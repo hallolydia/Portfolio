@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
+  <title>Lydia — Product Designer</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -11,231 +11,189 @@
   <!-- GNB -->
   <header class="gnb" id="gnb">
     <div class="gnb__inner">
-      <a href="#hero" class="gnb__logo">JE.</a>
+      <a href="/" class="gnb__logo">Lydia</a>
       <nav class="gnb__nav">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <a href="work/">Work</a>
+        <a href="about/">About</a>
+        <a href="lab/">Lab</a>
+        <a href="resume/">Resume</a>
       </nav>
-      <button class="gnb__hamburger" id="hamburger" aria-label="메뉴 열기">
+      <button class="gnb__hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="gnb__mobile-nav" id="mobileNav">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+      <a href="work/">Work</a>
+      <a href="about/">About</a>
+      <a href="lab/">Lab</a>
+      <a href="resume/">Resume</a>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="hero" id="hero">
     <div class="hero__inner">
-      <p class="hero__greeting">안녕하세요,</p>
-      <h1 class="hero__name">정은 <span>입니다</span></h1>
-      <p class="hero__desc">사용자 경험을 중심에 두는 프론트엔드 개발자입니다.<br />아이디어를 실제 제품으로 만드는 과정을 좋아합니다.</p>
+      <p class="hero__label">Hi, I'm Lydia —</p>
+      <h1 class="hero__headline">
+        <span class="hero__line">a designer who</span>
+        <span class="hero__line">uncovers the real problems</span>
+        <span class="hero__line">hidden between user needs</span>
+        <span class="hero__line">and business goals.</span>
+      </h1>
       <div class="hero__cta">
-        <a href="#projects" class="btn btn--primary">프로젝트 보기</a>
-        <a href="#contact" class="btn btn--outline">연락하기</a>
+        <a href="work/" class="btn btn--primary">View My Work →</a>
+        <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="btn btn--outline">LinkedIn ↗</a>
       </div>
     </div>
-    <div class="hero__scroll-hint">
-      <span></span>
-    </div>
+    <div class="hero__scroll-hint"><span></span></div>
   </section>
 
-  <!-- About -->
-  <section class="section" id="about">
+  <!-- Selected Work -->
+  <section class="section" id="work">
     <div class="section__inner">
-      <h2 class="section__title">About</h2>
-      <div class="card-grid card-grid--about">
-        <div class="card card--profile">
-          <div class="card__avatar"></div>
-          <h3>Jung Eun</h3>
-          <p class="card__role">Frontend Developer</p>
-          <p class="card__bio">코드 한 줄 한 줄에 의미를 담고, 사용자가 불편함을 느끼지 않는 인터페이스를 만드는 것을 목표로 합니다.</p>
-          <div class="card__links">
-            <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-            <a href="mailto:ari@memecore.org">Email</a>
+      <div class="section__header reveal">
+        <h2 class="section__title">Selected Work</h2>
+        <a href="work/" class="section__link">View All Work →</a>
+      </div>
+      <div class="work-grid">
+
+        <article class="work-card reveal">
+          <a href="work/project-a/" class="work-card__thumb-link">
+            <div class="work-card__thumb" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+              <div class="work-card__overlay"><span>View Case Study →</span></div>
+            </div>
+          </a>
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span class="tag">UX Research</span>
+              <span class="tag">Product Design</span>
+            </div>
+            <h3>Project Title A</h3>
+            <p>Brief description of what problem was solved and the outcome. One to two sentences.</p>
           </div>
-        </div>
-        <div class="card card--info">
-          <ul class="info-list">
-            <li><span class="info-label">위치</span><span>서울, 대한민국</span></li>
-            <li><span class="info-label">경력</span><span>3년차</span></li>
-            <li><span class="info-label">관심사</span><span>UI/UX, Web Performance</span></li>
-            <li><span class="info-label">언어</span><span>한국어, English</span></li>
-          </ul>
-        </div>
+        </article>
+
+        <article class="work-card reveal">
+          <a href="work/project-b/" class="work-card__thumb-link">
+            <div class="work-card__thumb" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">
+              <div class="work-card__overlay"><span>View Case Study →</span></div>
+            </div>
+          </a>
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span class="tag">Redesign</span>
+              <span class="tag">Mobile</span>
+            </div>
+            <h3>Project Title B</h3>
+            <p>Brief description of what problem was solved and the outcome. One to two sentences.</p>
+          </div>
+        </article>
+
+        <article class="work-card reveal">
+          <a href="work/project-c/" class="work-card__thumb-link">
+            <div class="work-card__thumb" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">
+              <div class="work-card__overlay"><span>View Case Study →</span></div>
+            </div>
+          </a>
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span class="tag">Product Design</span>
+              <span class="tag">B2B</span>
+            </div>
+            <h3>Project Title C</h3>
+            <p>Brief description of what problem was solved and the outcome. One to two sentences.</p>
+          </div>
+        </article>
+
+        <article class="work-card reveal">
+          <a href="work/project-d/" class="work-card__thumb-link">
+            <div class="work-card__thumb" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)">
+              <div class="work-card__overlay"><span>View Case Study →</span></div>
+            </div>
+          </a>
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span class="tag">Branding</span>
+              <span class="tag">UX Research</span>
+            </div>
+            <h3>Project Title D</h3>
+            <p>Brief description of what problem was solved and the outcome. One to two sentences.</p>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section class="section section--alt" id="projects">
+  <!-- Story Strip -->
+  <div class="story-strip reveal">
+    <div class="story-strip__inner">
+      <div class="story-strip__item">
+        <span class="story-strip__label">Award</span>
+        <span class="story-strip__value">Award Name, Year</span>
+      </div>
+      <span class="story-strip__dot" aria-hidden="true">·</span>
+      <div class="story-strip__item">
+        <span class="story-strip__label">Featured in</span>
+        <span class="story-strip__value">Article / Publication</span>
+      </div>
+      <span class="story-strip__dot" aria-hidden="true">·</span>
+      <div class="story-strip__item">
+        <span class="story-strip__label">Experience</span>
+        <span class="story-strip__value">Company / Role</span>
+      </div>
+      <span class="story-strip__dot" aria-hidden="true">·</span>
+      <div class="story-strip__item">
+        <span class="story-strip__label">Education</span>
+        <span class="story-strip__value">School / Degree</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Referrals / Testimonials -->
+  <section class="section section--alt" id="referrals">
     <div class="section__inner">
-      <h2 class="section__title">Projects</h2>
-      <div class="card-grid card-grid--projects">
+      <h2 class="section__title reveal">Kind Words</h2>
+      <div class="testimonial-grid">
 
-        <article class="card card--project">
-          <div class="card__thumb" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
-            <span class="card__tag">Web App</span>
+        <div class="testimonial-card reveal">
+          <p class="testimonial-card__quote">"Lydia has a rare ability to translate fuzzy business problems into crisp, user-centered solutions. Her work directly impacted our retention metrics."</p>
+          <div class="testimonial-card__author">
+            <strong>Name</strong>
+            <span>Former Manager · Company</span>
           </div>
-          <div class="card__body">
-            <h3>프로젝트 이름 A</h3>
-            <p>프로젝트에 대한 간략한 설명을 여기에 작성합니다. 어떤 문제를 해결했는지 한두 문장으로 정리해 주세요.</p>
-            <div class="card__stack">
-              <span>React</span><span>TypeScript</span><span>Tailwind</span>
-            </div>
-            <div class="card__actions">
-              <a href="#" class="btn btn--sm btn--primary">Demo</a>
-              <a href="#" class="btn btn--sm btn--outline">GitHub</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card card--project">
-          <div class="card__thumb" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">
-            <span class="card__tag">Mobile</span>
-          </div>
-          <div class="card__body">
-            <h3>프로젝트 이름 B</h3>
-            <p>프로젝트에 대한 간략한 설명을 여기에 작성합니다. 어떤 문제를 해결했는지 한두 문장으로 정리해 주세요.</p>
-            <div class="card__stack">
-              <span>Next.js</span><span>Prisma</span><span>PostgreSQL</span>
-            </div>
-            <div class="card__actions">
-              <a href="#" class="btn btn--sm btn--primary">Demo</a>
-              <a href="#" class="btn btn--sm btn--outline">GitHub</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card card--project">
-          <div class="card__thumb" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">
-            <span class="card__tag">Tool</span>
-          </div>
-          <div class="card__body">
-            <h3>프로젝트 이름 C</h3>
-            <p>프로젝트에 대한 간략한 설명을 여기에 작성합니다. 어떤 문제를 해결했는지 한두 문장으로 정리해 주세요.</p>
-            <div class="card__stack">
-              <span>Vue.js</span><span>Node.js</span><span>MongoDB</span>
-            </div>
-            <div class="card__actions">
-              <a href="#" class="btn btn--sm btn--primary">Demo</a>
-              <a href="#" class="btn btn--sm btn--outline">GitHub</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card card--project">
-          <div class="card__thumb" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)">
-            <span class="card__tag">Open Source</span>
-          </div>
-          <div class="card__body">
-            <h3>프로젝트 이름 D</h3>
-            <p>프로젝트에 대한 간략한 설명을 여기에 작성합니다. 어떤 문제를 해결했는지 한두 문장으로 정리해 주세요.</p>
-            <div class="card__stack">
-              <span>Python</span><span>FastAPI</span><span>Docker</span>
-            </div>
-            <div class="card__actions">
-              <a href="#" class="btn btn--sm btn--primary">Demo</a>
-              <a href="#" class="btn btn--sm btn--outline">GitHub</a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section class="section" id="skills">
-    <div class="section__inner">
-      <h2 class="section__title">Skills</h2>
-      <div class="card-grid card-grid--skills">
-
-        <div class="card card--skill">
-          <div class="card__skill-icon">🖥</div>
-          <h3>Frontend</h3>
-          <ul>
-            <li>React / Next.js</li>
-            <li>TypeScript</li>
-            <li>HTML / CSS / SCSS</li>
-            <li>Tailwind CSS</li>
-          </ul>
         </div>
 
-        <div class="card card--skill">
-          <div class="card__skill-icon">⚙️</div>
-          <h3>Backend</h3>
-          <ul>
-            <li>Node.js / Express</li>
-            <li>Python / FastAPI</li>
-            <li>REST API</li>
-            <li>GraphQL</li>
-          </ul>
-        </div>
-
-        <div class="card card--skill">
-          <div class="card__skill-icon">🗄</div>
-          <h3>Database</h3>
-          <ul>
-            <li>PostgreSQL</li>
-            <li>MongoDB</li>
-            <li>Redis</li>
-            <li>Prisma ORM</li>
-          </ul>
-        </div>
-
-        <div class="card card--skill">
-          <div class="card__skill-icon">🚀</div>
-          <h3>DevOps</h3>
-          <ul>
-            <li>Docker</li>
-            <li>GitHub Actions</li>
-            <li>Vercel / AWS</li>
-            <li>Linux</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="section section--alt" id="contact">
-    <div class="section__inner section__inner--narrow">
-      <h2 class="section__title">Contact</h2>
-      <p class="section__sub">새로운 기회나 협업에 대해 언제든지 연락 주세요.</p>
-      <div class="card card--contact">
-        <form class="contact-form" id="contactForm" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">이름</label>
-              <input type="text" id="name" name="name" placeholder="홍길동" required />
-            </div>
-            <div class="form-group">
-              <label for="email">이메일</label>
-              <input type="email" id="email" name="email" placeholder="email@example.com" required />
-            </div>
+        <div class="testimonial-card reveal">
+          <p class="testimonial-card__quote">"Working with Lydia was a masterclass in structured design thinking. She asks the right questions before touching any tool."</p>
+          <div class="testimonial-card__author">
+            <strong>Name</strong>
+            <span>Mentor · Organization</span>
           </div>
-          <div class="form-group">
-            <label for="message">메시지</label>
-            <textarea id="message" name="message" rows="5" placeholder="안녕하세요! 협업하고 싶은 프로젝트가 있는데..." required></textarea>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <p class="testimonial-card__quote">"Lydia brings energy and rigor to every project. She doesn't just deliver screens — she delivers reasoning."</p>
+          <div class="testimonial-card__author">
+            <strong>Name</strong>
+            <span>Colleague · Team</span>
           </div>
-          <button type="submit" class="btn btn--primary btn--full">보내기</button>
-          <p class="form-notice" id="formNotice"></p>
-        </form>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>© 2026 Jung Eun. Crafted with care.</p>
+    <div class="footer__inner">
+      <p class="footer__headline reveal">Let's work together.</p>
+      <div class="footer__cta reveal">
+        <a href="mailto:ari@memecore.org" class="btn btn--primary">Send Email</a>
+        <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="btn btn--outline">LinkedIn ↗</a>
+      </div>
+      <p class="footer__copy">© 2025 Lydia</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
