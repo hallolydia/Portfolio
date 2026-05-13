@@ -13,16 +13,23 @@ document.querySelectorAll('.gnb__nav a').forEach(a => {
   }
 });
 
-// Hamburger menu
+// Hamburger — toggle open state + animate bars
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobileNav');
 
 hamburger.addEventListener('click', () => {
-  mobileNav.classList.toggle('open');
+  const isOpen = mobileNav.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  // Prevent body scroll when menu is open
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
 mobileNav.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => mobileNav.classList.remove('open'));
+  a.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  });
 });
 
 // Scroll reveal
