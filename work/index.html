@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Work — Lydia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="work.css" />
 </head>
 <body>
 
@@ -13,7 +17,7 @@
     <div class="gnb__inner">
       <a href="../" class="gnb__logo">Lydia</a>
       <nav class="gnb__nav">
-        <a href="../work/">Work</a>
+        <a href="../work/" class="active">Work</a>
         <a href="../about/">About</a>
         <a href="../lab/">Lab</a>
         <a href="../article/">Article</a>
@@ -30,86 +34,162 @@
     </div>
   </header>
 
-  <!-- Page Hero -->
-  <div class="page-hero">
-    <div class="section__inner">
-      <h1 class="page-hero__title reveal">Work</h1>
-      <p class="page-hero__sub reveal">Selected case studies in product design.</p>
+  <!-- Page Header -->
+  <section class="page-hero">
+    <div class="page-hero__inner">
+      <p class="page-hero__label">Selected Projects</p>
+      <h1 class="page-hero__title">Work</h1>
+      <p class="page-hero__desc">Product design, UX research, and redesign case studies.</p>
     </div>
-  </div>
+  </section>
 
-  <!-- Work Grid -->
-  <section class="section">
-    <div class="section__inner">
-      <div class="work-grid">
+  <!-- Filter + Grid -->
+  <section class="work-section">
+    <div class="work-section__inner">
 
-        <article class="work-card reveal">
-          <a href="mel-ai/" class="work-card__thumb-link">
+      <!-- Filter Tabs -->
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="ux-research">UX Research</button>
+        <button class="filter-tab" data-filter="product-design">Product Design</button>
+        <button class="filter-tab" data-filter="redesign">Redesign</button>
+        <button class="filter-tab" data-filter="branding">Branding</button>
+      </div>
+
+      <!-- All Projects Grid -->
+      <div class="all-work-grid" id="workGrid">
+
+        <article class="work-card reveal" data-tags="ux-research,product-design">
+          <a href="project-a/" class="work-card__thumb-link">
             <div class="work-card__thumb" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
               <div class="work-card__overlay"><span>View Case Study →</span></div>
             </div>
           </a>
           <div class="work-card__body">
             <div class="work-card__tags">
-              <span class="tag">AI</span>
-              <span class="tag">Chatting</span>
-              <span class="tag">Business Impact</span>
+              <span class="tag">UX Research</span>
+              <span class="tag">Product Design</span>
             </div>
-            <h3>Mel AI 화상통화</h3>
-            <p>AI 기반 실시간 화상 미팅에서 사용자 이탈을 줄인 챗 UX 개선.</p>
+            <h3>Project Title A</h3>
+            <p>Brief description of what problem was solved and the outcome. One to two sentences.</p>
           </div>
         </article>
 
-        <article class="work-card reveal">
-          <a href="sk-hmi/" class="work-card__thumb-link">
+        <article class="work-card reveal" data-tags="redesign">
+          <a href="project-b/" class="work-card__thumb-link">
             <div class="work-card__thumb" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">
               <div class="work-card__overlay"><span>View Case Study →</span></div>
             </div>
           </a>
           <div class="work-card__body">
             <div class="work-card__tags">
-              <span class="tag">Enterprise</span>
-              <span class="tag">Education</span>
-              <span class="tag">HMI</span>
+              <span class="tag">Redesign</span>
+              <span class="tag">Mobile</span>
             </div>
-            <h3>SK on HMI 교육 시뮬레이션</h3>
-            <p>현장 운전원을 위한 시뮬레이션 기반 HMI 교육 시스템 설계.</p>
+            <h3>Project Title B</h3>
+            <p>Brief description of what problem was solved and the outcome. One to two sentences.</p>
           </div>
         </article>
 
-        <article class="work-card reveal">
-          <a href="security-collab/" class="work-card__thumb-link">
+        <article class="work-card reveal" data-tags="product-design">
+          <a href="project-c/" class="work-card__thumb-link">
             <div class="work-card__thumb" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">
               <div class="work-card__overlay"><span>View Case Study →</span></div>
             </div>
           </a>
           <div class="work-card__body">
             <div class="work-card__tags">
-              <span class="tag">B2G</span>
-              <span class="tag">Security</span>
-              <span class="tag">Collaboration</span>
+              <span class="tag">Product Design</span>
+              <span class="tag">B2B</span>
             </div>
-            <h3>다기관 보안 협업 서비스</h3>
-            <p>보안이 중요한 공공기관 간 안전한 문서 협업 플랫폼 UX.</p>
+            <h3>Project Title C</h3>
+            <p>Brief description of what problem was solved and the outcome. One to two sentences.</p>
+          </div>
+        </article>
+
+        <article class="work-card reveal" data-tags="branding,ux-research">
+          <a href="project-d/" class="work-card__thumb-link">
+            <div class="work-card__thumb" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)">
+              <div class="work-card__overlay"><span>View Case Study →</span></div>
+            </div>
+          </a>
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span class="tag">Branding</span>
+              <span class="tag">UX Research</span>
+            </div>
+            <h3>Project Title D</h3>
+            <p>Brief description of what problem was solved and the outcome. One to two sentences.</p>
+          </div>
+        </article>
+
+        <article class="work-card reveal" data-tags="redesign,product-design">
+          <a href="project-e/" class="work-card__thumb-link">
+            <div class="work-card__thumb" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%)">
+              <div class="work-card__overlay"><span>View Case Study →</span></div>
+            </div>
+          </a>
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span class="tag">Redesign</span>
+              <span class="tag">Product Design</span>
+            </div>
+            <h3>Project Title E</h3>
+            <p>Brief description of what problem was solved and the outcome. One to two sentences.</p>
+          </div>
+        </article>
+
+        <article class="work-card reveal" data-tags="ux-research">
+          <a href="project-f/" class="work-card__thumb-link">
+            <div class="work-card__thumb" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)">
+              <div class="work-card__overlay"><span>View Case Study →</span></div>
+            </div>
+          </a>
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span class="tag">UX Research</span>
+            </div>
+            <h3>Project Title F</h3>
+            <p>Brief description of what problem was solved and the outcome. One to two sentences.</p>
           </div>
         </article>
 
       </div>
+
+      <!-- Empty state -->
+      <div class="work-empty" id="workEmpty" hidden>
+        <p>No projects in this category yet.</p>
+      </div>
+
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer__inner">
-      <p class="footer__headline reveal">Let's work together.</p>
-      <div class="footer__cta reveal">
-        <a href="mailto:ari@memecore.org" class="btn btn--primary">Send Email</a>
-        <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="btn btn--outline">LinkedIn ↗</a>
+      <p class="footer__copy">© 2026 Lydia Oh. All rights reserved.</p>
+      <div class="footer__social">
+        <a href="https://linkedin.com/in/" class="footer__social-btn" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+          </svg>
+        </a>
+        <a href="https://behance.net/" class="footer__social-btn" aria-label="Behance" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M7.5 6.5H2v11h5.5c2.5 0 4-1.2 4-3.2 0-1.3-.6-2.2-1.7-2.7.8-.5 1.3-1.3 1.3-2.3 0-1.8-1.3-2.8-3.6-2.8zm-.2 4.4H4.4V8.4h2.9c1 0 1.7.4 1.7 1.2 0 .9-.7 1.3-1.7 1.3zm.3 4.8H4.4v-2.8H7.6c1.2 0 1.9.5 1.9 1.4 0 1-.7 1.4-1.9 1.4zM15.5 7h5V6h-5v1zm3.2 8.7c-.8 0-1.4-.3-1.8-.8-.3-.5-.5-1-.5-1.7h6.5c0-1-.1-1.9-.4-2.7-.3-.7-.7-1.3-1.2-1.8-.5-.4-1.1-.8-1.7-1-.6-.2-1.3-.3-2-.3-.8 0-1.5.1-2.1.4-.6.3-1.2.7-1.6 1.2s-.8 1.1-1 1.8c-.2.7-.4 1.4-.4 2.2 0 .8.1 1.6.4 2.3.3.7.7 1.2 1.2 1.7.5.4 1.1.8 1.7 1 .6.2 1.4.3 2.2.3 1.1 0 2-.2 2.8-.7.8-.5 1.4-1.2 1.7-2.3l-2.4-.2c-.2.5-.5.8-.9 1.1-.3.2-.8.3-1.4.3zm-.2-6.2c.7 0 1.2.2 1.6.6.4.4.6.9.6 1.5h-4.5c.1-.7.3-1.2.7-1.6.5-.3 1-.5 1.6-.5z"/>
+          </svg>
+        </a>
+        <a href="mailto:ari@memecore.org" class="footer__social-btn" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/>
+          </svg>
+        </a>
       </div>
-      <p class="footer__copy">© 2025 Lydia</p>
     </div>
   </footer>
 
   <script src="../script.js"></script>
+  <script src="work.js"></script>
 </body>
 </html>

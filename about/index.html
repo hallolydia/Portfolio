@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Lydia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="about.css" />
 </head>
 <body>
 
@@ -14,7 +18,7 @@
       <a href="../" class="gnb__logo">Lydia</a>
       <nav class="gnb__nav">
         <a href="../work/">Work</a>
-        <a href="../about/">About</a>
+        <a href="../about/" class="active">About</a>
         <a href="../lab/">Lab</a>
         <a href="../article/">Article</a>
       </nav>
@@ -30,45 +34,167 @@
     </div>
   </header>
 
-  <!-- About Content -->
-  <section class="section about-section">
+  <!-- Intro -->
+  <section class="about-intro">
+    <div class="about-intro__inner">
+      <p class="page-hero__label">About</p>
+      <h1 class="about-intro__title">
+        Designer who asks<br>
+        <em>why</em> before <em>how.</em>
+      </h1>
+      <p class="about-intro__bio">
+        Hi, I'm Lydia — a product designer based in Seoul. I specialize in
+        uncovering the real problems hidden between user needs and business goals,
+        then turning those insights into products people actually want to use.
+      </p>
+      <p class="about-intro__bio">
+        I believe good design starts with the right question. Before any wireframe
+        or prototype, I dig into the problem space — talking to users, mapping
+        system constraints, and finding where the real friction lives.
+      </p>
+      <div class="about-intro__links">
+        <a href="mailto:ari@memecore.org" class="btn btn--primary">Say Hello</a>
+        <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="btn btn--outline">LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="section section--alt">
     <div class="section__inner">
+      <h2 class="section__title reveal">Experience</h2>
+      <div class="timeline">
 
-      <div class="about-profile reveal">
-        <div class="profile-placeholder"></div>
-      </div>
-
-      <div class="about-body">
-        <h1 class="page-hero__title reveal">I find the question<br>behind the question.</h1>
-
-        <div class="about-story reveal">
-          <p>저는 Jung Eun(Lydia)입니다. 사용자와 비즈니스 사이에서 진짜 문제를 찾는 프로덕트 디자이너예요.</p>
-          <p>Mel AI, SK on, 그리고 공공기관 서비스에서 복잡한 시스템을 단순하게 만들어왔습니다. 인터뷰 한 줄, 데이터 한 줄에서 숨겨진 패턴을 읽는 걸 좋아합니다.</p>
-          <p>디자인이 예뻐서가 아니라, 제대로 작동해서 선택받길 원합니다.</p>
+        <div class="timeline-item reveal">
+          <div class="timeline-item__meta">
+            <span class="timeline-item__period">2024 — Present</span>
+          </div>
+          <div class="timeline-item__body">
+            <h3>Product Designer</h3>
+            <p class="timeline-item__company">Company Name</p>
+            <p class="timeline-item__desc">
+              Led end-to-end design for [product/feature]. Conducted user research,
+              synthesized insights, and collaborated closely with product and engineering.
+            </p>
+          </div>
         </div>
 
-        <div class="about-skills reveal">
-          <span class="tag">UX Research</span>
-          <span class="tag">Interaction Design</span>
-          <span class="tag">Service Design</span>
-          <span class="tag">Prototyping</span>
-          <span class="tag">Figma</span>
-          <span class="tag">Enterprise UX</span>
+        <div class="timeline-item reveal">
+          <div class="timeline-item__meta">
+            <span class="timeline-item__period">2022 — 2024</span>
+          </div>
+          <div class="timeline-item__body">
+            <h3>UX Designer</h3>
+            <p class="timeline-item__company">Company Name</p>
+            <p class="timeline-item__desc">
+              Owned the redesign of [product area], improving key metrics by X%.
+              Established a research practice and design system foundations.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-item__meta">
+            <span class="timeline-item__period">2021 — 2022</span>
+          </div>
+          <div class="timeline-item__body">
+            <h3>UX Design Intern</h3>
+            <p class="timeline-item__company">Company Name</p>
+            <p class="timeline-item__desc">
+              Supported the design team on [project]. Ran usability tests,
+              created wireframes, and iterated based on feedback.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section">
+    <div class="section__inner">
+      <h2 class="section__title reveal">Skills & Tools</h2>
+      <div class="skills-grid">
+
+        <div class="skill-group reveal">
+          <h3>Design</h3>
+          <ul>
+            <li>Product Design</li>
+            <li>UX Research</li>
+            <li>Interaction Design</li>
+            <li>Design Systems</li>
+            <li>Prototyping</li>
+          </ul>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3>Research</h3>
+          <ul>
+            <li>User Interviews</li>
+            <li>Usability Testing</li>
+            <li>Competitive Analysis</li>
+            <li>Journey Mapping</li>
+            <li>Data Analysis</li>
+          </ul>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3>Tools</h3>
+          <ul>
+            <li>Figma</li>
+            <li>Framer</li>
+            <li>Notion</li>
+            <li>HTML / CSS</li>
+            <li>Maze / Dovetail</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="section section--alt">
+    <div class="section__inner">
+      <h2 class="section__title reveal">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-item__meta">
+            <span class="timeline-item__period">2018 — 2022</span>
+          </div>
+          <div class="timeline-item__body">
+            <h3>B.A. / B.S. in [Major]</h3>
+            <p class="timeline-item__company">University Name</p>
+            <p class="timeline-item__desc">Relevant coursework, thesis, or notable activities.</p>
+          </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer__inner">
-      <p class="footer__headline reveal">Let's work together.</p>
-      <div class="footer__cta reveal">
-        <a href="mailto:ari@memecore.org" class="btn btn--primary">Send Email</a>
-        <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="btn btn--outline">LinkedIn ↗</a>
+      <p class="footer__copy">© 2026 Lydia Oh. All rights reserved.</p>
+      <div class="footer__social">
+        <a href="https://linkedin.com/in/" class="footer__social-btn" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+          </svg>
+        </a>
+        <a href="https://behance.net/" class="footer__social-btn" aria-label="Behance" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M7.5 6.5H2v11h5.5c2.5 0 4-1.2 4-3.2 0-1.3-.6-2.2-1.7-2.7.8-.5 1.3-1.3 1.3-2.3 0-1.8-1.3-2.8-3.6-2.8zm-.2 4.4H4.4V8.4h2.9c1 0 1.7.4 1.7 1.2 0 .9-.7 1.3-1.7 1.3zm.3 4.8H4.4v-2.8H7.6c1.2 0 1.9.5 1.9 1.4 0 1-.7 1.4-1.9 1.4zM15.5 7h5V6h-5v1zm3.2 8.7c-.8 0-1.4-.3-1.8-.8-.3-.5-.5-1-.5-1.7h6.5c0-1-.1-1.9-.4-2.7-.3-.7-.7-1.3-1.2-1.8-.5-.4-1.1-.8-1.7-1-.6-.2-1.3-.3-2-.3-.8 0-1.5.1-2.1.4-.6.3-1.2.7-1.6 1.2s-.8 1.1-1 1.8c-.2.7-.4 1.4-.4 2.2 0 .8.1 1.6.4 2.3.3.7.7 1.2 1.2 1.7.5.4 1.1.8 1.7 1 .6.2 1.4.3 2.2.3 1.1 0 2-.2 2.8-.7.8-.5 1.4-1.2 1.7-2.3l-2.4-.2c-.2.5-.5.8-.9 1.1-.3.2-.8.3-1.4.3zm-.2-6.2c.7 0 1.2.2 1.6.6.4.4.6.9.6 1.5h-4.5c.1-.7.3-1.2.7-1.6.5-.3 1-.5 1.6-.5z"/>
+          </svg>
+        </a>
+        <a href="mailto:ari@memecore.org" class="footer__social-btn" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/>
+          </svg>
+        </a>
       </div>
-      <p class="footer__copy">© 2025 Lydia</p>
     </div>
   </footer>
 

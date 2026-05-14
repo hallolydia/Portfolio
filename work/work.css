@@ -1,0 +1,120 @@
+/* ===== Work Page ===== */
+
+/* Page Hero */
+.page-hero {
+  padding-top: calc(var(--gnb-height) + var(--gnb-top) + 64px);
+  padding-bottom: 56px;
+}
+
+.page-hero__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.page-hero__label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 0.1s forwards;
+}
+
+.page-hero__title {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  color: var(--color-text);
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 0.2s forwards;
+}
+
+.page-hero__desc {
+  font-size: 1.05rem;
+  color: var(--color-muted);
+  opacity: 0;
+  animation: fadeUp 0.6s ease 0.3s forwards;
+}
+
+/* Work Section */
+.work-section {
+  padding-bottom: 120px;
+}
+
+.work-section__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filter-tab {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  background: transparent;
+  border: 1.5px solid var(--color-border);
+  border-radius: 999px;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.filter-tab:hover {
+  color: var(--color-text);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.filter-tab.active {
+  background: var(--color-text);
+  color: #fff;
+  border-color: var(--color-text);
+}
+
+/* Work Grid — 3 columns on work page */
+.all-work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Card hidden state (filter) */
+.work-card.hidden {
+  display: none;
+}
+
+/* Empty state */
+.work-empty {
+  text-align: center;
+  padding: 80px 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .all-work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero__title { letter-spacing: -1px; }
+  .all-work-grid { grid-template-columns: 1fr; }
+  .work-section { padding-bottom: 80px; }
+}
