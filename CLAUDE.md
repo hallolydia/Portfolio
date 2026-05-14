@@ -77,10 +77,12 @@ Portfolio/
 
 ## 작업 지침
 
+> **최상위 규칙** → [`rules/portfolio-rules.md`](rules/portfolio-rules.md) 를 먼저 읽을 것
+
 - **색상 변경 시** 반드시 CSS Variable 값만 수정 (하드코딩 금지)
 - **새 섹션 추가 시** `section[id]` 패턴 유지 (script.js의 active nav 감지에 필요)
 - **애니메이션 추가 시** `reveal` 클래스 + Intersection Observer 패턴 재사용 (`script.js:38–51`)
-- **반응형 작업 시** 브레이크포인트는 `768px`(태블릿), `480px`(모바일) 두 단계만 사용
+- **반응형 작업 시** 브레이크포인트 3단계: `1280px`(태블릿), `768px`(모바일) — 임의 추가 금지
 - **Contact Form**은 현재 데모 전용 (실제 전송 기능 없음)
 
 ---
