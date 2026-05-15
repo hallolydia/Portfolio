@@ -9,7 +9,7 @@
 .page-hero__inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
 }
 
 .page-hero__label {
@@ -49,7 +49,7 @@
 .work-section__inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
 }
 
 /* Filter Tabs */
@@ -86,13 +86,6 @@
   border-color: var(--color-text);
 }
 
-/* Work Grid — 3 columns on work page */
-.all-work-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
 /* Card hidden state (filter) */
 .work-card.hidden {
   display: none;
@@ -107,14 +100,10 @@
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 1024px) {
-  .all-work-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
+  .page-hero__inner,
+  .work-section__inner { padding: 0 20px; }
   .page-hero__title { letter-spacing: -1px; }
-  .all-work-grid { grid-template-columns: 1fr; }
+  .all-work-grid { grid-template-columns: 1fr; gap: 20px; }
   .work-section { padding-bottom: 80px; }
 }

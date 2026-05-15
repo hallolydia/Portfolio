@@ -9,7 +9,7 @@
 .resume-hero__inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -282,6 +282,8 @@
 }
 
 @media (max-width: 768px) {
+  .resume-hero__inner,
+  .resume-body__inner { padding: 0 20px; }
   .resume-hero__inner {
     flex-direction: column;
     align-items: flex-start;

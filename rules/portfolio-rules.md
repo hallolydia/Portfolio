@@ -13,7 +13,12 @@
 | 목적 | **2026 Fall 미국 UX 인턴** 지원 + **정규직 Product Designer** 지원 |
 | 타겟 | 미국 테크 기업 / 디자인 에이전시 채용 담당자 |
 | 언어 | 영어 카피 원칙 (UI 텍스트·케이스스터디 모두 영어) |
-| 스택 | Vanilla HTML / CSS / JS — 프레임워크 도입 금지 |
+| 스택 (현재) | Vanilla HTML / CSS / JS |
+| 스택 (로드맵) | Next.js + TypeScript + Tailwind — 점진 마이그레이션 |
+| 최우선 문서 | [`README.md`](../README.md) |
+
+**GNB:** Lydia · Work · Lab · Article · About · **`Contact me!`** (LinkedIn, 맨 오른쪽)  
+**Home 허용:** Hero · Selected Work 4 · Proof strip — Referrals / Contact 섹션 / Hero LinkedIn **금지**
 
 ---
 
@@ -108,4 +113,4 @@ Portfolio/
 
 ---
 
-*최종 수정: 2026-05-15 (추가 규칙 반영)*
+*최종 수정: 2026-05-16 (README·GNB CTA·Home 화이트리스트 반영)*

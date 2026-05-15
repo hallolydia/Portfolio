@@ -1,7 +1,7 @@
 // GNB scroll shadow
 const gnb = document.getElementById('gnb');
 window.addEventListener('scroll', () => {
-  gnb.classList.toggle('scrolled', window.scrollY > 10);
+  gnb.classList.toggle('scrolled', window.scrollY > 80);
 }, { passive: true });
 
 // Active nav based on current page path
@@ -31,6 +31,15 @@ mobileNav.querySelectorAll('a').forEach(a => {
     document.body.style.overflow = '';
   });
 });
+
+const mobileCta = document.querySelector('.gnb__mobile-cta');
+if (mobileCta) {
+  mobileCta.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+}
 
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {

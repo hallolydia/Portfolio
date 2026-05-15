@@ -9,7 +9,7 @@
 .about-intro__inner {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
 }
 
 .page-hero__label {
@@ -159,6 +159,8 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
+  .about-intro__inner,
+  .about-section .section__inner { padding: 0 20px; }
   .timeline-item {
     grid-template-columns: 1fr;
     gap: 8px;
