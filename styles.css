@@ -131,6 +131,13 @@ ul { list-style: none; }
   white-space: nowrap;
 }
 
+/* Inline wrapper for nav items that contain icon + text (e.g. RESUME) */
+.gnb__nav-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
 /* Reserve bold-weight width so layout never shifts on hover */
 .gnb__nav a::after {
   content: attr(data-text);
