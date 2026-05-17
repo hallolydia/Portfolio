@@ -154,6 +154,11 @@ ul { list-style: none; }
   pointer-events: none;
 }
 
+/* RESUME has icon (12px) + gap (4px) inside — ghost needs same extra width */
+.gnb__nav a:has(.gnb__nav-row)::after {
+  padding-right: 16px;
+}
+
 /* Nav item On — one weight step up, same size */
 .gnb__nav a:hover,
 .gnb__nav a.active {
