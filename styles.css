@@ -37,8 +37,8 @@
   --work-card-link-radius:  20px;
   --work-card-media-radius: 24px;
   --work-card-frame:        rgba(18, 18, 19, 0.14);
-  --work-card-gap:          24px;
-  --work-card-stack:        24px;
+  --work-card-gap:          40px;
+  --work-card-stack:        32px;
 }
 
 html { scroll-behavior: smooth; }
@@ -75,7 +75,7 @@ ul { list-style: none; }
   height: var(--gnb-height);
   z-index: 1000;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.20);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.65);
@@ -124,19 +124,30 @@ ul { list-style: none; }
   color: var(--color-muted);
   padding: 0 12px;
   height: 36px;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
+  display: inline-grid;
+  place-content: center;
   border-radius: 999px;
-  transition: color var(--transition), font-weight var(--transition), background var(--transition);
+  transition: color var(--transition), background var(--transition);
   white-space: nowrap;
 }
 
-/* Nav item On — 14px #121213, radius 999 */
+/* Reserve bold-weight width so layout never shifts on hover */
+.gnb__nav a::after {
+  content: attr(data-text);
+  font-weight: 800;
+  font-size: 14px;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Nav item On — one weight step up, same size */
 .gnb__nav a:hover,
 .gnb__nav a.active {
   color: var(--color-text);
-  font-weight: 600;
+  font-weight: 800;
 }
 
 /* GNB CTA — Contact me! → LinkedIn */
@@ -390,7 +401,7 @@ ul { list-style: none; }
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 48px;
+  margin-bottom: 44px;
   padding-bottom: 10px;
 }
 
@@ -453,7 +464,7 @@ ul { list-style: none; }
 .work-card__content {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0;
   padding: 0 2px;
 }
 
@@ -470,12 +481,14 @@ ul { list-style: none; }
   font-weight: 400;
   color: var(--color-muted);
   line-height: 1.55;
+  margin-top: 20px;
 }
 
 .work-card__tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  margin-top: 16px;
 }
 
 .tag {
@@ -810,10 +823,6 @@ ul { list-style: none; }
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 1280px) {
-  .work-grid,
-  .all-work-grid { gap: 20px; }
-}
 
 @media (max-width: 768px) {
   .gnb {
@@ -832,6 +841,7 @@ ul { list-style: none; }
 
   .work-grid,
   .all-work-grid      { grid-template-columns: 1fr; gap: 20px; }
+  .work-card__link    { gap: 20px; }
   .testimonial-grid   { grid-template-columns: 1fr; }
   .story-strip__dot   { display: none; }
 
