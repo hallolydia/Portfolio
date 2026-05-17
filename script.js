@@ -52,3 +52,30 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Email copy button — click anywhere on button to copy & show "Copied!"
+document.querySelectorAll('.footer__email-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const email = btn.dataset.email;
+    const action = btn.querySelector('.footer__email-action');
+    const finish = () => {
+      action.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        action.textContent = 'Copy';
+        btn.classList.remove('copied');
+      }, 2000);
+    };
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(email).then(finish);
+    } else {
+      // Fallback for older browsers
+      const ta = Object.assign(document.createElement('textarea'), { value: email });
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      finish();
+    }
+  });
+});

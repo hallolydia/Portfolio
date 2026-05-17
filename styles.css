@@ -33,6 +33,10 @@
   --shadow-lg:          0 8px 40px rgba(0, 0, 0, 0.10);
   --transition:         0.22s ease;
 
+  /* Typography — label token */
+  --font-label-size:    14px;
+  --font-label-weight:  400;
+
   /* Work / resource cards (Modulor-style) */
   --work-card-link-radius:  20px;
   --work-card-media-radius: 24px;
@@ -502,8 +506,8 @@ ul { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: var(--font-label-size);
+  font-weight: var(--font-label-weight);
   padding: 5px 12px;
   background: #fff;
   color: var(--color-text);
@@ -668,10 +672,10 @@ ul { list-style: none; }
   gap: 40px; /* Figma: sitemap frame gap=40 */
 }
 
-/* Copyright — Manrope 400 18px rgba(194,194,204) (Figma) */
+/* Copyright — font-label token */
 .footer__copy {
-  font-size: 18px;
-  font-weight: 400;
+  font-size: var(--font-label-size);
+  font-weight: var(--font-label-weight);
   color: var(--color-footer-text);
   white-space: nowrap;
 }
@@ -683,23 +687,57 @@ ul { list-style: none; }
   gap: 20px; /* Figma: itemSpacing=20 */
 }
 
-/* Each icon: 48×48 white circle (Figma: cornerRadius≈999, fill #ffffff) */
+/* Each icon: 44×44 white circle */
 .footer__social-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: #ffffff;
   color: var(--color-footer-bg);
   flex-shrink: 0;
-  transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.footer__social-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+/* ===== Footer Email Copy Button ===== */
+.footer__email-btn {
+  width: auto;
+  max-width: 44px;
+  padding-left: 12px;
+  padding-right: 0;
+  overflow: hidden;
+  justify-content: flex-start;
+  cursor: pointer;
+  border: none;
+  font-family: 'Manrope', sans-serif;
+  transition: max-width 0.32s ease, padding-right 0.32s ease;
+}
+
+.footer__email-btn:hover,
+.footer__email-btn.copied {
+  max-width: 380px;
+  padding-right: 12px;
+}
+
+.footer__email-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-size: var(--font-label-size);
+  font-weight: var(--font-label-weight);
+}
+
+.footer__email-addr {
+  color: var(--color-muted);
+}
+
+.footer__email-action {
+  color: var(--color-text);
+  font-weight: 700;
 }
 
 /* ===== Page Hero (서브페이지 공통) ===== */
@@ -866,13 +904,6 @@ ul { list-style: none; }
     align-items: center;
     gap: 24px;
     text-align: center;
-  }
-  .footer__copy { font-size: 14px; }
-
-  /* Social icons mobile — Figma: 44×44 */
-  .footer__social-btn {
-    width: 44px;
-    height: 44px;
   }
 }
 
