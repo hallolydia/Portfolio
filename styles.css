@@ -22,8 +22,8 @@
   --color-accent:       #5b4ff0;
   --color-accent-hover: #7c6fff;
 
-  /* GNB — Figma: 1200×72, radius 999, bg rgba(255,255,255,0.20) + blur */
-  --gnb-height:         72px;
+  /* GNB — height 56px */
+  --gnb-height:         56px;
   --gnb-top:            16px;
 
   /* Misc */
@@ -75,7 +75,7 @@ ul { list-style: none; }
   height: var(--gnb-height);
   z-index: 1000;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.30);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.65);
@@ -117,13 +117,13 @@ ul { list-style: none; }
   margin-left: auto;
 }
 
-/* Nav item Off — Manrope 400 18px #646464, padding 0 16px (Figma) */
+/* Nav item Off — 14px #646464, padding 0 12px */
 .gnb__nav a {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
   color: var(--color-muted);
-  padding: 0 16px;
-  height: 48px;
+  padding: 0 12px;
+  height: 36px;
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -132,7 +132,7 @@ ul { list-style: none; }
   white-space: nowrap;
 }
 
-/* Nav item On — Manrope 600 18px #121213, radius 999 (Figma) */
+/* Nav item On — 14px #121213, radius 999 */
 .gnb__nav a:hover,
 .gnb__nav a.active {
   color: var(--color-text);
