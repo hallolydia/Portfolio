@@ -75,7 +75,7 @@ ul { list-style: none; }
   height: var(--gnb-height);
   z-index: 1000;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.10);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.65);
@@ -476,7 +476,7 @@ ul { list-style: none; }
 }
 
 .work-card__title {
-  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  font-size: 28px;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.25;
@@ -484,18 +484,18 @@ ul { list-style: none; }
 }
 
 .work-card__desc {
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-size: 16px;
   font-weight: 400;
   color: var(--color-muted);
   line-height: 1.55;
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 .work-card__tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 .tag {
@@ -847,8 +847,10 @@ ul { list-style: none; }
   .story-strip__inner { padding-left: 20px; padding-right: 20px; }
 
   .work-grid,
-  .all-work-grid      { grid-template-columns: 1fr; gap: 20px; }
+  .all-work-grid      { grid-template-columns: 1fr; gap: 32px; }
   .work-card__link    { gap: 20px; }
+  .work-card__title   { font-size: 24px; }
+  .work-card__desc    { font-size: 16px; }
   .testimonial-grid   { grid-template-columns: 1fr; }
   .story-strip__dot   { display: none; }
 
