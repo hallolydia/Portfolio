@@ -684,40 +684,45 @@ ul { list-style: none; }
 .footer__social {
   display: flex;
   align-items: center;
-  gap: 20px; /* Figma: itemSpacing=20 */
+  gap: 16px;
 }
 
-/* Each icon: 44×44 white circle */
+/* Each icon: transparent wrapper, icon image carries visual */
 .footer__social-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  background: #ffffff;
-  color: var(--color-footer-bg);
   flex-shrink: 0;
+}
+
+.footer__social-btn img {
+  width: 44px;
+  height: 44px;
+  display: block;
 }
 
 /* ===== Footer Email Copy Button ===== */
 .footer__email-btn {
   width: auto;
   max-width: 44px;
-  padding-left: 12px;
   padding-right: 0;
   overflow: hidden;
   justify-content: flex-start;
   cursor: pointer;
   border: none;
+  background: transparent;
+  border-radius: 22px;
   font-family: 'Manrope', sans-serif;
-  transition: max-width 0.32s ease, padding-right 0.32s ease;
+  transition: max-width 0.32s ease, padding-right 0.32s ease, background 0.32s ease;
 }
 
 .footer__email-btn:hover,
 .footer__email-btn.copied {
   max-width: 380px;
-  padding-right: 12px;
+  padding-right: 16px;
+  background: #ffffff;
 }
 
 .footer__email-label {
