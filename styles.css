@@ -79,9 +79,9 @@ ul { list-style: none; }
   height: var(--gnb-height);
   z-index: 1000;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.10);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.65);
   box-shadow:
     0 2px 24px rgba(0, 0, 0, 0.06),
@@ -396,7 +396,7 @@ ul { list-style: none; }
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 44px;
+  margin-bottom: 32px;
   padding-bottom: 10px;
 }
 
@@ -713,7 +713,7 @@ ul { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  margin-left: 8px;
+  margin-left: 4px;
   white-space: nowrap;
   flex-shrink: 0;
   font-size: var(--font-label-size);
