@@ -41,17 +41,23 @@ if (mobileCta) {
   });
 }
 
-// Scroll reveal
+// Scroll reveal — bolt.new style: fade + slide up, staggered
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      // 같은 프레임에 여러 요소가 들어오면 순서대로 스태거
+      const delay = i * 80;
+      setTimeout(() => entry.target.classList.add('visible'), delay);
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, {
+  threshold: 0.08,
+  rootMargin: '0px 0px -40px 0px' // 뷰포트 하단 40px 전에 트리거
+});
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
 
 // Email copy button — click anywhere on button to copy & show "Copied!"
 document.querySelectorAll('.footer__email-btn').forEach(btn => {

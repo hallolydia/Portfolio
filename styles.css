@@ -34,8 +34,8 @@
   --transition:         0.22s ease;
 
   /* Typography — label token */
-  --font-label-size:    14px;
-  --font-label-weight:  400;
+  --font-label-size:    13px;
+  --font-label-weight:  500;
 
   /* Work / resource cards (Modulor-style) */
   --work-card-link-radius:  20px;
@@ -87,7 +87,7 @@ ul { list-style: none; }
     0 2px 24px rgba(0, 0, 0, 0.06),
     inset 0 1px 0 rgba(255, 255, 255, 0.85);
   transition: background var(--transition), box-shadow var(--transition);
-  padding: 0 12px 0 20px;
+  padding: 0 10px 0 20px;
 }
 
 .gnb.scrolled {
@@ -165,6 +165,7 @@ ul { list-style: none; }
   color: var(--color-text);
   font-weight: 800;
 }
+
 
 /* GNB CTA — Contact me! → LinkedIn */
 .gnb__cta {
@@ -344,11 +345,13 @@ ul { list-style: none; }
 }
 
 .hero__headline {
-  font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+  font-family: 'Manrope', sans-serif;
+  font-size: 56px;
   font-weight: 800;
-  line-height: 1.12;
+  line-height: 1.2;
   letter-spacing: -2px;
   margin-bottom: 44px;
+  text-align: center;
   color: var(--color-text);
 }
 
@@ -401,8 +404,8 @@ ul { list-style: none; }
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 32px;
-  padding-bottom: 10px;
+  margin-bottom: 24px;
+  padding-bottom: 0px;
 }
 
 .section__header .section__title { margin-bottom: 0; }
@@ -452,13 +455,14 @@ ul { list-style: none; }
 
 .work-card__thumb {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   position: relative;
-  transition: transform 0.45s ease;
+  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
 }
 
 .work-card__link:hover .work-card__thumb {
-  transform: scale(1.02);
+  transform: scale(1.06);
 }
 
 .work-card__content {
@@ -497,11 +501,11 @@ ul { list-style: none; }
   gap: 5px;
   font-size: var(--font-label-size);
   font-weight: var(--font-label-weight);
-  padding: 5px 12px;
+  padding: 2px 10px;
   background: #fff;
   color: var(--color-text);
   border-radius: 100px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid #121213;
   letter-spacing: 0.01em;
 }
 
@@ -510,6 +514,7 @@ ul { list-style: none; }
   color: #fff;
   border-color: #121213;
 }
+
 
 /* ===== Story Strip ===== */
 .story-strip {
@@ -852,13 +857,16 @@ ul { list-style: none; }
 
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transform: translateY(36px);
+  transition:
+    opacity 1.0s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.0s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: none;
+  transform: translateY(0);
 }
 
 /* ===== Responsive ===== */

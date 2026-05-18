@@ -6,7 +6,7 @@
   <title>Lydia — Product Designer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Geist:wght@100..900&family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -19,7 +19,7 @@
         <a href="#work" data-text="WORK">WORK</a>
         <a href="about/" data-text="ABOUT">ABOUT</a>
         <a href="lab/" data-text="LAB">LAB</a>
-        <a href="resume/" data-text="RESUME"><span class="gnb__nav-row">RESUME<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span></a>
+        <a href="resume/" data-text="RESUME"><span class="gnb__nav-row">RESUME<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span></a>
       </nav>
       <a href="https://www.linkedin.com/in/lydia-jeongeun-oh-2142a8198/" class="gnb__cta" target="_blank" rel="noopener noreferrer">CONTACT ME</a>
       <button class="gnb__hamburger" id="hamburger" aria-label="Open menu">
@@ -38,12 +38,7 @@
   <!-- Hero -->
   <section class="hero" id="hero">
     <div class="hero__inner">
-      <h1 class="hero__headline">
-        <span class="hero__line">I'm obsessed with finding</span>
-        <span class="hero__line">the real problem —</span>
-        <span class="hero__line">where users and</span>
-        <span class="hero__line">business meet.</span>
-      </h1>
+      <h1 class="hero__headline">Hi, I'm Lydia<br>a product designer who turns user friction<br>into business opportunity</h1>
     </div>
   </section>
 
@@ -58,7 +53,9 @@
         <article class="work-card reveal">
           <a href="work/mel-ai/" class="work-card__link">
             <div class="work-card__media">
-              <div class="work-card__thumb" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)"></div>
+              <div class="work-card__thumb">
+                <img src="/assets/images/thumb-mel-ai.png" alt="Mel AI 화상통화 썸네일" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;" loading="lazy">
+              </div>
             </div>
             <div class="work-card__content">
               <h3 class="work-card__title">Mel AI 화상통화</h3>
@@ -75,7 +72,9 @@
         <article class="work-card reveal">
           <a href="work/sk-hmi/" class="work-card__link">
             <div class="work-card__media">
-              <div class="work-card__thumb" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"></div>
+              <div class="work-card__thumb">
+                <img src="/assets/images/thumb-sk-on.png" alt="SK on HMI 교육 시뮬레이션 썸네일" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;" loading="lazy">
+              </div>
             </div>
             <div class="work-card__content">
               <h3 class="work-card__title">SK on HMI 교육 시뮬레이션</h3>
@@ -126,30 +125,8 @@
     </div>
   </section>
 
-  <!-- Proof strip -->
-  <div class="story-strip reveal" id="proof">
-    <div class="story-strip__inner">
-      <div class="story-strip__item">
-        <span class="story-strip__label">Award</span>
-        <span class="story-strip__value">Award Name, Year</span>
-      </div>
-      <span class="story-strip__dot" aria-hidden="true">·</span>
-      <div class="story-strip__item">
-        <span class="story-strip__label">Featured in</span>
-        <span class="story-strip__value">Article / Publication</span>
-      </div>
-      <span class="story-strip__dot" aria-hidden="true">·</span>
-      <div class="story-strip__item">
-        <span class="story-strip__label">Experience</span>
-        <span class="story-strip__value">Company / Role</span>
-      </div>
-      <span class="story-strip__dot" aria-hidden="true">·</span>
-      <div class="story-strip__item">
-        <span class="story-strip__label">Education</span>
-        <span class="story-strip__value">School / Degree</span>
-      </div>
-    </div>
-  </div>
+  <!-- Proof strip placeholder -->
+  <div style="height: 80px;"></div>
 
   <!-- Footer -->
   <footer class="footer">
