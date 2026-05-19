@@ -353,23 +353,6 @@ ul { list-style: none; }
   margin-bottom: 44px;
   text-align: center;
   color: var(--color-text);
-  opacity: 0;
-  transform: translateY(24px);
-  clip-path: inset(100% 0 0 0);
-  animation: heroEntrance 1.4s cubic-bezier(0.12, 1, 0.28, 1) 0.15s forwards;
-}
-
-@keyframes heroEntrance {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-    clip-path: inset(100% 0 0 0);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    clip-path: inset(0% 0 0 0);
-  }
 }
 
 .hero__line {
