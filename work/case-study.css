@@ -128,11 +128,9 @@
 /* ── Section (vertical: label → content) ── */
 .cs-section {
   padding: 64px 0;
-  border-top: 1px solid var(--color-border);
 }
 
 .cs-section:first-child {
-  border-top: none;
   padding-top: 0;
 }
 
