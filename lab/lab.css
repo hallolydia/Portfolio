@@ -44,6 +44,7 @@
 
 /* Lab Section */
 .lab-section {
+  padding-top: calc(var(--gnb-height) + var(--gnb-top) + 64px);
   padding-bottom: 120px;
 }
 
