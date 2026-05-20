@@ -686,21 +686,21 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
 }
 
 .footer__social-btn img {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   display: block;
 }
 
 /* ===== Footer Email Copy Button ===== */
 .footer__email-btn {
   width: auto;
-  max-width: 44px;
+  max-width: 40px;
   padding-right: 0;
   overflow: hidden;
   justify-content: flex-start;
