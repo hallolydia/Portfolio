@@ -7,9 +7,14 @@
 }
 
 .about-intro__inner {
-  max-width: 800px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 0 40px;
+}
+
+/* About 페이지 section__inner도 1120px로 통일 */
+.about-intro ~ .section .section__inner {
+  max-width: 1120px;
 }
 
 .page-hero__label {
