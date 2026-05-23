@@ -45,15 +45,14 @@ if (mobileCta) {
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
-      // 같은 프레임에 여러 요소가 들어오면 순서대로 스태거
-      const delay = i * 80;
+      const delay = i * 60;
       setTimeout(() => entry.target.classList.add('visible'), delay);
       observer.unobserve(entry.target);
     }
   });
 }, {
-  threshold: 0.08,
-  rootMargin: '0px 0px -40px 0px' // 뷰포트 하단 40px 전에 트리거
+  threshold: 0.15,
+  rootMargin: '0px 0px -80px 0px'
 });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));

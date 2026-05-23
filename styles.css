@@ -10,12 +10,12 @@
   --color-border:       rgba(0, 0, 0, 0.08);
 
   /* Text — Figma */
-  --color-text:         #121213;   /* rgba(18,18,19) */
+  --color-text:         #141414;   /* rgba(18,18,19) */
   --color-muted:        #646464;   /* rgba(100,100,100) — nav Off */
   --color-muted-2:      #8c8c8c;   /* rgba(140,140,140) */
 
   /* Footer — Figma */
-  --color-footer-bg:    #121213;
+  --color-footer-bg:    #141414;
   --color-footer-text:  #c2c2cc;   /* rgba(194,194,204) */
 
   /* Accent */
@@ -40,9 +40,9 @@
   /* Work / resource cards (Modulor-style) */
   --work-card-link-radius:  20px;
   --work-card-media-radius: 20px;
-  --work-card-frame:        rgba(18, 18, 19, 0.14);
-  --work-card-gap:          40px;
-  --work-card-stack:        32px;
+  --work-card-frame:        rgba(20, 20, 20, 0.14);
+  --work-card-gap:          48px;
+  --work-card-stack:        20px;
 }
 
 html { scroll-behavior: smooth; }
@@ -65,9 +65,9 @@ ul { list-style: none; }
    - bg: rgba(255,255,255,0.20) + BACKGROUND_BLUR
    - padding: left=20 right=20 top=12 bottom=12
    - inner buttons frame: HORIZONTAL gap=24
-   - logo: Manrope 800 20px #121213
+   - logo: Manrope 800 20px #141414
    - nav Off: Manrope 400 18px #646464, padding 0 16px
-   - nav On: Manrope 600 18px #121213, radius 999
+   - nav On: Manrope 600 18px #141414, radius 999
    ============================================= */
 .gnb {
   position: fixed;
@@ -75,7 +75,7 @@ ul { list-style: none; }
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 48px);
-  max-width: 1120px;
+  max-width: 1160px;
   height: var(--gnb-height);
   z-index: 1000;
   border-radius: 999px;
@@ -104,7 +104,7 @@ ul { list-style: none; }
   gap: 24px; /* Figma: buttons frame gap=24 */
 }
 
-/* Logo — Manrope 800 20px #121213 (Figma) */
+/* Logo — Manrope 800 20px #141414 (Figma) */
 .gnb__logo {
   font-size: 20px;
   font-weight: 800;
@@ -180,7 +180,7 @@ ul { list-style: none; }
   font-size: 15px;
   font-weight: 600;
   color: #fff;
-  background: #121213;
+  background: #141414;
   overflow: hidden;
   transform: translateZ(0); /* force GPU clip so border-radius cuts cleanly */
   white-space: nowrap;
@@ -323,7 +323,7 @@ ul { list-style: none; }
 .btn--primary:hover {
   background: #2a2a2d;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(18, 18, 19, 0.18);
+  box-shadow: 0 6px 20px rgba(20, 20, 20, 0.18);
 }
 
 .btn--outline {
@@ -366,7 +366,8 @@ ul { list-style: none; }
 }
 
 .hero__inner {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 40px 80px;
   position: relative;
@@ -422,7 +423,7 @@ ul { list-style: none; }
 }
 
 .section__inner {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 40px;
 }
@@ -516,11 +517,12 @@ ul { list-style: none; }
   letter-spacing: -0.02em;
   line-height: 1.25;
   color: var(--color-text);
+  margin-top: 16px;
 }
 
 .work-card__desc {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--color-muted);
   line-height: 1.55;
   margin-top: 12px;
@@ -530,7 +532,7 @@ ul { list-style: none; }
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 12px;
+  margin-top: 0;
 }
 
 .tag {
@@ -543,14 +545,14 @@ ul { list-style: none; }
   background: #fff;
   color: var(--color-text);
   border-radius: 100px;
-  border: 1px solid #121213;
+  border: 1px solid #141414;
   letter-spacing: 0.01em;
 }
 
 .tag--primary {
-  background: #121213;
+  background: #141414;
   color: #fff;
-  border-color: #121213;
+  border-color: #141414;
 }
 
 
@@ -563,7 +565,7 @@ ul { list-style: none; }
 }
 
 .story-strip__inner {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 40px;
   display: flex;
@@ -684,7 +686,7 @@ ul { list-style: none; }
 
 /* =============================================
    FOOTER — Figma spec (node 5317:37218 / 37219)
-   - bg: #121213 (rgba 18,18,19)
+   - bg: #141414 (rgba 18,18,19)
    - padding: top=120 bottom=120 left=40 right=40
    - inner: 1200×48 row, gap=40, space-between
    - left: © 2026 Lydia Oh. | Manrope 400 18px #c2c2cc
@@ -696,7 +698,7 @@ ul { list-style: none; }
 }
 
 .footer__inner {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -733,6 +735,21 @@ ul { list-style: none; }
   width: 40px;
   height: 40px;
   display: block;
+}
+
+/* ===== Scroll Reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
 }
 
 /* ===== Footer Email Copy Button ===== */
