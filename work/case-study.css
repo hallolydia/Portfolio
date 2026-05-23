@@ -7,7 +7,7 @@
 }
 
 .cs-hero__inner {
-  max-width: 1240px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
 }
@@ -59,7 +59,7 @@
 
 /* ── Meta strip ── */
 .cs-meta {
-  max-width: 1240px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
 }
@@ -97,7 +97,7 @@
 
 /* ── Body ── */
 .cs-body {
-  max-width: 1240px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px 120px;
 }
