@@ -221,7 +221,8 @@ ul { list-style: none; }
 }
 
 .gnb__cta:hover {
-  background: #0080FF;
+  background: #56ADFF;
+  color: #fff;
 }
 
 .gnb__cta:hover span {
