@@ -1,6 +1,6 @@
 # Lydia Portfolio
 
-> **2026 Fall 미국 UX 인턴** (Google, Meta) · Product Designer  
+> **2026 Fall 미국 UX 인턴**  · Product Designer  
 > **UI 언어:** English only · **문서 언어:** 한국어 (이 README)
 
 ---
