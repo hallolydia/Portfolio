@@ -1,21 +1,30 @@
-// GNB — hide on scroll down, reveal on scroll up
+// GNB — hide on scroll down, reveal on scroll up (chewy easing)
 const gnb = document.getElementById('gnb');
 let lastScrollY = window.scrollY;
 let rafPending = false;
+let gnbVisible = true;
 
 window.addEventListener('scroll', () => {
   if (rafPending) return;
   rafPending = true;
   requestAnimationFrame(() => {
     const currentY = window.scrollY;
-    if (currentY > lastScrollY && currentY > 80) {
+    const goingDown = currentY > lastScrollY && currentY > 80;
+
+    if (goingDown && gnbVisible) {
+      // Hide: quick ease-in — feels decisive
+      gnb.style.transition = 'transform 0.38s cubic-bezier(0.4, 0, 1, 1)';
       gnb.classList.add('gnb--hidden');
-      // collapse mobile nav if open
       mobileNav.classList.remove('open');
       hamburger.classList.remove('open');
-    } else {
+      gnbVisible = false;
+    } else if (!goingDown && !gnbVisible) {
+      // Reveal: slow ease-out expo — chewy, satisfying
+      gnb.style.transition = 'transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
       gnb.classList.remove('gnb--hidden');
+      gnbVisible = true;
     }
+
     lastScrollY = currentY;
     rafPending = false;
   });

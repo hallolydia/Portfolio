@@ -78,9 +78,8 @@ ul { list-style: none; }
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid #121213;
-  padding: 20px 0 12px;
+  padding: 16px 0 12px;
   transform: translateY(0);
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gnb--hidden {
@@ -965,6 +964,7 @@ ul { list-style: none; }
 }
 
 @media (max-width: 768px) {
+  .gnb { padding: 8px 0 8px; }
   .gnb__nav { display: none; }
   .gnb__hamburger { display: flex; }
   .gnb__logo { margin: 0 12px; }
