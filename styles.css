@@ -322,10 +322,10 @@ ul { list-style: none; }
 }
 
 .hero__mouse {
-  width: 32px;
-  height: 50px;
+  width: 24px;
+  height: 38px;
   background: var(--color-text);
-  border-radius: 16px;
+  border-radius: 12px;
   display: flex;
   justify-content: center;
   padding-top: 9px;
