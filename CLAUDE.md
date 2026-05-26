@@ -61,6 +61,12 @@ Portfolio/
 - `rules/portfolio-rules.md` 금지 규칙 준수
 - 한 작업 = 한 파일(또는 GNB처럼 동일 패턴 일괄) 위주
 
+## Figma MCP 연동
+
+- **Figma 데스크탑 앱 아님** — Web(브라우저) 기반 Figma MCP로 연동할 것
+- Figma REST API 사용 시 rate limit(429) 주의 → 폴링으로 대기
+- API Token은 사용자에게 요청 (Personal access tokens)
+
 ## 에이전트 문서
 
 | 작업 | 파일 |
