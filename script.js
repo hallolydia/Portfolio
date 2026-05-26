@@ -12,15 +12,15 @@ window.addEventListener('scroll', () => {
     const goingDown = currentY > lastScrollY && currentY > 80;
 
     if (goingDown && gnbVisible) {
-      // Hide: quick ease-in — feels decisive
-      gnb.style.transition = 'transform 0.38s cubic-bezier(0.4, 0, 1, 1)';
+      // Hide: sharp, snappy — disappears before you notice
+      gnb.style.transition = 'transform 0.2s cubic-bezier(0.4, 0, 1, 0.6)';
       gnb.classList.add('gnb--hidden');
       mobileNav.classList.remove('open');
       hamburger.classList.remove('open');
       gnbVisible = false;
     } else if (!goingDown && !gnbVisible) {
-      // Reveal: slow ease-out expo — chewy, satisfying
-      gnb.style.transition = 'transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
+      // Reveal: spring bounce — tense snap-back
+      gnb.style.transition = 'transform 0.42s cubic-bezier(0.34, 1.35, 0.64, 1)';
       gnb.classList.remove('gnb--hidden');
       gnbVisible = true;
     }
