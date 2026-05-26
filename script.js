@@ -1,7 +1,24 @@
-// GNB scroll shadow
+// GNB — hide on scroll down, reveal on scroll up
 const gnb = document.getElementById('gnb');
+let lastScrollY = window.scrollY;
+let rafPending = false;
+
 window.addEventListener('scroll', () => {
-  gnb.classList.toggle('scrolled', window.scrollY > 80);
+  if (rafPending) return;
+  rafPending = true;
+  requestAnimationFrame(() => {
+    const currentY = window.scrollY;
+    if (currentY > lastScrollY && currentY > 80) {
+      gnb.classList.add('gnb--hidden');
+      // collapse mobile nav if open
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+    } else {
+      gnb.classList.remove('gnb--hidden');
+    }
+    lastScrollY = currentY;
+    rafPending = false;
+  });
 }, { passive: true });
 
 // Active nav based on current page path

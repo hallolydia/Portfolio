@@ -59,9 +59,11 @@ a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 
 /* =============================================
-   GNB — Figma spec (Navigationbar, node 5428-14134)
-   Desktop:  max-width 1200px, centered, padding top=20 L/R=20 bottom=12
-   Tablet/Mobile: padding top=12 L/R=12 bottom=8
+   GNB — Figma spec (node 5442-29298)
+   Full-width bar, border-bottom only (1px)
+   Inner content: max-width 1200px, centered, padding L/R 20px
+   Desktop:  padding top=20 bottom=12
+   Tablet/Mobile: padding top=12 bottom=8
    bg: rgba(255,255,255,0.5), backdrop-filter blur(12px)
    Logo: Manrope 800 20px
    Nav: Manrope 500 14px, touch target min-height 44px
@@ -69,22 +71,28 @@ ul { list-style: none; }
 .gnb {
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 40px);
-  max-width: 1200px;
+  left: 0;
+  right: 0;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--color-border);
-  border-radius: 0 0 12px 12px;
-  padding: 20px 20px 12px;
+  border-bottom: 1px solid var(--color-border);
+  padding: 20px 0 12px;
+  transform: translateY(0);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gnb--hidden {
+  transform: translateY(-110%);
 }
 
 .gnb__inner {
   display: flex;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 /* Logo — Manrope 800 20px */
@@ -111,9 +119,23 @@ ul { list-style: none; }
   color: var(--color-muted);
   min-height: 44px;
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   transition: color var(--transition);
   white-space: nowrap;
+}
+
+/* Reserve bold width so hover/active never shifts layout */
+.gnb__nav a::after {
+  content: attr(data-text);
+  font-size: 14px;
+  font-weight: 600;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+  user-select: none;
 }
 
 /* Inline wrapper for icon + text (Resume) */
@@ -938,7 +960,8 @@ ul { list-style: none; }
 
 @media (max-width: 1280px) {
   :root { --gnb-height: 44px; }
-  .gnb { padding: 12px 12px 8px; }
+  .gnb { padding: 12px 0 8px; }
+  .gnb__inner { padding: 0 12px; }
 }
 
 @media (max-width: 768px) {
