@@ -299,7 +299,7 @@ ul { list-style: none; }
   color: var(--color-text);
 }
 
-/* Scroll cue — mouse with scrolling dot */
+/* Scroll cue — solid filled mouse, white dot animates down */
 .hero__scroll-cue {
   display: flex;
   justify-content: center;
@@ -309,25 +309,25 @@ ul { list-style: none; }
 .hero__mouse {
   width: 28px;
   height: 46px;
-  border: 2.5px solid var(--color-text);
+  background: var(--color-text);
   border-radius: 14px;
   display: flex;
   justify-content: center;
-  padding-top: 8px;
+  padding-top: 9px;
   box-sizing: border-box;
 }
 
 .hero__mouse-dot {
-  width: 4px;
-  height: 8px;
-  background: var(--color-text);
-  border-radius: 2px;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
   animation: scroll-cue 1.8s ease-in-out infinite;
 }
 
 @keyframes scroll-cue {
   0%   { transform: translateY(0);    opacity: 1; }
-  55%  { transform: translateY(14px); opacity: 0; }
+  55%  { transform: translateY(16px); opacity: 0; }
   56%  { transform: translateY(0);    opacity: 0; }
   100% { transform: translateY(0);    opacity: 1; }
 }
