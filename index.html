@@ -6,7 +6,7 @@
   <title>Lydia — Product Designer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Geist:wght@100..900&family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -16,29 +16,30 @@
     <div class="gnb__inner">
       <a href="/" class="gnb__logo">Lydia</a>
       <nav class="gnb__nav">
-        <a href="#work" data-text="WORK">WORK</a>
-        <a href="about/" data-text="ABOUT">ABOUT</a>
-        <a href="lab/" data-text="LAB">LAB</a>
-        <a href="resume/" data-text="RESUME"><span class="gnb__nav-row">RESUME<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span></a>
+        <a href="#work">Work</a>
+        <a href="about/">About</a>
+        <a href="lab/">Lab</a>
+        <a href="resume/"><span class="gnb__nav-row">Resume<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span></a>
       </nav>
-      <a href="https://www.linkedin.com/in/lydia-jeongeun-oh-2142a8198/" class="gnb__cta" target="_blank" rel="noopener noreferrer"><span>CONTACT ME</span></a>
       <button class="gnb__hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="gnb__mobile-nav" id="mobileNav">
-      <a href="#work">WORK</a>
-      <a href="about/">ABOUT</a>
-      <a href="lab/">LAB</a>
-      <a href="resume/">RESUME</a>
-      <a href="https://www.linkedin.com/in/lydia-jeongeun-oh-2142a8198/" class="gnb__mobile-cta" target="_blank" rel="noopener noreferrer">CONTACT ME</a>
+      <a href="#work">Work</a>
+      <a href="about/">About</a>
+      <a href="lab/">Lab</a>
+      <a href="resume/">Resume</a>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="hero" id="hero">
     <div class="hero__inner">
-      <h1 class="hero__headline">Hi, I'm Lydia<br>a product designer who turns user friction<br>into business opportunity</h1>
+      <h1 class="hero__headline">
+        <span class="hero__greeting"><img src="assets/images/profile.png" alt="Lydia Oh" class="hero__portrait">Hi, I'm Lydia</span><br>
+        a product designer who turns user friction<br>into business opportunity
+      </h1>
     </div>
   </section>
 
@@ -58,12 +59,12 @@
               </div>
             </div>
             <div class="work-card__content">
-              <h3 class="work-card__title">AI Relationship App</h3>
               <div class="work-card__tags">
                 <span class="tag tag--primary"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(45deg);flex-shrink:0" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Gen AI</span>
                 <span class="tag">Chatting</span>
                 <span class="tag">Business Impact</span>
               </div>
+              <h3 class="work-card__title">AI Relationship App</h3>
               <p class="work-card__desc">Designed AI video calls with an AI companion, increasing conversation time by 5.5× through Content Mode.</p>
             </div>
           </a>
@@ -77,12 +78,12 @@
               </div>
             </div>
             <div class="work-card__content">
-              <h3 class="work-card__title">Factory Equipment Training Simulator</h3>
               <div class="work-card__tags">
                 <span class="tag tag--primary"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(45deg);flex-shrink:0" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Enterprise</span>
                 <span class="tag">Education</span>
                 <span class="tag">HMI</span>
               </div>
+              <h3 class="work-card__title">Factory Equipment Training Simulator</h3>
               <p class="work-card__desc">Redesigned the company e-learning platform using gamified UI/UX, making it easy for foreign workers to learn.</p>
             </div>
           </a>
@@ -96,12 +97,12 @@
               </div>
             </div>
             <div class="work-card__content">
-              <h3 class="work-card__title">Collaboration platform for six government agencies</h3>
               <div class="work-card__tags">
                 <span class="tag tag--primary"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(45deg);flex-shrink:0" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>B2G</span>
                 <span class="tag">Security</span>
                 <span class="tag">Collaboration</span>
               </div>
+              <h3 class="work-card__title">Collaboration platform for six government agencies</h3>
               <p class="work-card__desc">Improved the schedule-sharing process across six agencies, reducing complaints to 1/12.</p>
             </div>
           </a>
@@ -115,11 +116,11 @@
               </div>
             </div>
             <div class="work-card__content">
-              <h3 class="work-card__title">Seat View-Sharing App for Baseball Stadiums</h3>
               <div class="work-card__tags">
                 <span class="tag tag--primary"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(45deg);flex-shrink:0" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Side Project</span>
                 <span class="tag">Product Design</span>
               </div>
+              <h3 class="work-card__title">Seat View-Sharing App for Baseball Stadiums</h3>
               <p class="work-card__desc">Quickly find and share views from countless baseball seats.</p>
             </div>
           </a>

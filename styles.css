@@ -22,9 +22,9 @@
   --color-accent:       #5b4ff0;
   --color-accent-hover: #7c6fff;
 
-  /* GNB — height 56px */
+  /* GNB */
   --gnb-height:         56px;
-  --gnb-top:            16px;
+  --gnb-top:            0px;
 
   /* Misc */
   --radius:             14px;
@@ -59,52 +59,35 @@ a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 
 /* =============================================
-   GNB — Figma spec
-   - size: 1200×72px
-   - shape: border-radius 999px (pill)
-   - bg: rgba(255,255,255,0.20) + BACKGROUND_BLUR
-   - padding: left=20 right=20 top=12 bottom=12
-   - inner buttons frame: HORIZONTAL gap=24
-   - logo: Manrope 800 20px #121213
-   - nav Off: Manrope 400 18px #646464, padding 0 16px
-   - nav On: Manrope 600 18px #121213, radius 999
+   GNB — Figma spec (Navigationbar, node 5428-14134)
+   Desktop:  max-width 1200px, centered, padding top=20 L/R=20 bottom=12
+   Tablet/Mobile: padding top=12 L/R=12 bottom=8
+   bg: rgba(255,255,255,0.5), backdrop-filter blur(12px)
+   Logo: Manrope 800 20px
+   Nav: Manrope 500 14px, touch target min-height 44px
    ============================================= */
 .gnb {
   position: fixed;
-  top: var(--gnb-top);
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 48px);
-  max-width: 1120px;
-  height: var(--gnb-height);
+  width: calc(100% - 40px);
+  max-width: 1200px;
   z-index: 1000;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  box-shadow:
-    0 2px 24px rgba(0, 0, 0, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.85);
-  transition: background var(--transition), box-shadow var(--transition);
-  padding: 0 10px 0 20px;
-}
-
-.gnb.scrolled {
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow:
-    0 4px 32px rgba(0, 0, 0, 0.10),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: 0 0 12px 12px;
+  padding: 20px 20px 12px;
 }
 
 .gnb__inner {
-  height: 100%;
   display: flex;
   align-items: center;
-  gap: 24px; /* Figma: buttons frame gap=24 */
 }
 
-/* Logo — Manrope 800 20px #121213 (Figma) */
+/* Logo — Manrope 800 20px */
 .gnb__logo {
   font-size: 20px;
   font-weight: 800;
@@ -113,145 +96,55 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 
-/* Nav — Figma: Frame 411×48, HORIZONTAL gap=24 */
+/* Nav — right side, gap 32px */
 .gnb__nav {
   display: flex;
   align-items: center;
-  gap: 24px; /* Figma: itemSpacing=24 between BtnNavi items */
+  gap: 32px;
   margin-left: auto;
 }
 
-/* Nav item Off — 14px #646464, padding 0 12px */
+/* Nav item — 14px 500, min touch target 44px */
 .gnb__nav a {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--color-muted);
-  padding: 0 12px;
-  height: 36px;
-  display: inline-grid;
-  place-content: center;
-  border-radius: 999px;
-  transition: color var(--transition), background var(--transition);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  transition: color var(--transition);
   white-space: nowrap;
 }
 
-/* Inline wrapper for nav items that contain icon + text (e.g. RESUME) */
+/* Inline wrapper for icon + text (Resume) */
 .gnb__nav-row {
   display: inline-flex;
   align-items: center;
   gap: 4px;
 }
 
-/* Reserve bold-weight width so layout never shifts on hover */
-.gnb__nav a::after {
-  content: attr(data-text);
-  font-weight: 800;
-  font-size: 14px;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-  white-space: nowrap;
-  pointer-events: none;
-}
-
-/* RESUME has icon (12px) + gap (4px) inside — ghost needs same extra width */
-.gnb__nav a:has(.gnb__nav-row)::after {
-  padding-right: 16px;
-}
-
-/* Nav item On — one weight step up, same size */
+/* Nav hover / active */
 .gnb__nav a:hover,
 .gnb__nav a.active {
   color: var(--color-text);
-  font-weight: 800;
-}
-
-
-/* GNB CTA — Contact me! → LinkedIn */
-.gnb__cta {
-  flex-shrink: 0;
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  padding: 0 18px;
-  border-radius: 999px;
-  font-size: 15px;
   font-weight: 600;
-  color: #fff;
-  background: #121213;
-  overflow: hidden;
-  transform: translateZ(0);
-  white-space: nowrap;
-  transition: background 0.25s ease;
 }
 
-.gnb__cta span {
-  display: block;
-  /* 언호버: LET'S TALK! 퇴장 후 CONTACT ME 쫀득 등장 */
-  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) 0.12s;
-  will-change: transform;
-}
-
-.gnb__cta::after {
-  content: "LET'S TALK!";
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  font-weight: 600;
-  transform: translateY(200%);
-  /* 언호버: LET'S TALK! 잽싸게 퇴장 */
-  transition: transform 0.16s cubic-bezier(0.4, 0, 1, 1);
-  will-change: transform;
-}
-
-.gnb__cta:hover {
-  background: #1A8FE3;
-  color: #fff;
-}
-
-.gnb__cta:hover span {
-  transform: translateY(-200%);
-  /* 호버: CONTACT ME 잽싸게 퇴장 */
-  transition: transform 0.16s cubic-bezier(0.4, 0, 1, 1);
-}
-
-.gnb__cta:hover::after {
-  transform: translateY(0);
-  /* 호버: LET'S TALK! 쫀득 등장 (CONTACT ME 퇴장 후) */
-  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) 0.12s;
-}
-
-.gnb__mobile-cta {
-  margin-top: 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 52px;
-  padding: 0 32px;
-  border-radius: 999px;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #fff;
-  background: var(--color-accent);
-}
-
-/* Hamburger (mobile) */
+/* Hamburger — hidden on desktop, shown on mobile */
 .gnb__hamburger {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 0;
   flex-shrink: 0;
   margin-left: auto;
-  margin-right: 12px;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .gnb__hamburger span {
@@ -267,22 +160,22 @@ ul { list-style: none; }
 .gnb__hamburger.open span:nth-child(2) { opacity: 0; }
 .gnb__hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-/* Mobile nav — full-screen overlay */
+/* Mobile nav — dropdown below GNB bar */
 .gnb__mobile-nav {
   display: none;
   position: fixed;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  top: var(--gnb-height);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-bottom: 1px solid var(--color-border);
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  align-items: flex-end;
+  padding: 0 12px 8px;
   z-index: 999;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.28s ease;
+  transition: opacity 0.22s ease;
 }
 
 .gnb__mobile-nav.open {
@@ -291,15 +184,18 @@ ul { list-style: none; }
 }
 
 .gnb__mobile-nav a {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-text);
-  padding: 12px 40px;
-  border-radius: 999px;
-  transition: background var(--transition);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-muted);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  transition: color var(--transition);
 }
 
-.gnb__mobile-nav a:hover { background: var(--color-surface); }
+.gnb__mobile-nav a:hover {
+  color: var(--color-text);
+}
 
 /* ===== Buttons ===== */
 .btn {
@@ -1040,14 +936,13 @@ ul { list-style: none; }
 
 /* ===== Responsive ===== */
 
-@media (max-width: 768px) {
-  .gnb {
-    width: calc(100% - 40px);
-    padding: 0 16px;
-  }
+@media (max-width: 1280px) {
+  :root { --gnb-height: 44px; }
+  .gnb { padding: 12px 12px 8px; }
+}
 
-  .gnb__nav,
-  .gnb__cta { display: none; }
+@media (max-width: 768px) {
+  .gnb__nav { display: none; }
   .gnb__hamburger { display: flex; }
   .gnb__mobile-nav { display: flex; }
 
