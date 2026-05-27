@@ -276,7 +276,7 @@ ul { list-style: none; }
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: clamp(96px, calc(12vh + 16px), 124px) 40px 80px;
+  padding: clamp(108px, calc(12vh + 28px), 136px) 40px 80px;
 }
 
 .hero__copy {
@@ -331,7 +331,7 @@ ul { list-style: none; }
   z-index: 99;
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.28s ease, transform 0.28s ease;
   pointer-events: none;
 }
 
