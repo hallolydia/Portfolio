@@ -71,6 +71,14 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+// Scroll cue — fade out as soon as user starts scrolling
+const scrollCue = document.querySelector('.hero__scroll-cue');
+if (scrollCue) {
+  window.addEventListener('scroll', () => {
+    scrollCue.classList.toggle('hero__scroll-cue--hidden', window.scrollY > 60);
+  }, { passive: true });
+}
+
 
 // Email copy button — click anywhere on button to copy & show "Copied!"
 document.querySelectorAll('.footer__email-btn').forEach(btn => {
