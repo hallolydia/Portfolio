@@ -137,6 +137,11 @@ ul { list-style: none; }
   user-select: none;
 }
 
+/* Resume has icon (12px) + gap (4px) — add that space to the reserved width */
+.gnb__nav a:has(.gnb__nav-row)::after {
+  padding-right: 16px;
+}
+
 /* Inline wrapper for icon + text (Resume) */
 .gnb__nav-row {
   display: inline-flex;
@@ -271,7 +276,7 @@ ul { list-style: none; }
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: clamp(80px, 12vh, 108px) 40px 80px;
+  padding: clamp(96px, calc(12vh + 16px), 124px) 40px 80px;
 }
 
 .hero__copy {
@@ -297,6 +302,7 @@ ul { list-style: none; }
   height: 72px;
   vertical-align: middle;
   object-fit: contain;
+  will-change: transform;
 }
 
 .hero__sub {
@@ -324,12 +330,14 @@ ul { list-style: none; }
   justify-content: center;
   z-index: 99;
   opacity: 1;
-  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(0);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   pointer-events: none;
 }
 
 .hero__scroll-cue--hidden {
   opacity: 0;
+  transform: translateY(-12px);
 }
 
 .hero__mouse {
@@ -630,6 +638,64 @@ ul { list-style: none; }
   gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+/* ===== Marquee Strip ===== */
+.marquee-strip {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+  background: var(--color-bg);
+}
+
+.marquee-strip__track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+}
+
+.marquee-strip__group {
+  display: inline-flex;
+  align-items: center;
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -1.5px;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.marquee-strip__emoji {
+  font-size: 0.85em;
+  line-height: 1;
+  display: inline-block;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Edge fade overlays */
+.marquee-strip::before,
+.marquee-strip::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 320px;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.marquee-strip::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-bg) 30%, transparent 100%);
+}
+
+.marquee-strip::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-bg) 30%, transparent 100%);
 }
 
 /* =============================================
