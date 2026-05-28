@@ -770,10 +770,9 @@ ul { list-style: none; }
 .marquee-strip {
   padding: 80px 0 0;
   margin-bottom: -12px;
-  background: var(--color-footer-bg);
+  background: var(--color-bg);
   position: relative;
   z-index: 4;
-  border-radius: 32px 32px 0 0;
 }
 
 /* Inner wrapper handles overflow clipping separately from padding */
@@ -795,7 +794,6 @@ ul { list-style: none; }
   display: block;
   flex-shrink: 0;
   user-select: none;
-  filter: invert(1);
 }
 
 @keyframes marquee-scroll {
@@ -817,12 +815,12 @@ ul { list-style: none; }
 
 .marquee-strip__window::before {
   left: 0;
-  background: linear-gradient(to right, rgba(18,18,19,0.7) 30%, transparent 100%);
+  background: linear-gradient(to right, rgba(255,255,255,0.5) 30%, transparent 100%);
 }
 
 .marquee-strip__window::after {
   right: 0;
-  background: linear-gradient(to left, rgba(18,18,19,0.7) 30%, transparent 100%);
+  background: linear-gradient(to left, rgba(255,255,255,0.5) 30%, transparent 100%);
 }
 
 /* =============================================
