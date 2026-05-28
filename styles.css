@@ -87,14 +87,15 @@ ul { list-style: none; }
 }
 
 .gnb__inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
 }
 
-/* Logo — Manrope 800 20px */
+/* Logo — Manrope 800 20px, left col */
 .gnb__logo {
   font-size: 20px;
   font-weight: 800;
@@ -103,12 +104,33 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 
-/* Nav — right side, gap 32px */
+/* Nav — center col */
 .gnb__nav {
   display: flex;
   align-items: center;
   gap: 32px;
-  margin-left: auto;
+}
+
+/* Let's Talk CTA — right col */
+.gnb__cta {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background: var(--color-text);
+  color: #fff;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.gnb__cta:hover {
+  background: #333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(18, 18, 19, 0.22);
 }
 
 /* Nav item — 14px 500, min touch target 44px */
@@ -1040,7 +1062,9 @@ ul { list-style: none; }
 
 @media (max-width: 768px) {
   .gnb { padding: 8px 0 8px; }
+  .gnb__inner { display: flex; }
   .gnb__nav { display: none; }
+  .gnb__cta { display: none; }
   .gnb__hamburger { display: flex; }
   .gnb__logo { margin: 0 12px; }
   .gnb__mobile-nav { display: flex; }
