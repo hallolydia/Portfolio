@@ -1,5 +1,6 @@
 // GNB — hide on scroll down, reveal on scroll up (chewy easing)
 const gnb = document.getElementById('gnb');
+const heroInner = document.querySelector('.hero__inner');
 let lastScrollY = window.scrollY;
 let rafPending = false;
 let gnbVisible = true;
@@ -9,7 +10,7 @@ window.addEventListener('scroll', () => {
   rafPending = true;
   requestAnimationFrame(() => {
     const currentY = window.scrollY;
-    const goingDown = currentY > lastScrollY && currentY > 80;
+    const goingDown = currentY > lastScrollY && currentY > 10;
 
     if (goingDown && gnbVisible) {
       // Hide: sharp, snappy — disappears before you notice
@@ -18,11 +19,21 @@ window.addEventListener('scroll', () => {
       mobileNav.classList.remove('open');
       hamburger.classList.remove('open');
       gnbVisible = false;
+      // Hero inner floats up with GNB
+      if (heroInner) {
+        heroInner.style.transition = 'transform 0.28s cubic-bezier(0.4, 0, 1, 0.6)';
+        heroInner.style.transform = 'translateY(-28px)';
+      }
     } else if (!goingDown && !gnbVisible) {
       // Reveal: spring bounce — tense snap-back
       gnb.style.transition = 'transform 0.42s cubic-bezier(0.34, 1.35, 0.64, 1)';
       gnb.classList.remove('gnb--hidden');
       gnbVisible = true;
+      // Hero inner settles back with spring
+      if (heroInner) {
+        heroInner.style.transition = 'transform 0.42s cubic-bezier(0.34, 1.35, 0.64, 1)';
+        heroInner.style.transform = 'translateY(0px)';
+      }
     }
 
     lastScrollY = currentY;
@@ -55,7 +66,7 @@ mobileNav.querySelectorAll('a').forEach(a => {
   });
 });
 
-// Scroll reveal — bolt.new style: fade + slide up, staggered
+// Scroll reveal — fade + slide up, staggered; fires later so user scrolls to see it
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
@@ -65,17 +76,71 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.15,
-  rootMargin: '0px 0px -80px 0px'
+  threshold: 0.08,
+  rootMargin: '0px 0px 0px 0px'
 });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Scroll cue — fade out as soon as user starts scrolling
+// Scroll cue — float up + fade out as soon as user starts scrolling
 const scrollCue = document.querySelector('.hero__scroll-cue');
 if (scrollCue) {
   window.addEventListener('scroll', () => {
-    scrollCue.classList.toggle('hero__scroll-cue--hidden', window.scrollY > 60);
+    scrollCue.classList.toggle('hero__scroll-cue--hidden', window.scrollY > 10);
+  }, { passive: true });
+}
+
+// Hero parallax — SVG idle float + scroll parallax, headline/sub scroll only
+const heroEmojis   = document.querySelectorAll('.hero__emoji');
+const heroHeadline = document.querySelector('.hero__headline');
+const heroSub      = document.querySelector('.hero__sub');
+
+if (heroEmojis.length || heroHeadline) {
+  let eCur = 0, eTgt = 0;
+  let hCur = 0, hTgt = 0, hRaf = null;
+  let sCur = 0, sTgt = 0, sRaf = null;
+
+  // Emoji: persistent loop — idle gravity float (sine) layered on top of scroll parallax
+  function eTick(ts) {
+    const t = ts / 1000;
+    eCur += (eTgt - eCur) * 0.05;
+    const floatY = Math.sin(t * 0.2 * Math.PI * 2) * 2.5;
+    heroEmojis.forEach(el => {
+      el.style.transform = `translateY(${(eCur + floatY).toFixed(3)}px)`;
+    });
+    requestAnimationFrame(eTick);
+  }
+  requestAnimationFrame(eTick);
+
+  function hTick() {
+    hCur += (hTgt - hCur) * 0.028;
+    heroHeadline.style.transform = `translateY(${hCur.toFixed(3)}px)`;
+    if (Math.abs(hTgt - hCur) > 0.05) hRaf = requestAnimationFrame(hTick);
+    else { heroHeadline.style.transform = `translateY(${hTgt}px)`; hRaf = null; }
+  }
+
+  function sTick() {
+    sCur += (sTgt - sCur) * 0.034;
+    heroSub.style.transform = `translateY(${sCur.toFixed(3)}px)`;
+    if (Math.abs(sTgt - sCur) > 0.05) sRaf = requestAnimationFrame(sTick);
+    else { heroSub.style.transform = `translateY(${sTgt}px)`; sRaf = null; }
+  }
+
+  window.addEventListener('scroll', () => {
+    const sy  = window.scrollY;
+    const vh6 = window.innerHeight * 0.6;
+
+    eTgt = -Math.min(Math.max(sy, 0) / vh6, 1) * 10;
+
+    if (heroHeadline) {
+      hTgt = -Math.min(Math.max(sy, 0) / vh6, 1) * 92;
+      if (!hRaf) hRaf = requestAnimationFrame(hTick);
+    }
+
+    if (heroSub) {
+      sTgt = -Math.min(Math.max(sy - 4, 0) / vh6, 1) * 107;
+      if (!sRaf) sRaf = requestAnimationFrame(sTick);
+    }
   }, { passive: true });
 }
 
