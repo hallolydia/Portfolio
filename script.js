@@ -145,6 +145,17 @@ if (heroEmojis.length || heroHeadline) {
 }
 
 
+// Strength accordion — toggle open/close with aria-expanded
+document.querySelectorAll('.strength-item__btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+    const body = btn.nextElementSibling;
+
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    body.classList.toggle('open', !isOpen);
+  });
+});
+
 // Email copy button — click anywhere on button to copy & show "Copied!"
 document.querySelectorAll('.footer__email-btn').forEach(btn => {
   btn.addEventListener('click', () => {
