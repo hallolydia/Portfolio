@@ -145,6 +145,44 @@ if (heroEmojis.length || heroHeadline) {
 }
 
 
+// Card-over-card tension — border-radius 56→32 + inner scale-down
+(function () {
+  const work     = document.getElementById('work');
+  const strength = document.getElementById('strength');
+  const workInner = work && work.querySelector('.section__inner');
+
+  function cardTick() {
+    const vh = window.innerHeight;
+
+    if (work) {
+      const wTop = work.getBoundingClientRect().top;
+
+      // Work enters from below: radius 56→32 as it rises into view
+      const tIn = Math.max(0, Math.min(1, (vh - wTop) / vh));
+      const br  = (56 - tIn * 24).toFixed(1);
+      work.style.borderRadius = `${br}px ${br}px 0 0`;
+
+      // Work inner scales down as Strength slides over it
+      if (workInner) {
+        const tCover = Math.max(0, Math.min(1, -wTop / vh));
+        workInner.style.transform = `scale(${(1 - tCover * 0.06).toFixed(4)})`;
+      }
+    }
+
+    if (strength) {
+      const sTop = strength.getBoundingClientRect().top;
+
+      // Strength enters from below: radius 56→32 as it rises into view
+      const tIn = Math.max(0, Math.min(1, (vh - sTop) / vh));
+      const br  = (56 - tIn * 24).toFixed(1);
+      strength.style.borderRadius = `${br}px ${br}px 0 0`;
+    }
+  }
+
+  window.addEventListener('scroll', cardTick, { passive: true });
+  cardTick();
+})();
+
 // Strength accordion — toggle open/close with aria-expanded
 document.querySelectorAll('.strength-item__btn').forEach(btn => {
   btn.addEventListener('click', () => {
