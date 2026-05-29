@@ -157,11 +157,6 @@ if (heroEmojis.length || heroHeadline) {
     if (work) {
       const wTop = work.getBoundingClientRect().top;
 
-      // Work enters from below: radius 56→32 as it rises into view
-      const tIn = Math.max(0, Math.min(1, (vh - wTop) / vh));
-      const br  = (56 - tIn * 24).toFixed(1);
-      work.style.borderRadius = `${br}px ${br}px 0 0`;
-
       // Work inner scales down as Strength slides over it
       if (workInner) {
         const tCover = Math.max(0, Math.min(1, -wTop / vh));
