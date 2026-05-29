@@ -408,10 +408,20 @@ ul { list-style: none; }
   will-change: transform;
 }
 
+/* Work → Strength dwell: sticky gray hold before Strength slides in */
+.work-dwell {
+  position: sticky;
+  top: 0;
+  height: 60vh;
+  background: #F5F5F5;
+  z-index: 2;
+  pointer-events: none;
+}
+
 /* ===== My Strength ===== */
 #strength {
   background: #ffffff;
-  padding: 120px 0 160px;
+  padding: 120px 0 calc(160px + 60vh);
   position: relative;
   z-index: 3;
   border-radius: 56px 56px 0 0;
