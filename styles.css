@@ -457,7 +457,7 @@ ul { list-style: none; }
 
 .strength-item__name {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(26px, 3.2vw, 46px);
+  font-size: 40px;
   font-weight: 700;
   color: var(--color-text);
   line-height: 1.15;
@@ -466,9 +466,9 @@ ul { list-style: none; }
 }
 
 .strength-item__sub {
-  font-size: clamp(13px, 1.1vw, 16px);
+  font-size: 24px;
   font-weight: 400;
-  color: var(--color-muted);
+  color: #AAAAAA;
   white-space: nowrap;
 }
 
