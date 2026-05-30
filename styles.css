@@ -428,8 +428,12 @@ ul { list-style: none; }
   will-change: border-radius;
 }
 
+#work .section__title,
 #strength .section__title {
   font-weight: 600;
+}
+
+#strength .section__title {
   margin-bottom: 32px;
 }
 
