@@ -475,15 +475,20 @@ ul { list-style: none; }
 .strength-item__plus {
   margin-left: auto;
   flex-shrink: 0;
-  color: var(--color-text);
-  line-height: 1;
-  transition: transform 0.35s cubic-bezier(0.34, 1.2, 0.64, 1);
+  line-height: 0;
   user-select: none;
 }
 
-.strength-item__btn[aria-expanded="true"] .strength-item__plus {
-  transform: rotate(45deg);
+.strength-item__icon {
+  display: block;
+  width: 56px;
+  height: 56px;
 }
+
+.strength-item__icon--close { display: none; }
+
+.strength-item__btn[aria-expanded="true"] .strength-item__icon--plus { display: none; }
+.strength-item__btn[aria-expanded="true"] .strength-item__icon--close { display: block; }
 
 /* Smooth height expand via CSS grid trick */
 .strength-item__body {
