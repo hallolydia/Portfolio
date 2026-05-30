@@ -434,17 +434,10 @@ ul { list-style: none; }
 
 .strength-list {
   margin-top: 0;
-  border-top: 1px solid var(--color-text);
 }
 
 .strength-item {
-  border-bottom: 1px solid var(--color-text);
   overflow: hidden;
-}
-
-/* When expanded, bottom border is replaced by the dashed divider inside */
-.strength-item:has(.strength-item__body.open) {
-  border-bottom: none;
 }
 
 .strength-item__btn {
