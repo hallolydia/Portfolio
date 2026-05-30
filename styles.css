@@ -428,7 +428,10 @@ ul { list-style: none; }
   will-change: border-radius;
 }
 
-#work .section__title,
+#work .section__title {
+  font-weight: 500;
+}
+
 #strength .section__title {
   font-weight: 600;
 }
