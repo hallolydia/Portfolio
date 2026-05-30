@@ -117,7 +117,8 @@ ul { list-style: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
+  width: 120px;
+  padding: 10px 0;
   background: var(--color-text);
   color: #fff;
   border-radius: 50px;
