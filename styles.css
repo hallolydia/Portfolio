@@ -124,14 +124,17 @@ ul { list-style: none; }
   font-size: 14px;
   font-weight: 700;
   white-space: nowrap;
-  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  transition: background var(--transition), color var(--transition);
 }
 
 .gnb__cta:hover {
-  background: #333;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(18, 18, 19, 0.22);
+  background: #FFCD00;
+  color: #121213;
 }
+
+.gnb__cta-hover { display: none; }
+.gnb__cta:hover .gnb__cta-default { display: none; }
+.gnb__cta:hover .gnb__cta-hover { display: inline; }
 
 /* Nav item — 14px 500, min touch target 44px */
 .gnb__nav a {
