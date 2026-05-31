@@ -493,8 +493,8 @@ ul { list-style: none; }
 
 .strength-item__icon {
   display: block;
-  width: 56px;
-  height: 56px;
+  width: 36px;
+  height: 36px;
 }
 
 .strength-item__icon--close { display: none; }
