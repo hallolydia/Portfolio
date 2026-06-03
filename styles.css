@@ -571,7 +571,7 @@ ul { list-style: none; }
 
 .strength-item__body-inner {
   min-height: 0;
-  padding: 0 0 80px;
+  padding: 0;
 }
 
 /* Divider: always dashed, opacity-animated */
@@ -626,6 +626,7 @@ ul { list-style: none; }
   max-width: 780px;
   height: 160px;
   margin-top: 56px;
+  margin-bottom: 80px;
   border-radius: 16px;
   overflow: hidden;
   line-height: 0;
