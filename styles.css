@@ -479,7 +479,6 @@ ul { list-style: none; }
   gap: 20px;
   width: 100%;
   box-sizing: border-box;
-  min-height: 156px;
   padding: 56px 0;
   background: none;
   border: none;
@@ -630,12 +629,21 @@ ul { list-style: none; }
   border-radius: 16px;
   overflow: hidden;
   line-height: 0;
-  box-shadow: 0px 1px 0px 0px rgba(255, 160, 183, 0.2);
-  transition: box-shadow 0.3s ease;
+  box-shadow: 0px 1px 20px 0px rgba(255, 160, 183, 0.2);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.18s ease, transform 0.18s ease, box-shadow 0.3s ease;
+}
+
+/* Card appears AFTER the body text (text first, then thumbnail) */
+.strength-item__body.open .strength-item__card {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.32s ease 0.36s, transform 0.32s ease 0.36s, box-shadow 0.3s ease;
 }
 
 .strength-item__card:hover {
-  box-shadow: 0px 4px 12px 0px rgba(255, 160, 183, 0.35);
+  box-shadow: 0px 4px 28px 0px rgba(255, 160, 183, 0.35);
 }
 
 .strength-item__card-img {
@@ -664,11 +672,6 @@ ul { list-style: none; }
   font-weight: 600;
   line-height: 1;
   border-radius: 999px;
-  transition: transform 0.3s ease;
-}
-
-.strength-item__card:hover .strength-item__card-btn {
-  transform: translateX(3px);
 }
 
 .section--alt {
