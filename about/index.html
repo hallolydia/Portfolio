@@ -23,7 +23,7 @@
         <a href="../resume/" data-text="Resume"><span class="gnb__nav-row">Resume<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span></a>
       </nav>
       <a href="https://www.linkedin.com/in/lydia-jeongeun-oh-2142a8198/" class="gnb__cta" target="_blank" rel="noopener"><span class="gnb__cta-default">Let's Talk</span><span class="gnb__cta-hover">Contact me!</span></a>
-    <button class="gnb__hamburger" id="hamburger" aria-label="Open menu">
+      <button class="gnb__hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -36,115 +36,89 @@
     </div>
   </header>
 
-  <!-- Intro -->
-  <section class="about-intro">
-    <div class="about-intro__inner">
-      <h1 class="about-intro__title">
-        Designer who asks<br>
-        <em>why</em> before <em>how.</em>
-      </h1>
-      <p class="about-intro__bio about-intro__bio--1">
-        Hi, I'm Lydia — a product designer based in Seoul. I specialize in
-        uncovering the real problems hidden between user needs and business goals,
-        then turning those insights into products people actually want to use.
-      </p>
-      <p class="about-intro__bio about-intro__bio--2">
-        I believe good design starts with the right question. Before any wireframe
-        or prototype, I dig into the problem space — talking to users, mapping
-        system constraints, and finding where the real friction lives.
-      </p>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section class="section section--alt">
-    <div class="section__inner">
-      <h2 class="section__title reveal">Experience</h2>
-      <div class="timeline">
-
-        <div class="timeline-item reveal">
-          <div class="timeline-item__meta">
-            <span class="timeline-item__period">2024 — Present</span>
-          </div>
-          <div class="timeline-item__body">
-            <h3>Product Designer</h3>
-            <p class="timeline-item__company">Company Name</p>
-            <p class="timeline-item__desc">
-              Led end-to-end design for [product/feature]. Conducted user research,
-              synthesized insights, and collaborated closely with product and engineering.
-            </p>
-          </div>
+  <!-- Hero -->
+  <section class="about-hero" id="about-hero">
+    <div class="about-hero__inner">
+      <div class="about-hero__text">
+        <h1 class="about-hero__title">Hi all! I'm Lydia, a product designer.<br>I believe technology should be simple.</h1>
+        <div class="about-hero__body">
+          <p>어느 회사에서 그동안 어떤 일들을 해 왔는지 I am strong at turning logically structured services into visually compelling experiences.</p>
+          <p>Driven by my interest in UX strategy and business, I regularly attend startup and business meetups to gain new perspectives. I also take a solo trip each year, where meeting new people in unfamiliar places helps me broaden how I see the world.</p>
         </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-item__meta">
-            <span class="timeline-item__period">2022 — 2024</span>
-          </div>
-          <div class="timeline-item__body">
-            <h3>UX Designer</h3>
-            <p class="timeline-item__company">Company Name</p>
-            <p class="timeline-item__desc">
-              Owned the redesign of [product area], improving key metrics by X%.
-              Established a research practice and design system foundations.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-item__meta">
-            <span class="timeline-item__period">2021 — 2022</span>
-          </div>
-          <div class="timeline-item__body">
-            <h3>UX Design Intern</h3>
-            <p class="timeline-item__company">Company Name</p>
-            <p class="timeline-item__desc">
-              Supported the design team on [project]. Ran usability tests,
-              created wireframes, and iterated based on feedback.
-            </p>
-          </div>
-        </div>
-
+      </div>
+      <div class="about-hero__photo">
+        <img src="../assets/images/profile.png" alt="Lydia Oh" />
       </div>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section class="section">
-    <div class="section__inner">
-      <h2 class="section__title reveal">Skills & Tools</h2>
-      <div class="skills-grid">
+  <!-- Connect -->
+  <section class="about-section" id="about-connect">
+    <div class="about-section__inner">
+      <h2 class="about-section__title">Connect</h2>
+      <div class="about-connect__icons">
+        <a href="https://www.linkedin.com/in/lydia-jeongeun-oh-2142a8198/" class="about-connect__icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://behance.net/" class="about-connect__icon" aria-label="Behance" target="_blank" rel="noopener">
+          <svg width="36" height="28" viewBox="0 0 48 30" fill="white" aria-hidden="true"><path d="M29.5 3.5h10v2.5h-10zM18.3 13.9c1.2-.7 1.9-1.8 1.9-3.3 0-3.2-2.4-4.8-6.1-4.8H4v20.4h10.6c3.9 0 6.8-1.8 6.8-5.5 0-2.1-1-3.8-3.1-4.8zM8.4 9.5h4.8c1.4 0 2.6.4 2.6 2s-1 2.3-2.6 2.3H8.4V9.5zm5.5 12.9H8.4v-5h5.5c1.8 0 3 .8 3 2.6 0 1.8-1.3 2.4-3 2.4zm20.6-3.6c.4-3.9-2.1-8.5-7.6-8.5-5 0-8.1 3.5-8.1 8.2 0 4.9 3 8.3 8.1 8.3 3.8 0 6.3-1.7 7.4-5.1h-3.8c-.4 1.2-1.8 1.9-3.4 1.9-2.3 0-3.9-1.4-4.1-4.8h11.5zm-11.4-2c.2-2.3 1.7-4.1 3.9-4.1 2.4 0 3.7 1.6 3.8 4.1H23.1z"/></svg>
+        </a>
+        <a href="mailto:hallolydia1@gmail.com" class="about-connect__icon" aria-label="Email">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+        <a href="https://medium.com/" class="about-connect__icon" aria-label="Medium" target="_blank" rel="noopener">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
 
-        <div class="skill-group reveal">
-          <h3>Design</h3>
-          <ul>
-            <li>Product Design</li>
-            <li>UX Research</li>
-            <li>Interaction Design</li>
-            <li>Design Systems</li>
-            <li>Prototyping</li>
-          </ul>
+  <!-- Work Experience -->
+  <section class="about-section" id="about-work">
+    <div class="about-section__inner">
+      <h2 class="about-section__title">Work Experience</h2>
+      <div class="about-work-list">
+
+        <div class="about-work-item">
+          <div class="about-work-item__left">
+            <span class="about-work-item__company">MemeCore</span>
+            <span class="about-work-item__location">Seoul, Korea</span>
+          </div>
+          <div class="about-work-item__right">
+            <div class="about-work-item__header">
+              <span class="about-work-item__role">Product Designer</span>
+              <span class="about-work-item__date">Feb 2025 - Current</span>
+            </div>
+            <p class="about-work-item__desc">Led end-to-end product design for 4,000+ non-crypto users, reducing technical barriers by translating Web3 interactions into theme park ticket purchase and ride-access flows.</p>
+          </div>
         </div>
 
-        <div class="skill-group reveal">
-          <h3>Research</h3>
-          <ul>
-            <li>User Interviews</li>
-            <li>Usability Testing</li>
-            <li>Competitive Analysis</li>
-            <li>Journey Mapping</li>
-            <li>Data Analysis</li>
-          </ul>
+        <div class="about-work-item">
+          <div class="about-work-item__left">
+            <span class="about-work-item__company">Company Name</span>
+            <span class="about-work-item__location">Seoul, Korea</span>
+          </div>
+          <div class="about-work-item__right">
+            <div class="about-work-item__header">
+              <span class="about-work-item__role">UX Designer</span>
+              <span class="about-work-item__date">2022 — 2024</span>
+            </div>
+            <p class="about-work-item__desc">Owned the redesign of [product area], improving key metrics by X%. Established a research practice and design system foundations.</p>
+          </div>
         </div>
 
-        <div class="skill-group reveal">
-          <h3>Tools</h3>
-          <ul>
-            <li>Figma</li>
-            <li>Framer</li>
-            <li>Notion</li>
-            <li>HTML / CSS</li>
-            <li>Maze / Dovetail</li>
-          </ul>
+        <div class="about-work-item">
+          <div class="about-work-item__left">
+            <span class="about-work-item__company">Company Name</span>
+            <span class="about-work-item__location">Seoul, Korea</span>
+          </div>
+          <div class="about-work-item__right">
+            <div class="about-work-item__header">
+              <span class="about-work-item__role">UX Design Intern</span>
+              <span class="about-work-item__date">2021 — 2022</span>
+            </div>
+            <p class="about-work-item__desc">Supported the design team on [project]. Ran usability tests, created wireframes, and iterated based on feedback.</p>
+          </div>
         </div>
 
       </div>
@@ -152,99 +126,115 @@
   </section>
 
   <!-- Education -->
-  <section class="section section--alt">
-    <div class="section__inner">
-      <h2 class="section__title reveal">Education</h2>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <div class="timeline-item__meta">
-          </div>
-          <div class="timeline-item__body">
-            <h3>The University of Texas at Austin</h3>
-            <p class="timeline-item__company">Master of Science in Information Science (MSIS)</p>
-          </div>
+  <section class="about-section" id="about-education">
+    <div class="about-section__inner">
+      <h2 class="about-section__title">Education</h2>
+      <div class="about-edu-list">
+
+        <div class="about-edu-item">
+          <h3 class="about-edu-item__school">The University of Texas at Austin</h3>
+          <p class="about-edu-item__degree">Master of Science in Information Studies/Science (MSIS)</p>
         </div>
-        <div class="timeline-item reveal">
-          <div class="timeline-item__meta">
-          </div>
-          <div class="timeline-item__body">
-            <h3>Seoul National University of Science and Technology</h3>
-            <p class="timeline-item__company">BFA Ceramic Arts and Design · Minor in Design</p>
-          </div>
+
+        <div class="about-edu-item">
+          <h3 class="about-edu-item__school">Seoul National University of Science and Technology</h3>
+          <p class="about-edu-item__degree">Ceramic Arts and Design, Minor Department of Design (BFA)</p>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Awards & Honors -->
-  <section class="section">
-    <div class="section__inner">
-      <h2 class="section__title reveal">Awards &amp; Honors</h2>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <div class="timeline-item__meta">
-            <span class="timeline-item__period">Oct 2024</span>
+  <!-- Award -->
+  <section class="about-section" id="about-award">
+    <div class="about-section__inner">
+      <h2 class="about-section__title">Award</h2>
+      <div class="about-award-list">
+
+        <div class="about-award-item">
+          <div class="about-award-item__left">
+            <span class="about-award-item__name">Behance</span>
           </div>
-          <div class="timeline-item__body">
-            <h3>Behance</h3>
-            <p class="timeline-item__company">Featured UI Project</p>
-          </div>
-        </div>
-        <div class="timeline-item reveal">
-          <div class="timeline-item__meta">
-            <span class="timeline-item__period">Jun 2019, Mar 2020</span>
-          </div>
-          <div class="timeline-item__body">
-            <h3>Behance</h3>
-            <p class="timeline-item__company">Featured Motion Graphic Project</p>
+          <div class="about-award-item__right">
+            <div class="about-award-item__header">
+              <span class="about-award-item__desc">Featured UI Project</span>
+              <span class="about-award-item__date">Oct 2024</span>
+            </div>
           </div>
         </div>
-        <div class="timeline-item reveal">
-          <div class="timeline-item__meta">
-            <span class="timeline-item__period">Nov 2019</span>
+
+        <div class="about-award-item">
+          <div class="about-award-item__left">
+            <span class="about-award-item__name">Behance</span>
           </div>
-          <div class="timeline-item__body">
-            <h3>The International Design Trend Competition</h3>
-            <p class="timeline-item__company">Special Prize</p>
-          </div>
-        </div>
-        <div class="timeline-item reveal">
-          <div class="timeline-item__meta">
-            <span class="timeline-item__period">Nov 2019</span>
-          </div>
-          <div class="timeline-item__body">
-            <h3>Samsung Electronics Sero Creator</h3>
-            <p class="timeline-item__company">Finalist</p>
+          <div class="about-award-item__right">
+            <div class="about-award-item__header">
+              <span class="about-award-item__desc">Featured Motion Graphic Project</span>
+              <span class="about-award-item__date">Jun 2019, Mar 2020</span>
+            </div>
           </div>
         </div>
-        <div class="timeline-item reveal">
-          <div class="timeline-item__meta">
-            <span class="timeline-item__period">Jul 2019</span>
+
+        <div class="about-award-item">
+          <div class="about-award-item__left">
+            <span class="about-award-item__name">The International Design Trend Competition</span>
           </div>
-          <div class="timeline-item__body">
-            <h3>Korea Design Exhibition Award</h3>
-            <p class="timeline-item__company">Special Prize</p>
-          </div>
-        </div>
-        <div class="timeline-item reveal">
-          <div class="timeline-item__meta">
-            <span class="timeline-item__period">Mar 2018 – Dec 2018</span>
-          </div>
-          <div class="timeline-item__body">
-            <h3>Acuvue Video Creator Program</h3>
-            <p class="timeline-item__company">Highest-Ranked Creator</p>
-            <p class="timeline-item__desc">Produced official motion graphic content for Acuvue brand campaigns.</p>
+          <div class="about-award-item__right">
+            <div class="about-award-item__header">
+              <span class="about-award-item__desc">Special Prize</span>
+              <span class="about-award-item__date">Nov 2019</span>
+            </div>
           </div>
         </div>
-        <div class="timeline-item reveal">
-          <div class="timeline-item__meta">
-            <span class="timeline-item__period">Aug 2015, Aug 2016</span>
+
+        <div class="about-award-item">
+          <div class="about-award-item__left">
+            <span class="about-award-item__name">Samsung Electronics Sero Creator</span>
           </div>
-          <div class="timeline-item__body">
-            <h3>Academic Excellence Scholarship (50% tuition award)</h3>
-            <p class="timeline-item__company">Seoul National University of Science and Technology</p>
+          <div class="about-award-item__right">
+            <div class="about-award-item__header">
+              <span class="about-award-item__desc">Finalist</span>
+              <span class="about-award-item__date">Nov 2019</span>
+            </div>
           </div>
         </div>
+
+        <div class="about-award-item">
+          <div class="about-award-item__left">
+            <span class="about-award-item__name">Korea Design Exhibition Award</span>
+          </div>
+          <div class="about-award-item__right">
+            <div class="about-award-item__header">
+              <span class="about-award-item__desc">Special Prize</span>
+              <span class="about-award-item__date">Jul 2019</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-award-item">
+          <div class="about-award-item__left">
+            <span class="about-award-item__name">Acuvue Video Creator Program</span>
+          </div>
+          <div class="about-award-item__right">
+            <div class="about-award-item__header">
+              <span class="about-award-item__desc">Highest-Ranked Creator</span>
+              <span class="about-award-item__date">Mar 2018 – Dec 2018</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-award-item">
+          <div class="about-award-item__left">
+            <span class="about-award-item__name">Academic Excellence Scholarship (50% tuition award)</span>
+          </div>
+          <div class="about-award-item__right">
+            <div class="about-award-item__header">
+              <span class="about-award-item__desc">Seoul National University of Science and Technology</span>
+              <span class="about-award-item__date">Aug 2015, Aug 2016</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
