@@ -23,7 +23,7 @@
         <a href="../resume/" data-text="Resume"><span class="gnb__nav-row">Resume<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span></a>
       </nav>
       <a href="https://www.linkedin.com/in/lydia-jeongeun-oh-2142a8198/" class="gnb__cta" target="_blank" rel="noopener"><span class="gnb__cta-default">Let's Talk</span><span class="gnb__cta-hover">Contact me!</span></a>
-    <button class="gnb__hamburger" id="hamburger" aria-label="Open menu">
+      <button class="gnb__hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -36,185 +36,216 @@
     </div>
   </header>
 
-  <!-- Lab Grid -->
-  <section class="lab-section">
-    <div class="lab-section__inner">
+  <!-- Lab Content -->
+  <main class="lab-main">
 
-      <!-- Category filter -->
-      <div class="filter-tabs reveal" id="labFilterTabs">
-        <button class="filter-tab active" data-filter="all">All</button>
-        <button class="filter-tab" data-filter="ai">AI / Vibe Coding</button>
-        <button class="filter-tab" data-filter="tool">Tools</button>
-        <button class="filter-tab" data-filter="motion">Motion</button>
-        <button class="filter-tab" data-filter="visual">Visual</button>
-      </div>
+    <!-- 3D Motion Graphics — linked with arrow -->
+    <section class="lab-category reveal">
+      <h2 class="lab-category__title">3D Motion Graphics</h2>
+      <div class="lab-gallery">
 
-      <div class="lab-grid" id="labGrid">
-
-        <article class="lab-card reveal" data-tags="ai">
-          <div class="lab-card__thumb" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
-            <div class="lab-card__badge">AI</div>
+        <a href="#" class="lab-item" target="_blank" rel="noopener">
+          <div class="lab-item__thumb" style="background:#1a1a2e;">
+            <img src="../assets/images/lab/little-detective.png" alt="Little Detective" onerror="this.style.display='none'">
           </div>
-          <div class="lab-card__body">
-            <div class="lab-card__meta">
-              <span class="tag tag--primary"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(45deg);flex-shrink:0" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>AI / Vibe Coding</span>
-              <span class="lab-card__date">2025</span>
-            </div>
-            <h3>Experiment Title A</h3>
-            <p>Short description of what this is and what you explored or learned from it.</p>
-            <a href="#" class="lab-card__link" target="_blank" rel="noopener">
-              View
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M7 7h10v10M7 17 17 7"/>
-              </svg>
-            </a>
+          <div class="lab-item__info">
+            <span class="tag">Character Animation</span>
+            <p class="lab-item__title">Little Detective <span class="lab-item__arrow"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
           </div>
-        </article>
-
-        <article class="lab-card reveal" data-tags="tool">
-          <div class="lab-card__thumb" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)">
-            <div class="lab-card__badge">Tool</div>
-          </div>
-          <div class="lab-card__body">
-            <div class="lab-card__meta">
-              <span class="tag tag--primary"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(45deg);flex-shrink:0" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Tools</span>
-              <span class="lab-card__date">2025</span>
-            </div>
-            <h3>Experiment Title B</h3>
-            <p>Short description of what this is and what you explored or learned from it.</p>
-            <a href="#" class="lab-card__link" target="_blank" rel="noopener">
-              View
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M7 7h10v10M7 17 17 7"/>
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <article class="lab-card reveal" data-tags="motion">
-          <div class="lab-card__thumb" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">
-            <div class="lab-card__badge">Motion</div>
-          </div>
-          <div class="lab-card__body">
-            <div class="lab-card__meta">
-              <span class="tag tag--primary"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(45deg);flex-shrink:0" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Motion</span>
-              <span class="lab-card__date">2024</span>
-            </div>
-            <h3>Experiment Title C</h3>
-            <p>Short description of what this is and what you explored or learned from it.</p>
-            <a href="#" class="lab-card__link" target="_blank" rel="noopener">
-              View
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M7 7h10v10M7 17 17 7"/>
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <article class="lab-card reveal" data-tags="visual">
-          <div class="lab-card__thumb" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">
-            <div class="lab-card__badge">Visual</div>
-          </div>
-          <div class="lab-card__body">
-            <div class="lab-card__meta">
-              <span class="tag tag--primary"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(45deg);flex-shrink:0" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Visual</span>
-              <span class="lab-card__date">2024</span>
-            </div>
-            <h3>Experiment Title D</h3>
-            <p>Short description of what this is and what you explored or learned from it.</p>
-            <a href="#" class="lab-card__link" target="_blank" rel="noopener">
-              View
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M7 7h10v10M7 17 17 7"/>
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <article class="lab-card reveal" data-tags="ai">
-          <div class="lab-card__thumb" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%)">
-            <div class="lab-card__badge">AI</div>
-          </div>
-          <div class="lab-card__body">
-            <div class="lab-card__meta">
-              <span class="tag tag--primary"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(45deg);flex-shrink:0" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>AI / Vibe Coding</span>
-              <span class="lab-card__date">2024</span>
-            </div>
-            <h3>Experiment Title E</h3>
-            <p>Short description of what this is and what you explored or learned from it.</p>
-            <a href="#" class="lab-card__link" target="_blank" rel="noopener">
-              View
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M7 7h10v10M7 17 17 7"/>
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <article class="lab-card reveal" data-tags="tool,visual">
-          <div class="lab-card__thumb" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)">
-            <div class="lab-card__badge">Tool</div>
-          </div>
-          <div class="lab-card__body">
-            <div class="lab-card__meta">
-              <span class="tag tag--primary"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(45deg);flex-shrink:0" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Tools</span>
-              <span class="tag">Visual</span>
-              <span class="lab-card__date">2024</span>
-            </div>
-            <h3>Experiment Title F</h3>
-            <p>Short description of what this is and what you explored or learned from it.</p>
-            <a href="#" class="lab-card__link" target="_blank" rel="noopener">
-              View
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M7 7h10v10M7 17 17 7"/>
-              </svg>
-            </a>
-          </div>
-        </article>
-
-      </div>
-
-      <!-- Empty state -->
-      <div class="work-empty" id="labEmpty" hidden>
-        <p>Nothing in this category yet — check back soon.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Writing -->
-  <section class="section section--alt">
-    <div class="section__inner">
-      <h2 class="section__title reveal">Writing</h2>
-      <div class="article-list">
-
-        <a href="#" class="article-item reveal">
-          <div class="article-item__body">
-            <div class="work-card__tags" style="margin-bottom:10px">
-              <span class="tag">UX Analysis</span>
-              <span class="tag">Fintech</span>
-            </div>
-            <h3 class="article-item__title">Robinhood vs 토스 — 투자 UX 비교 분석</h3>
-            <p class="article-item__desc">미국과 한국의 대표 투자 앱이 같은 사용자 목표를 어떻게 다르게 풀어냈는가.</p>
-          </div>
-          <span class="article-item__arrow">→</span>
         </a>
 
-        <a href="#" class="article-item reveal">
-          <div class="article-item__body">
-            <div class="work-card__tags" style="margin-bottom:10px">
-              <span class="tag">Case Study</span>
-              <span class="tag">Coming Soon</span>
-            </div>
-            <h3 class="article-item__title">다음 글 준비 중</h3>
-            <p class="article-item__desc">추후 업로드 예정입니다.</p>
+        <a href="#" class="lab-item" target="_blank" rel="noopener">
+          <div class="lab-item__thumb" style="background:linear-gradient(135deg,#b44fff,#ff6bde);">
+            <img src="../assets/images/lab/adobe-cc.png" alt="Adobe Creative Cloud" onerror="this.style.display='none'">
           </div>
-          <span class="article-item__arrow">→</span>
+          <div class="lab-item__info">
+            <span class="tag">Brand Video</span>
+            <p class="lab-item__title">Adobe Creative Cloud <span class="lab-item__arrow"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+          </div>
+        </a>
+
+        <a href="#" class="lab-item" target="_blank" rel="noopener">
+          <div class="lab-item__thumb" style="background:linear-gradient(135deg,#ff8c00,#ffb347);">
+            <img src="../assets/images/lab/food-festival.png" alt="Food Festival" onerror="this.style.display='none'">
+          </div>
+          <div class="lab-item__info">
+            <span class="tag">Concept Video</span>
+            <p class="lab-item__title">Food Festival <span class="lab-item__arrow"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+          </div>
         </a>
 
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Graphic Design — no link, no arrow -->
+    <section class="lab-category reveal">
+      <h2 class="lab-category__title">Graphic Design</h2>
+      <div class="lab-gallery">
+
+        <div class="lab-item">
+          <div class="lab-item__thumb" style="background:linear-gradient(135deg,#ff6b35,#f7931e);"></div>
+          <div class="lab-item__info">
+            <span class="tag">Poster</span>
+            <p class="lab-item__title">Circular Rings</p>
+          </div>
+        </div>
+
+        <div class="lab-item">
+          <div class="lab-item__thumb" style="background:linear-gradient(135deg,#00c9ff,#7b2ff7 50%,#ff6bde);"></div>
+          <div class="lab-item__info">
+            <span class="tag">Illustration</span>
+            <p class="lab-item__title">Abstract Shapes</p>
+          </div>
+        </div>
+
+        <div class="lab-item">
+          <div class="lab-item__thumb" style="background:linear-gradient(135deg,#ffd700,#ff8c00);"></div>
+          <div class="lab-item__info">
+            <span class="tag">Poster</span>
+            <p class="lab-item__title">Color Study</p>
+          </div>
+        </div>
+
+        <div class="lab-item">
+          <div class="lab-item__thumb" style="background:linear-gradient(135deg,#f093fb,#f5576c);"></div>
+          <div class="lab-item__info">
+            <span class="tag">Illustration</span>
+            <p class="lab-item__title">Gradient Series</p>
+          </div>
+        </div>
+
+        <div class="lab-item">
+          <div class="lab-item__thumb" style="background:linear-gradient(135deg,#ffb347,#ffd700);"></div>
+          <div class="lab-item__info">
+            <span class="tag">Color</span>
+            <p class="lab-item__title">Warm Palette</p>
+          </div>
+        </div>
+
+        <div class="lab-item">
+          <div class="lab-item__thumb" style="background:#e8e4df;"></div>
+          <div class="lab-item__info">
+            <span class="tag">Storyboard</span>
+            <p class="lab-item__title">Character Story</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Branding — no link, no arrow -->
+    <section class="lab-category reveal">
+      <h2 class="lab-category__title">Branding</h2>
+      <div class="lab-gallery">
+
+        <div class="lab-item">
+          <div class="lab-item__thumb lab-item__thumb--placeholder"></div>
+          <div class="lab-item__info">
+            <span class="tag">Coming Soon</span>
+            <p class="lab-item__title">—</p>
+          </div>
+        </div>
+
+        <div class="lab-item">
+          <div class="lab-item__thumb lab-item__thumb--placeholder"></div>
+          <div class="lab-item__info">
+            <span class="tag">Coming Soon</span>
+            <p class="lab-item__title">—</p>
+          </div>
+        </div>
+
+        <div class="lab-item">
+          <div class="lab-item__thumb lab-item__thumb--placeholder"></div>
+          <div class="lab-item__info">
+            <span class="tag">Coming Soon</span>
+            <p class="lab-item__title">—</p>
+          </div>
+        </div>
+
+        <div class="lab-item">
+          <div class="lab-item__thumb lab-item__thumb--placeholder"></div>
+          <div class="lab-item__info">
+            <span class="tag">Coming Soon</span>
+            <p class="lab-item__title">—</p>
+          </div>
+        </div>
+
+        <div class="lab-item">
+          <div class="lab-item__thumb lab-item__thumb--placeholder"></div>
+          <div class="lab-item__info">
+            <span class="tag">Coming Soon</span>
+            <p class="lab-item__title">—</p>
+          </div>
+        </div>
+
+        <div class="lab-item">
+          <div class="lab-item__thumb lab-item__thumb--placeholder"></div>
+          <div class="lab-item__info">
+            <span class="tag">Coming Soon</span>
+            <p class="lab-item__title">—</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Marketing — no link, no arrow -->
+    <section class="lab-category reveal">
+      <h2 class="lab-category__title">Marketing</h2>
+      <div class="lab-gallery">
+
+        <div class="lab-item">
+          <div class="lab-item__thumb lab-item__thumb--placeholder"></div>
+          <div class="lab-item__info">
+            <span class="tag">Coming Soon</span>
+            <p class="lab-item__title">—</p>
+          </div>
+        </div>
+
+        <div class="lab-item">
+          <div class="lab-item__thumb lab-item__thumb--placeholder"></div>
+          <div class="lab-item__info">
+            <span class="tag">Coming Soon</span>
+            <p class="lab-item__title">—</p>
+          </div>
+        </div>
+
+        <div class="lab-item">
+          <div class="lab-item__thumb lab-item__thumb--placeholder"></div>
+          <div class="lab-item__info">
+            <span class="tag">Coming Soon</span>
+            <p class="lab-item__title">—</p>
+          </div>
+        </div>
+
+        <div class="lab-item">
+          <div class="lab-item__thumb lab-item__thumb--placeholder"></div>
+          <div class="lab-item__info">
+            <span class="tag">Coming Soon</span>
+            <p class="lab-item__title">—</p>
+          </div>
+        </div>
+
+        <div class="lab-item">
+          <div class="lab-item__thumb lab-item__thumb--placeholder"></div>
+          <div class="lab-item__info">
+            <span class="tag">Coming Soon</span>
+            <p class="lab-item__title">—</p>
+          </div>
+        </div>
+
+        <div class="lab-item">
+          <div class="lab-item__thumb lab-item__thumb--placeholder"></div>
+          <div class="lab-item__info">
+            <span class="tag">Coming Soon</span>
+            <p class="lab-item__title">—</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -239,6 +270,5 @@
   </footer>
 
   <script src="../script.js"></script>
-  <script src="../lab/lab.js"></script>
 </body>
 </html>
