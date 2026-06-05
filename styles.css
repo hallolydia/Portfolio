@@ -493,13 +493,13 @@ ul { list-style: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   background: #8c8c8c;
   color: #fff;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   font-family: 'Manrope', sans-serif;
   flex-shrink: 0;
   line-height: 1;
