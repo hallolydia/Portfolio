@@ -489,6 +489,22 @@ ul { list-style: none; }
 
 .strength-item__btn:hover { opacity: 0.7; }
 
+.strength-item__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #8c8c8c;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Manrope', sans-serif;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
 .strength-item__name {
   font-family: 'Manrope', sans-serif;
   font-size: 32px;
@@ -580,8 +596,8 @@ ul { list-style: none; }
   border-top: 1px solid transparent;
   border-image: repeating-linear-gradient(
     to right,
-    var(--color-text) 0,
-    var(--color-text) 4px,
+    #8C8C8C 0,
+    #8C8C8C 4px,
     transparent 4px,
     transparent 10px
   ) 1;
