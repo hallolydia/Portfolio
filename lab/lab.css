@@ -92,14 +92,16 @@ a.lab-item:hover .lab-item__thumb {
 }
 
 /* ===== Responsive ===== */
+/* BP2 — tablet */
 @media (max-width: 1024px) {
   .lab-gallery {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 40px;
   }
   .lab-category__title { font-size: 28px; }
 }
 
+/* BP3 — mobile */
 @media (max-width: 768px) {
   .lab-main {
     padding: calc(var(--gnb-height) + var(--gnb-top) + 48px) 20px 80px;
@@ -107,7 +109,7 @@ a.lab-item:hover .lab-item__thumb {
   }
   .lab-gallery {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 20px;
   }
   .lab-category__title { font-size: 24px; }
   .lab-item__title { font-size: 16px; }
