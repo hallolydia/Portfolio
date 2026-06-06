@@ -6,7 +6,7 @@
   padding: calc(var(--gnb-height) + var(--gnb-top) + 184px) 40px 120px;
   display: flex;
   flex-direction: column;
-  gap: 160px;
+  gap: 120px;
 }
 
 /* Category Section */
