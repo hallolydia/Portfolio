@@ -826,6 +826,7 @@ ul { list-style: none; }
   gap: 5px;
   font-size: var(--font-label-size);
   font-weight: var(--font-label-weight);
+  line-height: 1.5;
   padding: 2px 10px;
   background: #fff;
   color: var(--color-text);
