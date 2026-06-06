@@ -3,7 +3,7 @@
 .lab-main {
   max-width: 1240px;
   margin: 0 auto;
-  padding: calc(var(--gnb-height) + var(--gnb-top) + 64px) 40px 120px;
+  padding: calc(var(--gnb-height) + var(--gnb-top) + 184px) 40px 120px;
   display: flex;
   flex-direction: column;
   gap: 160px;
