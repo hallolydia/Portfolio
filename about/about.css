@@ -13,7 +13,7 @@
   padding: 0 40px;
   display: grid;
   grid-template-columns: 1fr 387px;
-  gap: 60px;
+  gap: 36px;
   align-items: flex-start;
 }
 
@@ -21,6 +21,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  max-width: 753px;
 }
 
 .about-hero__title {
@@ -66,12 +67,12 @@
 
 /* ── Shared Section ── */
 .about-section {
-  padding: 120px 0 160px;
+  padding: 90px 0;
   background: var(--color-bg);
 }
 
 .about-section__inner {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 40px;
   display: flex;
@@ -80,7 +81,7 @@
 }
 
 .about-section__title {
-  font-size: 18px;
+  font-size: 36px;
   font-weight: 800;
   line-height: 1.4;
   letter-spacing: -0.18px;
@@ -91,22 +92,16 @@
 .about-connect__icons {
   display: flex;
   flex-direction: row;
-  gap: 24px;
+  gap: 20px;
 }
 
-.about-connect__icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: var(--color-text);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.about-connect__icons a {
+  display: block;
   flex-shrink: 0;
   transition: opacity 0.2s ease;
 }
 
-.about-connect__icon:hover {
+.about-connect__icons a:hover {
   opacity: 0.75;
 }
 
@@ -120,12 +115,16 @@
   display: grid;
   grid-template-columns: 300px 1fr;
   gap: 40px;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
 }
 
 .about-work-item + .about-work-item {
-  padding-top: 60px;
+  padding-top: 40px;
   border-top: 1px solid rgb(217, 217, 217);
+}
+
+.about-work-item__header--gap60 {
+  margin-top: 36px;
 }
 
 .about-work-item__left {
@@ -137,7 +136,7 @@
 .about-work-item__company {
   font-size: 20px;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.05;
   letter-spacing: -0.2px;
   color: var(--color-text);
 }
@@ -154,6 +153,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  max-width: 860px;
 }
 
 .about-work-item__header {
@@ -166,7 +166,7 @@
 .about-work-item__role {
   font-size: 16px;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.05;
   letter-spacing: -0.16px;
   color: var(--color-text);
   flex: 1;
@@ -233,11 +233,11 @@
   display: grid;
   grid-template-columns: 300px 1fr;
   gap: 40px;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
 }
 
 .about-award-item + .about-award-item {
-  padding-top: 60px;
+  padding-top: 40px;
   border-top: 1px solid rgb(217, 217, 217);
 }
 
