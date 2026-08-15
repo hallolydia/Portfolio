@@ -316,38 +316,38 @@ ul { list-style: none; }
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  max-width: 1200px;
+  max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  padding: 150px 40px 80px;
+  padding: 90px 40px 80px;
 }
 
 .hero__copy {}
 
 .hero__headline {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(24px, 3.6vw, 52px);
+  font-size: clamp(24px, 3.6vw, 58px);
   font-weight: 700;
-  line-height: 1.22;
+  line-height: 1.4;
   letter-spacing: -0.01em;
   color: #121213;
-  margin: 0 0 40px;
+  margin: 0 0 60px;
   text-align: left;
   will-change: transform;
 }
 
-/* Inline illustration — 72px each (proportional to 52px headline) */
+/* Inline illustration — scales with headline font-size (80px at 58px desktop headline) */
 .hero__emoji {
   display: inline-block;
-  width: 72px;
-  height: 72px;
+  width: 1.3793em;
+  height: 1.3793em;
   vertical-align: middle;
   object-fit: contain;
   will-change: transform;
 }
 
 .hero__sub {
-  font-size: clamp(14px, 1.2vw, 20px);
+  font-size: clamp(14px, 1.2vw, 24px);
   font-weight: 400;
   line-height: 1.4;
   letter-spacing: -0.01em;
