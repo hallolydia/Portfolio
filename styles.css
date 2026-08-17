@@ -183,11 +183,19 @@ ul { list-style: none; }
   padding-right: 16px;
 }
 
+/* Resume nav button — 120×48 per Figma */
+.gnb__nav a:has(.gnb__nav-row) {
+  width: 120px;
+  height: 48px;
+  min-height: 48px;
+  align-items: flex-start;
+}
+
 /* Inline wrapper for icon + text (Resume) */
 .gnb__nav-row {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 0;
 }
 
 /* Nav hover / active */
