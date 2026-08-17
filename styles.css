@@ -199,10 +199,35 @@ ul { list-style: none; }
 }
 
 /* Nav hover / active */
-.gnb__nav a:hover,
 .gnb__nav a.active {
   color: var(--color-text);
   font-weight: 600;
+}
+
+/* Nav sparkle — continuous overlapping per-character pulse while hovered (skyepark-style color wave) */
+.gnb__nav-chars {
+  display: inline-flex;
+  align-items: center;
+}
+
+.gnb__nav-char {
+  display: inline-block;
+  transition: color 0.15s ease;
+}
+
+.gnb__nav a:hover .gnb__nav-char,
+.gnb__nav a.active .gnb__nav-char {
+  color: var(--color-text);
+}
+
+.gnb__nav-char.pulse {
+  animation: gnbNavPulse 800ms ease-out 1 both;
+}
+
+@keyframes gnbNavPulse {
+  0%   { color: var(--color-text); }
+  50%  { color: var(--pulse-color, #FFCD00); }
+  100% { color: var(--color-text); }
 }
 
 /* Hamburger — hidden on desktop, shown on mobile */

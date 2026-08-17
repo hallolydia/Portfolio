@@ -50,6 +50,51 @@ document.querySelectorAll('.gnb__nav a').forEach(a => {
   }
 });
 
+// Nav sparkle — continuous overlapping per-char color wave while hovered (skyepark-style)
+document.querySelectorAll('.gnb__nav a').forEach(a => {
+  const textHost = a.querySelector('.gnb__nav-row') || a;
+  const walker = document.createTreeWalker(textHost, NodeFilter.SHOW_TEXT);
+  const textNode = walker.nextNode();
+  if (!textNode) return;
+
+  const container = document.createElement('span');
+  container.className = 'gnb__nav-chars';
+  const palette = ['#FFCD00', '#EC6700'];
+  [...textNode.textContent].forEach((char, i) => {
+    const span = document.createElement('span');
+    span.className = 'gnb__nav-char';
+    span.style.setProperty('--pulse-color', palette[i % palette.length]);
+    span.textContent = char;
+    container.appendChild(span);
+  });
+  textNode.replaceWith(container);
+
+  const chars = [...textHost.querySelectorAll('.gnb__nav-char')];
+  const PULSE_DURATION = 800;
+  const STAGGER = 240;
+  const LOOP_PAUSE = 3000;
+  let timer = null;
+
+  function runFrom(i) {
+    const c = chars[i];
+    c.classList.remove('pulse');
+    void c.offsetWidth;
+    c.classList.add('pulse');
+    const isLast = i >= chars.length - 1;
+    timer = setTimeout(() => runFrom(isLast ? 0 : i + 1), isLast ? STAGGER + LOOP_PAUSE : STAGGER);
+  }
+
+  a.addEventListener('mouseenter', () => {
+    if (timer) clearTimeout(timer);
+    runFrom(0);
+  });
+  a.addEventListener('mouseleave', () => {
+    if (timer) clearTimeout(timer);
+    timer = null;
+    chars.forEach(c => c.classList.remove('pulse'));
+  });
+});
+
 // Hamburger — toggle open state + animate bars
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobileNav');
