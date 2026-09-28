@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reconstructing the MemeCore Website — Lydia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../case-study.css" />
+  <link rel="stylesheet" href="memecore.css" />
+</head>
+<body class="mc-page">
+
+  <!-- GNB -->
+  <header class="gnb" id="gnb">
+    <div class="gnb__inner">
+      <a href="../../" class="gnb__logo">Lydia</a>
+      <nav class="gnb__nav">
+        <a href="../../#work" class="active" data-text="Work">Work</a>
+        <a href="../../about/" data-text="About">About</a>
+        <a href="../../lab/" data-text="Lab">Lab</a>
+        <a href="../../resume/" data-text="Resume"><span class="gnb__nav-row">Resume<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+      </nav>
+      <a href="https://www.linkedin.com/in/lydia-oh-2142a8198/" class="gnb__cta" target="_blank" rel="noopener"><span class="gnb__cta-default">Let's Talk</span><span class="gnb__cta-hover">Contact me!</span></a>
+    <button class="gnb__hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="gnb__mobile-nav" id="mobileNav">
+      <a href="../../#work" data-text="Work">Work</a>
+      <a href="../../about/" data-text="About">About</a>
+      <a href="../../lab/" data-text="Lab">Lab</a>
+      <a href="../../resume/">Resume</a>
+      <a href="https://www.linkedin.com/in/lydia-oh-2142a8198/" target="_blank" rel="noopener">Let's Talk</a>
+    </div>
+  </header>
+
+  <!-- Hero (Figma 6730:105201) -->
+  <section class="mc-hero">
+    <div class="mc-container mc-hero__inner">
+      <div class="mc-cover">
+        <div class="mc-scene" role="img" aria-label="MemeCore website reconstruction cover">
+          <img class="mc-scene__logo" src="../../assets/images/memecore/hero-logo.svg" alt="">
+          <div class="mc-scene__shade"></div>
+          <div class="mc-browser">
+            <img class="mc-browser__header" src="../../assets/images/memecore/hero-header.webp" alt="">
+            <div class="mc-browser__main">
+              <img class="mc-browser__title" src="../../assets/images/memecore/hero-title.webp" alt="">
+              <video class="mc-browser__video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+                <source src="../../assets/images/memecore/hero-homepage.webm" type="video/webm">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mc-hero__text">
+        <div class="mc-hero__tags">
+          <span class="tag tag--primary">Web3</span>
+          <span class="tag">Vibe Coding</span>
+          <span class="tag">Product Design/Management</span>
+        </div>
+        <div class="mc-hero__copy">
+          <h1 class="mc-hero__title">Reconstructing the MemeCore Website<br>for Better Web3 Usability</h1>
+          <p class="mc-hero__summary">Rebuilt the site with AI in 4 days, cutting page size by 94%, reducing bounce by 2.6×, and establishing an AI workflow adopted across the organization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Role · Timeline · Team · Tools (Figma 6730:105238) -->
+  <section class="mc-overview">
+    <div class="mc-container">
+      <div class="mc-overview__box">
+        <div class="mc-overview__col">
+          <div class="mc-overview__item">
+            <p class="mc-overview__label">MY ROLE</p>
+            <p class="mc-overview__value">Product Management<br>End-to-end Product Design<br>AI Engineer Design<br>Interaction Design</p>
+          </div>
+        </div>
+        <div class="mc-overview__col">
+          <div class="mc-overview__item">
+            <p class="mc-overview__label">TIMELINE</p>
+            <p class="mc-overview__value">Nov 2025 - Jun 2026</p>
+          </div>
+        </div>
+        <div class="mc-overview__col">
+          <div class="mc-overview__item">
+            <p class="mc-overview__label">TEAM</p>
+            <p class="mc-overview__value">1 Frontend Engineer<br>1 Backend Engineer<br>3 Illustrators<br>1 Growth Lead<br>2 Marketers</p>
+          </div>
+        </div>
+        <div class="mc-overview__col">
+          <div class="mc-overview__item">
+            <p class="mc-overview__label">TOOLS</p>
+            <p class="mc-overview__value">Figma<br>Claude Code<br>LightRoom<br>After Effects</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview (Figma 6730:105257) -->
+  <section class="mc-intro">
+    <div class="mc-container mc-intro__inner">
+      <div class="mc-intro__text">
+        <span class="mc-label mc-label--chip mc-label--spaced">OVERVIEW</span>
+        <h2 class="mc-title">Rebuilding for trust, clarity, and performance</h2>
+        <p class="mc-body"><strong>The result: 17× lighter, 2.6× lower bounce rate, and 21% more engagement with key information.</strong><br>MemeCore is a <strong>Web3 startup building a sustainable meme coin</strong> ecosystem around M. Its original website relied heavily on flashy illustrations and animations to stand out in the crowded crypto market. After launch, however, the visual-heavy experience made it difficult for investors and partners to quickly assess the company’s credibility, while its <strong>48.6 MB size</strong> created accessibility barriers especially for users with slower internet connections.<br><br>As<strong> the sole product designer and product manager</strong>, I redesigned the website to <strong>balance brand experience, trust, information clarity, and performance</strong>—restructuring the information architecture and reducing the site to 2.8 MB. I also introduced vibe coding into the workflow and documented the process, which later evolved into a <strong>designer–developer workflow</strong> across the company.</p>
+      </div>
+      <div class="mc-showcase">
+        <div class="mc-showcase__stage">
+          <video class="mc-showcase__video" autoplay muted loop playsinline preload="metadata" poster="../../assets/images/memecore/overview-poster.webp" aria-label="Redesigned MemeCore website — Explore Ecosystem page">
+            <source src="../../assets/images/memecore/overview-video.webm" type="video/webm">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About MemeCore (Figma 6730:105270) -->
+  <section class="mc-split">
+    <div class="mc-container">
+      <div class="mc-split__row mc-split__row--about">
+        <div class="mc-text">
+          <div class="mc-text__head">
+            <span class="mc-label">ABOUT MEMECORE<img class="mc-label__icon" src="../../assets/images/memecore/icon-arrow-up-right.svg" width="25" height="25" alt=""></span>
+            <h2 class="mc-title">A web3 company building trusted meme coins</h2>
+          </div>
+          <p class="mc-body">MemeCore is a <strong>Web3 startup behind M, a community-driven meme coin</strong> built to address the lack of trust in meme coins. Beyond the coin itself, MemeCore builds platforms and creates online and offline experiences that connect the M community and drive lasting engagement.</p>
+        </div>
+        <div class="mc-media">
+          <img src="../../assets/images/memecore/about.webp" width="610" height="400" alt="MemeCore community pixel-art scene" loading="lazy">
+          <video class="mc-media__anim" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+            <source src="../../assets/images/memecore/anim/about-scene.webm" type="video/webm">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Background (Figma 6730:105283) -->
+  <section class="mc-split">
+    <div class="mc-container">
+      <div class="mc-split__row">
+        <div class="mc-text">
+          <div class="mc-text__head">
+            <span class="mc-label">SITE BACKGROUND</span>
+            <h2 class="mc-title">Building credibility became more important after MemeCore’s major exchange listings</h2>
+          </div>
+          <p class="mc-body">Early on, MemeCore used flashy GIF illustrations to capture attention in the crowded Web3 market. This strategy helped grow its social community to 600K+ and service participation to 3.2M+ before launch. MemeCore <strong>later secured listings on major exchanges, built its own ecosystem</strong> and rewards programs, and formed partnerships with reputable institutions. As the company grew, <strong>communicating the project’s value and credibility became more important than simply capturing attention through visuals</strong>.</p>
+        </div>
+        <div class="mc-media">
+          <img src="../../assets/images/memecore/background.webp" width="606" height="400" alt="MemeCore coin ranked #21 in a crypto market-cap table" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem (Figma 6730:105296) -->
+  <section class="mc-split mc-split--last">
+    <div class="mc-container">
+      <div class="mc-split__row mc-split__row--problem">
+        <div class="mc-text">
+          <div class="mc-text__head">
+            <span class="mc-label mc-label--spaced">PROBLEM</span>
+            <h2 class="mc-title">Prospective investors and partners struggled to understand the project and find the information they needed</h2>
+          </div>
+          <p class="mc-body">Despite MemeCore’s growth, market skepticism remained due to its origins as a meme coin. The Growth &amp; Marketing team frequently heard from prospective investors and partners that they still didn’t understand what MemeCore was or where it was headed. <strong>Limited information and unclear content hierarchy made key information difficult to find</strong>, requiring the team to repeatedly explain the project during external events and IR meetings.</p>
+        </div>
+        <div class="mc-feedback">
+          <div class="mc-feedback__inner">
+            <span class="mc-feedback__chip">Key Feedbacks</span>
+            <ul class="mc-feedback__list">
+              <li class="mc-feedback__card">
+                <img class="mc-feedback__avatar" src="../../assets/images/memecore/feedback-partner.svg" width="74" height="66" alt="">
+                <p class="mc-feedback__quote">“So, what kind of project is MemeCore? I visited<br>the website, but I still don’t understand what it does.”<span class="mc-feedback__by">- Prospective Partner</span></p>
+              </li>
+              <li class="mc-feedback__card">
+                <img class="mc-feedback__avatar" src="../../assets/images/memecore/feedback-investor.svg" width="74" height="66" alt="">
+                <p class="mc-feedback__quote">“Given the scale of its past events, it seems well-funded. But I’m still concerned, it’s a meme coin.”<span class="mc-feedback__by">- MemeCore Investor</span></p>
+              </li>
+              <li class="mc-feedback__card">
+                <img class="mc-feedback__avatar" src="../../assets/images/memecore/feedback-vc.svg" width="74" height="66" alt="">
+                <p class="mc-feedback__quote">“The project strategy feels too abstract, making it seem focused mainly on short-term price growth.”<span class="mc-feedback__by">- Crypto VC</span></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Analysis & Challenges (Figma 6730:105368) -->
+  <section class="mc-challenge">
+    <div class="mc-container mc-challenge__inner">
+      <div class="mc-text mc-challenge__text">
+        <div class="mc-text__head">
+          <span class="mc-label mc-label--spaced">DATA ANALYSIS &amp; CHALLENGES</span>
+          <h2 class="mc-title">Unclear content structure and heavy page weight<br>drove a 56.1% initial bounce rate</h2>
+        </div>
+        <p class="mc-lead"><strong>As the PM and product designer, I tackled both design and development challenges</strong>. Analysis of six months of Google Analytics and Clarity data showed that many users left the first page without taking action or dropped off before it finished loading.<br>I focused on improving user experience and web performance together.</p>
+      </div>
+      <div class="mc-challenge__cards">
+        <article class="mc-challenge__card">
+          <div class="mc-challenge__content">
+            <div class="mc-challenge__head mc-challenge__head--inset">
+              <span class="mc-challenge__chip">DESIGN</span>
+              <h3 class="mc-challenge__title">Hover-dependent navigation and unclear visual cues</h3>
+            </div>
+            <div class="mc-challenge__shot">
+              <img src="../../assets/images/memecore/da-design.webp" width="508" height="281" alt="Original MemeCore homepage — an isometric pixel-art map with no visible navigation" loading="lazy">
+            </div>
+            <p class="mc-body">The first screen emphasized graphics <strong>without navigation or key information, making it unclear where to start</strong>. Users had to discover pages through an unfamiliar hover interaction, leading to drop-off before reaching key content.</p>
+          </div>
+        </article>
+        <article class="mc-challenge__card">
+          <div class="mc-challenge__content">
+            <div class="mc-challenge__head">
+              <span class="mc-challenge__chip">DEVELOPMENT</span>
+              <h3 class="mc-challenge__title mc-challenge__title--wide">16× heavier than the average webpage</h3>
+            </div>
+            <div class="mc-challenge__shot">
+              <img src="../../assets/images/memecore/da-dev.webp" width="508" height="281" alt="Original MemeCore loading screen shown before the site became usable" loading="lazy">
+            </div>
+            <p class="mc-body mc-body--tight">While the average desktop webpage is around 3MB, <strong>MemeCore’s site was 48.6MB, requiring an extra loading screen</strong> before users could access the site. This created greater friction in regions with limited network infrastructure, making optimization essential.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next sections (Figma 6730:105396 ~) to be added -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__copy">© 2026 Lydia Oh. All rights reserved.</p>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/in/lydia-oh-2142a8198/" class="footer__social-btn" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <img src="../../assets/icons/Linkedin.png" width="40" height="40" alt="LinkedIn">
+        </a>
+        <a href="https://www.behance.net/hilydiaoh" class="footer__social-btn" aria-label="Behance" target="_blank" rel="noopener">
+          <img src="../../assets/icons/Behance.png" width="40" height="40" alt="Behance">
+        </a>
+        <button class="footer__social-btn footer__email-btn" aria-label="Copy email address" data-email="hallolydia1@gmail.com">
+          <img src="../../assets/icons/Email-Default.png" width="40" height="40" alt="">
+          <span class="footer__email-label">
+            <span class="footer__email-addr">hallolydia1@gmail.com</span>
+            <span class="footer__email-action">Copy</span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

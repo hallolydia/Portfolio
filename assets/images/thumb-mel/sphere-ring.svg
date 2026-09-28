@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="12.6293" height="12.6293" viewBox="0 0 12.6293 12.6293" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="melGradient" d="M6.31472 0.394802C9.58422 0.394833 12.2346 3.04522 12.2346 6.31472C12.2346 9.5842 9.5842 12.2346 6.31472 12.2346C3.04522 12.2346 0.394833 9.58422 0.394802 6.31472C0.394802 3.0452 3.0452 0.394802 6.31472 0.394802Z" fill="url(#paint0_radial_0_117)" stroke="white" stroke-width="0.789333"/>
+<defs>
+<radialGradient id="paint0_radial_0_117" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.30772 6.30772) scale(5.51838)">
+<stop stop-color="white" stop-opacity="0"/>
+<stop offset="0.1" stop-color="white" stop-opacity="0.01"/>
+<stop offset="0.21" stop-color="white" stop-opacity="0.01"/>
+<stop offset="0.34" stop-color="white" stop-opacity="0.0289"/>
+<stop offset="0.47" stop-color="white" stop-opacity="0.09"/>
+<stop offset="0.6" stop-color="white" stop-opacity="0.2209"/>
+<stop offset="0.74" stop-color="white" stop-opacity="0.4489"/>
+<stop offset="0.88" stop-color="white" stop-opacity="0.8281"/>
+<stop offset="0.93" stop-color="white"/>
+</radialGradient>
+</defs>
+</svg>

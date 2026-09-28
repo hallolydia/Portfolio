@@ -1,0 +1,608 @@
+/* =========================================================
+   MemeCore case study — Figma 6730:105200 (1920 frame)
+   ========================================================= */
+
+.mc-page {
+  --mc-text:        #121213;
+  --mc-summary:     #2f323a;
+  --mc-label:       #565860;
+  --mc-value:       #76777d;
+  --mc-box-bg:      #f9fafb;
+  --mc-white:       #ffffff;
+
+  /* Cover scene */
+  --mc-purple-0:    rgb(29, 0, 82);
+  --mc-purple-1:    rgb(82, 41, 171);
+  --mc-sky-50:      rgba(96, 172, 255, 0.5);
+  --mc-navy-50:     rgba(5, 21, 80, 0.5);
+  --mc-navy:        rgb(5, 21, 80);
+  --mc-shade-0:     rgba(33, 33, 36, 0);
+  --mc-shade-1:     rgba(33, 33, 36, 0.04);
+  --mc-shade-2:     rgba(33, 33, 36, 0.4);
+  --mc-browser-sky: #81bdff;
+  --mc-frame:       #fff9f9;
+  --mc-shadow:      rgba(23, 64, 96, 0.25);
+
+  /* Story sections */
+  --mc-accent:        #996eff;
+  --mc-accent-bg:     #f0eaff;
+  --mc-body:          #424751;
+  --mc-quote:         #31353a;
+  --mc-quote-by:      #7e889c;
+  --mc-chip-dark:     #616773;
+  --mc-panel-top:     #f3f6f9;
+  --mc-card-shadow:   rgba(129, 133, 143, 0.2);
+  --mc-heading:       #111111;
+  --mc-chip-ink:      #4f555f;
+}
+
+/* Shared content column: 1360 frame − 40px side padding = 1280 */
+.mc-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ── 1. Hero (6730:105201) ── */
+.mc-hero {
+  background: var(--mc-white);
+  padding: 240px 0 80px;
+}
+
+.mc-hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Cover card — 1280×774, scaled proportionally via container units */
+.mc-cover {
+  container-type: inline-size;
+  width: 100%;
+}
+
+.mc-scene {
+  --u: calc(100cqw / 1280);
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1280 / 774;
+  border-radius: 28px;
+  overflow: hidden;
+  background:
+    linear-gradient(-0.01deg, var(--mc-sky-50) 3.207%, var(--mc-navy-50) 22.456%, var(--mc-navy) 43.995%),
+    linear-gradient(47.92deg, var(--mc-purple-0) -14.072%, var(--mc-purple-1) 60.269%);
+}
+
+.mc-scene img,
+.mc-scene video {
+  display: block;
+  max-width: none;
+}
+
+.mc-scene__logo {
+  position: absolute;
+  top: calc(var(--u) * 69);
+  left: 50%;
+  width: calc(var(--u) * 407.274);
+  height: calc(var(--u) * 64);
+  transform: translateX(-50%);
+}
+
+.mc-scene__shade {
+  position: absolute;
+  top: calc(var(--u) * 397);
+  left: 50%;
+  width: calc(var(--u) * 1920);
+  height: calc(var(--u) * 377);
+  transform: translateX(-50%);
+  mix-blend-mode: overlay;
+  background: linear-gradient(180deg, var(--mc-shade-0) -21.429%, var(--mc-shade-1) 21.071%, var(--mc-shade-2) 100%);
+  pointer-events: none;
+}
+
+.mc-browser {
+  position: absolute;
+  top: calc(var(--u) * 216);
+  left: 50%;
+  width: calc(var(--u) * 1050);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--mc-browser-sky);
+  border-radius: calc(var(--u) * 24) calc(var(--u) * 24) 0 0;
+  /* Figma stroke 4px OUTSIDE + drop shadow (-4, 2, 30) */
+  box-shadow:
+    0 0 0 calc(var(--u) * 4) var(--mc-frame),
+    calc(var(--u) * -4) calc(var(--u) * 2) calc(var(--u) * 30) 0 var(--mc-shadow);
+}
+
+.mc-browser__header {
+  width: calc(var(--u) * 800);
+  height: calc(var(--u) * 36.8);
+}
+
+.mc-browser__main {
+  position: relative;
+  width: 100%;
+  height: calc(var(--u) * 521.6);
+  padding: calc(var(--u) * 80) calc(var(--u) * 16) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background: var(--mc-browser-sky);
+}
+
+.mc-browser__title {
+  position: relative;
+  width: calc(var(--u) * 1018);
+  height: calc(var(--u) * 150);
+}
+
+.mc-browser__video {
+  position: absolute;
+  top: calc(var(--u) * 229.6);
+  left: 50%;
+  width: calc(var(--u) * 1536);
+  height: calc(var(--u) * 292);
+  transform: translateX(-50%);
+  object-fit: cover;
+}
+
+/* Hero text */
+.mc-hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1000px;
+}
+
+.mc-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mc-hero__tags .tag {
+  /* Figma stroke is INSIDE → 1px border + 1px/9px padding = 25px tall */
+  padding: 1px 9px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: -0.28px;
+}
+
+.mc-hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.mc-hero__title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.36px;
+  color: var(--mc-text);
+}
+
+.mc-hero__summary {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--mc-summary);
+}
+
+/* ── 2. Role / Timeline / Team / Tools (6730:105238) ── */
+.mc-overview {
+  background: var(--mc-white);
+  padding: 40px 0 90px;
+}
+
+.mc-overview__box {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 40px;
+  border-radius: 24px;
+  background: var(--mc-box-bg);
+}
+
+.mc-overview__col {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.mc-overview__item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.mc-overview__label {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.18px;
+  color: var(--mc-label);
+}
+
+.mc-overview__value {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--mc-value);
+}
+
+/* ── Story sections: shared text styles ── */
+.mc-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  color: var(--mc-accent);
+}
+
+.mc-label--spaced { letter-spacing: 0.6px; }
+
+.mc-label--chip {
+  align-self: flex-start;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--mc-accent-bg);
+}
+
+.mc-label__icon {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+}
+
+.mc-title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.4;
+  color: var(--mc-text);
+}
+
+.mc-body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--mc-body);
+}
+
+.mc-body strong { font-weight: 600; }
+
+/* Label → title 14px, head → body 20px */
+.mc-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mc-text__head {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mc-media {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.mc-media > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ── 3. Overview (6730:105257) ── */
+.mc-intro {
+  background: var(--mc-white);
+  padding: 40px 0 80px;
+}
+
+.mc-intro__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.mc-intro__text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1000px;
+}
+
+.mc-intro__text .mc-body { letter-spacing: -0.16px; }
+
+/* Explore Ecosystem screen recording (box 1280×420, frame 633×356 at 324,75) */
+.mc-showcase {
+  container-type: inline-size;
+  width: 100%;
+}
+
+.mc-showcase__stage {
+  --u: calc(100cqw / 1280);
+  position: relative;
+  aspect-ratio: 1280 / 420;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--mc-panel-top) -6%, var(--mc-white) 153%);
+}
+
+.mc-showcase__video {
+  position: absolute;
+  top: calc(var(--u) * 75);
+  left: calc(var(--u) * 324);
+  width: calc(var(--u) * 632.97);
+  height: calc(var(--u) * 356.05);
+  display: block;
+  object-fit: cover;
+  border-radius: calc(var(--u) * 13);
+  /* Figma stroke 4px OUTSIDE + drop shadow (3.38, 1.69, 25.32) */
+  box-shadow:
+    0 0 0 calc(var(--u) * 4) var(--mc-frame),
+    calc(var(--u) * 3.38) calc(var(--u) * 1.69) calc(var(--u) * 25.32) 0 var(--mc-shadow);
+}
+
+/* ── 4–6. Split sections (6753:72219) ── */
+.mc-split {
+  background: var(--mc-white);
+  padding: 40px 0 100px;
+}
+
+.mc-split--last { padding-bottom: 80px; }
+
+.mc-split__row {
+  display: flex;
+  gap: 68px;
+  align-items: center;
+}
+
+.mc-split__row > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* About MemeCore: 60px gap, top-aligned, text starts 80px down */
+.mc-split__row--about {
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.mc-split__row--about .mc-text { padding-top: 80px; }
+
+/* Problem: fixed 566px text column */
+.mc-split__row--problem > .mc-text { flex: 0 0 566px; }
+
+/* About scene — GIF clip laid over the static export (610×400) */
+.mc-media__anim {
+  position: absolute;
+  left: 4.918%;
+  top: 3.25%;
+  width: 90.164%;
+  height: 93.5%;
+  object-fit: cover;
+}
+
+/* Key Feedbacks panel (646×491) */
+.mc-feedback {
+  height: 491.14px;
+  padding: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 24px;
+  background: linear-gradient(180deg, var(--mc-panel-top) -8.7%, var(--mc-white) 138.1%);
+}
+
+.mc-feedback__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.mc-feedback__chip,
+.mc-feedback__quote { font-family: 'Inter', sans-serif; }
+
+.mc-feedback__chip {
+  padding: 12px 16px;
+  border-radius: 50px;
+  background: var(--mc-chip-dark);
+  color: var(--mc-white);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.4px;
+}
+
+.mc-feedback__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mc-feedback__card {
+  width: 500px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 18.7px;
+  padding: 18px 17.24px 18px 20.69px;
+  border-radius: 14.96px;
+  background: var(--mc-white);
+  box-shadow: 0.86px 3.45px 14.96px 0 var(--mc-card-shadow);
+}
+
+.mc-feedback__card:nth-child(2) { padding-right: 18.7px; }
+.mc-feedback__card:nth-child(3) { padding-right: 22.44px; gap: 22.44px; }
+
+/* Browser Inter renders ~1px wider than Figma — keep Figma's 2-line wrap */
+.mc-feedback__card:nth-child(1) .mc-feedback__quote { margin-right: -2px; }
+
+.mc-feedback__avatar {
+  width: 74.1px;
+  height: 65.9px;
+  flex-shrink: 0;
+}
+
+.mc-feedback__quote {
+  flex: 1 1 0;
+  min-width: 0;
+  font-size: 15.52px;
+  font-weight: 400;
+  line-height: 23.28px;
+  letter-spacing: -0.31px;
+  color: var(--mc-quote);
+}
+
+.mc-feedback__by {
+  display: block;
+  color: var(--mc-quote-by);
+}
+
+/* ── 7. Data Analysis & Challenges (6730:105368) ── */
+.mc-challenge {
+  background: var(--mc-white);
+  padding: 40px 0 100px;
+}
+
+.mc-challenge__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.mc-challenge__text { max-width: 1100px; }
+
+.mc-lead {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: -0.18px;
+  color: var(--mc-summary);
+}
+
+.mc-lead strong { font-weight: 600; }
+
+.mc-body--tight { letter-spacing: -0.16px; }
+
+.mc-challenge__cards {
+  display: flex;
+  gap: 28px;
+}
+
+.mc-challenge__card {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  padding: 48px 0;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--mc-panel-top) 14%, var(--mc-white) 140.4%);
+}
+
+.mc-challenge__content {
+  width: 500px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.mc-challenge__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 36px;
+}
+
+/* Design card head is a fixed 494px frame centered over the 500px image */
+.mc-challenge__head--inset { padding: 0 3px; }
+
+.mc-challenge__chip {
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: var(--mc-chip-ink);
+  color: var(--mc-white);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25.2px;
+  letter-spacing: 0.54px;
+}
+
+.mc-challenge__title {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.41px;
+  color: var(--mc-heading);
+}
+
+.mc-challenge__title--wide { letter-spacing: 0.28px; }
+
+/* 500×272.8 frame; export includes the 4px white OUTSIDE stroke */
+.mc-challenge__shot {
+  aspect-ratio: 500 / 272.8;
+}
+
+.mc-challenge__shot img {
+  display: block;
+  width: calc(100% + 8px);
+  max-width: none;
+  height: auto;
+  margin: -4px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1280px) {
+  .mc-overview__col { padding: 0; }
+}
+
+@media (max-width: 1024px) {
+  .mc-overview__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mc-overview__col { align-items: flex-start; }
+
+  .mc-split__row,
+  .mc-split__row--about {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 40px;
+  }
+  .mc-split__row > *,
+  .mc-split__row--problem > .mc-text { flex: none; }
+  .mc-split__row--about .mc-text { padding-top: 0; }
+  .mc-feedback { height: auto; }
+  .mc-challenge__cards { flex-direction: column; }
+  .mc-feedback__inner { align-self: stretch; }
+  .mc-feedback__list { width: 100%; align-items: center; }
+}
+
+@media (max-width: 768px) {
+  .mc-container { padding: 0 20px; }
+  .mc-feedback { padding: 32px 16px; }
+  .mc-challenge__card { padding: 32px 16px; }
+}
+
+@media (max-width: 560px) {
+  .mc-overview__box { grid-template-columns: 1fr; }
+}

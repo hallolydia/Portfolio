@@ -58,6 +58,8 @@ Portfolio/
 ## 작업 지침
 
 - 색상: CSS Variable만
+- Work(케이스 스터디) 페이지: **Max width 1360px, 좌우 마진 40px** (콘텐츠 폭 1280px)
+- 영상·애니메이션: 화질은 최대화, 용량은 최소화하기 위해 **WebP 또는 WebM**으로 한다 (GIF·MP4 원본은 변환해서 사용)
 - `rules/portfolio-rules.md` 금지 규칙 준수
 - 한 작업 = 한 파일(또는 GNB처럼 동일 패턴 일괄) 위주
 
