@@ -18,9 +18,9 @@
   --color-line-light:   #d7d7d7;   /* About dividers — Figma */
 
   /* Disabled work card — Figma */
-  --color-disabled-tag:   #6b6b6b;
-  --color-disabled-title: #959595;
-  --color-disabled-desc:  #a9a9ad;
+  --color-disabled-tag:   #86898e;
+  --color-disabled-title: #86898e;
+  --color-disabled-desc:  #a9abaf;
   --color-divider:      #bcbcbc;   /* Strength open divider */
 
   /* Footer — Figma */
@@ -1189,6 +1189,11 @@ ul { list-style: none; }
 }
 
 /* Disabled work card — gray colors (Figma) */
+.work-card--disabled .work-card__media {
+  border-radius: 24px;
+  background: transparent;
+}
+
 .work-card--disabled .tag {
   color: var(--color-disabled-tag);
   border-color: var(--color-disabled-tag);
