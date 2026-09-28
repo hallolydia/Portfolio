@@ -8,11 +8,11 @@
 }
 
 .about-hero__inner {
-  max-width: 1280px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 40px;
   display: grid;
-  grid-template-columns: minmax(0, 780px) 352px;
+  grid-template-columns: minmax(0, 632px) 320px;
   justify-content: space-between;
   gap: 68px;
   align-items: center;
@@ -54,8 +54,8 @@
 }
 
 .about-hero__photo {
-  width: 352px;
-  height: 463px;
+  width: 320px;
+  height: 422px;
   border-radius: 20px;
   overflow: hidden;
   flex-shrink: 0;
@@ -76,7 +76,7 @@
 }
 
 .about-section__inner {
-  max-width: 1280px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 40px;
   display: flex;
@@ -132,7 +132,7 @@
 
 .about-work-item {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 240px 1fr;
   gap: 40px;
   padding-bottom: 24px;
 }
@@ -164,6 +164,10 @@
   color: var(--color-text);
 }
 
+.about-work-item__company--wrap {
+  line-height: 28px;
+}
+
 .about-work-item__location {
   font-size: 16px;
   font-weight: 400;
@@ -176,7 +180,7 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
-  max-width: 860px;
+  max-width: 740px;
 }
 
 .about-work-item__header {
@@ -209,7 +213,7 @@
   padding-left: 24px;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.5;
   letter-spacing: -0.16px;
   color: var(--color-text-sub);
 }
@@ -218,7 +222,7 @@
   content: "";
   position: absolute;
   left: 10px;
-  top: 9.2px;
+  top: 10px;
   width: 4px;
   height: 4px;
   border-radius: 50%;
@@ -327,21 +331,6 @@
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 1280px) {
-  .about-hero__inner {
-    grid-template-columns: minmax(0, 1fr) 320px;
-    gap: 48px;
-  }
-  .about-hero__photo {
-    width: 320px;
-    height: 421px;
-  }
-  .about-work-item {
-    grid-template-columns: 240px 1fr;
-  }
-
-}
-
 @media (max-width: 768px) {
   .about-hero {
     padding-top: calc(var(--gnb-height) + var(--gnb-top) + 48px);
@@ -355,7 +344,7 @@
   .about-hero__photo {
     width: 100%;
     height: auto;
-    aspect-ratio: 352 / 463;
+    aspect-ratio: 320 / 422;
   }
   .about-hero__title {
     font-size: 28px;

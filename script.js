@@ -1,3 +1,16 @@
+// Deployed site only (not local dev): disabled work cards are not clickable
+(function () {
+  const h = location.hostname;
+  const isLocal = h === 'localhost' || h === '127.0.0.1' || h === '[::1]' || h.endsWith('.local');
+  if (isLocal) return;
+  document.documentElement.classList.add('is-deployed');
+  document.querySelectorAll('.work-card--disabled .work-card__link').forEach(a => {
+    a.removeAttribute('href');
+    a.setAttribute('aria-disabled', 'true');
+    a.setAttribute('tabindex', '-1');
+  });
+})();
+
 // GNB — hide on scroll down, reveal on scroll up (chewy easing)
 const gnb = document.getElementById('gnb');
 const heroInner = document.querySelector('.hero__inner');

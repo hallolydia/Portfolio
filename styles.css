@@ -16,6 +16,11 @@
   --color-text-sub:     #424751;   /* About body text — Figma */
   --color-text-date:    #898989;   /* About dates — Figma */
   --color-line-light:   #d7d7d7;   /* About dividers — Figma */
+
+  /* Disabled work card — Figma */
+  --color-disabled-tag:   #6b6b6b;
+  --color-disabled-title: #959595;
+  --color-disabled-desc:  #a9a9ad;
   --color-divider:      #bcbcbc;   /* Strength open divider */
 
   /* Footer — Figma */
@@ -1181,6 +1186,31 @@ ul { list-style: none; }
   background: #121213;
   color: #fff;
   border-color: #121213;
+}
+
+/* Disabled work card — gray colors (Figma) */
+.work-card--disabled .tag {
+  color: var(--color-disabled-tag);
+  border-color: var(--color-disabled-tag);
+}
+
+.work-card--disabled .tag--primary {
+  background: var(--color-disabled-tag);
+  color: #fff;
+}
+
+.work-card--disabled .work-card__title {
+  color: var(--color-disabled-title);
+}
+
+.work-card--disabled .work-card__desc {
+  color: var(--color-disabled-desc);
+}
+
+/* Not clickable on the deployed site only (html.is-deployed set in script.js) */
+.is-deployed .work-card--disabled .work-card__link {
+  pointer-events: none;
+  cursor: default;
 }
 
 
