@@ -664,3 +664,8 @@
   display: block;
   max-width: none;
 }
+
+.mg-live .mg-live__glass {
+  position: absolute;
+  display: block;
+}
