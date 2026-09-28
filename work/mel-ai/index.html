@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Relationship App — Lydia</title>
+  <title>Designing an AI Dating Experience — Lydia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../../styles.css" />
   <link rel="stylesheet" href="../case-study.css" />
+  <link rel="stylesheet" href="mel-ai.css" />
 </head>
-<body class="page-mel-ai">
+<body class="page-mel-ai mg-page">
 
   <!-- GNB -->
   <header class="gnb" id="gnb">
@@ -36,54 +37,442 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="cs-hero">
-    <div class="cs-hero__inner">
-      <div class="cs-cover-wrap">
-        <div class="cs-cover">
-          <img src="../../assets/images/thumb-mel-ai.png" alt="AI Relationship App cover" loading="eager">
+  <!-- Hero (Figma 6730:87109) -->
+  <section class="mg-hero">
+    <div class="mg-container mg-hero__inner">
+      <div class="mg-cover">
+        <img src="../../assets/images/mel-ai/hero-cover.webp" width="1280" height="774" alt="Mel AI video dating app screens on a Match Group cover" loading="eager">
+      </div>
+      <div class="mg-hero__text">
+        <div class="mg-hero__tags">
+          <span class="tag tag--primary">AI-Native</span>
+          <span class="tag">Dating</span>
+          <span class="tag">Conversation</span>
+          <span class="tag">Business Impact</span>
+        </div>
+        <div class="mg-hero__copy">
+          <h1 class="mg-hero__title">Designing an AI Dating Experience for Longer,<br>More Engaging Conversations</h1>
+          <p class="mg-hero__summary">Redesigned Interactive Mode to make it easier to discover and sustain AI conversations,<br>increasing entry by 5× and average conversation time by 5.5×.</p>
         </div>
       </div>
-      <div class="cs-hero__tags">
-        <span class="tag tag--primary">Gen AI</span>
-        <span class="tag">Chatting</span>
-        <span class="tag">Business Impact</span>
-      </div>
-      <h1 class="cs-hero__title">AI Relationship App</h1>
-      <p class="cs-hero__summary">Designed AI video calls with an AI companion, increasing conversation time by 5.5× through Content Mode.</p>
     </div>
   </section>
 
-  <!-- Meta strip -->
-  <div class="cs-meta">
-    <div class="cs-meta__grid reveal">
-      <div class="cs-meta__item">
-        <span class="cs-meta__label">My Role</span>
-        <span class="cs-meta__value">Product Designer</span>
-      </div>
-      <div class="cs-meta__item">
-        <span class="cs-meta__label">Outcome</span>
-        <span class="cs-meta__value">5.5× conversation time</span>
-      </div>
-      <div class="cs-meta__item">
-        <span class="cs-meta__label">Timeline</span>
-        <span class="cs-meta__value">3 months</span>
-      </div>
-      <div class="cs-meta__item">
-        <span class="cs-meta__label">Team</span>
-        <span class="cs-meta__value">2 Designers<br>3 Engineers</span>
-      </div>
-      <div class="cs-meta__item">
-        <span class="cs-meta__label">Tools</span>
-        <span class="cs-meta__value">Figma<br>ProtoPie</span>
+  <!-- Role · Timeline · Team · Tools (Figma 6730:87190) -->
+  <section class="mg-overview">
+    <div class="mg-container">
+      <div class="mg-overview__box">
+        <div class="mg-overview__col">
+          <div class="mg-overview__item">
+            <p class="mg-overview__label">MY ROLE</p>
+            <p class="mg-overview__value">Product Design<br>Interaction Design<br>Design System<br>UX Research<br>Prototyping</p>
+          </div>
+        </div>
+        <div class="mg-overview__col">
+          <div class="mg-overview__item">
+            <p class="mg-overview__label">TIMELINE</p>
+            <p class="mg-overview__value">Apr 2024 - Jul 2024</p>
+          </div>
+        </div>
+        <div class="mg-overview__col">
+          <div class="mg-overview__item">
+            <p class="mg-overview__label">TEAM</p>
+            <p class="mg-overview__value">2 Product Designers (Me)<br>1 Product Owner<br>2 Product Managers<br>6 ML Engineers<br>8 iOS/Android/Web Engineers</p>
+          </div>
+        </div>
+        <div class="mg-overview__col">
+          <div class="mg-overview__item">
+            <p class="mg-overview__label">TOOLS</p>
+            <p class="mg-overview__value">Figma<br>Claude Code<br>LightRoom<br>After Effects</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Body -->
-  <div class="cs-body">
-    <img src="../../assets/images/mel/img-mel.png" alt="Mel AI case study" style="width:100%; display:block;">
-  </div>
+  <!-- Overview (Figma 6730:87209) -->
+  <section class="mg-section">
+    <div class="mg-container mg-stack mg-intro">
+      <div class="mg-text mg-text--g24">
+        <div class="mg-head mg-head--g16">
+          <span class="mg-label mg-label--chip">OVERVIEW</span>
+          <h2 class="mg-title mg-ls-n056">Turning a promising AI interaction into a discoverable, engaging experience</h2>
+        </div>
+        <p class="mg-body">Match Group is a global leader in dating and relationship technology, with platforms including Tinder, Hinge, and Match. This project explored an <strong>AI dating experience that helps users build meaningful, ongoing relationships with AI companions</strong>.<br><br>I designed ‘Interaction Mode’ to offer richer interactions beyond casual conversation. Behavioral data from 1,000+ users revealed two challenges: low discoverability during conversations and low engagement after entering the mode. I redesigned the experience to <strong>help users discover Interaction Mode more easily and stay engaged longer</strong>, driving a <strong>5× increase in Interaction Mode starts and a 5.5× increase in session duration.</strong></p>
+      </div>
+      <div class="mg-panel">
+        <img src="../../assets/images/mel-ai/overview.webp" width="1280" height="385" alt="Mel app icon" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Context (Figma 6730:87223) -->
+  <section class="mg-section">
+    <div class="mg-container">
+      <div class="mg-context">
+        <div class="mg-context__text">
+          <span class="mg-label mg-label--chip">CONTEXT</span>
+          <div class="mg-text">
+            <div class="mg-head">
+              <span class="mg-label">ABOUT MATCH GROUP<img class="mg-label__icon" src="../../assets/images/mel-ai/icon-arrow-up-right.svg" width="25" height="25" alt=""></span>
+              <h2 class="mg-title mg-ls-n028">The world’s leading dating company behind Tinder and Hinge</h2>
+            </div>
+            <p class="mg-body">Match Group is the <strong>#1 global online dating company behind brands like Tinder</strong> and Hinge. Its portfolio serves different relationship needs and audiences, with a shared mission to help people build meaningful connections through technology.</p>
+          </div>
+        </div>
+        <div class="mg-context__media mg-panel">
+          <img src="../../assets/images/mel-ai/context.webp" width="652" height="385" alt="Couples laughing together" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Background (Figma 6730:87242) -->
+  <section class="mg-section">
+    <div class="mg-container mg-stack">
+      <div class="mg-text">
+        <div class="mg-head">
+          <span class="mg-label">SERVICE BACKGROUND</span>
+          <h2 class="mg-title">Exploring AI video dating to address Tinder users’ dating fatigue</h2>
+        </div>
+        <p class="mg-body">Tinder’s growth slowed after losing 100,000 subscribers following the pandemic. Users also felt burdened by the time and effort required to explore potential partners and reach a meaningful match. Meanwhile, <strong>the AI character chat market was growing rapidly</strong> in North America. Our research found <strong>users treating AI characters as romantic partners</strong>, even on platforms not designed for dating.<br><br>This revealed an opportunity to bring these relationships beyond text. We created <strong>Mel, an AI video dating service that brings users’ ideal partners to life</strong> through realistic video interactions.</p>
+      </div>
+      <div class="mg-row">
+        <figure class="mg-figure">
+          <div class="mg-panel">
+            <img src="../../assets/images/mel-ai/bg-burnout.webp" width="624" height="400" alt="Pie chart: 79% of users often feel burnt out from dating" loading="lazy">
+          </div>
+          <figcaption class="mg-source mg-source--tight">Studies Show Modern Daters Are Experiencing Swiping Fatigue &amp; Burnout - Dating Advice.com (2024. 01)</figcaption>
+        </figure>
+        <figure class="mg-figure">
+          <div class="mg-panel">
+            <img src="../../assets/images/mel-ai/bg-market.webp" width="624" height="400" alt="AI character chat market grew from $1.6B in 2020 to $5.7B in 2024; 67% use it to create their ideal partner" loading="lazy">
+          </div>
+          <figcaption class="mg-source">Love in the Age of AI Dating Apps : 2024 Statistics - TIDIO (2024. 03)</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Behavioral Insight (Figma 6730:87313) -->
+  <section class="mg-section mg-section--pb80">
+    <div class="mg-container mg-stack">
+      <div class="mg-text mg-text--1100">
+        <div class="mg-head">
+          <span class="mg-label">BEHAVIORAL INSIGHT</span>
+          <h2 class="mg-title mg-ls-n028">Longer conversations weren't more realistic, they were more imaginative</h2>
+        </div>
+        <p class="mg-body mg-ls-n016">To validate the potential of a conversation-based subscription model, we tested whether users could sustain 10-minute AI video calls. However, the average conversation lasted only half of the target time. with many users saying they did not know what to talk about.<br><br>We then analyzed users who <strong>talked for over 30 minutes and found that 90.1% used role-play and scenarios to continue their conversations.</strong> Based on this insight, we introduced Interactive Mode.</p>
+      </div>
+      <div class="mg-row">
+        <div class="mg-panel">
+          <img src="../../assets/images/mel-ai/insight-time.webp" width="624" height="420" alt="Average conversation time in user testing: 10 min target vs 5 min actual" loading="lazy">
+        </div>
+        <div class="mg-panel">
+          <img src="../../assets/images/mel-ai/insight-analysis.webp" width="624" height="420" alt="Analysis of 30+ minute conversations: 90.1% were dating and role-playing attempts" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Challenge (Figma 6730:87358) -->
+  <section class="mg-section">
+    <div class="mg-container mg-stack">
+      <div class="mg-text">
+        <div class="mg-head">
+          <span class="mg-label mg-label--chip">THE CHALLENGE</span>
+          <h2 class="mg-title mg-ls-n042">Unclear guidance resulted in only 13.3% of users entering Interactive Mode</h2>
+        </div>
+        <p class="mg-body">Our team’s vision was to create a natural, seamless AI conversation, so we initially used dialogue-only entry into Interactive Mode rather than UI guidance. However, many users failed to recognize the feature, resulting in an entry rate of only 13.3%. <strong>Users who entered Interactive Mode stayed longer, suggesting that the bigger barrier was getting users into the experience.</strong></p>
+      </div>
+      <div class="mg-row mg-row--g28">
+        <div class="mg-panel">
+          <img src="../../assets/images/mel-ai/challenge-assumption.webp" width="626" height="400" alt="Initial dialogue-only entry into Interactive Mode" loading="lazy">
+        </div>
+        <div class="mg-panel">
+          <img src="../../assets/images/mel-ai/challenge-feedback.webp" width="626" height="400" alt="User testing feedback synthesis: unfamiliar pattern, unclear transition, low discoverability" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Goal (Figma 6730:87498) -->
+  <section class="mg-section">
+    <div class="mg-container mg-stack">
+      <div class="mg-text mg-text--g16">
+        <div class="mg-head mg-head--g16">
+          <span class="mg-label mg-label--chip">GOAL</span>
+          <h2 class="mg-title">Increase Interactive Mode entry to 50% and extend conversation time</h2>
+        </div>
+        <p class="mg-body">As Interactive Mode was both the service’s core feature and the foundation of its business model, our primary goal was to <strong>help at least half of call users enter the mode</strong>. Our secondary goal was to <strong>extend conversation time through</strong> continued interaction.</p>
+      </div>
+      <div class="mg-panel">
+        <img src="../../assets/images/mel-ai/goal.webp" width="1280" height="420" alt="Goal 1. Discover: increase Interactive Mode entry up to 50%, then Sustain: extend conversations after entry" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Exploration (Figma 6730:87536) -->
+  <section class="mg-section">
+    <div class="mg-container mg-stack">
+      <div class="mg-text">
+        <div class="mg-head">
+          <span class="mg-label">EXPLORATION</span>
+          <h2 class="mg-title">Aligning product direction, user experience, and technical feasibility</h2>
+        </div>
+        <p class="mg-body">Working with PM, design, and ML/engineering, we aligned user needs with product goals and technical constraints to define three design directions.</p>
+      </div>
+      <div class="mg-explore">
+        <article class="mg-explore__card">
+          <div class="mg-explore__content">
+            <div class="mg-explore__head">
+              <span class="mg-explore__num">01 ENTRY</span>
+              <h3 class="mg-explore__title">Make entry visible without disrupting the conversation</h3>
+            </div>
+            <div class="mg-explore__list">
+              <p><strong>Product need</strong><br>Surface Interactive Mode as soon as the call begins.</p>
+              <p><strong>UX consideration</strong><br>Keep entry natural instead of requiring exact commands.</p>
+              <p><strong>Technical constraint</strong><br>Avoid interaction patterns that require heavy implementation.</p>
+            </div>
+          </div>
+          <p class="mg-explore__result">→ Persistent entry + contextual prompts</p>
+        </article>
+        <article class="mg-explore__card">
+          <div class="mg-explore__content">
+            <div class="mg-explore__head">
+              <span class="mg-explore__num">02 ENGAGEMENT</span>
+              <h3 class="mg-explore__title">Reduce the effort to keep conversations going</h3>
+            </div>
+            <div class="mg-explore__list">
+              <p><strong>Product need</strong><br>Give users reasons to continue after entering.</p>
+              <p><strong>UX consideration</strong><br>Help users decide what scenario to start and what to say next.</p>
+              <p><strong>Technical capability</strong><br>AI could generate scenarios and context-aware dialogue suggestions.</p>
+            </div>
+          </div>
+          <p class="mg-explore__result">→ Scenario options + suggested replies</p>
+        </article>
+        <article class="mg-explore__card">
+          <div class="mg-explore__content">
+            <div class="mg-explore__head">
+              <span class="mg-explore__num">03 CONTINUITY</span>
+              <h3 class="mg-explore__title">Turn long-term memory into a user-facing advantage</h3>
+            </div>
+            <div class="mg-explore__list">
+              <p><strong>Market signal</strong><br>AI chat users frustrated when conversation context was lost during longer interactions.</p>
+              <p><strong>Technical capability</strong><br>MEL could retain previous conversation context through long-term memory.</p>
+              <p><strong>UX opportunity</strong><br>Make that continuity visible so users could easily return to previous scenarios.</p>
+            </div>
+          </div>
+          <p class="mg-explore__result">→ Interactive Mode history</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hypothesis (Figma 6730:87573) -->
+  <section class="mg-hypo">
+    <div class="mg-container mg-hypo__inner">
+      <div class="mg-head">
+        <span class="mg-label">HYPOTHESIS</span>
+        <h2 class="mg-title">We translated our two goals into testable design hypotheses</h2>
+      </div>
+      <div class="mg-hypo__list">
+        <div class="mg-hypo__item">
+          <div class="mg-hypo__row">
+            <span class="mg-hypo__num">01</span>
+            <div class="mg-hypo__head">
+              <span class="mg-hypo__tag">ENTRY POINT</span>
+              <h3 class="mg-hypo__title">Make Interactive Mode easier to discover</h3>
+            </div>
+          </div>
+          <p class="mg-hypo__body mg-hypo__body--916">Providing two entry points, a main CTA and “Request a Line”, will increase entry into Interactive Mode</p>
+        </div>
+        <div class="mg-hypo__item">
+          <div class="mg-hypo__row">
+            <span class="mg-hypo__num">02</span>
+            <div class="mg-hypo__head">
+              <span class="mg-hypo__tag">CONVERSATIONAL ENGAGEMENT</span>
+              <h3 class="mg-hypo__title">Make it easier to continue and return</h3>
+            </div>
+          </div>
+          <p class="mg-hypo__body mg-hypo__body--1000">Providing scenario options and dialogue suggestions will help users continue conversations more easily, while conversation history will make it easier to return</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Strategy (Figma 6730:87607) -->
+  <section class="mg-strategy">
+    <div class="mg-container mg-hypo__inner">
+      <div class="mg-head">
+        <span class="mg-label">DESIGN STRATEGY</span>
+        <h2 class="mg-title">Curiosity</h2>
+      </div>
+      <div class="mg-strategy__body">
+        <h3 class="mg-hypo__title">Make it easier to continue and return</h3>
+        <p class="mg-hypo__body">Providing scenario options and dialogue suggestions will help users continue conversations more easily, while conversation history will make it easier to return</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Decision: Entry Point (Figma 6730:87624) -->
+  <section class="mg-section mg-section--pb40">
+    <div class="mg-container mg-entry">
+      <div class="mg-stack">
+        <div class="mg-text">
+          <div class="mg-head">
+            <span class="mg-label mg-label--chip">DESIGN DECISION : ENTRY POINT</span>
+            <h2 class="mg-title">Making Interactive Mode easier to discover<br>without disrupting the conversation</h2>
+          </div>
+          <p class="mg-body">To balance seamlessness with discoverability, we added clear entry points without disrupting the conversation: a persistent button for direct access and contextual prompts during relevant dialogue.</p>
+        </div>
+        <div class="mg-panel">
+          <img src="../../assets/images/mel-ai/entry-before.webp" width="1280" height="569" alt="Before: Interactive Mode was introduced only through dialogue" loading="lazy">
+        </div>
+      </div>
+      <div class="mg-stack">
+        <div class="mg-text mg-text--g16">
+          <div class="mg-head mg-head--g12">
+            <span class="mg-label">DESIGN EXPLORATION</span>
+            <h2 class="mg-title">Making Hidden Features Discoverable</h2>
+          </div>
+          <p class="mg-body">Hiding the feature preserved the conversation, but made it easy to miss. I explored how to surface it without disrupting the flow.</p>
+        </div>
+        <div class="mg-options">
+          <article class="mg-option">
+            <div class="mg-option__head">
+              <span class="mg-option__tag">OPTION  A</span>
+              <h3 class="mg-option__title"><img src="../../assets/images/mel-ai/icon-option-a.svg" width="22" height="22" alt="">Hidden behind an extra step</h3>
+            </div>
+            <div class="mg-option__body">
+              <div class="mg-option__shot"><img src="../../assets/images/mel-ai/option-a.webp" width="250" height="130" alt="Mode menu hidden behind an extra icon" loading="lazy"></div>
+              <p class="mg-option__desc">Users had to tap an unfamiliar icon before discovering the two modes.</p>
+            </div>
+          </article>
+          <article class="mg-option">
+            <div class="mg-option__head">
+              <span class="mg-option__tag">OPTION B</span>
+              <h3 class="mg-option__title"><img src="../../assets/images/mel-ai/icon-option-b.svg" width="22" height="22" alt="">Too disruptive</h3>
+            </div>
+            <div class="mg-option__body">
+              <div class="mg-option__shot"><img src="../../assets/images/mel-ai/option-b.webp" width="250" height="130" alt="Prominent pink prompt over the call" loading="lazy"></div>
+              <p class="mg-option__desc">The prominent prompt made the feature clear, but competed with the conversation.</p>
+            </div>
+          </article>
+          <article class="mg-option mg-option--wide">
+            <div class="mg-option__head">
+              <span class="mg-option__tag mg-option__tag--selected">SELECTED DIRECTION</span>
+              <h3 class="mg-option__title"><img src="../../assets/images/mel-ai/icon-option-selected.svg" width="22" height="22" alt="">Curiosity-driven CTA</h3>
+            </div>
+            <div class="mg-option__body">
+              <div class="mg-option__shot"><img src="../../assets/images/mel-ai/option-selected.webp" width="250" height="130" alt="Subtle animated branded CTA" loading="lazy"></div>
+              <p class="mg-option__desc mg-option__desc--tight">An animated, branded CTA invited exploration without interrupting the conversation.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- After (Figma 6730:87921) -->
+  <section class="mg-section">
+    <div class="mg-container">
+      <div class="mg-panel">
+        <img src="../../assets/images/mel-ai/entry-after.webp" width="1280" height="696" alt="After: persistent entry button, first-time onboarding and contextual entry button" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Decision: Conversational Engagement — scenario (Figma 6730:88034) -->
+  <section class="mg-section mg-section--pb80">
+    <div class="mg-container mg-stack">
+      <div class="mg-text">
+        <div class="mg-head">
+          <span class="mg-label mg-label--chip">DESIGN DECISION: CONVERSATIONAL ENGAGEMENT</span>
+          <h2 class="mg-title">Reducing the effort to start and sustain a scenario</h2>
+        </div>
+        <p class="mg-body">Describing a desired scenario through conversation was unfamiliar UX to users, making it difficult to get started. We introduced two ways to start and supported both high-intent users and users who needed inspiration.</p>
+      </div>
+      <div class="mg-panel">
+        <img src="../../assets/images/mel-ai/scenario.webp" width="1280" height="696" alt="Before: describe a whole scenario by voice. After: create your own or choose a preset" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Decision: Conversational Engagement — replies (Figma 6730:88298) -->
+  <section class="mg-section">
+    <div class="mg-container mg-stack">
+      <div class="mg-text">
+        <div class="mg-head">
+          <span class="mg-label mg-label--chip">DESIGN DECISION: CONVERSATIONAL ENGAGEMENT</span>
+          <h2 class="mg-title">Helping users keep the conversation moving</h2>
+        </div>
+        <p class="mg-body">Even after choosing a scenario, users could pause while deciding what to say next. We added context-aware suggested replies to give users an easy starting point and keep conversation flowing.</p>
+      </div>
+      <div class="mg-panel">
+        <img src="../../assets/images/mel-ai/replies.webp" width="1280" height="700" alt="Before: users came up with their own replies. After: context-aware suggested replies" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Conversation history (Figma 6730:88381) -->
+  <section class="mg-section">
+    <div class="mg-container mg-stack">
+      <div class="mg-text">
+        <h2 class="mg-title">Helping users return to past conversations with context</h2>
+        <p class="mg-body">After users left Interactive Mode, there was no clear way to return to a previous scenario. We introduced My Conversation, which automatically saves past sessions with the latest image and an AI-generated summary, making it easy for users to recognize and revisit their previous experiences.</p>
+      </div>
+      <div class="mg-panel">
+        <img src="../../assets/images/mel-ai/history.webp" width="1280" height="600" alt="My Conversation saves past sessions with the latest image and an AI-generated summary" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Result (Figma 6730:88526) -->
+  <section class="mg-section mg-section--pb80">
+    <div class="mg-container mg-stack">
+      <div class="mg-head">
+        <span class="mg-label">RESULT</span>
+        <h2 class="mg-title">More users entered Interactive Mode and spent more time using it</h2>
+      </div>
+      <div class="mg-row mg-row--g40">
+        <article class="mg-result">
+          <div class="mg-result__top">
+            <p class="mg-result__label">Increase in entry rate</p>
+            <p class="mg-result__num">5<span class="mg-result__x">x</span></p>
+            <p class="mg-result__change"><span>13.38%</span><span>→</span><span>68.15%</span></p>
+          </div>
+          <p class="mg-body">The share of users who tried Interactive Mode immediately after entering chat rose significantly. Users also reported feeling closer to their AI partner when their shared history was remembered.</p>
+        </article>
+        <article class="mg-result mg-result--fade">
+          <div class="mg-result__top">
+            <p class="mg-result__label">Conversation time longer</p>
+            <p class="mg-result__num">5.5<span class="mg-result__x mg-result__x--400">x</span></p>
+            <p class="mg-result__change"><span>5.4 min</span><span>→</span><span>29.5 min</span></p>
+          </div>
+          <p class="mg-body">Scenario options and suggested replies reduced pauses and helped users keep conversations moving—extending the average chat duration to nearly 30 minutes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lessons Learned (Figma 6730:88557) -->
+  <section class="mg-section mg-section--pb80">
+    <div class="mg-container">
+      <div class="mg-lessons">
+        <div class="mg-text">
+          <div class="mg-head">
+            <span class="mg-label">LESSONS LEARNED</span>
+            <h2 class="mg-title">Using data to uncover user needs behind unexpected responses</h2>
+          </div>
+          <p class="mg-body">We initially assumed users wanted AI conversations to feel like real video calls, so we designed a minimal interface around that experience. However, usage remained below expectations, while behavioral data showed that users with longer conversations were more drawn to imaginative scenarios beyond everyday reality.<br><br>This taught us that in an emerging market without established mental models, design decisions must be guided by observed behavior rather than assumptions. Although time constraints prevented formal A/B testing, future iterations should validate user responses systematically to inform more impactful UX/UI decisions.</p>
+        </div>
+        <div class="mg-panel">
+          <img src="../../assets/images/mel-ai/lessons.webp" width="610" height="404" alt="Iterations for an intuitive Interactive Mode UI" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">

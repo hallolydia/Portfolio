@@ -1,0 +1,639 @@
+/* =========================================================
+   Match Group (Mel AI) case study — Figma 6730:87107 (1920 frame)
+   ========================================================= */
+
+.mg-page {
+  --mg-text:       #121213;
+  --mg-body:       #424751;
+  --mg-label:      #565860;
+  --mg-value:      #76777d;
+  --mg-box-bg:     #f9fafb;
+  --mg-white:      #ffffff;
+  --mg-accent:     #f57874;
+  --mg-accent-bg:  #ffeceb;
+  --mg-accent-ink: #ff6365;
+  --mg-panel-top:  #f3f6f9;
+  --mg-source:     #cacaca;
+  --mg-muted:      #b4b9be;
+  --mg-stat-title: #616773;
+  --mg-stat-num:   #000000;
+  --mg-stat-sub:   #9095a0;
+  --mg-circle-shadow: rgba(255, 161, 162, 0.2);
+  --mg-hypo-bg:    #fff5f6;
+  --mg-strategy-bg:#ffd8d8; /* #ffffff + #ff3a3a @ 20% */
+}
+
+/* Shared content column: 1360 frame − 40px side padding = 1280 */
+.mg-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.mg-section {
+  background: var(--mg-white);
+  padding: 40px 0 100px;
+}
+
+.mg-section--pb80 { padding-bottom: 80px; }
+.mg-section--pb40 { padding-bottom: 40px; }
+
+.mg-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* ── Shared text ── */
+.mg-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1000px;
+}
+
+.mg-text--1100 { max-width: 1100px; }
+.mg-text--g16 { gap: 16px; }
+.mg-text--g24 { gap: 24px; }
+
+.mg-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.mg-head--g12 { gap: 12px; }
+.mg-head--g16 { gap: 16px; }
+
+.mg-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  letter-spacing: 0.6px;
+  color: var(--mg-accent);
+}
+
+.mg-label--chip {
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--mg-accent-bg);
+}
+
+.mg-label__icon {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+}
+
+.mg-title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 39.2px;
+  color: var(--mg-text);
+}
+
+.mg-body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--mg-body);
+}
+
+.mg-body strong { font-weight: 600; }
+
+/* Per-text letter-spacing from Figma */
+.mg-ls-n016 { letter-spacing: -0.16px; }
+.mg-ls-n028 { letter-spacing: -0.28px; }
+.mg-ls-n042 { letter-spacing: -0.42px; }
+.mg-ls-n056 { letter-spacing: -0.56px; }
+
+/* Visual panels exported from Figma (card incl. radius) */
+.mg-panel {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.mg-panel img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mg-row {
+  display: flex;
+  gap: 32px;
+}
+
+.mg-row > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.mg-row--g28 { gap: 28px; }
+.mg-row--g40 { gap: 40px; }
+
+.mg-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mg-source {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.2px;
+  color: var(--mg-source);
+}
+
+.mg-source--tight { letter-spacing: -0.28px; }
+
+/* ── 1. Hero (6730:87109) ── */
+.mg-hero {
+  background: var(--mg-white);
+  padding: 240px 0 80px;
+}
+
+.mg-hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.mg-cover {
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.mg-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mg-hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1200px;
+}
+
+.mg-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mg-hero__tags .tag {
+  /* Figma stroke is INSIDE → 1px border + 1px/9px padding = 25px tall */
+  padding: 1px 9px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: -0.28px;
+}
+
+.mg-hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.mg-hero__title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 50.4px;
+  letter-spacing: -0.36px;
+  color: var(--mg-text);
+}
+
+.mg-hero__summary {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25.2px;
+  color: var(--mg-body);
+}
+
+/* ── 2. Role / Timeline / Team / Tools (6730:87190) ── */
+.mg-overview {
+  background: var(--mg-white);
+  padding: 40px 0 90px;
+}
+
+.mg-overview__box {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 40px;
+  border-radius: 24px;
+  background: var(--mg-box-bg);
+}
+
+.mg-overview__col {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.mg-overview__item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.mg-overview__label {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 25.2px;
+  letter-spacing: -0.18px;
+  color: var(--mg-label);
+}
+
+.mg-overview__value {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28.8px;
+  color: var(--mg-value);
+}
+
+/* ── 3. Overview (6730:87209) ── */
+.mg-intro { gap: 68px; }
+
+/* ── 4. Context (6730:87223) ── */
+.mg-context {
+  display: flex;
+  gap: 68px;
+  align-items: flex-start;
+}
+
+.mg-context__text {
+  flex: 0 0 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mg-context__media {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* ── 9. Exploration cards (6730:87545) ── */
+.mg-explore {
+  display: flex;
+  gap: 24px;
+}
+
+.mg-explore__card {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px 44px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, var(--mg-panel-top) 0%, var(--mg-white) 100%);
+}
+
+.mg-explore__content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.mg-explore__head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mg-explore__num {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 20.8px;
+  letter-spacing: 0.48px;
+  color: var(--mg-accent);
+}
+
+.mg-explore__title {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 26px;
+  color: var(--mg-text);
+}
+
+.mg-explore__list,
+.mg-explore__result {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.8px;
+  letter-spacing: -0.16px;
+}
+
+.mg-explore__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--mg-body);
+}
+
+.mg-explore__list strong { font-weight: 600; }
+.mg-explore__result { color: var(--mg-accent-ink); }
+
+/* ── 10. Hypothesis (6730:87573) ── */
+.mg-hypo {
+  background: var(--mg-hypo-bg);
+  padding: 80px 0 100px;
+}
+
+.mg-strategy {
+  background: var(--mg-strategy-bg);
+  padding: 80px 0 100px;
+}
+
+.mg-hypo__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mg-hypo__list {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.mg-hypo__item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mg-hypo__row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.mg-hypo__num {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  background: var(--mg-white);
+  box-shadow: 0 2.145px 21.449px 0 var(--mg-circle-shadow);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 33.6px;
+  color: var(--mg-text);
+}
+
+.mg-hypo__head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mg-hypo__tag {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 22.4px;
+  letter-spacing: 0.48px;
+  color: var(--mg-accent);
+}
+
+.mg-hypo__title {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 33.6px;
+  color: var(--mg-text);
+}
+
+.mg-hypo__body {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 33px;
+  color: var(--mg-body);
+}
+
+.mg-hypo__item .mg-hypo__body { padding-left: 92px; }
+.mg-hypo__body--916  { max-width: 1008px; }
+.mg-hypo__body--1000 { max-width: 1092px; }
+
+.mg-strategy__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1000px;
+}
+
+.mg-strategy__body .mg-hypo__title { max-width: 916px; }
+
+/* ── 11. Entry point (6730:87624) ── */
+.mg-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.mg-options {
+  display: flex;
+  gap: 28px;
+}
+
+.mg-option {
+  flex: 380 1 380px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 40px 32px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, var(--mg-panel-top) 0%, var(--mg-white) 100%);
+}
+
+.mg-option--wide { flex: 464 1 464px; }
+
+.mg-option__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.mg-option__tag {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18.2px;
+  letter-spacing: 0.42px;
+  color: var(--mg-muted);
+  text-align: center;
+  white-space: pre;
+}
+
+.mg-option__tag--selected { color: var(--mg-accent); }
+
+.mg-option__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 22.1px;
+  color: var(--mg-body);
+}
+
+.mg-option__title img {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.mg-option__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.mg-option__shot {
+  width: 250px;
+  max-width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mg-option__shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mg-option__desc {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  letter-spacing: -0.16px;
+  color: var(--mg-body);
+  text-align: center;
+}
+
+.mg-option__desc--tight { letter-spacing: -0.32px; }
+
+/* ── 16. Result (6730:88526) ── */
+.mg-result {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 56px;
+  border-radius: 24px;
+  background: var(--mg-panel-top);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.mg-result--fade {
+  background: linear-gradient(180deg, var(--mg-panel-top) 0%, var(--mg-white) 100%);
+}
+
+.mg-result__top {
+  display: flex;
+  flex-direction: column;
+}
+
+.mg-result__label {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: var(--mg-stat-title);
+}
+
+.mg-result__num {
+  margin-top: -12px;
+  padding-top: 8px;
+  height: 104px;
+  font-family: 'Geist', sans-serif;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 96px; /* 72px line centered in 96px box */
+  color: var(--mg-stat-num);
+}
+
+.mg-result__x      { font-weight: 500; }
+.mg-result__x--400 { font-weight: 400; }
+
+.mg-result__change {
+  margin-top: -8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.1px;
+  color: var(--mg-stat-sub);
+}
+
+/* ── 17. Lessons learned (6730:88557) ── */
+.mg-lessons {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.mg-lessons > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1280px) {
+  .mg-overview__col { padding: 0; }
+}
+
+@media (max-width: 1024px) {
+  .mg-overview__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mg-overview__col { align-items: flex-start; }
+
+  .mg-context,
+  .mg-lessons,
+  .mg-row,
+  .mg-explore,
+  .mg-options {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 40px;
+  }
+  .mg-context__text { flex: none; }
+  .mg-row > *,
+  .mg-lessons > *,
+  .mg-option { flex: none; }
+}
+
+@media (max-width: 768px) {
+  .mg-container { padding: 0 20px; }
+  .mg-hypo__item .mg-hypo__body { padding-left: 0; }
+  .mg-result,
+  .mg-explore__card { padding: 32px 24px; }
+}
+
+@media (max-width: 560px) {
+  .mg-overview__box { grid-template-columns: 1fr; }
+}
