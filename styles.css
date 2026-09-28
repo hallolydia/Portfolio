@@ -13,6 +13,9 @@
   --color-text:         #121213;   /* rgba(18,18,19) */
   --color-muted:        #646464;   /* rgba(100,100,100) — nav Off */
   --color-muted-2:      #8c8c8c;   /* rgba(140,140,140) */
+  --color-text-sub:     #424751;   /* About body text — Figma */
+  --color-text-date:    #898989;   /* About dates — Figma */
+  --color-line-light:   #d7d7d7;   /* About dividers — Figma */
   --color-divider:      #bcbcbc;   /* Strength open divider */
 
   /* Footer — Figma */
@@ -455,10 +458,6 @@ ul { list-style: none; }
   position: relative;
   z-index: 2;
   border-radius: 0;
-}
-
-#work .section__inner {
-  will-change: transform;
 }
 
 /* Work → Strength dwell: sticky gray hold before Strength slides in */

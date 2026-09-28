@@ -1,0 +1,1032 @@
+/* =========================================================
+   SK On case study — Figma 6730:81028 (1920 frame)
+   ========================================================= */
+
+.sk-page {
+  --sk-text:          #121213;
+  --sk-white:         #ffffff;
+  --sk-label:         #56575f;
+  --sk-value:         #76777d;
+  --sk-box-bg:        #f9fafb;
+  --sk-body:          #424751;
+
+  --sk-accent:        #ff8c1e;
+  --sk-accent-bg:     #fff6bc;
+  --sk-accent-soft:   #ffaa5a;
+  --sk-tag-muted:     #b3b8bd;
+  --sk-chip-dark:     #4f555f;
+
+  --sk-panel:         #f3f6f9;
+  --sk-panel-top:     #f2f5f9;
+  --sk-fade:          rgba(244, 247, 250, 1);
+  --sk-fade-0:        rgba(244, 247, 250, 0);
+  --sk-muted:         #686e70;
+
+  --sk-lang-name:     #98a7c4;
+  --sk-lang-text:     #838c95;
+  --sk-lang-shadow:   rgba(22, 64, 96, 0.05);
+
+  --sk-voice-title:   #7e889b;
+  --sk-quote-by:      #7e889c;
+  --sk-bubble-dark:   #29292f;
+  --sk-bubble-ink:    #f9f9f9;
+  --sk-bubble-text:   #101010;
+  --sk-bubble-dot:    #161616;
+  --sk-shadow-dark:   rgba(42, 42, 48, 0.2);
+  --sk-shadow-light:  rgba(124, 124, 124, 0.2);
+}
+
+/* Shared content column: 1360 frame − 40px side padding = 1280 */
+.sk-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ── Shared text styles ── */
+.sk-label {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 3px;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  letter-spacing: 0.6px;
+  color: var(--sk-accent);
+}
+
+.sk-label--chip {
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--sk-accent-bg);
+}
+
+.sk-label__icon {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+}
+
+.sk-title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.4;
+  color: var(--sk-text);
+}
+
+.sk-title--tight { letter-spacing: -0.28px; }
+
+.sk-body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--sk-body);
+}
+
+.sk-body--tight { letter-spacing: -0.16px; }
+
+/* Pretendard body copy used inside cards */
+.sk-card__body,
+.sk-iter__text,
+.sk-option__text,
+.sk-quotes {
+  font-family: 'Pretendard', 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  color: var(--sk-body);
+}
+
+.sk-ls-0  { letter-spacing: 0; }
+.sk-ls-16 { letter-spacing: -0.16px; }
+.sk-ls-20 { letter-spacing: -0.2px; }
+.sk-ls-24 { letter-spacing: -0.24px; }
+.sk-ls-34 { letter-spacing: -0.34px; }
+
+/* Label → title 14px, head → body 20px */
+.sk-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sk-text__head {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sk-text--1000 { max-width: 1000px; }
+.sk-text--1100 { max-width: 1100px; }
+
+.sk-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Card backgrounds: #f3f6f9 under a #f2f5f9 → white vertical gradient */
+.sk-panel {
+  --g0: -8.7%;
+  --g1: 138.1%;
+  background:
+    linear-gradient(180deg, var(--sk-panel-top) var(--g0), var(--sk-white) var(--g1)),
+    var(--sk-panel);
+}
+
+.sk-panel--a { --g0: -6%;    --g1: 139.4%; }
+.sk-panel--c { --g0: -19.7%; --g1: 138.1%; }
+.sk-panel--d { --g0: -8.7%;  --g1: 159.7%; }
+.sk-panel--e { --g0: -13.9%; --g1: 155%; }
+.sk-panel--f { --g0: 2.9%;   --g1: 149%; }
+.sk-panel--r { --g0: -8.7%;  --g1: 138.1%; }
+
+/* Full-bleed image band cut from the card export (spans the card padding) */
+.sk-bleed {
+  --bleed: 0px;
+  display: block;
+  width: calc(100% + var(--bleed) * 2);
+  max-width: none;
+  height: auto;
+  margin: 0 calc(var(--bleed) * -1);
+}
+
+.sk-bleed--28 { --bleed: 28px; }
+.sk-bleed--32 { --bleed: 32px; }
+.sk-bleed--36 { --bleed: 36px; }
+.sk-bleed--40 { --bleed: 40px; }
+.sk-bleed--48 { --bleed: 48px; }
+.sk-bleed--52 { --bleed: 52px; }
+.sk-bleed--56 { --bleed: 56px; }
+
+.sk-chip {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  height: 36px;
+  padding: 0 8px;
+  border-radius: 6px;
+  background: var(--sk-chip-dark);
+  color: var(--sk-white);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25.2px;
+  letter-spacing: 0.54px;
+}
+
+.sk-chip--accent { background: var(--sk-accent); }
+
+/* ── 1. Hero (6730:81030) ── */
+.sk-hero {
+  background: var(--sk-white);
+  padding: 240px 0 80px;
+}
+
+.sk-hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.sk-cover {
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.sk-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sk-hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1200px;
+}
+
+.sk-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sk-hero__tags .tag {
+  /* Figma stroke is INSIDE → 1px border + 1px/9px padding = 25px tall */
+  padding: 1px 9px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: -0.28px;
+}
+
+.sk-hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.sk-hero__title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.36px;
+  color: var(--sk-text);
+}
+
+.sk-hero__summary {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--sk-text);
+}
+
+/* ── 2. Role / Timeline / Team / Tools (6730:81454) ── */
+.sk-overview {
+  background: var(--sk-white);
+  padding: 40px 0 90px;
+}
+
+.sk-overview__box {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 40px 20px;
+  border-radius: 24px;
+  background: var(--sk-box-bg);
+}
+
+.sk-overview__col {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.sk-overview__item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.sk-overview__label {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.18px;
+  color: var(--sk-label);
+}
+
+.sk-overview__value {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--sk-value);
+}
+
+/* ── Generic story section ── */
+.sk-section {
+  background: var(--sk-white);
+  padding: 40px 0 100px;
+}
+
+/* Text + 610×400 media, 60px gap, vertically centered */
+.sk-split {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.sk-split > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.sk-media {
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 610 / 400;
+}
+
+.sk-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── 5. Project Background (6730:81566) ── */
+.sk-bg-cards {
+  display: flex;
+  gap: 32px;
+}
+
+.sk-bg-card {
+  flex: 0 1 450px;
+  min-width: 0;
+  height: 400px;
+  padding: 52px 52px 0;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.sk-bg-card--wide { flex: 0 1 798px; }
+
+.sk-bg-card__title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: -0.18px;
+  color: var(--sk-muted);
+}
+
+.sk-bg-card__title--tight {
+  height: 98px;
+  line-height: 24.6px;
+  letter-spacing: 0;
+}
+
+.sk-bg-card .sk-bleed { --bleed: 52px; }
+
+/* ── 6. The Challenge (6730:81613) ── */
+.sk-challenge {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sk-challenge__blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.sk-challenge__block {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.sk-challenge__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.sk-ccard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding: 56px 52px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.sk-ccard--flush { gap: 0; }
+
+.sk-ccard__head,
+.sk-ccard__screens,
+.sk-ccard__text { position: relative; }
+
+.sk-ccard__head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sk-ccard__num {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 25.2px;
+  letter-spacing: 0.54px;
+  color: var(--sk-accent);
+}
+
+.sk-ccard__title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30.8px;
+  color: var(--sk-text);
+}
+
+.sk-ccard__title--sm {
+  font-size: 21px;
+  line-height: 29.4px;
+}
+
+.sk-ccard__screens {
+  display: block;
+  width: 710px;
+  max-width: 100%;
+  height: auto;
+}
+
+.sk-ccard__text { max-width: 1050px; }
+
+/* Blurred "Confidential" screens peeking in at the right edge */
+.sk-ccard__confidential {
+  position: absolute;
+  top: -40px;
+  right: 56px;
+  width: 200px;
+  height: auto;
+}
+
+.sk-ccard__fade {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 173px;
+  background: linear-gradient(90deg, var(--sk-fade-0) 0%, var(--sk-fade) 72.3%);
+  pointer-events: none;
+}
+
+.sk-pmcard {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 52px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.sk-pmcard__text { max-width: 1050px; }
+
+.sk-lang {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sk-lang__card {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 40px;
+  border-radius: 13px;
+  background: var(--sk-white);
+  box-shadow: -5.57px 3.71px 15.37px 0 var(--sk-lang-shadow);
+}
+
+.sk-lang__name {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19.6px;
+  color: var(--sk-lang-name);
+}
+
+.sk-lang__text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  letter-spacing: -0.14px;
+  color: var(--sk-lang-text);
+}
+
+.sk-lang__text--hu { letter-spacing: 0; }
+
+.sk-lang__arrow {
+  flex-shrink: 0;
+  width: 32px;
+  height: 18px;
+  margin: 0 -1.5px;
+}
+
+/* ── 7. Insight — feedback bubbles (6730:81838) ── */
+.sk-voices {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  height: 428px;
+  padding: 44px 0 0;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.sk-voices__col {
+  flex: 0 1 522px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.sk-voices__col--light { flex-basis: 512px; }
+
+.sk-voices__title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.36px;
+  text-align: center;
+  color: var(--sk-voice-title);
+}
+
+.sk-bubble-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.sk-bubble {
+  width: 100%;
+  height: 273px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  border-radius: 20px;
+}
+
+.sk-bubble--dark {
+  padding: 32px 24px;
+  background: var(--sk-bubble-dark);
+  box-shadow: -3px 2px 20px 0 var(--sk-shadow-dark);
+}
+
+.sk-bubble--light {
+  padding: 28px;
+  background: var(--sk-white);
+  box-shadow: -3px 2px 20px 0 var(--sk-shadow-light);
+}
+
+.sk-bubble__row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sk-bubble--light .sk-bubble__row { gap: 20px; }
+
+.sk-bubble__avatar {
+  position: relative;
+  flex-shrink: 0;
+  width: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.sk-bubble--light .sk-bubble__avatar { width: 44px; }
+
+.sk-bubble__avatar img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sk-bubble__dot {
+  position: absolute;
+  top: 31px;
+  left: 26px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--sk-bubble-dot);
+}
+
+.sk-bubble__quote {
+  flex: 1 1 0;
+  min-width: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--sk-bubble-ink);
+}
+
+.sk-bubble--light .sk-bubble__quote { color: var(--sk-bubble-text); }
+
+.sk-bubble__by {
+  display: block;
+  color: var(--sk-quote-by);
+}
+
+.sk-bubble__by--inline { display: inline; }
+
+.sk-bubble__tail {
+  display: block;
+  width: 100px;
+  height: auto;
+}
+
+/* ── 8. Design Goal (6730:81941) ── */
+.sk-goal {
+  background: var(--sk-accent);
+  padding: 120px 0;
+}
+
+.sk-goal__text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1000px;
+}
+
+.sk-goal__head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sk-goal__title {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.4;
+  color: var(--sk-white);
+}
+
+.sk-goal__body {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  color: var(--sk-white);
+}
+
+/* ── 9. Design Strategy + Trade-off (6730:81950) ── */
+.sk-strategy { padding-top: 80px; }
+
+.sk-tradeoff { margin-top: 80px; }
+
+.sk-cards {
+  display: flex;
+  gap: 28px;
+}
+
+.sk-cards--3 { gap: 52px; }
+.sk-cards--28 { gap: 28px; }
+
+.sk-card {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+}
+
+.sk-card--strategy {
+  height: 300px;
+  gap: 24px;
+  padding: 56px 52px;
+}
+
+.sk-card--tradeoff {
+  height: 361px;
+  gap: 20px;
+  padding: 40px;
+}
+
+.sk-card--result {
+  height: 559px;
+  gap: 20px;
+  padding: 40px;
+}
+
+.sk-card__head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sk-card__num {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 20.8px;
+  letter-spacing: 0.48px;
+  color: var(--sk-accent-soft);
+}
+
+.sk-card__title {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 26px;
+  color: var(--sk-text);
+}
+
+.sk-card__title--lg {
+  font-size: 24px;
+  line-height: 31.2px;
+}
+
+/* ── 10. Final Design 1 (6730:81995) ── */
+.sk-final {
+  background: var(--sk-white);
+  padding-top: 80px;
+}
+
+.sk-final--2 {
+  padding-top: 140px;
+  padding-bottom: 100px;
+}
+
+.sk-final__sub { margin-top: 80px; }
+.sk-final__sub--last { margin-top: 120px; }
+
+.sk-iter {
+  display: flex;
+  gap: 24px;
+}
+
+.sk-iter__card {
+  flex: 0 1 356px;
+  min-width: 0;
+  height: 504px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 28px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.sk-iter__card--wide {
+  flex: 0 1 520px;
+  padding: 40px 36px;
+}
+
+.sk-iter__head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sk-iter__tag {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18.2px;
+  letter-spacing: 0.42px;
+  color: var(--sk-tag-muted);
+}
+
+.sk-iter__tag--accent { color: var(--sk-accent-soft); }
+
+.sk-iter__title {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 22.1px;
+  color: var(--sk-text);
+}
+
+.sk-ba {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.sk-ba__card {
+  display: flex;
+  flex-direction: column;
+  padding: 52px 52px 0;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* After card: white glow behind the header, continuing into the image band */
+.sk-ba__card--glow {
+  background:
+    url("../../assets/images/skon/img-skon-fd1-after-head.webp") top center / 100% auto no-repeat,
+    linear-gradient(180deg, var(--sk-panel-top) var(--g0), var(--sk-white) var(--g1)),
+    var(--sk-panel);
+}
+
+.sk-ba__head,
+.sk-hmi__head,
+.sk-components__head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sk-ba__title {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 31.2px;
+  letter-spacing: -0.24px;
+  color: var(--sk-text);
+}
+
+/* ── 11. Final Design 2 (6730:83089) ── */
+.sk-options {
+  display: flex;
+  gap: 24px;
+}
+
+.sk-option {
+  flex: 0 1 380px;
+  min-width: 0;
+  height: 576px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 28px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.sk-option--wide {
+  flex: 0 1 472px;
+  padding: 40px 32px;
+}
+
+.sk-option__head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+}
+
+.sk-option__text {
+  letter-spacing: -0.16px;
+  text-align: center;
+}
+
+.sk-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.sk-layout__row {
+  display: flex;
+  gap: 24px;
+}
+
+.sk-hmi {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.sk-hmi--before {
+  flex: 0 1 460px;
+  padding: 52px 40px 27px;
+}
+
+.sk-hmi--after {
+  flex: 0 1 796px;
+  padding: 52px 56px;
+}
+
+.sk-components {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 52px 48px 0;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* The HMI panel starts 15px above the header's bottom edge */
+.sk-components .sk-bleed { margin-top: -15px; }
+
+.sk-components__head {
+  position: relative;
+  z-index: 1;
+}
+
+/* Right-edge fade over the header band (the image band already includes it) */
+.sk-components__fade {
+  position: absolute;
+  top: 13px;
+  right: 0;
+  width: 100px;
+  height: 115px;
+  opacity: 0.6;
+  background: linear-gradient(90deg, var(--sk-fade-0) 0%, var(--sk-fade) 72.3%);
+  pointer-events: none;
+}
+
+/* ── 12. Result (6730:84184) ── */
+.sk-result { padding-bottom: 80px; }
+
+.sk-result__head {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sk-quotes {
+  letter-spacing: -0.16px;
+}
+
+/* Figma hanging punctuation: the opening quote sits outside the text edge */
+.sk-quotes p { text-indent: -0.4em; }
+.sk-quotes p + p { margin-top: 10px; }
+
+/* ── 13. Lessons Learned (6730:84208) ── */
+.sk-lessons__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1280px) {
+  .sk-overview__col { padding: 0; }
+  .sk-ccard__confidential,
+  .sk-ccard__fade { display: none; }
+}
+
+@media (max-width: 1024px) {
+  .sk-overview__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sk-overview__col { align-items: flex-start; }
+
+  .sk-split {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 40px;
+  }
+  .sk-split > * { flex: none; }
+
+  .sk-bg-cards,
+  .sk-cards,
+  .sk-iter,
+  .sk-options,
+  .sk-layout__row,
+  .sk-voices,
+  .sk-lang { flex-direction: column; }
+
+  .sk-bg-card,
+  .sk-card,
+  .sk-iter__card,
+  .sk-option,
+  .sk-hmi { flex: none; height: auto; }
+
+  .sk-bg-card { padding-bottom: 0; }
+
+  /* Stacked cards: never upscale an image band past its design size */
+  .sk-bleed {
+    width: auto;
+    max-width: calc(100% + var(--bleed) * 2);
+    align-self: center;
+  }
+
+  /* Soften the edges of bands narrower than their (now wider) card */
+  .sk-bg-card .sk-bleed,
+  .sk-iter__card .sk-bleed,
+  .sk-option .sk-bleed,
+  .sk-hmi .sk-bleed {
+    -webkit-mask-image:
+      linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%),
+      linear-gradient(180deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%),
+      linear-gradient(180deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+    mask-composite: intersect;
+  }
+
+  .sk-media {
+    width: 100%;
+    max-width: 610px;
+  }
+  .sk-card--strategy,
+  .sk-card--tradeoff,
+  .sk-card--result,
+  .sk-iter__card,
+  .sk-option { padding-bottom: 40px; }
+
+  .sk-voices {
+    height: auto;
+    align-items: center;
+    gap: 40px;
+    padding: 44px 24px;
+  }
+  .sk-voices__col,
+  .sk-voices__col--light { flex: none; width: 100%; max-width: 522px; }
+  .sk-bubble { height: auto; }
+
+  .sk-lang__card { flex: none; width: 100%; height: auto; padding: 32px 40px; }
+  .sk-lang__arrow { transform: rotate(90deg); }
+}
+
+@media (max-width: 768px) {
+  .sk-container { padding: 0 20px; }
+  .sk-hero { padding-top: 120px; }
+  .sk-ccard,
+  .sk-pmcard { padding: 32px 20px; }
+  .sk-ccard .sk-bleed--52 { --bleed: 20px; }
+  .sk-bg-card,
+  .sk-ba__card { padding: 32px 20px 0; }
+  .sk-bg-card .sk-bleed,
+  .sk-ba__card .sk-bleed--52 { --bleed: 20px; }
+  .sk-bg-card__title--tight { height: auto; margin-bottom: 20px; }
+  .sk-lang__card { padding: 24px 20px; }
+}
+
+@media (max-width: 560px) {
+  .sk-overview__box { grid-template-columns: 1fr; }
+  .sk-overview__item { white-space: normal; }
+}
