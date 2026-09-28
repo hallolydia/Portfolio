@@ -637,3 +637,30 @@
 @media (max-width: 560px) {
   .mg-overview__box { grid-template-columns: 1fr; }
 }
+
+/* ── Live media layers: Figma videos/GIFs placed over the exported panel ── */
+.mg-live {
+  position: relative;
+  container-type: inline-size;
+}
+
+.mg-live__stage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.mg-live .mg-live__ov,
+.mg-live .mg-live__clip {
+  position: absolute;
+  display: block;
+  max-width: none;
+}
+
+.mg-live__clip { overflow: hidden; }
+
+.mg-live .mg-live__media {
+  position: absolute;
+  display: block;
+  max-width: none;
+}
