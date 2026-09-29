@@ -182,6 +182,7 @@
   font-weight: 500;
   line-height: 21px;
   letter-spacing: -0.28px;
+  color: var(--mc-black);
 }
 
 .mc-hero__copy {
@@ -201,7 +202,7 @@
 .mc-hero__summary {
   font-size: 18px;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 27px;
   color: var(--mc-summary);
 }
 
@@ -237,17 +238,17 @@
 }
 
 .mc-overview__label {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 800;
-  line-height: 1.4;
-  letter-spacing: -0.18px;
+  line-height: 22.4px;
+  letter-spacing: -0.16px;
   color: var(--mc-label);
 }
 
 .mc-overview__value {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 25.6px;
   color: var(--mc-value);
 }
 
@@ -256,13 +257,13 @@
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 800;
-  line-height: 28px;
+  line-height: 21px;
   color: var(--mc-accent);
 }
 
-.mc-label--spaced { letter-spacing: 0.6px; }
+.mc-label--spaced { letter-spacing: 0.45px; }
 
 .mc-label--chip {
   align-self: flex-start;
@@ -272,15 +273,23 @@
 }
 
 .mc-label__icon {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
 }
 
+/* ABOUT MEMECORE → memecore.com : text + icon together are the click area (Figma hug, gap 2) */
+.mc-label--link {
+  align-self: flex-start;
+  gap: 2px;
+  cursor: pointer;
+}
+.mc-label--link .mc-label__text { text-decoration: underline; }
+
 .mc-title {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 800;
-  line-height: 1.4;
+  line-height: 128%;
   color: var(--mc-text);
 }
 
@@ -297,7 +306,7 @@
 .mc-text {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .mc-text__head {
@@ -305,6 +314,9 @@
   flex-direction: column;
   gap: 14px;
 }
+
+.mc-text__head--16 { gap: 16px; }
+.mc-text--20 { gap: 20px; }
 
 .mc-media {
   position: relative;
@@ -337,7 +349,13 @@
   max-width: 1000px;
 }
 
-.mc-intro__text .mc-body { letter-spacing: -0.16px; }
+.mc-intro__text .mc-body { letter-spacing: -0.24px; }
+
+.mc-intro__head {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
 /* Explore Ecosystem screen recording (box 1280×420, frame 633×356 at 324,75) */
 .mc-showcase {
@@ -379,12 +397,13 @@
 
 .mc-split__row {
   display: flex;
-  gap: 68px;
-  align-items: center;
+  gap: 60px;
+  align-items: flex-start;
 }
 
 .mc-split__row > * {
-  flex: 1 1 0;
+  /* equal columns (Figma 610 + 60 gap + 610) — basis includes padding so the Feedback panel doesn't grow */
+  flex: 1 1 calc((100% - 60px) / 2);
   min-width: 0;
 }
 
@@ -394,10 +413,7 @@
   align-items: flex-start;
 }
 
-.mc-split__row--about .mc-text { padding-top: 80px; }
 
-/* Problem: fixed 566px text column */
-.mc-split__row--problem > .mc-text { flex: 0 0 566px; }
 
 /* About scene — GIF clip laid over the static export (610×400) */
 .mc-media__anim {
@@ -409,10 +425,10 @@
   object-fit: cover;
 }
 
-/* Key Feedbacks panel (646×491) */
+/* Key Feedbacks panel (610×473.7) */
 .mc-feedback {
-  height: 491.14px;
-  padding: 56px;
+  height: 473.7px;
+  padding: 44px 56px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -426,7 +442,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
 }
 
 .mc-feedback__chip,
@@ -437,10 +453,10 @@
   border-radius: 50px;
   background: var(--mc-chip-dark);
   color: var(--mc-white);
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 20px;
-  letter-spacing: -0.4px;
+  line-height: 16px;
+  letter-spacing: -0.32px;
 }
 
 .mc-feedback__list {
@@ -450,22 +466,21 @@
 }
 
 .mc-feedback__card {
-  width: 500px;
+  width: 480px;
   max-width: 100%;
   display: flex;
   align-items: center;
   gap: 18.7px;
-  padding: 18px 17.24px 18px 20.69px;
+  padding: 16px 16px 16px 20px;
   border-radius: 14.96px;
   background: var(--mc-white);
-  box-shadow: 0.86px 3.45px 14.96px 0 var(--mc-card-shadow);
+  box-shadow: 0.94px 3.74px 14.96px 0 var(--mc-card-shadow);
 }
 
-.mc-feedback__card:nth-child(2) { padding-right: 18.7px; }
-.mc-feedback__card:nth-child(3) { padding-right: 22.44px; gap: 22.44px; }
+.mc-feedback__card:nth-child(3) { gap: 22.44px; }
 
-/* Browser Inter renders ~1px wider than Figma — keep Figma's 2-line wrap */
-.mc-feedback__card:nth-child(1) .mc-feedback__quote { margin-right: -2px; }
+/* Figma: quote letter-spacing -0.56 on card 1, -0.42 on cards 2–3 */
+.mc-feedback__card:nth-child(1) .mc-feedback__quote { letter-spacing: -0.56px; }
 
 .mc-feedback__avatar {
   width: 74.1px;
@@ -476,15 +491,17 @@
 .mc-feedback__quote {
   flex: 1 1 0;
   min-width: 0;
-  font-size: 15.52px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 23.28px;
-  letter-spacing: -0.31px;
+  line-height: 19.6px;
+  letter-spacing: -0.42px;
   color: var(--mc-quote);
 }
 
 .mc-feedback__by {
   display: block;
+  line-height: 21px;
+  letter-spacing: -0.28px;
   color: var(--mc-quote-by);
 }
 
@@ -513,6 +530,7 @@
 .mc-lead strong { font-weight: 600; }
 
 .mc-body--tight { letter-spacing: -0.16px; }
+.mc-body--tighter { letter-spacing: -0.24px; }
 
 .mc-challenge__cards {
   display: flex;
@@ -531,7 +549,7 @@
 }
 
 .mc-challenge__content {
-  width: 500px;
+  width: 514px;
   max-width: 100%;
   display: flex;
   flex-direction: column;
@@ -546,17 +564,16 @@
 }
 
 /* Design card head is a fixed 494px frame centered over the 500px image */
-.mc-challenge__head--inset { padding: 0 3px; }
 
 .mc-challenge__chip {
   padding: 4px 12px;
-  border-radius: 8px;
-  background: var(--mc-chip-ink);
+  border-radius: 6px;
+  background: var(--mc-chip-muted);
   color: var(--mc-white);
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
-  line-height: 25.2px;
-  letter-spacing: 0.54px;
+  line-height: 21px;
+  letter-spacing: 0.45px;
 }
 
 .mc-challenge__title {
@@ -568,9 +585,9 @@
 
 .mc-challenge__title--wide { letter-spacing: 0.28px; }
 
-/* 500×272.8 frame; export includes the 4px white OUTSIDE stroke */
+/* 514×280.4 frame; 4px white OUTSIDE stroke */
 .mc-challenge__shot {
-  aspect-ratio: 500 / 272.8;
+  aspect-ratio: 514 / 280.4;
   border-radius: 10.83px;
   overflow: hidden;
   background: var(--mc-white);
@@ -611,9 +628,9 @@
 /* 1280 frame with 40px padding → 1200 content (Trade-off / Visual world) */
 .mc-container--inset { max-width: 1280px; }
 .mc-tradeoff { margin-top: 100px; }
-.mc-world { margin-top: 60px; }
 
-.mc-title--tight { letter-spacing: -0.28px; }
+.mc-title--tight { letter-spacing: -0.32px; }
+.mc-title--tighter { letter-spacing: -0.48px; }
 
 .mc-lead--body { color: var(--mc-body); letter-spacing: 0; }
 .mc-lead--tight { letter-spacing: -0.18px; }
@@ -708,10 +725,10 @@
   padding: 4px 12px;
   border-radius: 6px;
   color: var(--mc-white);
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
-  line-height: 25.2px;
-  letter-spacing: 0.54px;
+  line-height: 21px;
+  letter-spacing: 0.45px;
 }
 
 .mc-tag--muted { background: var(--mc-chip-muted); }
@@ -722,7 +739,7 @@
   align-items: center;
   height: 36px;
   padding: 4px 8px;
-  letter-spacing: -0.36px;
+  letter-spacing: -0.3px;
 }
 
 .mc-tag--before { background: var(--mc-chip-ink); }
@@ -880,10 +897,10 @@
 }
 
 .mc-navs__label {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 800;
-  line-height: 25.2px;
-  letter-spacing: 0.54px;
+  line-height: 22.4px;
+  letter-spacing: 0.48px;
 }
 
 .mc-navs__label--1 { color: var(--mc-accent-soft); }
@@ -958,13 +975,13 @@
 .mc-subhead {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 }
 
 .mc-subhead__title {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 800;
-  line-height: 33.6px;
+  line-height: 128%;
   color: var(--mc-text);
 }
 
@@ -997,7 +1014,7 @@
 
 /* Stat cards (Design result / Shipping result) */
 .mc-stats { display: flex; }
-.mc-stats--2 { gap: 40px; }
+.mc-stats--2 { gap: 28px; }
 .mc-stats--3 { gap: 28px; }
 
 .mc-stat {
@@ -1021,10 +1038,13 @@
   margin-top: -12px;
   font-size: 60px;
   font-weight: 600;
-  line-height: 96px;
+  line-height: 72px;
   color: var(--mc-black);
   white-space: nowrap;
 }
+
+/* Figma: leading "+" is Geist 400 80/96 */
+.mc-stat__value > .mc-stat__plus { font-size: 80px; font-weight: 400; line-height: 96px; }
 
 .mc-stat__value--row {
   display: flex;
@@ -1034,6 +1054,9 @@
 }
 
 .mc-stat__value--gap10 { gap: 10px; }
+
+/* Figma: '92', '17x', '6%' are fixed-height 96px text boxes, vertically centered */
+.mc-stat__num--96 { display: inline-flex; align-items: center; height: 96px; }
 
 .mc-stat__arrow {
   font-size: 40px;
