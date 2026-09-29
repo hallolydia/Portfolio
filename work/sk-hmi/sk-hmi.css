@@ -14,6 +14,7 @@
   --sk-accent-bg:     #fff6bc;
   --sk-accent-soft:   #ffaa5a;
   --sk-tag-muted:     #b3b8bd;
+  --sk-tag-ink:       #000000;
   --sk-chip-dark:     #4f555f;
 
   --sk-panel:         #f3f6f9;
@@ -49,11 +50,23 @@
   align-items: center;
   align-self: flex-start;
   gap: 3px;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 800;
+  line-height: 21px;
+  letter-spacing: 0.45px;
+  color: var(--sk-accent);
+}
+
+/* Lessons Learned step numbers keep the larger label size */
+.sk-label--num {
+  font-size: 20px;
   line-height: 28px;
   letter-spacing: 0.6px;
-  color: var(--sk-accent);
+}
+
+.sk-label--link {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .sk-label--chip {
@@ -63,19 +76,19 @@
 }
 
 .sk-label__icon {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
 }
 
 .sk-title {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 800;
-  line-height: 1.4;
+  line-height: 1.28;
   color: var(--sk-text);
 }
 
-.sk-title--tight { letter-spacing: -0.28px; }
+.sk-title--tight { letter-spacing: -0.32px; }
 
 .sk-body {
   font-size: 16px;
@@ -85,6 +98,9 @@
 }
 
 .sk-body--tight { letter-spacing: -0.16px; }
+
+/* Browser Manrope sets ~3% narrower than Figma's; this keeps Figma's 4-line wrap */
+.sk-body--wrap-960 { max-width: 960px; }
 
 /* Pretendard body copy used inside cards */
 .sk-card__body,
@@ -104,12 +120,14 @@
 .sk-ls-24 { letter-spacing: -0.24px; }
 .sk-ls-34 { letter-spacing: -0.34px; }
 
-/* Label → title 14px, head → body 20px */
+/* Label → title 14px, head → body 24px */
 .sk-text {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
+
+.sk-text--20 { gap: 20px; }
 
 .sk-text__head {
   display: flex;
@@ -164,15 +182,14 @@
   display: inline-flex;
   align-items: center;
   align-self: flex-start;
-  height: 36px;
-  padding: 0 8px;
+  padding: 4px 8px;
   border-radius: 6px;
   background: var(--sk-chip-dark);
   color: var(--sk-white);
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
-  line-height: 25.2px;
-  letter-spacing: 0.54px;
+  line-height: 21px;
+  letter-spacing: 0.45px;
 }
 
 .sk-chip--accent { background: var(--sk-accent); }
@@ -220,6 +237,7 @@
   font-weight: 500;
   line-height: 21px;
   letter-spacing: -0.28px;
+  color: var(--sk-tag-ink);
 }
 
 .sk-hero__copy {
@@ -263,7 +281,7 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   padding: 0 40px;
 }
 
@@ -275,15 +293,15 @@
 }
 
 .sk-overview__label {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 800;
   line-height: 1.4;
-  letter-spacing: -0.18px;
+  letter-spacing: -0.16px;
   color: var(--sk-label);
 }
 
 .sk-overview__value {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
   color: var(--sk-value);
@@ -295,10 +313,10 @@
   padding: 40px 0 100px;
 }
 
-/* Text + 610×400 media, 60px gap, vertically centered */
+/* Text + 610×340 media, 60px gap, top-aligned */
 .sk-split {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 60px;
 }
 
@@ -310,7 +328,7 @@
 .sk-media {
   border-radius: 24px;
   overflow: hidden;
-  aspect-ratio: 610 / 400;
+  aspect-ratio: 610 / 340;
 }
 
 .sk-media img {
@@ -508,8 +526,8 @@
   display: flex;
   justify-content: center;
   gap: 64px;
-  height: 428px;
-  padding: 44px 0 0;
+  height: 440px;
+  padding: 50px 0 0;
   border-radius: 24px;
   overflow: hidden;
 }
@@ -884,6 +902,9 @@
   border-radius: 24px;
   overflow: hidden;
 }
+
+/* Figma: "Reusable component set" has no letter-spacing */
+.sk-components__head .sk-ba__title { letter-spacing: 0; }
 
 /* The HMI panel starts 15px above the header's bottom edge */
 .sk-components .sk-bleed { margin-top: -15px; }

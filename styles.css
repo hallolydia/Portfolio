@@ -1185,12 +1185,6 @@ ul { list-style: none; }
   letter-spacing: 0.01em;
 }
 
-.tag--primary {
-  background: #121213;
-  color: #fff;
-  border-color: #121213;
-}
-
 /* Disabled work card — gray colors (Figma) */
 .work-card--disabled .work-card__media {
   border-radius: 24px;
@@ -1200,11 +1194,6 @@ ul { list-style: none; }
 .work-card--disabled .tag {
   color: var(--color-disabled-tag);
   border-color: var(--color-disabled-tag);
-}
-
-.work-card--disabled .tag--primary {
-  background: var(--color-disabled-tag);
-  color: #fff;
 }
 
 .work-card--disabled .work-card__title {
