@@ -78,8 +78,11 @@ ul { list-style: none; }
    Nav: Manrope 500 14px, touch target min-height 44px
    ============================================= */
 .gnb {
+  /* Bar extends this far ABOVE the viewport (same bg + blur), so the springy
+     show/hide animation can overshoot without ever opening a gap at the top. */
+  --gnb-bleed: 32px;
   position: fixed;
-  top: 0;
+  top: calc(-1 * var(--gnb-bleed));
   left: 0;
   right: 0;
   z-index: 1000;
@@ -87,7 +90,7 @@ ul { list-style: none; }
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid #121213;
-  padding: 16px 0 12px;
+  padding: calc(16px + var(--gnb-bleed)) 0 12px;
   transform: translateY(0);
 }
 
@@ -273,7 +276,7 @@ ul { list-style: none; }
 .gnb__mobile-nav {
   display: none;
   position: fixed;
-  top: var(--gnb-height);
+  top: calc(var(--gnb-height) + var(--gnb-bleed));   /* positioned inside .gnb (transformed) */
   left: 0;
   right: 0;
   background: #fff;
@@ -1635,12 +1638,12 @@ ul { list-style: none; }
 
 @media (max-width: 1280px) {
   :root { --gnb-height: 44px; }
-  .gnb { padding: 12px 0 8px; }
+  .gnb { padding: calc(12px + var(--gnb-bleed)) 0 8px; }
   .gnb__inner { padding: 0 12px; }
 }
 
 @media (max-width: 768px) {
-  .gnb { padding: 8px 0 8px; }
+  .gnb { padding: calc(8px + var(--gnb-bleed)) 0 8px; }
   .gnb__inner { display: flex; }
   .gnb__nav { display: none; }
   .gnb__cta { display: none; }

@@ -11,7 +11,7 @@
   });
 })();
 
-// GNB — hide on scroll down, reveal on scroll up (chewy easing)
+// GNB — stays visible while scrolling down, hides on scroll up
 const gnb = document.getElementById('gnb');
 const heroInner = document.querySelector('.hero__inner');
 let lastScrollY = window.scrollY;
@@ -23,11 +23,14 @@ window.addEventListener('scroll', () => {
   rafPending = true;
   requestAnimationFrame(() => {
     const currentY = window.scrollY;
-    const goingDown = currentY > lastScrollY && currentY > 10;
+    const delta = currentY - lastScrollY;
+    // Visible while scrolling down; hides on a slight scroll up. Always visible near the very top.
+    const shouldHide = delta < 0 && currentY > 10;
+    const shouldShow = delta > 0 || currentY <= 10;
 
-    if (goingDown && gnbVisible) {
-      // Hide: sharp, snappy — disappears before you notice
-      gnb.style.transition = 'transform 0.2s cubic-bezier(0.4, 0, 1, 0.6)';
+    if (shouldHide && gnbVisible) {
+      // Hide: chewy — a tiny squash down (anticipation), then snaps up
+      gnb.style.transition = 'transform 0.38s cubic-bezier(0.55, -0.45, 0.75, 0.15)';
       gnb.classList.add('gnb--hidden');
       mobileNav.classList.remove('open');
       hamburger.classList.remove('open');
@@ -37,9 +40,9 @@ window.addEventListener('scroll', () => {
         heroInner.style.transition = 'transform 0.28s cubic-bezier(0.4, 0, 1, 0.6)';
         heroInner.style.transform = 'translateY(-28px)';
       }
-    } else if (!goingDown && !gnbVisible) {
-      // Reveal: spring bounce — tense snap-back
-      gnb.style.transition = 'transform 0.42s cubic-bezier(0.34, 1.35, 0.64, 1)';
+    } else if (shouldShow && !gnbVisible) {
+      // Reveal: chewy spring — overshoots and settles (the bar's --gnb-bleed hides any gap at the top)
+      gnb.style.transition = 'transform 0.62s cubic-bezier(0.34, 1.56, 0.64, 1)';
       gnb.classList.remove('gnb--hidden');
       gnbVisible = true;
       // Hero inner settles back with spring
