@@ -264,3 +264,112 @@ document.querySelectorAll('.footer__email-btn').forEach(btn => {
     }
   });
 });
+
+// Custom cursor — 12px dot that follows with a spring (slight overshoot + squash across the motion),
+// morphing into a text bar (height = font size) when over text. Mouse/trackpad only.
+(function initCursor() {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const cursor = document.createElement('div');
+  cursor.className = 'cursor';
+  cursor.setAttribute('aria-hidden', 'true');
+  cursor.innerHTML = '<div class="cursor__shape"></div>';
+  document.body.appendChild(cursor);
+
+  const STIFFNESS = 600; // spring pull toward the pointer
+  const DAMPING   = 24;  // < critical → bouncy overshoot that settles quickly
+  let tx = 0, ty = 0, x = 0, y = 0, vx = 0, vy = 0;
+  let isText = false, started = false, raf = 0, last = 0;
+
+  // Over a glyph of text (not links/buttons or big section titles)? Returns its font size, else 0.
+  function textSizeAt(px, py) {
+    let node, offset;
+    if (document.caretPositionFromPoint) {
+      const pos = document.caretPositionFromPoint(px, py);
+      if (!pos) return 0;
+      node = pos.offsetNode; offset = pos.offset;
+    } else if (document.caretRangeFromPoint) {
+      const r = document.caretRangeFromPoint(px, py);
+      if (!r) return 0;
+      node = r.startContainer; offset = r.startOffset;
+    } else return 0;
+    if (!node || node.nodeType !== 3 || !node.textContent.trim()) return 0;
+    const el = node.parentElement;
+    if (!el || el.closest('a, button, [role="button"], input, textarea, select, .section__title')) return 0;
+    const range = document.createRange();
+    for (const o of [offset, offset - 1]) {
+      if (o < 0 || o >= node.length) continue;
+      range.setStart(node, o);
+      range.setEnd(node, o + 1);
+      for (const rc of range.getClientRects()) {
+        if (px >= rc.left - 1 && px <= rc.right + 1 && py >= rc.top && py <= rc.bottom) {
+          return parseFloat(getComputedStyle(el).fontSize) || 0;
+        }
+      }
+    }
+    return 0;
+  }
+
+  function render() {
+    let t = `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0)`;
+    if (!isText && !reduceMotion) {
+      const speed = Math.hypot(vx, vy);
+      const s = Math.min(speed / 2600, 0.3);
+      if (s > 0.01) {
+        const a = Math.atan2(vy, vx);
+        t += ` rotate(${a}rad) scale(${(1 - s * 0.5).toFixed(3)}, ${(1 + s).toFixed(3)}) rotate(${-a}rad)`;
+      }
+    }
+    cursor.style.transform = t;
+  }
+
+  function tick(now) {
+    const dt = Math.min((now - last) / 1000 || 0.016, 1 / 30);
+    last = now;
+    if (reduceMotion) {
+      x = tx; y = ty; vx = vy = 0;
+    } else {
+      vx += (STIFFNESS * (tx - x) - DAMPING * vx) * dt;
+      vy += (STIFFNESS * (ty - y) - DAMPING * vy) * dt;
+      x += vx * dt;
+      y += vy * dt;
+    }
+    render();
+    const settled = Math.abs(tx - x) < 0.05 && Math.abs(ty - y) < 0.05 && Math.hypot(vx, vy) < 0.5;
+    if (settled) { x = tx; y = ty; vx = vy = 0; render(); raf = 0; return; }
+    raf = requestAnimationFrame(tick);
+  }
+
+  function wake() {
+    if (!raf) { last = performance.now(); raf = requestAnimationFrame(tick); }
+  }
+
+  function setText(size) {
+    const next = size > 0;
+    if (next) cursor.style.setProperty('--cursor-text-h', `${Math.round(size)}px`);
+    if (next !== isText) {
+      isText = next;
+      cursor.classList.toggle('is-text', isText);
+    }
+  }
+
+  window.addEventListener('pointermove', e => {
+    if (e.pointerType && e.pointerType !== 'mouse') return;
+    tx = e.clientX; ty = e.clientY;
+    if (!started) {
+      started = true;
+      x = tx; y = ty;
+      document.documentElement.classList.add('has-cursor');
+    }
+    cursor.classList.add('is-visible');
+    setText(textSizeAt(tx, ty));
+    wake();
+  }, { passive: true });
+
+  // Content can move under a still pointer while scrolling
+  window.addEventListener('scroll', () => { if (started) setText(textSizeAt(tx, ty)); }, { passive: true });
+
+  document.addEventListener('mouseleave', () => cursor.classList.remove('is-visible'));
+  document.addEventListener('mouseenter', () => { if (started) cursor.classList.add('is-visible'); });
+})();

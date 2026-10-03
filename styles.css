@@ -21,6 +21,9 @@
   --color-disabled-tag:   #86898e;
   --color-disabled-title: #86898e;
   --color-disabled-desc:  #a9abaf;
+
+  /* Custom cursor */
+  --cursor-color: #121213;
   --color-divider:      #bcbcbc;   /* Strength open divider */
 
   /* Footer — Figma */
@@ -1671,3 +1674,43 @@ ul { list-style: none; }
 @media (max-width: 480px) {
   .contact-cta__btns  { flex-direction: column; align-items: stretch; }
 }
+
+/* ===== Custom cursor (dot → text bar) — fine pointers only, set up in script.js ===== */
+html.has-cursor,
+html.has-cursor * {
+  cursor: none !important;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  pointer-events: none;
+  will-change: transform;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cursor.is-visible { opacity: 1; }
+
+.cursor__shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--cursor-color);
+  transform: translate(-50%, -50%);
+  /* Width settles without overshoot (no thin "ghost" dip); height gets a short bounce */
+  transition:
+    width 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+    height 0.3s cubic-bezier(0.34, 1.5, 0.64, 1);
+}
+
+.cursor.is-text .cursor__shape {
+  width: 2px;
+  height: var(--cursor-text-h, 20px);
+}
+
