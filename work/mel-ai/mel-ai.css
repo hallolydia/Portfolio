@@ -85,6 +85,7 @@
 }
 
 .mg-label--chip {
+  align-self: flex-start;   /* hug the text (Figma), don't stretch in column layouts */
   padding: 4px 8px;
   border-radius: 6px;
   background: var(--mg-accent-bg);
