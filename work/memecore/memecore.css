@@ -1097,8 +1097,8 @@
 .mc-tl__list { margin: 0; padding-left: 22px; list-style: disc; display: flex; flex-direction: column; gap: 0; color: var(--mc-body); font-weight: 400; }
 .mc-tl__list--a { font-size: 15px; line-height: 27px; }
 .mc-tl__list--b { font-size: 15px; line-height: 27px; }
-.mc-tl__list--b li:first-child { line-height: 22.5px; letter-spacing: -0.3px; }
-.mc-tl__list--c { font-size: 16px; line-height: 28.8px; }
+.mc-tl__list--b li:first-child { line-height: 22.5px; }
+.mc-tl__list--c { font-size: 15px; line-height: 27px; }
 
 /* ── Responsive ── */
 @media (max-width: 1280px) {
