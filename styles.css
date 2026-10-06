@@ -1681,6 +1681,14 @@ html.has-cursor * {
   cursor: none !important;
 }
 
+/* Links keep the native hand cursor so they read as clickable; the dot hides */
+html.has-cursor a[href],
+html.has-cursor a[href] * {
+  cursor: pointer !important;
+}
+
+.cursor.is-link { opacity: 0; }
+
 .cursor {
   position: fixed;
   top: 0;

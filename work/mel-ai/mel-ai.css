@@ -3,24 +3,26 @@
    ========================================================= */
 
 .mg-page {
-  --mg-text:       #121213;
-  --mg-body:       #424751;
-  --mg-label:      #565860;
-  --mg-value:      #76777d;
-  --mg-box-bg:     #f9fafb;
-  --mg-white:      #ffffff;
-  --mg-accent:     #f57874;
-  --mg-accent-bg:  #ffeceb;
-  --mg-accent-ink: #ff6365;
-  --mg-panel-top:  #f3f6f9;
-  --mg-source:     #cacaca;
-  --mg-muted:      #b4b9be;
-  --mg-stat-title: #616773;
-  --mg-stat-num:   #000000;
-  --mg-stat-sub:   #9095a0;
+  --mg-text:        #121213;
+  --mg-body:        #424751;
+  --mg-label:       #565860;
+  --mg-value:       #76777d;
+  --mg-box-bg:      #f9fafb;
+  --mg-white:       #ffffff;
+  --mg-accent:      #f57874;
+  --mg-accent-bg:   #ffeceb;
+  --mg-accent-ink:  #ff6365;
+  --mg-panel-top:   #f3f6f9;
+  --mg-source:      #cacaca;
+  --mg-muted:       #b4b9be;
+  --mg-card-title:  #333944;
+  --mg-card-body:   #5d677b;
+  --mg-stat-title:  #616773;
+  --mg-stat-num:    #000000;
+  --mg-stat-sub:    #9095a0;
   --mg-circle-shadow: rgba(255, 161, 162, 0.2);
-  --mg-hypo-bg:    #fff5f6;
-  --mg-strategy-bg:#ffd8d8; /* #ffffff + #ff3a3a @ 20% */
+  --mg-hypo-bg:     #fff5f6;
+  --mg-selected-top:#fff5f6;
 }
 
 /* Shared content column: 1360 frame − 40px side padding = 1280 */
@@ -36,13 +38,15 @@
 }
 
 .mg-section--pb80 { padding-bottom: 80px; }
-.mg-section--pb40 { padding-bottom: 40px; }
 
+/* Text block → visual: 48px */
 .mg-stack {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 48px;
 }
+
+.mg-stack--60 { gap: 60px; }
 
 /* ── Shared text ── */
 .mg-text {
@@ -52,8 +56,6 @@
   max-width: 1000px;
 }
 
-.mg-text--1100 { max-width: 1100px; }
-.mg-text--g16 { gap: 16px; }
 .mg-text--g20 { gap: 20px; }
 
 .mg-head {
@@ -69,26 +71,23 @@
 .mg-label {
   display: inline-flex;
   align-items: center;
-  gap: 3px;
-  font-size: 14px;
+  gap: 1px;
+  font-size: 15px;
   font-weight: 800;
-  line-height: 19.6px;
-  letter-spacing: 0.42px;
+  line-height: 21px;
+  letter-spacing: 0.45px;
   color: var(--mg-accent);
 }
 
-/* Label as external link (Figma: underlined, 1px gap, 20px icon) */
-.mg-label--link {
-  gap: 1px;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
 .mg-label--chip {
-  align-self: flex-start;   /* hug the text (Figma), don't stretch in column layouts */
   padding: 4px 8px;
   border-radius: 6px;
   background: var(--mg-accent-bg);
+}
+
+.mg-label--link {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .mg-label__icon {
@@ -100,9 +99,11 @@
 .mg-title {
   font-size: 32px;
   font-weight: 800;
-  line-height: 41px;
+  line-height: 40.96px;
   color: var(--mg-text);
 }
+
+.mg-title--tight { letter-spacing: -0.32px; }
 
 .mg-body {
   font-size: 16px;
@@ -112,12 +113,7 @@
 }
 
 .mg-body strong { font-weight: 600; }
-
-/* Per-text letter-spacing from Figma */
-.mg-ls-n016 { letter-spacing: -0.16px; }
-.mg-ls-n032 { letter-spacing: -0.32px; }
-.mg-ls-n048 { letter-spacing: -0.48px; }
-.mg-ls-n064 { letter-spacing: -0.64px; }
+.mg-body--tight { letter-spacing: -0.24px; }
 
 /* Visual panels exported from Figma (card incl. radius) */
 .mg-panel {
@@ -133,7 +129,7 @@
 
 .mg-row {
   display: flex;
-  gap: 32px;
+  gap: 28px;
 }
 
 .mg-row > * {
@@ -141,8 +137,8 @@
   min-width: 0;
 }
 
-.mg-row--g28 { gap: 28px; }
-.mg-row--g40 { gap: 40px; }
+.mg-row--g24 { gap: 24px; }
+.mg-row--g32 { gap: 32px; }
 
 .mg-figure {
   margin: 0;
@@ -154,11 +150,33 @@
 .mg-source {
   font-size: 14px;
   font-weight: 400;
-  line-height: 19.2px;
+  line-height: 19.12px;
   color: var(--mg-source);
 }
 
-.mg-source--tight { letter-spacing: -0.28px; }
+/* Text column + panel side by side (610 / 60 / 610) */
+.mg-split {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.mg-split > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.mg-split--center { align-items: center; }
+
+.mg-split__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.mg-split__text--g14 { gap: 14px; }
+.mg-split__text--g20 { gap: 20px; }
 
 /* ── 1. Hero (6730:87109) ── */
 .mg-hero {
@@ -229,7 +247,7 @@
 /* ── 2. Role / Timeline / Team / Tools (6730:87190) ── */
 .mg-overview {
   background: var(--mg-white);
-  padding: 40px 0 90px;
+  padding: 40px 0 100px;
 }
 
 .mg-overview__box {
@@ -272,29 +290,7 @@
   color: var(--mg-value);
 }
 
-/* ── 3. Overview (6730:87209) ── */
-.mg-intro { gap: 68px; }
-
-/* ── 4. Context (6730:87223) ── */
-.mg-context {
-  display: flex;
-  gap: 68px;
-  align-items: flex-start;
-}
-
-.mg-context__text {
-  flex: 0 0 560px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.mg-context__media {
-  flex: 1 1 0;
-  min-width: 0;
-}
-
-/* ── 9. Exploration cards (6730:87545) ── */
+/* ── 10. Exploration cards (6730:87545) ── */
 .mg-explore {
   display: flex;
   gap: 24px;
@@ -306,7 +302,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 50px 44px;
+  padding: 36px;
   border-radius: 24px;
   background: linear-gradient(180deg, var(--mg-panel-top) 0%, var(--mg-white) 100%);
 }
@@ -314,57 +310,56 @@
 .mg-explore__content {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px;
 }
 
 .mg-explore__head {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .mg-explore__num {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 800;
-  line-height: 20.8px;
-  letter-spacing: 0.48px;
+  line-height: 18.2px;
+  letter-spacing: 0.42px;
   color: var(--mg-accent);
 }
 
 .mg-explore__title {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 800;
-  line-height: 26px;
-  color: var(--mg-text);
+  line-height: 20.8px;
+  color: var(--mg-card-title);
 }
 
-.mg-explore__list,
+.mg-explore__list {
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px; /* Figma ps10 renders ~2.5px tighter than CSS margins → matches 191px text box */
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 19.5px;
+  letter-spacing: -0.15px;
+  color: var(--mg-card-body);
+}
+
+.mg-explore__list strong { font-weight: 600; }
+
 .mg-explore__result {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 20.8px;
   letter-spacing: -0.16px;
+  color: var(--mg-accent-ink);
 }
 
-.mg-explore__list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  color: var(--mg-body);
-}
-
-.mg-explore__list strong { font-weight: 600; }
-.mg-explore__result { color: var(--mg-accent-ink); }
-
-/* ── 10. Hypothesis (6730:87573) ── */
+/* ── 11. Hypothesis (6730:87573) ── */
 .mg-hypo {
   background: var(--mg-hypo-bg);
-  padding: 80px 0 100px;
-}
-
-.mg-strategy {
-  background: var(--mg-strategy-bg);
   padding: 80px 0 100px;
 }
 
@@ -430,30 +425,27 @@
 }
 
 .mg-hypo__body {
+  padding-left: 92px;
+  font-family: 'Inter', sans-serif;
   font-size: 22px;
   font-weight: 400;
   line-height: 33px;
   color: var(--mg-body);
 }
 
-.mg-hypo__item .mg-hypo__body { padding-left: 92px; }
 .mg-hypo__body--916  { max-width: 1008px; }
 .mg-hypo__body--1000 { max-width: 1092px; }
 
-.mg-strategy__body {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 1000px;
+/* ── 12. Design solution 1 (6873:73383) ── */
+.mg-solution {
+  background: var(--mg-white);
+  padding: 100px 0 100px;
 }
 
-.mg-strategy__body .mg-hypo__title { max-width: 916px; }
-
-/* ── 11. Entry point (6730:87624) ── */
-.mg-entry {
+.mg-solution__inner {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 100px;
 }
 
 .mg-options {
@@ -462,18 +454,20 @@
 }
 
 .mg-option {
-  flex: 380 1 380px;
+  flex: 1 1 0;
   min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 32px;
-  padding: 40px 32px;
+  padding: 32px 24px;
   border-radius: 24px;
   background: linear-gradient(180deg, var(--mg-panel-top) 0%, var(--mg-white) 100%);
 }
 
-.mg-option--wide { flex: 464 1 464px; }
+.mg-option--selected {
+  background: linear-gradient(180deg, var(--mg-selected-top) 0%, var(--mg-white) 100%);
+}
 
 .mg-option__head {
   display: flex;
@@ -532,6 +526,7 @@
 }
 
 .mg-option__desc {
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 22.4px;
@@ -540,9 +535,10 @@
   text-align: center;
 }
 
-.mg-option__desc--tight { letter-spacing: -0.32px; }
+/* Fixed-height frame around the scenario panel (650 panel in a 680 frame) */
+.mg-panel-wrap--680 { padding-bottom: 30px; }
 
-/* ── 16. Result (6730:88526) ── */
+/* ── 17. Result (6730:88526) ── */
 .mg-result {
   flex: 1 1 0;
   min-width: 0;
@@ -596,18 +592,6 @@
   color: var(--mg-stat-sub);
 }
 
-/* ── 17. Lessons learned (6730:88557) ── */
-.mg-lessons {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-}
-
-.mg-lessons > * {
-  flex: 1 1 0;
-  min-width: 0;
-}
-
 /* ── Responsive ── */
 @media (max-width: 1280px) {
   .mg-overview__col { padding: 0; }
@@ -620,8 +604,7 @@
   }
   .mg-overview__col { align-items: flex-start; }
 
-  .mg-context,
-  .mg-lessons,
+  .mg-split,
   .mg-row,
   .mg-explore,
   .mg-options {
@@ -629,15 +612,13 @@
     align-items: stretch;
     gap: 40px;
   }
-  .mg-context__text { flex: none; }
-  .mg-row > *,
-  .mg-lessons > *,
-  .mg-option { flex: none; }
+  .mg-split > *,
+  .mg-row > * { flex: none; }
 }
 
 @media (max-width: 768px) {
   .mg-container { padding: 0 20px; }
-  .mg-hypo__item .mg-hypo__body { padding-left: 0; }
+  .mg-hypo__body { padding-left: 0; }
   .mg-result,
   .mg-explore__card { padding: 32px 24px; }
 }
