@@ -327,3 +327,11 @@
 
   .cs-body { padding-bottom: 80px; }
 }
+
+/* Laptop widths (769–1679px): scale the case-study body to 87.5% so the 1920-wide Figma
+   layouts keep similar side margins. GNB, footer and the custom cursor stay at 100%. */
+@media (min-width: 769px) and (max-width: 1679px) {
+  body > section,
+  body > .cs-meta,
+  body > .cs-body { zoom: 0.875; }
+}

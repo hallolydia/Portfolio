@@ -614,8 +614,8 @@
 
 .mc-block--hypothesis { padding: 80px 0 100px; }
 .mc-block--di2,
-.mc-block--impl,
-.mc-block--last { padding-bottom: 80px; }
+.mc-block--impl { padding-bottom: 80px; }
+.mc-block--last { padding-bottom: 100px; }
 
 .mc-stack { display: flex; flex-direction: column; }
 .mc-stack--14 { gap: 14px; }
@@ -1075,10 +1075,7 @@
 .mc-split__row--result > .mc-media--result { flex: 0 0 580px; }
 .mc-split__row--learning { gap: 60px; }
 
-/* ── Prioritization (Figma 6800:78728) ── */
-.mc-block--prio { padding: 40px 0 80px; }
 .mc-block--insight { padding-bottom: 120px; }
-.mc-prio,
 .mc-shotimg { display: block; width: 100%; height: auto; }
 
 /* ── Timeline (Figma 6730:105453): arrow line + dots + release cards ── */
