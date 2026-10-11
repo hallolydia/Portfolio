@@ -47,6 +47,9 @@
   --mc-num-shadow:    rgba(139, 150, 161, 0.2);
   --mc-stat-label:    #616773;
   --mc-black:         #000000;
+  --mc-accent-box:    #8d47ff;
+  --mc-fade:          rgba(247, 249, 251, 0.34);
+  --mc-fade-0:        rgba(247, 249, 251, 0);
 }
 
 /* Shared content column: 1360 frame − 40px side padding = 1280 */
@@ -259,13 +262,13 @@
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 800;
-  line-height: 21px;
+  line-height: 19.6px;
   color: var(--mc-accent);
 }
 
-.mc-label--spaced { letter-spacing: 0.45px; }
+.mc-label--spaced { letter-spacing: 0.42px; }
 
 .mc-label--chip {
   align-self: flex-start;
@@ -335,13 +338,13 @@
 /* ── 3. Overview (6730:105257) ── */
 .mc-intro {
   background: var(--mc-white);
-  padding: 40px 0 80px;
+  padding: 40px 0 100px;
 }
 
 .mc-intro__inner {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 48px;
 }
 
 .mc-intro__text {
@@ -356,37 +359,19 @@
 .mc-intro__head {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
 }
 
-/* Explore Ecosystem screen recording (box 1280×420, frame 633×356 at 324,75) */
+/* Three mobile screens (Figma export, 1280×420) */
 .mc-showcase {
-  container-type: inline-size;
-  width: 100%;
-}
-
-.mc-showcase__stage {
-  --u: calc(100cqw / 1280);
-  position: relative;
-  aspect-ratio: 1280 / 420;
   border-radius: 24px;
   overflow: hidden;
-  background: linear-gradient(180deg, var(--mc-panel-top) -6%, var(--mc-white) 153%);
 }
 
-.mc-showcase__video {
-  position: absolute;
-  top: calc(var(--u) * 75);
-  left: calc(var(--u) * 324);
-  width: calc(var(--u) * 632.97);
-  height: calc(var(--u) * 356.05);
+.mc-showcase > img {
   display: block;
-  object-fit: cover;
-  border-radius: calc(var(--u) * 13);
-  /* Figma stroke 4px OUTSIDE + drop shadow (3.38, 1.69, 25.32) */
-  box-shadow:
-    0 0 0 calc(var(--u) * 4) var(--mc-frame),
-    calc(var(--u) * 3.38) calc(var(--u) * 1.69) calc(var(--u) * 25.32) 0 var(--mc-shadow);
+  width: 100%;
+  height: auto;
 }
 
 /* ── 4–6. Split sections (6753:72219) ── */
@@ -395,7 +380,7 @@
   padding: 40px 0 100px;
 }
 
-.mc-split--last { padding-bottom: 80px; }
+.mc-split--last { padding-bottom: 100px; }
 
 .mc-split__row {
   display: flex;
@@ -447,8 +432,8 @@
   gap: 24px;
 }
 
-.mc-feedback__chip,
-.mc-feedback__quote { font-family: 'Inter', sans-serif; }
+.mc-feedback__chip { font-family: 'Inter', sans-serif; }
+.mc-feedback__quote { font-family: 'Pretendard', 'Manrope', sans-serif; }
 
 .mc-feedback__chip {
   padding: 12px 16px;
@@ -481,8 +466,6 @@
 
 .mc-feedback__card:nth-child(3) { gap: 22.44px; }
 
-/* Figma: quote letter-spacing -0.56 on card 1, -0.42 on cards 2–3 */
-.mc-feedback__card:nth-child(1) .mc-feedback__quote { letter-spacing: -0.56px; }
 
 .mc-feedback__avatar {
   width: 67.5px;
@@ -495,15 +478,13 @@
   min-width: 0;
   font-size: 14px;
   font-weight: 400;
-  line-height: 19.6px;
-  letter-spacing: -0.42px;
+  line-height: 21px;
+  letter-spacing: -0.28px;
   color: var(--mc-quote);
 }
 
 .mc-feedback__by {
   display: block;
-  line-height: 21px;
-  letter-spacing: -0.28px;
   color: var(--mc-quote-by);
 }
 
@@ -516,7 +497,7 @@
 .mc-challenge__inner {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 48px;
 }
 
 .mc-challenge__text { max-width: 1100px; }
@@ -533,7 +514,6 @@
 
 .mc-body--tight { letter-spacing: -0.16px; }
 .mc-body--tighter { letter-spacing: -0.24px; }
-.mc-body--n008 { letter-spacing: -0.08px; }
 .mc-body--n010 { letter-spacing: -0.1px; }
 
 .mc-challenge__cards {
@@ -546,14 +526,14 @@
   min-width: 0;
   display: flex;
   justify-content: center;
-  padding: 48px 0;
+  padding: 40px;
   border-radius: 24px;
   overflow: hidden;
   background: linear-gradient(180deg, var(--mc-panel-top) 14%, var(--mc-white) 140.4%);
 }
 
 .mc-challenge__content {
-  width: 514px;
+  width: 546px;
   max-width: 100%;
   display: flex;
   flex-direction: column;
@@ -564,7 +544,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 36px;
+  gap: 28px;
 }
 
 /* Design card head is a fixed 494px frame centered over the 500px image */
@@ -574,25 +554,23 @@
   border-radius: 6px;
   background: var(--mc-chip-muted);
   color: var(--mc-white);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
-  line-height: 21px;
-  letter-spacing: 0.45px;
+  line-height: 18.2px;
+  letter-spacing: 0.39px;
 }
 
 .mc-challenge__title {
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 33.41px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32.8px;
   color: var(--mc-heading);
 }
 
-.mc-challenge__title--wide { letter-spacing: 0.28px; }
-
-/* 514×280.4 frame; 4px white OUTSIDE stroke */
+/* 546×298 frame; 4px white OUTSIDE stroke */
 .mc-challenge__shot {
-  aspect-ratio: 514 / 280.4;
-  border-radius: 10.83px;
+  aspect-ratio: 546 / 298;
+  border-radius: 12px;
   overflow: hidden;
   background: var(--mc-white);
   box-shadow: 0 0 0 4px var(--mc-white);
@@ -613,8 +591,7 @@
 }
 
 .mc-block--hypothesis { padding: 80px 0 100px; }
-.mc-block--di2,
-.mc-block--impl { padding-bottom: 80px; }
+
 .mc-block--last { padding-bottom: 100px; }
 
 .mc-stack { display: flex; flex-direction: column; }
@@ -623,10 +600,12 @@
 .mc-stack--28 { gap: 28px; }
 .mc-stack--32 { gap: 32px; }
 .mc-stack--40 { gap: 40px; }
+.mc-stack--48 { gap: 48px; }
 .mc-stack--60 { gap: 60px; }
 .mc-stack--80 { gap: 80px; }
 
 .mc-w-1000 { max-width: 1000px; }
+.mc-w-1036 { max-width: 1036px; }
 .mc-w-1100 { max-width: 1100px; }
 
 /* 1280 frame with 40px padding → 1200 content (Trade-off / Visual world) */
@@ -639,6 +618,7 @@
 
 .mc-lead--body { color: var(--mc-body); letter-spacing: 0; }
 .mc-lead--tight { letter-spacing: -0.18px; }
+.mc-lead--nav { color: var(--mc-nav-desc); }
 
 .mc-strong-800 { font-weight: 800; }
 .mc-w300 { font-weight: 300; }
@@ -731,10 +711,10 @@
   padding: 4px 12px;
   border-radius: 6px;
   color: var(--mc-white);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
-  line-height: 21px;
-  letter-spacing: 0.45px;
+  line-height: 18.2px;
+  letter-spacing: 0.39px;
 }
 
 .mc-tag--muted { background: var(--mc-chip-muted); }
@@ -745,6 +725,8 @@
   align-items: center;
   height: 36px;
   padding: 4px 8px;
+  font-size: 15px;
+  line-height: 21px;
   letter-spacing: -0.3px;
 }
 
@@ -760,7 +742,7 @@
   background: linear-gradient(180deg, var(--mc-panel-top) -8.7%, var(--mc-white) 138.1%);
 }
 
-.mc-card--hyp { gap: 36px; padding: 60px 52px; }
+.mc-card--hyp { gap: 36px; padding: 52px; }
 
 .mc-card__copy {
   display: flex;
@@ -965,10 +947,11 @@
   box-shadow: 0 0 0 5px var(--mc-white);
 }
 
-.mc-frame--4 {
-  aspect-ratio: 600 / 321.77;
-  border-radius: 12.79px;
-  box-shadow: 0 0 0 4px var(--mc-white);
+/* 546×293; 6px white OUTSIDE stroke */
+.mc-frame--6 {
+  aspect-ratio: 546 / 293;
+  border-radius: 13px;
+  box-shadow: 0 0 0 6px var(--mc-white);
 }
 
 .mc-frame__media {
@@ -985,37 +968,142 @@
 }
 
 .mc-subhead__title {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 800;
-  line-height: 128%;
+  line-height: 38.4px;
   color: var(--mc-text);
 }
 
-.mc-panel--zone {
-  background: linear-gradient(180deg, var(--mc-panel-top) 25.5%, var(--mc-white) 138.1%);
-}
+.mc-subhead__num { color: var(--mc-accent); }
 
+/* Scroll-interaction cards: text on top, 546×293 recording pinned to the bottom */
 .mc-zone {
   display: flex;
-  align-items: center;
-  gap: 64px;
-  padding: 56px;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px;
 }
 
-.mc-zone__text {
-  flex: 0 0 504px;
-}
-
-.mc-zone__frame {
-  flex: 1 1 0;
-  min-width: 0;
-}
+.mc-zone > .mc-frame { margin-top: auto; }
 
 .mc-panel--info {
   display: flex;
   flex-direction: column;
   gap: 32px;
   padding: 56px;
+}
+
+/* Implementation decision (6730:106708) */
+.mc-impl__title {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 30.72px;
+  color: var(--mc-text);
+}
+
+.mc-tag--sm {
+  height: 26px;
+  font-size: 13px;
+  line-height: 18.2px;
+  letter-spacing: -0.26px;
+}
+
+.mc-impl-card { padding: 40px; }
+
+/* 546×330 content box; Figma positions are absolute inside it */
+.mc-impl-card__body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.mc-impl-card__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.mc-impl-art {
+  position: relative;
+  aspect-ratio: 546 / 238;
+  border-radius: 12.26px;
+  overflow: hidden;
+}
+
+.mc-impl-art > img,
+.mc-impl-art > video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mc-impl-card__body--after {
+  container-type: inline-size;
+  display: block;
+  aspect-ratio: 546 / 330;
+}
+
+.mc-impl-card__body--after > .mc-tag {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: min(26px, calc(100cqw * 26 / 546));
+  padding: 0 min(8px, calc(100cqw * 8 / 546));
+  font-size: min(13px, calc(100cqw * 13 / 546));
+}
+
+.mc-impl-art--after {
+  position: absolute;
+  left: 0;
+  top: 27.58%;
+  width: 100%;
+  aspect-ratio: 546 / 239;
+}
+
+.mc-impl-note {
+  position: absolute;
+  margin: 0;
+  /* 16 / 21.12 at the 546px Figma width, scaled with the card */
+  font-size: min(16px, calc(100cqw * 16 / 546));
+  font-weight: 400;
+  line-height: 1.32;
+  color: var(--mc-body);
+}
+
+.mc-impl-boxes {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  fill: none;
+  stroke: var(--mc-accent-box);
+  stroke-width: 1;
+  stroke-dasharray: 2 2;
+}
+
+/* Figma: bottom fade (#f7f9fb, 0→60% over y 130–290) is baked into the card image;
+   repeat it only over the GIF clip (x 330–554, y 19–220.77) so the clip matches */
+.mc-impl-fade {
+  position: absolute;
+  left: 52.72%;
+  top: 44.83%;
+  width: 35.78%;
+  height: 31.3%;
+  background: linear-gradient(180deg, var(--mc-fade-0) 0%, var(--mc-fade) 100%);
+  pointer-events: none;
+}
+
+.mc-impl-line {
+  position: absolute;
+  height: auto;
+  pointer-events: none;
 }
 
 /* Stat cards (Design result / Shipping result) */
@@ -1071,7 +1159,7 @@
 }
 
 /* Shipping result / Learning rows */
-.mc-split__row--result { gap: 64px; }
+.mc-split__row--result { gap: 64px; align-items: center; }
 .mc-split__row--result > .mc-media--result { flex: 0 0 580px; }
 .mc-split__row--learning { gap: 60px; }
 
@@ -1093,9 +1181,8 @@
 .mc-tl__sub { margin: 0; font-size: 16px; font-weight: 600; line-height: 22.4px; text-align: center; color: var(--mc-accent); }
 .mc-tl__list { margin: 0; padding-left: 22px; list-style: disc; display: flex; flex-direction: column; gap: 0; color: var(--mc-body); font-weight: 400; }
 .mc-tl__list--a { font-size: 15px; line-height: 27px; }
-.mc-tl__list--b { font-size: 15px; line-height: 27px; }
-.mc-tl__list--b li:first-child { line-height: 22.5px; }
-.mc-tl__list--c { font-size: 15px; line-height: 27px; }
+.mc-tl__list--b { font-size: 15px; line-height: 22.5px; gap: 5px; }
+.mc-tl__list--c { font-size: 15px; line-height: 27px; gap: 2.67px; }
 
 /* ── Responsive ── */
 @media (max-width: 1280px) {
@@ -1120,17 +1207,14 @@
   .mc-split__row--about .mc-text { padding-top: 0; }
   .mc-feedback { height: auto; }
   .mc-challenge__cards { flex-direction: column; }
+  .mc-challenge__card { flex: none; }
   .mc-pair,
   .mc-phases,
-  .mc-stats,
-  .mc-zone { flex-direction: column; }
+  .mc-stats { flex-direction: column; }
   .mc-pair > *,
   .mc-phase,
   .mc-stat,
-  .mc-zone__text,
-  .mc-zone__frame,
   .mc-split__row--result > .mc-media--result { flex: none; width: 100%; }
-  .mc-zone { align-items: stretch; gap: 32px; }
   .mc-goal { height: auto; padding: 80px 0; }
   .mc-feedback__inner { align-self: stretch; }
   .mc-feedback__list { width: 100%; align-items: center; }
