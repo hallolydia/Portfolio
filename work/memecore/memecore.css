@@ -47,9 +47,9 @@
   --mc-num-shadow:    rgba(139, 150, 161, 0.2);
   --mc-stat-label:    #616773;
   --mc-black:         #000000;
-  --mc-accent-box:    #8d47ff;
-  --mc-fade:          rgba(247, 249, 251, 0.34);
-  --mc-fade-0:        rgba(247, 249, 251, 0);
+  --mc-accent-box:    #8749ff;
+  --mc-clip-shadow:   rgba(0, 0, 0, 0.45);
+  --mc-beam-dim:      rgba(0, 0, 0, 0.55);
 }
 
 /* Shared content column: 1360 frame − 40px side padding = 1280 */
@@ -550,7 +550,7 @@
 /* Design card head is a fixed 494px frame centered over the 500px image */
 
 .mc-challenge__chip {
-  padding: 4px 12px;
+  padding: 4px 8px;
   border-radius: 6px;
   background: var(--mc-chip-muted);
   color: var(--mc-white);
@@ -717,7 +717,7 @@
   letter-spacing: 0.39px;
 }
 
-.mc-tag--muted { background: var(--mc-chip-muted); }
+.mc-tag--muted { padding: 4px 8px; background: var(--mc-chip-muted); }
 
 .mc-tag--before,
 .mc-tag--after {
@@ -1060,9 +1060,10 @@
 .mc-impl-art--after {
   position: absolute;
   left: 0;
-  top: 27.58%;
+  top: 27.7%;
   width: 100%;
-  aspect-ratio: 546 / 239;
+  aspect-ratio: 546 / 238.6;
+  border-radius: 11.08px;
 }
 
 .mc-impl-note {
@@ -1088,16 +1089,78 @@
   stroke-dasharray: 2 2;
 }
 
-/* Figma: bottom fade (#f7f9fb, 0→60% over y 130–290) is baked into the card image;
-   repeat it only over the GIF clip (x 330–554, y 19–220.77) so the clip matches */
-.mc-impl-fade {
+/* GIF recording over the phone mockup: bottom edge fades out into the card image */
+.mc-impl-gif {
+  -webkit-mask-image: linear-gradient(180deg, var(--mc-black) 55%, transparent 100%);
+  mask-image: linear-gradient(180deg, var(--mc-black) 55%, transparent 100%);
+}
+
+/* Cut-out assets placed at Figma coordinates; each keeps its own drop shadow */
+.mc-impl-assets {
   position: absolute;
-  left: 52.72%;
-  top: 44.83%;
-  width: 35.78%;
-  height: 31.3%;
-  background: linear-gradient(180deg, var(--mc-fade-0) 0%, var(--mc-fade) 100%);
+  inset: 0;
   pointer-events: none;
+}
+
+.mc-impl-asset {
+  position: absolute;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+/* Coins: per-coin vertical path measured from the GIF (1.28s loop) */
+.mc-coin { animation: 1.28s linear infinite; }
+@keyframes mc-coin-106731 { 0% { translate: 0 0px; } 12.5% { translate: 0 -1px; } 25% { translate: 0 -3px; } 37.5% { translate: 0 -6px; } 50% { translate: 0 -8px; } 62.5% { translate: 0 -8px; } 75% { translate: 0 -5px; } 87.5% { translate: 0 -3px; } 100% { translate: 0 0px; } }
+.mc-coin--106731 { animation-name: mc-coin-106731; }
+@keyframes mc-coin-106732 { 0% { translate: 0 -0.43px; } 6.25% { translate: 0 -1.71px; } 12.5% { translate: 0 -1.71px; } 18.75% { translate: 0 -0.85px; } 25% { translate: 0 0.43px; } 31.25% { translate: 0 1.71px; } 37.5% { translate: 0 2.99px; } 43.75% { translate: 0 4.27px; } 50% { translate: 0 5.55px; } 56.25% { translate: 0 6.83px; } 62.5% { translate: 0 7.25px; } 68.75% { translate: 0 5.97px; } 75% { translate: 0 4.69px; } 81.25% { translate: 0 3.41px; } 87.5% { translate: 0 2.13px; } 93.75% { translate: 0 0.85px; } 100% { translate: 0 -0.43px; } }
+.mc-coin--106732 { animation-name: mc-coin-106732; }
+@keyframes mc-coin-106733 { 0% { translate: 0 0px; } 6.25% { translate: 0 -1.28px; } 12.5% { translate: 0 -2.56px; } 18.75% { translate: 0 -4.05px; } 25% { translate: 0 -4.69px; } 31.25% { translate: 0 -4.69px; } 37.5% { translate: 0 -3.41px; } 43.75% { translate: 0 -2.13px; } 50% { translate: 0 -0.85px; } 56.25% { translate: 0 0.43px; } 62.5% { translate: 0 1.71px; } 68.75% { translate: 0 2.99px; } 75% { translate: 0 4.27px; } 81.25% { translate: 0 3.84px; } 87.5% { translate: 0 2.56px; } 93.75% { translate: 0 1.28px; } 100% { translate: 0 0px; } }
+.mc-coin--106733 { animation-name: mc-coin-106733; }
+@keyframes mc-coin-106734 { 0% { translate: 0 0.43px; } 6.25% { translate: 0 -0.85px; } 12.5% { translate: 0 -2.13px; } 18.75% { translate: 0 -3.41px; } 25% { translate: 0 -5.12px; } 31.25% { translate: 0 -5.12px; } 37.5% { translate: 0 -4.27px; } 43.75% { translate: 0 -2.99px; } 50% { translate: 0 -1.71px; } 56.25% { translate: 0 -0.43px; } 62.5% { translate: 0 0.85px; } 68.75% { translate: 0 2.13px; } 75% { translate: 0 3.41px; } 81.25% { translate: 0 4.27px; } 87.5% { translate: 0 2.99px; } 93.75% { translate: 0 1.71px; } 100% { translate: 0 0.43px; } }
+.mc-coin--106734 { animation-name: mc-coin-106734; }
+@keyframes mc-coin-106735 { 0% { translate: 0 -0.43px; } 6.25% { translate: 0 -1.71px; } 12.5% { translate: 0 -2.99px; } 18.75% { translate: 0 -4.27px; } 25% { translate: 0 -5.55px; } 31.25% { translate: 0 -7.25px; } 37.5% { translate: 0 -6.83px; } 43.75% { translate: 0 -6.4px; } 50% { translate: 0 -5.12px; } 56.25% { translate: 0 -3.84px; } 62.5% { translate: 0 -2.56px; } 68.75% { translate: 0 -1.28px; } 75% { translate: 0 0px; } 81.25% { translate: 0 1.28px; } 87.5% { translate: 0 2.13px; } 93.75% { translate: 0 0.85px; } 100% { translate: 0 -0.43px; } }
+.mc-coin--106735 { animation-name: mc-coin-106735; }
+@keyframes mc-coin-106736 { 0% { translate: 0 -0.43px; } 6.25% { translate: 0 0px; } 12.5% { translate: 0 -1.28px; } 18.75% { translate: 0 -2.56px; } 25% { translate: 0 -3.84px; } 31.25% { translate: 0 -5.12px; } 37.5% { translate: 0 -6.4px; } 43.75% { translate: 0 -7.68px; } 50% { translate: 0 -7.68px; } 56.25% { translate: 0 -7.68px; } 62.5% { translate: 0 -7.68px; } 68.75% { translate: 0 -6.83px; } 75% { translate: 0 -5.55px; } 81.25% { translate: 0 -4.27px; } 87.5% { translate: 0 -2.99px; } 93.75% { translate: 0 -1.71px; } 100% { translate: 0 -0.43px; } }
+.mc-coin--106736 { animation-name: mc-coin-106736; }
+@keyframes mc-coin-106737 { 0% { translate: 0 -0.43px; } 6.25% { translate: 0 -1.71px; } 12.5% { translate: 0 -2.99px; } 18.75% { translate: 0 -3.84px; } 25% { translate: 0 -3.84px; } 31.25% { translate: 0 -2.56px; } 37.5% { translate: 0 -1.06px; } 43.75% { translate: 0 0.43px; } 50% { translate: 0 1.71px; } 56.25% { translate: 0 2.99px; } 62.5% { translate: 0 4.27px; } 68.75% { translate: 0 5.55px; } 75% { translate: 0 4.69px; } 81.25% { translate: 0 3.41px; } 87.5% { translate: 0 2.13px; } 93.75% { translate: 0 0.85px; } 100% { translate: 0 -0.43px; } }
+.mc-coin--106737 { animation-name: mc-coin-106737; }
+@keyframes mc-coin-106738 { 0% { translate: 0 -0.43px; } 6.25% { translate: 0 -1.71px; } 12.5% { translate: 0 -2.56px; } 18.75% { translate: 0 -2.56px; } 25% { translate: 0 -1.28px; } 31.25% { translate: 0 0px; } 37.5% { translate: 0 1.71px; } 43.75% { translate: 0 2.99px; } 50% { translate: 0 4.27px; } 56.25% { translate: 0 5.55px; } 62.5% { translate: 0 6.83px; } 68.75% { translate: 0 5.97px; } 75% { translate: 0 4.69px; } 81.25% { translate: 0 3.41px; } 87.5% { translate: 0 2.13px; } 93.75% { translate: 0 0.85px; } 100% { translate: 0 -0.43px; } }
+.mc-coin--106738 { animation-name: mc-coin-106738; }
+@keyframes mc-coin-106739 { 0% { translate: 0 -0.43px; } 6.25% { translate: 0 0.85px; } 12.5% { translate: 0 2.13px; } 18.75% { translate: 0 3.41px; } 25% { translate: 0 4.69px; } 31.25% { translate: 0 5.97px; } 37.5% { translate: 0 6.83px; } 43.75% { translate: 0 5.55px; } 50% { translate: 0 4.27px; } 56.25% { translate: 0 2.99px; } 62.5% { translate: 0 1.71px; } 68.75% { translate: 0 0px; } 75% { translate: 0 -1.28px; } 81.25% { translate: 0 -2.56px; } 87.5% { translate: 0 -2.56px; } 93.75% { translate: 0 -1.71px; } 100% { translate: 0 -0.43px; } }
+.mc-coin--106739 { animation-name: mc-coin-106739; }
+@keyframes mc-coin-106740 { 0% { translate: 0 0px; } 6.25% { translate: 0 0.85px; } 12.5% { translate: 0 2.13px; } 18.75% { translate: 0 3.41px; } 25% { translate: 0 4.69px; } 31.25% { translate: 0 5.97px; } 37.5% { translate: 0 7.25px; } 43.75% { translate: 0 7.68px; } 50% { translate: 0 7.68px; } 56.25% { translate: 0 7.68px; } 62.5% { translate: 0 6.83px; } 68.75% { translate: 0 5.12px; } 75% { translate: 0 3.84px; } 81.25% { translate: 0 2.56px; } 87.5% { translate: 0 1.28px; } 93.75% { translate: 0 0px; } 100% { translate: 0 0px; } }
+.mc-coin--106740 { animation-name: mc-coin-106740; }
+
+/* Leftmost ant: small hop measured from the GIF (0.32s) */
+.mc-impl-asset--hop { animation: mc-ant-hop 0.32s steps(1) infinite; }
+@keyframes mc-ant-hop { 0% { translate: 0 0; } 25% { translate: 0 0.4px; } 50% { translate: 0 0; } 75% { translate: 0 -0.9px; } }
+
+/* Light beam: rays pulse and a bright band sweeps upward (1.28s loop, like the GIF) */
+.mc-impl-beam {
+  animation: mc-beam-pulse 1.28s ease-in-out infinite;
+  -webkit-mask-image: linear-gradient(0deg, var(--mc-beam-dim) 0%, var(--mc-beam-dim) 35%, var(--mc-black) 50%, var(--mc-beam-dim) 65%, var(--mc-beam-dim) 100%);
+  mask-image: linear-gradient(0deg, var(--mc-beam-dim) 0%, var(--mc-beam-dim) 35%, var(--mc-black) 50%, var(--mc-beam-dim) 65%, var(--mc-beam-dim) 100%);
+  -webkit-mask-size: 100% 300%;
+  mask-size: 100% 300%;
+}
+
+@keyframes mc-beam-pulse {
+  0%   { opacity: 1;    -webkit-mask-position: 0 100%; mask-position: 0 100%; }
+  50%  { opacity: 0.7;  }
+  100% { opacity: 1;    -webkit-mask-position: 0 0;    mask-position: 0 0; }
+}
+
+/* Street ants play the original GIF frames (transparent WebM cut from it) */
+.mc-impl-clip {
+  position: absolute;
+  height: auto;
+  filter: drop-shadow(2px 1px 2px var(--mc-clip-shadow));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mc-coin,
+  .mc-impl-beam,
+  .mc-impl-asset--hop { animation: none; }
 }
 
 .mc-impl-line {
