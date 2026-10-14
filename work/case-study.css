@@ -283,6 +283,62 @@
   .reveal { opacity: 1; transform: none; transition: none; }
 }
 
+/* ── Section scroll reveal: blocks rise in as they enter (tagged by script.js) ── */
+.sr {
+  opacity: 0;
+  transform: translateY(56px);
+  transition:
+    opacity 1.3s cubic-bezier(0.22, 1, 0.36, 1) var(--sr-delay, 0s),
+    transform 1.5s cubic-bezier(0.22, 1, 0.36, 1) var(--sr-delay, 0s);
+  will-change: opacity, transform;
+}
+.sr.sr--card { transform: translateY(36px); }
+.sr.in { opacity: 1; transform: none; will-change: auto; }
+@media (prefers-reduced-motion: reduce) {
+  .sr, .sr.sr--card { opacity: 1; transform: none; transition: none; }
+}
+
+/* ── Slot-machine numbers for result / impact figures (reels built by script.js) ── */
+.slot {
+  position: relative;
+  display: inline-block;
+  clip-path: inset(0 -0.5em);            /* clip vertically only; keeps the text baseline */
+}
+.slot__ghost { visibility: hidden; }     /* sizes the slot to the final digit */
+.slot__reel {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate3d(-50%, 0, 0);
+  will-change: transform;
+}
+.slot__reel > span { display: block; }
+.slot-sign { display: inline-block; opacity: 0; }
+
+.slot-group.is-rolling .slot__reel {
+  animation: slot-roll var(--roll-dur, 1.4s) cubic-bezier(0.2, 0.8, 0.3, 1.1) var(--roll-delay, 0s) both;
+}
+.slot-group.is-rolling .slot-sign {
+  animation: slot-sign 0.45s cubic-bezier(0.34, 1.45, 0.64, 1) var(--roll-delay, 0s) both;
+}
+
+@keyframes slot-roll {
+  from { transform: translate3d(-50%, 0, 0); }
+  to   { transform: translate3d(-50%, var(--roll-to), 0); }
+}
+@keyframes slot-sign {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slot-sign { opacity: 1; }
+  .slot-group .slot__reel, .slot-group .slot-sign { animation: none !important; }
+}
+
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .cs-meta__grid {
