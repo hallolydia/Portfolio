@@ -1301,7 +1301,6 @@
 
 .mc-block--insight { padding-bottom: 120px; }
 .mc-shotimg { display: block; width: 100%; height: auto; }
-.mc-shotimg--navs { max-width: 1218px; }
 
 /* ── Timeline (Figma 6730:105453): arrow line + dots + release cards ── */
 .mc-tl { position: relative; }
