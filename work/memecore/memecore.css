@@ -693,7 +693,7 @@
 
 .mc-lead--body { color: var(--mc-body); letter-spacing: 0; }
 .mc-lead--tight { letter-spacing: -0.18px; }
-.mc-lead--nav { color: var(--mc-nav-desc); }
+.mc-lead--nav { font-size: 16px; line-height: 24px; letter-spacing: -0.16px; color: var(--mc-nav-desc); }
 
 .mc-strong-800 { font-weight: 800; }
 .mc-w300 { font-weight: 300; }
@@ -1301,6 +1301,7 @@
 
 .mc-block--insight { padding-bottom: 120px; }
 .mc-shotimg { display: block; width: 100%; height: auto; }
+.mc-shotimg--navs { max-width: 1218px; }
 
 /* ── Timeline (Figma 6730:105453): arrow line + dots + release cards ── */
 .mc-tl { position: relative; }
@@ -1317,7 +1318,7 @@
 .mc-tl__sub { margin: 0; font-size: 16px; font-weight: 600; line-height: 22.4px; text-align: center; color: var(--mc-accent); }
 .mc-tl__list { margin: 0; padding-left: 22px; list-style: disc; display: flex; flex-direction: column; gap: 0; color: var(--mc-body); font-weight: 400; }
 .mc-tl__list--a { font-size: 15px; line-height: 27px; }
-.mc-tl__list--b { font-size: 15px; line-height: 22.5px; gap: 5px; }
+.mc-tl__list--b { font-size: 15px; line-height: 22.5px; letter-spacing: -0.22px; gap: 5px; }
 .mc-tl__list--c { font-size: 15px; line-height: 27px; gap: 2.67px; }
 
 /* ── Responsive ── */
