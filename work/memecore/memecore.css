@@ -1298,6 +1298,7 @@
 .mc-split__row--result { gap: 64px; align-items: center; }
 .mc-split__row--result > .mc-media--result { flex: 0 0 580px; }
 .mc-split__row--learning { gap: 60px; }
+.mc-split__row--learning .mc-lead { font-size: 16px; line-height: 24px; }
 
 .mc-block--insight { padding-bottom: 120px; }
 .mc-shotimg { display: block; width: 100%; height: auto; }
