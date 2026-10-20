@@ -222,7 +222,9 @@ if (document.querySelector('link[href*="case-study.css"]') &&
     nums.forEach(g => {
       if (g.classList.contains('is-rolling')) return;
       if (g.getBoundingClientRect().top < limit) {
-        const base = 0.1;
+        // wait for the card holding the figure to start rising in, or the roll plays while it is still invisible
+        const card = g.closest('.sr');
+        const base = 0.1 + (card ? parseFloat(card.style.getPropertyValue('--sr-delay')) || 0 : 0);
         g.querySelectorAll('.slot__reel').forEach(r => r.style.setProperty('--roll-delay', base + 's'));
         const last = [...g.querySelectorAll('.slot__reel')].pop();
         const end = base + (last ? parseFloat(last.style.getPropertyValue('--roll-dur')) * 0.6 : 0);
@@ -299,25 +301,17 @@ if (heroEmojis.length || heroHeadline) {
 }
 
 
-// Card-over-card tension — border-radius 56→32
+// Work pins when its bottom meets the viewport bottom, so Strength covers it on the way up
 (function () {
-  const strength = document.getElementById('strength');
-
-  function cardTick() {
-    const vh = window.innerHeight;
-
-    if (strength) {
-      const sTop = strength.getBoundingClientRect().top;
-
-      // Strength enters from below: radius 56→32 as it rises into view
-      const tIn = Math.max(0, Math.min(1, (vh - sTop) / vh));
-      const br  = (56 - tIn * 24).toFixed(1);
-      strength.style.borderRadius = `${br}px ${br}px 0 0`;
-    }
-  }
-
-  window.addEventListener('scroll', cardTick, { passive: true });
-  cardTick();
+  const work = document.getElementById('work');
+  if (!work) return;
+  const setStick = () => {
+    work.style.setProperty('--work-stick', Math.min(0, window.innerHeight - work.offsetHeight) + 'px');
+  };
+  setStick();
+  window.addEventListener('resize', setStick);
+  window.addEventListener('load', setStick);
+  if ('ResizeObserver' in window) new ResizeObserver(setStick).observe(work);
 })();
 
 // Strength accordion — toggle open/close with aria-expanded

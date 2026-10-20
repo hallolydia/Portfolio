@@ -220,21 +220,19 @@
 
 .mc-overview__box {
   display: flex;
-  justify-content: center;
-  gap: 28px;
-  padding: 40px;
-  border-radius: 24px;
-  background: var(--mc-box-bg);
+  justify-content: space-between;
+  gap: 60px;
 }
 
+/* Figma: first column hugs its text at the left; the other three sit centered in 206px frames */
 .mc-overview__col {
-  flex: 1 1 0;
-  min-width: 0;
+  flex: none;
+  width: 206px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 40px;
 }
+.mc-overview__col:first-child { width: auto; align-items: flex-start; }
 
 .mc-overview__item {
   display: flex;
@@ -257,6 +255,7 @@
   line-height: 25.6px;
   color: var(--mc-value);
 }
+.mc-overview__value--tight { letter-spacing: -0.16px; }
 
 /* ── Story sections: shared text styles ── */
 .mc-label {
@@ -415,8 +414,8 @@
 
 /* Key Feedbacks panel (610×462) */
 .mc-feedback {
-  height: 462px;
-  padding: 44px 56px;
+  height: 448px;
+  padding: 40px 56px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -430,21 +429,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
 }
 
 .mc-feedback__chip { font-family: 'Inter', sans-serif; }
 .mc-feedback__quote { font-family: 'Pretendard', 'Manrope', sans-serif; }
 
 .mc-feedback__chip {
-  padding: 12px 16px;
+  padding: 10px 14px;
   border-radius: 50px;
   background: var(--mc-chip-dark);
   color: var(--mc-white);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  line-height: 16px;
-  letter-spacing: -0.32px;
+  line-height: 14px;
+  letter-spacing: -0.28px;
 }
 
 .mc-feedback__list {
@@ -545,7 +544,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 28px;
+  gap: 14px;
 }
 
 /* Design card head is a fixed 494px frame centered over the 500px image */
@@ -568,9 +567,9 @@
   color: var(--mc-heading);
 }
 
-/* 546×298 frame; 4px white OUTSIDE stroke */
+/* 546×297 frame; 4px white OUTSIDE stroke */
 .mc-challenge__shot {
-  aspect-ratio: 546 / 298;
+  aspect-ratio: 546 / 297;
   border-radius: 12px;
   overflow: hidden;
   background: var(--mc-white);
@@ -621,7 +620,7 @@
 }
 
 .mc-tradeoff__head > * {
-  flex: 1 1 0;
+  flex: 1 1 calc(50% - 30px);
   min-width: 0;
 }
 
@@ -646,15 +645,15 @@
   flex: none;
   width: 66px;
   font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.2;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14.4px;
   white-space: nowrap;
 }
 
-.mc-chat__who img { display: block; width: 52px; height: 52px; }
+.mc-chat__who img { display: block; width: 48px; height: 48px; }
 .mc-chat__who--me { color: var(--mc-accent-text); }
-.mc-chat__who--them { gap: 2px; color: var(--mc-quote-by); letter-spacing: -0.26px; }
+.mc-chat__who--them { width: 59px; gap: 2px; color: var(--mc-quote-by); letter-spacing: -0.24px; }
 
 .mc-chat__bubble {
   position: relative;
@@ -798,11 +797,11 @@
 .mc-tag--after {
   display: inline-flex;
   align-items: center;
-  height: 36px;
+  height: 26px;
   padding: 4px 8px;
-  font-size: 15px;
-  line-height: 21px;
-  letter-spacing: -0.3px;
+  font-size: 13px;
+  line-height: 18.2px;
+  letter-spacing: 0.26px;
 }
 
 .mc-tag--before { background: var(--mc-chip-ink); }
@@ -999,16 +998,14 @@
 .mc-navs__desc--lg { font-size: 18px; line-height: 27px; }
 
 /* Design Improvement 2 — before / after */
-.mc-card--shot { gap: 29px; }
-/* Figma: BEFORE card is a fixed 526px frame (content overflows its 56px bottom padding) */
-.mc-card--shot:first-child { padding-bottom: 31px; }
-.mc-card--shot-after { gap: 28px; }
+.mc-card--shot { gap: 28px; padding: 40px; }
 
 .mc-card__shot-top {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px;
 }
+.mc-card__shot-top > .mc-tag { align-self: flex-start; }
 
 .mc-frame {
   position: relative;
@@ -1018,6 +1015,13 @@
 
 .mc-frame--5 {
   aspect-ratio: 514 / 274;
+  border-radius: 13px;
+  box-shadow: 0 0 0 5px var(--mc-white);
+}
+
+/* DS2 before/after: 546×274; 5px white OUTSIDE stroke */
+.mc-frame--di2 {
+  aspect-ratio: 546 / 274;
   border-radius: 13px;
   box-shadow: 0 0 0 5px var(--mc-white);
 }
@@ -1063,7 +1067,7 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding: 56px;
+  padding: 40px;
 }
 
 /* Implementation decision (6730:106708) */
@@ -1078,7 +1082,7 @@
   height: 26px;
   font-size: 13px;
   line-height: 18.2px;
-  letter-spacing: -0.26px;
+  letter-spacing: 0.26px;
 }
 
 .mc-impl-card { padding: 40px; }
@@ -1125,9 +1129,6 @@
   position: absolute;
   left: 0;
   top: 0;
-  height: min(26px, calc(100cqw * 26 / 546));
-  padding: 0 min(8px, calc(100cqw * 8 / 546));
-  font-size: min(13px, calc(100cqw * 13 / 546));
 }
 
 .mc-impl-art--after {
@@ -1304,6 +1305,9 @@
 .mc-shotimg { display: block; width: 100%; height: auto; }
 
 /* ── Timeline (Figma 6730:105453): arrow line + dots + release cards ── */
+.mc-block--timeline .mc-lead { font-size: 16px; line-height: 24px; }
+.mc-challenge .mc-text .mc-lead { font-size: 16px; line-height: 24px; letter-spacing: 0; }
+.mc-block--result .mc-lead { font-size: 16px; line-height: 24px; }
 .mc-tl { position: relative; }
 .mc-tl__line { position: absolute; left: 0; top: 28.2px; width: 100%; height: 29px; }
 .mc-tl__grid { position: relative; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
@@ -1322,16 +1326,12 @@
 .mc-tl__list--c { font-size: 15px; line-height: 27px; gap: 2.67px; }
 
 /* ── Responsive ── */
-@media (max-width: 1280px) {
-  .mc-overview__col { padding: 0; }
-}
-
 @media (max-width: 1024px) {
   .mc-overview__box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-  .mc-overview__col { align-items: flex-start; }
+  .mc-overview__col { width: auto; align-items: flex-start; }
 
   .mc-split__row,
   .mc-split__row--about {

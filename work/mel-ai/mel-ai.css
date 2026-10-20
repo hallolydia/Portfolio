@@ -121,6 +121,9 @@
   overflow: hidden;
 }
 
+/* Figma 7058:116237: before/after are two 610px cards, 28px apart (1248px total) */
+.mg-panel--replies { max-width: 1248px; border-radius: 0; }
+
 .mg-panel img {
   display: block;
   width: 100%;
@@ -252,21 +255,19 @@
 
 .mg-overview__box {
   display: flex;
-  justify-content: center;
-  gap: 28px;
-  padding: 40px;
-  border-radius: 24px;
-  background: var(--mg-box-bg);
+  justify-content: space-between;
+  gap: 60px;
 }
 
+/* Figma: first column hugs its text at the left; the other three sit centered in 259px frames */
 .mg-overview__col {
-  flex: 1 1 0;
-  min-width: 0;
+  flex: none;
+  width: 259px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 40px;
 }
+.mg-overview__col:first-child { width: auto; align-items: flex-start; }
 
 .mg-overview__item {
   display: flex;
@@ -308,6 +309,7 @@
 }
 
 .mg-explore__content {
+  flex: 1 1 auto;               /* Figma: content frames share one height, so every result line sits at the bottom */
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -347,6 +349,7 @@
 }
 
 .mg-explore__list strong { font-weight: 600; }
+.mg-explore__card:nth-child(3) .mg-explore__list { letter-spacing: 0; }
 
 .mg-explore__result {
   font-family: 'Inter', sans-serif;
@@ -593,16 +596,12 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 1280px) {
-  .mg-overview__col { padding: 0; }
-}
-
 @media (max-width: 1024px) {
   .mg-overview__box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-  .mg-overview__col { align-items: flex-start; }
+  .mg-overview__col { width: auto; align-items: flex-start; }
 
   .mg-split,
   .mg-row,
