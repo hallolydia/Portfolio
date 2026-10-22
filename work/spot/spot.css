@@ -1,0 +1,443 @@
+/* =========================================================
+   SPOT case study — Figma 6410:65850 (1920 frame)
+   ========================================================= */
+
+.sp-page {
+  --sp-text:        #121213;
+  --sp-body:        #424751;
+  --sp-label:       #565860;
+  --sp-value:       #76777d;
+  --sp-divider:     #d3d7db;
+  --sp-white:       #ffffff;
+  --sp-accent:      #0db78d;
+  --sp-accent-bg:   #ceffec;
+  --sp-num:         #2ed0a8;
+  --sp-panel-top:   #f3f6f9;
+  --sp-meta-key:    #4d5159;
+  --sp-meta-value:  #787e88;
+  --sp-stat-title:  #616773;
+  --sp-stat-num:    #000000;
+  --sp-stat-sub:    #9095a0;
+}
+
+/* Shared content column: 1360 frame − 40px side padding = 1280 */
+.sp-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.sp-section {
+  background: var(--sp-white);
+  padding: 40px 0 100px;
+}
+
+.sp-section--pt0   { padding-top: 0; }
+.sp-section--pt80  { padding-top: 80px; }
+.sp-section--pb120 { padding-bottom: 120px; }
+.sp-section--pb140 { padding-bottom: 140px; }
+
+/* Text block → visual */
+.sp-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.sp-stack--64  { gap: 64px; }
+.sp-stack--100 { gap: 100px; }
+
+/* ── Shared text ── */
+.sp-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 1000px;
+}
+
+.sp-text--1100 { max-width: 1100px; }
+.sp-text--g16  { gap: 16px; }
+
+.sp-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.sp-head--g12 { gap: 12px; }
+
+.sp-label {
+  display: inline-flex;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 21px;
+  letter-spacing: 0.45px;
+  color: var(--sp-accent);
+}
+
+.sp-label--chip {
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--sp-accent-bg);
+}
+
+.sp-title {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 44.8px;
+  color: var(--sp-text);
+}
+
+.sp-title--032 { letter-spacing: -0.32px; }
+.sp-title--038 { letter-spacing: -0.38px; }
+
+.sp-body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--sp-body);
+}
+
+.sp-body strong { font-weight: 600; }
+.sp-body--016  { letter-spacing: -0.16px; }
+.sp-body--ink  { color: var(--sp-text); }
+
+/* Visual panels exported from Figma (card incl. radius) */
+.sp-panel {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.sp-panel img,
+.sp-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sp-row {
+  display: flex;
+  gap: 28px;
+}
+
+.sp-row > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.sp-row--g40 { gap: 40px; }
+
+/* Text column + panel side by side (610 / 60 / 610) */
+.sp-split {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.sp-split > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* ── 1. Hero (6410:65852) ── */
+.sp-hero {
+  background: var(--sp-white);
+  padding: 240px 0 80px;
+}
+
+.sp-hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.sp-cover {
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.sp-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sp-hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1000px;
+}
+
+.sp-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sp-hero__tags .tag {
+  /* Figma stroke is INSIDE → 1px border + 1px/9px padding = 25px tall */
+  padding: 1px 9px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: -0.28px;
+}
+
+.sp-hero__tags .tag--fill {
+  background: var(--sp-text);
+  color: var(--sp-white);
+}
+
+.sp-hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.sp-hero__title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 50.4px;
+  letter-spacing: -0.36px;
+  color: var(--sp-text);
+}
+
+.sp-hero__summary {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25.2px;
+  color: var(--sp-text);
+}
+
+/* ── 2. Role / Timeline / Team / Tools (6999:100037) ── */
+.sp-overview__box {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Figma: 230px columns with 1px dividers, 60px on each side of a divider */
+.sp-overview__col {
+  flex: none;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sp-overview__col:first-child { align-items: flex-start; }
+
+.sp-overview__divider {
+  flex: none;
+  width: 1px;
+  height: 112px;
+  background: var(--sp-divider);
+}
+
+.sp-overview__item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.sp-overview__label {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 22.4px;
+  letter-spacing: -0.16px;
+  color: var(--sp-label);
+}
+
+.sp-overview__value {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25.6px;
+  color: var(--sp-value);
+}
+
+/* ── Problem (7176:118593): two 620px columns, 40px apart ── */
+.sp-cause {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sp-cause__text {
+  flex: 1 1 auto; /* Figma: both text frames are 161px, so the two panels line up */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sp-cause__head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sp-cause__num {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 21px;
+  letter-spacing: 0.45px;
+  color: var(--sp-num);
+}
+
+.sp-cause__title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 39.2px;
+  color: var(--sp-text);
+}
+
+.sp-cause__title--056 { letter-spacing: -0.56px; }
+
+/* ── User testing (7192:73472) ── */
+.sp-testing {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sp-testing__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 270px;
+}
+
+.sp-meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 24px;
+  row-gap: 6px;
+  font-size: 14px;
+  line-height: 18.2px;
+  letter-spacing: -0.14px;
+}
+
+.sp-meta dt {
+  font-weight: 500;
+  color: var(--sp-meta-key);
+}
+
+.sp-meta dd {
+  margin: 0;
+  font-weight: 400;
+  color: var(--sp-meta-value);
+}
+
+.sp-meta a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── Final design: before 340 / after 832 (DS1), before 350 / after 902 (DS2) ── */
+.sp-ba {
+  display: flex;
+  gap: 28px;
+}
+
+.sp-ba--ds1 { max-width: 1200px; }
+
+.sp-ba > :nth-child(1) { flex: 340 1 0; min-width: 0; }
+.sp-ba > :nth-child(2) { flex: 832 1 0; min-width: 0; }
+.sp-ba--ds2 > :nth-child(1) { flex-grow: 350; }
+.sp-ba--ds2 > :nth-child(2) { flex-grow: 902; }
+
+/* ── Result (7232:85234) ── */
+.sp-result {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 40px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, var(--sp-panel-top) -8.7%, var(--sp-white) 188.6%);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.sp-result__top {
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-result__label {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: var(--sp-stat-title);
+}
+
+.sp-result__num {
+  margin-top: -12px;
+  height: 92px;
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+  font-family: 'Geist', sans-serif;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 72px;
+  color: var(--sp-stat-num);
+}
+
+.sp-result__num--word {
+  font-size: 52px;
+  line-height: 62.4px;
+}
+
+.sp-result__x      { font-weight: 500; }
+.sp-result__x--400 { font-weight: 400; }
+
+.sp-result__change {
+  margin-top: -8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.1px;
+  color: var(--sp-stat-sub);
+}
+
+/* ── Lessons learned (6476:72966): text 680 / 60 / image 540 ── */
+.sp-lessons > :first-child { flex: 680 1 0; }
+.sp-lessons > :last-child  { flex: 540 1 0; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .sp-overview__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .sp-overview__col { width: auto; align-items: flex-start; }
+  .sp-overview__divider { display: none; }
+
+  .sp-split,
+  .sp-row,
+  .sp-ba {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 40px;
+  }
+  .sp-split > *,
+  .sp-row > *,
+  .sp-ba > * { flex: none; }
+  .sp-testing__intro { min-height: 0; }
+}
+
+@media (max-width: 768px) {
+  .sp-container { padding: 0 20px; }
+  .sp-result { padding: 32px 24px; }
+}
+
+@media (max-width: 560px) {
+  .sp-overview__box { grid-template-columns: 1fr; }
+}

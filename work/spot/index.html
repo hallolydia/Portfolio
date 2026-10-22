@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Seat View-Sharing App for Baseball Stadiums — Lydia</title>
+  <title>Making Baseball Seat Views Easier to Explore and Share, Lydia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="../../styles.css" />
   <link rel="stylesheet" href="../case-study.css" />
+  <link rel="stylesheet" href="spot.css" />
 </head>
-<body>
+<body class="sp-page">
 
   <!-- GNB -->
   <header class="gnb" id="gnb">
@@ -36,53 +38,348 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="cs-hero">
-    <div class="cs-hero__inner">
-      <div class="cs-cover-wrap">
-        <div class="cs-cover">
-          <img src="../../assets/images/spot/img-spot-main.png" alt="Seat View-Sharing App cover" loading="eager" style="object-position: top;">
+  <!-- Hero (Figma 6410:65852) -->
+  <section class="sp-hero">
+    <div class="sp-container sp-hero__inner">
+      <div class="sp-cover">
+        <img src="../../assets/images/spot/hero-cover.webp" width="1280" height="774" alt="SPOT app home screen with its 3D mascot on a green cover" loading="eager">
+      </div>
+      <div class="sp-hero__text">
+        <div class="sp-hero__tags">
+          <span class="tag tag--fill">Side Project</span>
+          <span class="tag">From 0 to 1</span>
+          <span class="tag">3D Graphics</span>
+        </div>
+        <div class="sp-hero__copy">
+          <h1 class="sp-hero__title">Making Baseball Seat Views Easier to Explore and Share</h1>
+          <p class="sp-hero__summary">Designed and launched a new seat-view service for baseball fans, reducing the time to find a view by 5×<br>and increasing review submissions by 720%.</p>
         </div>
       </div>
-      <div class="cs-hero__tags">
-        <span class="tag tag--primary">Side Project</span>
-        <span class="tag">Product Design</span>
-      </div>
-      <h1 class="cs-hero__title">Seat View-Sharing App for Baseball Stadiums</h1>
-      <p class="cs-hero__summary">Quickly find and share views from countless baseball seats.</p>
     </div>
   </section>
 
-  <!-- Meta strip -->
-  <div class="cs-meta">
-    <div class="cs-meta__grid reveal">
-      <div class="cs-meta__item">
-        <span class="cs-meta__label">My Role</span>
-        <span class="cs-meta__value">Product Designer</span>
-      </div>
-      <div class="cs-meta__item">
-        <span class="cs-meta__label">Team</span>
-        <span class="cs-meta__value">Solo</span>
-      </div>
-      <div class="cs-meta__item">
-        <span class="cs-meta__label">Tools</span>
-        <span class="cs-meta__value">Figma</span>
-      </div>
-      <div class="cs-meta__item">
-        <span class="cs-meta__label">Timeline</span>
-        <span class="cs-meta__value">2 months</span>
-      </div>
-      <div class="cs-meta__item">
-        <span class="cs-meta__label">For</span>
-        <span class="cs-meta__value">B2C</span>
+  <!-- Role · Timeline · Team · Tools (Figma 6999:100037) -->
+  <section class="sp-section">
+    <div class="sp-container">
+      <div class="sp-overview__box">
+        <div class="sp-overview__col">
+          <div class="sp-overview__item">
+            <p class="sp-overview__label">MY ROLE</p>
+            <p class="sp-overview__value">Product Design<br>3D Graphics<br>User Research and Testing</p>
+          </div>
+        </div>
+        <span class="sp-overview__divider" aria-hidden="true"></span>
+        <div class="sp-overview__col">
+          <div class="sp-overview__item">
+            <p class="sp-overview__label">TIMELINE</p>
+            <p class="sp-overview__value">Jun 2024 -<br>Aug 2024</p>
+          </div>
+        </div>
+        <span class="sp-overview__divider" aria-hidden="true"></span>
+        <div class="sp-overview__col">
+          <div class="sp-overview__item">
+            <p class="sp-overview__label">TEAM</p>
+            <p class="sp-overview__value">3 Product Designers (Me)<br>3 Android Developers<br>3 Backend Developers</p>
+          </div>
+        </div>
+        <span class="sp-overview__divider" aria-hidden="true"></span>
+        <div class="sp-overview__col">
+          <div class="sp-overview__item">
+            <p class="sp-overview__label">TOOLS</p>
+            <p class="sp-overview__value">Figma<br>Cinema 4D<br>Photoshop</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Body -->
-  <div class="cs-body">
-    <img src="../../assets/images/spot/img-spot-body.png" alt="SPOT! case study" style="width:100%; display:block;">
-  </div>
+  <!-- Context (Figma 7169:117389) -->
+  <section class="sp-section">
+    <div class="sp-container sp-stack sp-stack--64">
+      <div class="sp-head">
+        <span class="sp-label sp-label--chip">CONTEXT</span>
+        <div class="sp-text">
+          <div class="sp-head">
+            <span class="sp-label">WHAT IS SPOT?</span>
+            <h2 class="sp-title">An app where baseball fans share and find seat views</h2>
+          </div>
+          <p class="sp-body sp-body--ink sp-body--016">Korean baseball attendance surpassed 10 million in 2024, up 43% from the previous year. But with an average of 20,800 seats per stadium, and preferences that varied by who fans came with and how they liked to watch, choosing a seat was difficult. <strong>With SPOT, fans use others’ reviews to choose seats before a game. Afterward, they share their own views and keep a game-day journal.</strong></p>
+        </div>
+      </div>
+      <div class="sp-panel">
+        <img src="../../assets/images/spot/context.webp" width="1280" height="410" alt="Two SPOT screens: writing a review after a game, and seeing reviews from other fans" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Survey + Interviews (Figma 6410:66345) -->
+  <section class="sp-section">
+    <div class="sp-container sp-stack sp-stack--100">
+      <div class="sp-split">
+        <div class="sp-text">
+          <div class="sp-head">
+            <span class="sp-label">SURVEY</span>
+            <h2 class="sp-title sp-title--032">Baseball fans searched 4 to 5 platforms just to check a seat view</h2>
+          </div>
+          <p class="sp-body">In a survey of 252 fans, most checked seat views before a game. But<strong> reviews and photos were scattered across blogs, social media, and official sites, in different formats.</strong></p>
+        </div>
+        <div class="sp-panel">
+          <img src="../../assets/images/spot/survey.webp" width="610" height="380" alt="Survey: 74.6% check seat views. Top frustrations: info scattered across platforms 24.4%, not enough reviews and photos 24%, too many factors 19.8%" loading="lazy">
+        </div>
+      </div>
+      <div class="sp-split">
+        <div class="sp-text">
+          <div class="sp-head">
+            <span class="sp-label">USER INTERVIEWS &amp; KEY INSIGHT</span>
+            <h2 class="sp-title">Fans actively searched for seat reviews but rarely shared their own</h2>
+          </div>
+          <p class="sp-body sp-body--016">To understand why, we interviewed six frequent and casual fans. All of them read several seat-view reviews before a game, but none had ever written one. <strong>They had experiences worth sharing, but felt uncomfortable posting them publicly.</strong></p>
+        </div>
+        <div class="sp-panel">
+          <img src="../../assets/images/spot/interviews.webp" width="610" height="394" alt="Interviews with 6 fans: 100% said they don't write reviews after a game, with quotes from two fans" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem (Figma 7176:118585) -->
+  <section class="sp-section">
+    <div class="sp-container sp-stack">
+      <div class="sp-text sp-text--1100 sp-text--g16">
+        <div class="sp-head">
+          <span class="sp-label sp-label--chip">PROBLEM</span>
+          <h2 class="sp-title sp-title--032">Fans wanted everything in one place, and a reason to share</h2>
+        </div>
+        <p class="sp-body">Interviews revealed two causes behind the problem.</p>
+      </div>
+      <div class="sp-row sp-row--g40">
+        <div class="sp-cause">
+          <div class="sp-cause__text">
+            <div class="sp-cause__head">
+              <span class="sp-cause__num">01</span>
+              <h3 class="sp-cause__title sp-cause__title--056">Photos and reviews were on different sites</h3>
+            </div>
+            <p class="sp-body"><strong>Most users wanted both in one place.</strong> Photos show the view at a glance, and text adds what photos miss, like weather, sunlight, and crowd energy. But they had to piece the two together across platforms.</p>
+          </div>
+          <div class="sp-panel">
+            <img src="../../assets/images/spot/problem-01.webp" width="620" height="380" alt="What fans said about finding seat views: they want photos first, and text for what photos can't show" loading="lazy">
+          </div>
+        </div>
+        <div class="sp-cause">
+          <div class="sp-cause__text">
+            <div class="sp-cause__head">
+              <span class="sp-cause__num">02</span>
+              <h3 class="sp-cause__title">Fans had no reason to share reviews</h3>
+            </div>
+            <p class="sp-body">In follow-up interviews, all six participants, both frequent and casual fans, said <strong>a clear reward would make them more willing to write reviews.</strong></p>
+          </div>
+          <div class="sp-panel">
+            <img src="../../assets/images/spot/problem-02.webp" width="620" height="380" alt="What fans said about writing reviews: there is no reward, so they don't bother" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hypotheses (Figma 7176:118824) -->
+  <section class="sp-section sp-section--pt80">
+    <div class="sp-container sp-stack">
+      <div class="sp-text sp-text--1100">
+        <div class="sp-head">
+          <span class="sp-label sp-label--chip">HYPOTHESES</span>
+          <h2 class="sp-title">Faster access and a reason to contribute, right from home</h2>
+        </div>
+      </div>
+      <div class="sp-row">
+        <div class="sp-panel">
+          <img src="../../assets/images/spot/hypo-01.webp" width="626" height="370" alt="01. If fans can reach photo and text seat reviews straight from the home screen, they'll find the view they need faster." loading="lazy">
+        </div>
+        <div class="sp-panel">
+          <img src="../../assets/images/spot/hypo-02.webp" width="626" height="370" alt="02. If users can see their review count and level on the home screen, they'll want to post more to level up." loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- User testing (Figma 7182:119160) -->
+  <section class="sp-section sp-section--pb120">
+    <div class="sp-container">
+      <div class="sp-split">
+        <div class="sp-testing">
+          <div class="sp-testing__intro">
+            <div class="sp-head">
+              <span class="sp-label sp-label--chip">USER TESTING</span>
+              <h2 class="sp-title">Testing with 4 fans showed both home features needed a fix</h2>
+            </div>
+            <p class="sp-body">Using a Maze prototype, I observed how fans used the home screen and asked follow-up questions.</p>
+          </div>
+          <dl class="sp-meta">
+            <dt>Date</dt><dd>Jul 6, 2024</dd>
+            <dt>Participants</dt><dd style="letter-spacing:-0.28px">2 frequent fans (20+ games a year), 2 casual fans (3 to 4 games a year)</dd>
+            <dt>Method</dt><dd><span style="text-decoration:underline;text-underline-offset:2px">Observed usability test, interviews (link)</span></dd>
+          </dl>
+        </div>
+        <div class="sp-panel">
+          <img src="../../assets/images/spot/testing.webp" width="610" height="360" alt="Fans testing the SPOT prototype on their phones" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hypothesis 1 result (Figma 7182:119174) -->
+  <section class="sp-section sp-section--pt0 sp-section--pb140">
+    <div class="sp-container sp-stack">
+      <div class="sp-text">
+        <div class="sp-head">
+          <span class="sp-label">HYPOTHESIS 1 RESULT</span>
+          <h2 class="sp-title">All four users skipped the bottom tab and tapped the top button</h2>
+        </div>
+        <p class="sp-body sp-body--016">Since finding seat views was users’ top need, I gave two ways to reach it from home, a button at the top and a tab at the bottom, and asked fans to find a seat they wanted.<strong> More entry points didn’t help: users only noticed the button that stood out.</strong></p>
+      </div>
+      <div class="sp-row">
+        <div class="sp-panel">
+          <img src="../../assets/images/spot/h1-heatmap.webp" width="626" height="520" alt="Heatmap: everyone tapped the top quick-menu button first, and no one noticed the bottom navigation tab" loading="lazy">
+        </div>
+        <div class="sp-panel">
+          <img src="../../assets/images/spot/h1-feedback.webp" width="626" height="520" alt="What users said, and the design direction: remove the unclear tab and keep one clear Find seat views button" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hypothesis 2 result (Figma 7182:119211) -->
+  <section class="sp-section sp-section--pt0 sp-section--pb140">
+    <div class="sp-container sp-stack">
+      <div class="sp-text sp-text--1100">
+        <div class="sp-head">
+          <span class="sp-label">HYPOTHESIS 2 RESULT</span>
+          <h2 class="sp-title">A level number alone didn’t make anyone want to write more</h2>
+        </div>
+        <p class="sp-body">I showed three profile concepts inspired by KBO baseball cards, tickets, and membership cards, and asked whether leveling would motivate them to write reviews.<strong> Users understood the levels, but wanted a reward they could actually see and feel, not just a changing number.</strong></p>
+      </div>
+      <div class="sp-stack" style="gap:28px">
+        <div class="sp-panel">
+          <img src="../../assets/images/spot/h2-concepts.webp" width="1280" height="520" alt="Three profile concepts: baseball card, stadium ticket and membership card" loading="lazy">
+        </div>
+        <div class="sp-panel">
+          <img src="../../assets/images/spot/h2-feedback.webp" width="1280" height="376" alt="What users said, what else we noticed about team characters, and the design direction: turn levels into a growing character" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final design: Design solution 1 (Figma 6410:66608) -->
+  <section class="sp-section sp-section--pt0">
+    <div class="sp-container sp-stack">
+      <div class="sp-text">
+        <div class="sp-head">
+          <span class="sp-label sp-label--chip">FINAL DESIGN</span>
+          <span class="sp-label">DESIGN SOLUTION 1</span>
+          <h2 class="sp-title sp-title--038">Replacing the unused tab with one clear “Find seat views” button</h2>
+        </div>
+        <p class="sp-body">No one used the bottom tab in testing, <strong>so I removed it and made the top button the only way in.</strong> I also renamed it from “Check views” to “Find seat views” so users know what it does before tapping.</p>
+      </div>
+      <div class="sp-ba sp-ba--ds1">
+        <div class="sp-panel">
+          <img src="../../assets/images/spot/ds1-before.webp" width="340" height="540" alt="Before: one feature with two names, and users missed the tab" loading="lazy">
+        </div>
+        <div class="sp-panel">
+          <img src="../../assets/images/spot/ds1-after.webp" width="832" height="540" alt="After: a Find seat views button with stadium photos on the home screen, leading to seat photos, keywords and reviews" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final design: Design solution 2 (Figma 6410:66642) -->
+  <section class="sp-section">
+    <div class="sp-container sp-stack">
+      <div class="sp-text sp-text--1100">
+        <div class="sp-head">
+          <span class="sp-label">DESIGN SOLUTION 2</span>
+          <h2 class="sp-title">Replacing the level number with a team character that grows with every review</h2>
+        </div>
+        <p class="sp-body">Users understood the levels, but a number didn’t feel like a reward. <strong>Since fans already love their team’s mascots, I turned each level into a character that grows and cheers for their team.</strong></p>
+      </div>
+      <div class="sp-ba sp-ba--ds2">
+        <div class="sp-panel">
+          <img src="../../assets/images/spot/ds2-before.webp" width="350" height="540" alt="Before: only the number changed, so leveling up didn't feel rewarding" loading="lazy">
+        </div>
+        <div class="sp-panel">
+          <img src="../../assets/images/spot/ds2-after.webp" width="902" height="540" alt="After: a team character that levels up, a reviews-needed list per level, and a level-up pop-up" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Result (Figma 6410:66667) -->
+  <section class="sp-section">
+    <div class="sp-container sp-stack">
+      <div class="sp-head" style="gap:10px">
+        <span class="sp-label sp-label--chip">RESULT</span>
+        <div class="sp-head sp-head--g12">
+          <h2 class="sp-title">Fans found seat views faster and shared far more reviews</h2>
+          <p class="sp-body">Measured with Mixpanel and Google Analytics one month after launch</p>
+        </div>
+      </div>
+      <div class="sp-row">
+        <article class="sp-result">
+          <div class="sp-result__top">
+            <p class="sp-result__label">Faster access to seat views</p>
+            <p class="sp-result__num">5<span class="sp-result__x">x</span></p>
+            <p class="sp-result__change"><span>31</span><span>→</span><span>6 sec</span></p>
+          </div>
+          <p class="sp-body">One clear button on the home screen took users straight to the core feature.</p>
+        </article>
+        <article class="sp-result">
+          <div class="sp-result__top">
+            <p class="sp-result__label">More reviews written</p>
+            <p class="sp-result__num">8.2<span class="sp-result__x sp-result__x--400">x</span></p>
+            <p class="sp-result__change"><span>45</span><span>→</span><span>372 reviews</span></p>
+          </div>
+          <p class="sp-body">The growing character gave fans a reason to share. Users said they wanted to keep watching it level up.</p>
+        </article>
+        <article class="sp-result">
+          <div class="sp-result__top">
+            <p class="sp-result__label">Awards and recognition</p>
+            <p class="sp-result__num sp-result__num--word">Grand Prize</p>
+            <p class="sp-result__change"><span>4.46 / 5 user satisfaction</span></p>
+          </div>
+          <p class="sp-body">Won the Grand Prize at DEPROMEET, ranked #1 Trending Product on an IT platform, and got featured on Behance’s UI/UX gallery.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lessons learned (Figma 6476:72966) -->
+  <section class="sp-section">
+    <div class="sp-container">
+      <div class="sp-split sp-lessons">
+        <div class="sp-text">
+          <div class="sp-head">
+            <span class="sp-label sp-label--chip">LESSONS LEARNED</span>
+            <h2 class="sp-title">Letting user evidence decide where to spend limited time</h2>
+          </div>
+          <p class="sp-body">On a zero-to-one product, removing the tab and building a 3D character meant putting other features on hold. <strong>But interviews and testing kept pointing to the same two problems, finding seat views and a lack of reasons to share, so I spent two weeks on just those. </strong>Through the baseball season, I kept testing with fans who regularly attend games and refined the design until launch. The result was an experience fans shared on their own. Next time, I’ll keep using research and data, not assumptions, to decide where effort goes.</p>
+        </div>
+        <div class="sp-panel">
+          <img src="../../assets/images/spot/lessons.webp" width="540" height="301" alt="SPOT character cards on a green background" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next steps (Figma 6410:66691) -->
+  <section class="sp-section">
+    <div class="sp-container">
+      <div class="sp-text">
+        <div class="sp-head">
+          <span class="sp-label sp-label--chip">NEXT STEPS</span>
+          <h2 class="sp-title">Testing whether fans would pay for character items</h2>
+        </div>
+        <p class="sp-body">Fans responded well to the growing character, so the next step is character items they can buy or unlock by writing reviews. Before building them, I’d test which rewards fans want and whether they’d actually pay.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
