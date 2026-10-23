@@ -568,22 +568,66 @@
     </div>
   </section>
 
-  <!-- What's Next (Figma 6730:84225) — copy is still a placeholder ("Title" / "Body") in Figma; enable once written
-  <section class="sk-section">
-    <div class="sk-container">
-      <div class="sk-split">
-        <div class="sk-text">
-          <div class="sk-text__head">
-            <span class="sk-label">WHAT’S NEXT?</span>
-            <h2 class="sk-title"></h2>
-          </div>
-          <p class="sk-body"></p>
-        </div>
-        <div class="sk-media sk-panel sk-panel--b"></div>
+  <!-- What's Next: the next two projects (wraps around to the first; disabled projects are skipped) -->
+  <section class="whats-next" style="--wn-accent: var(--sk-accent)">
+    <div class="whats-next__inner">
+      <span class="whats-next__label">WHAT’S NEXT?</span>
+      <div class="work-grid">
+<article class="work-card reveal">
+          <a href="/work/spot/" class="work-card__link">
+            <div class="work-card__media">
+              <div class="work-card__thumb">
+                <img src="/assets/images/thumb-work-spot.webp" alt="SPOT 야구장 좌석뷰 공유 앱 썸네일" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="work-card__content">
+              <div class="work-card__tags">
+                <span class="tag tag--primary">Side Project</span>
+                <span class="tag">0 → 1</span>
+                <span class="tag">Sports</span>
+              </div>
+              <h3 class="work-card__title">Making Baseball Seat Views Easier to Explore and Share</h3>
+              <p class="work-card__desc">Designed and launched a new seat-view service for baseball fans, reducing the time to find a view by 5× and increasing review submissions by 720%.</p>
+            </div>
+          </a>
+        </article>
+<article class="work-card reveal">
+          <a href="/work/memecore/" class="work-card__link">
+            <div class="work-card__media">
+              <div class="work-card__thumb">
+                <div class="thumb-scene thumb-scene--memecore" role="img" aria-label="MemeCore website reconstruction thumbnail">
+                  <div class="tsm-logo">
+                    <img class="tsm-logo__symbol" src="/assets/images/thumb-memecore/logo-symbol.svg" alt="" loading="lazy" decoding="async">
+                    <img class="tsm-logo__type" src="/assets/images/thumb-memecore/logo-type.svg" alt="" loading="lazy" decoding="async">
+                  </div>
+                  <div class="thumb-scene__shade tsm-shade"></div>
+                  <div class="tsm-browser">
+                    <img class="tsm-browser__header" src="/assets/images/thumb-memecore/header.webp" alt="" loading="lazy" decoding="async">
+                    <div class="tsm-browser__main">
+                      <img class="tsm-browser__title" src="/assets/images/thumb-memecore/title.webp" alt="" loading="lazy" decoding="async">
+                      <video class="tsm-browser__video" muted loop playsinline preload="none" data-wn-lazy aria-hidden="true">
+                        <source src="/assets/images/thumb-memecore/homepage.webm" type="video/webm">
+                        <source src="/assets/images/thumb-memecore/homepage.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="work-card__content">
+              <div class="work-card__tags">
+                <span class="tag tag--primary">Web3</span>
+                <span class="tag">Vibe Coding</span>
+                <span class="tag">Product Design/Management</span>
+              </div>
+              <h3 class="work-card__title">Reconstructing the MemeCore Website for Better Web3 Usability</h3>
+              <p class="work-card__desc">Rebuilt the site with AI in 4 days, cutting page size by 94%, reducing bounce by 2.6×, and establishing an AI workflow adopted across the organization.</p>
+            </div>
+          </a>
+        </article>
       </div>
     </div>
   </section>
-  -->
 
   <!-- Footer -->
   <footer class="footer">

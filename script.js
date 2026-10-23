@@ -416,3 +416,25 @@ document.querySelectorAll('.footer__email-btn').forEach(btn => {
   document.addEventListener('mouseleave', () => cursor.classList.remove('is-visible'));
   document.addEventListener('mouseenter', () => { if (started) cursor.classList.add('is-visible'); });
 })();
+
+// What's Next cards: videos stay unloaded until the section is near the viewport,
+// so the extra thumbnails never slow down the case study itself.
+(function initWhatsNextVideos() {
+  const videos = document.querySelectorAll('.whats-next video[data-wn-lazy]');
+  if (!videos.length) return;
+  const start = v => {
+    v.preload = 'auto';
+    v.load();
+    const p = v.play();
+    if (p && p.catch) p.catch(() => {});
+  };
+  if (!('IntersectionObserver' in window)) { videos.forEach(start); return; }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      start(e.target);
+    });
+  }, { rootMargin: '400px 0px' });
+  videos.forEach(v => io.observe(v));
+})();

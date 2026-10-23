@@ -1703,3 +1703,35 @@ html.has-cursor a[href] * {
   height: var(--cursor-text-h, 20px);
 }
 
+/* ===== What's Next — next two projects at the bottom of each case study ===== */
+.whats-next {
+  background: #fff;
+  padding: 40px 0 100px;
+}
+
+.whats-next__inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Label: page accent colour, 20px, letter-spacing 3% */
+.whats-next__label {
+  align-self: flex-start;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  letter-spacing: 0.6px;
+  color: var(--wn-accent, var(--color-text));
+}
+
+/* Cards fill their 620px column (the home grid caps them at 580px) */
+.whats-next .work-card__media { max-width: none; }
+
+@media (max-width: 768px) {
+  .whats-next { padding: 32px 0 80px; }
+  .whats-next__inner { padding: 0 20px; gap: 40px; }
+}
