@@ -102,6 +102,7 @@
 
 .sp-body strong { font-weight: 600; }
 .sp-body--016  { letter-spacing: -0.16px; }
+.sp-body--15   { font-size: 15px; line-height: 22.5px; }
 .sp-body--ink  { color: var(--sp-text); }
 
 /* Visual panels exported from Figma (card incl. radius) */
@@ -418,8 +419,8 @@
 }
 
 /* ── Lessons learned (6476:72966): text 680 / 60 / image 540 ── */
-.sp-lessons > :first-child { flex: 680 1 0; }
-.sp-lessons > :last-child  { flex: 540 1 0; }
+.sp-lessons > :first-child { flex: 660 1 0; }
+.sp-lessons > :last-child  { flex: 560 1 0; }
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
