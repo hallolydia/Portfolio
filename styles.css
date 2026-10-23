@@ -1715,23 +1715,59 @@ html.has-cursor a[href] * {
   padding: 0 40px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 24px;
 }
 
-/* Label: page accent colour, 20px, letter-spacing 3% */
+/* Label: page accent colour, 16px, letter-spacing 3% */
 .whats-next__label {
   align-self: flex-start;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 800;
-  line-height: 28px;
-  letter-spacing: 0.6px;
+  line-height: 22.4px;
+  letter-spacing: 0.48px;
   color: var(--wn-accent, var(--color-text));
 }
 
 /* Cards fill their 620px column (the home grid caps them at 580px) */
 .whats-next .work-card__media { max-width: none; }
 
+/* The layered thumbnail scenes are 616px wide: scale them to keep covering the thumb when the card is wider */
+.whats-next .work-card__thumb { container-type: inline-size; }
+.whats-next .thumb-scene { scale: max(1.01, tan(atan2(100cqw, 616px))); }
+
+/* Zoom in with the same springy pop, but come back without undershooting 1x
+   (the undershoot exposed the grey thumb background at the left and right edges) */
+.whats-next .work-card__link .work-card__thumb {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.whats-next .work-card__link:hover .work-card__thumb {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Hover: the hovered card widens and the other narrows (the thumbnail zoom still applies) */
+@media (hover: hover) and (min-width: 769px) {
+  /* Reserve room for one extra title line (the narrower card can wrap once more) */
+  .whats-next .work-card__content { min-height: 201px; }
+
+  .whats-next .work-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    transition: grid-template-columns 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .whats-next .work-grid:has(.work-card:nth-child(1):hover) {
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  }
+
+  .whats-next .work-grid:has(.work-card:nth-child(2):hover) {
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whats-next .work-grid { transition: none; }
+}
+
 @media (max-width: 768px) {
   .whats-next { padding: 32px 0 80px; }
-  .whats-next__inner { padding: 0 20px; gap: 40px; }
+  .whats-next__inner { padding: 0 20px; gap: 24px; }
 }
