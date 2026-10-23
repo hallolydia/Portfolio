@@ -82,14 +82,14 @@
 ### GNB (전 페이지)
 
 ```
-[ Lydia → Home ]    Work · Lab · Article · About    [ Contact me! → LinkedIn ]
+[ Lydia → Home ]    Work · Lab · Article · About    [ LinkedIn (hover: Let's Talk!) → LinkedIn ]
 ```
 
 | 항목 | 규칙 |
 |------|------|
 | Lydia | 홈 (`/` 또는 `../`) |
 | Work / Lab / Article / About | 각 서브 페이지 |
-| **Contact me!** | GNB 맨 오른쪽 · LinkedIn 새 탭 · 문구 변경 금지 |
+| **LinkedIn** (hover: **Let's Talk!**) | GNB 맨 오른쪽 · LinkedIn 새 탭 · 문구 변경 금지 |
 
 ### 페이지 & Home 화이트리스트
 
@@ -135,7 +135,7 @@
 | Key | Text |
 |-----|------|
 | `hero.headline` | I'm obsessed with finding the real problem — where users and business meet. |
-| `gnb.cta` | Contact me! |
+| `gnb.cta` | LinkedIn (hover: Let's Talk!) |
 | `gnb.cta.url` | `https://www.linkedin.com/in/lydia-jeongeun-oh-2142a8198/` |
 
 ---
@@ -185,7 +185,7 @@ python3 -m http.server 8080
 
 ## 12. 완료 기준 (DoD)
 
-- [ ] GNB: Lydia + 4메뉴 + **Contact me!** (모든 페이지)
+- [ ] GNB: Lydia + 4메뉴 + **LinkedIn** (모든 페이지)
 - [ ] Home: Hero + Work 4 + Proof, Referrals/Contact 섹션 없음
 - [ ] Hero 문구 §5와 일치
 - [ ] 마진 40px / 20px

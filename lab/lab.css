@@ -149,6 +149,9 @@ a.lab-item:hover .lab-item__thumb img {
   margin-top: 40px;
 }
 
+/* A 3-column row that follows a flex row */
+.lab-gallery--follow { margin-top: 40px; }
+
 .lab-row-flex .lab-item {
   min-width: 0;
 }

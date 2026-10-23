@@ -36,7 +36,7 @@ Portfolio/
 
 ## GNB
 
-- Lydia (home) · Work · Lab · Article · About · **`Contact me!`** → LinkedIn (맨 오른쪽)
+- Lydia (home) · Work · Lab · Article · About · **`LinkedIn`** (hover 시 `Let's Talk!`) → LinkedIn (맨 오른쪽)
 - 플로팅 pill bar · `styles.css` GNB 섹션
 
 ## Home (`index.html`) 섹션
@@ -53,7 +53,7 @@ Portfolio/
 ## Locked copy
 
 - Hero: `I'm obsessed with finding the real problem — where users and business meet.`
-- GNB CTA: `Contact me!`
+- GNB CTA: `LinkedIn` (hover: `Let's Talk!`)
 
 ## 작업 지침
 
