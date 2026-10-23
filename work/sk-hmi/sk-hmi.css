@@ -6,6 +6,7 @@
   --sk-text:          #121213;
   --sk-white:         #ffffff;
   --sk-label:         #56575f;
+  --sk-divider:       #d3d7db;
   --sk-value:         #76777d;
   --sk-box-bg:        #f9fafb;
   --sk-body:          #424751;
@@ -270,7 +271,22 @@
 .sk-overview__box {
   display: flex;
   justify-content: space-between;
-  gap: 60px;
+}
+
+/* 1px divider centered in each gap (gap is at least 60px, as before) */
+.sk-overview__divider {
+  flex: 1 1 60px;
+  position: relative;
+}
+
+.sk-overview__divider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--sk-divider);
 }
 
 /* Figma: four 230px frames; the first is left-aligned, the other three center their text */
@@ -958,7 +974,9 @@
   .sk-overview__box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
   }
+  .sk-overview__divider { display: none; }
   .sk-overview__col { width: auto; align-items: flex-start; }
 
   .sk-split {

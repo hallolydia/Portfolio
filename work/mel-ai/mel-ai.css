@@ -6,6 +6,7 @@
   --mg-text:        #121213;
   --mg-body:        #424751;
   --mg-label:       #565860;
+  --mg-divider:     #d3d7db;
   --mg-value:       #76777d;
   --mg-box-bg:      #f9fafb;
   --mg-white:       #ffffff;
@@ -256,7 +257,22 @@
 .mg-overview__box {
   display: flex;
   justify-content: space-between;
-  gap: 60px;
+}
+
+/* 1px divider centered in each gap (gap is at least 60px, as before) */
+.mg-overview__divider {
+  flex: 1 1 60px;
+  position: relative;
+}
+
+.mg-overview__divider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--mg-divider);
 }
 
 /* Figma: first column hugs its text at the left; the other three sit centered in 259px frames */
@@ -600,7 +616,9 @@
   .mg-overview__box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
   }
+  .mg-overview__divider { display: none; }
   .mg-overview__col { width: auto; align-items: flex-start; }
 
   .mg-split,
