@@ -308,7 +308,8 @@ document.querySelectorAll('.footer__email-btn').forEach(btn => {
 });
 
 // Custom cursor — 12px dot that follows with a spring (slight overshoot + squash across the motion),
-// morphing into a text bar (height = font size) when over text. Mouse/trackpad only.
+// morphing into a circle (about 2x the font size) that inverts the letters under it when over text.
+// Mouse/trackpad only.
 (function initCursor() {
   if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

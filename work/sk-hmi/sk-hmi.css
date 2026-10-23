@@ -395,7 +395,7 @@
 .sk-challenge__blocks {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 72px;
 }
 
 .sk-challenge__block {
@@ -407,20 +407,43 @@
 .sk-challenge__cards {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 40px;
+}
+
+/* Text sits above the image-only panel */
+.sk-citem {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.sk-citem__text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .sk-ccard {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 36px;
-  padding: 56px 52px;
+  gap: 0;
+  padding: 40px;
   border-radius: 24px;
   overflow: hidden;
 }
 
-.sk-ccard--flush { gap: 0; }
+/* Heatmap band: its white card is inset 52px / 36px in the file, the panel wants 40px / 40px */
+.sk-ccard--flush { padding: 4px 0; }
+
+.sk-ccard__heat {
+  display: block;
+  position: relative;
+  width: calc(100% + 12px);
+  max-width: none;
+  height: auto;
+  margin-left: -12px;
+}
 
 .sk-ccard__head,
 .sk-ccard__screens,
@@ -429,7 +452,7 @@
 .sk-ccard__head {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .sk-ccard__num {
@@ -461,14 +484,25 @@
 
 .sk-ccard__text { max-width: 1050px; }
 
-/* Blurred "Confidential" screens peeking in at the right edge */
-.sk-ccard__confidential {
+/* Blurred "Confidential" screens: a row of three 173px tiles peeking in at the right edge,
+   each cut from the one stacked asset */
+.sk-ccard__tiles {
   position: absolute;
-  top: -40px;
-  right: 56px;
-  width: 200px;
-  height: auto;
+  top: 181px;
+  left: calc(100% - 483px);
+  display: flex;
+  gap: 12px;
 }
+
+.sk-ccard__tile {
+  flex: none;
+  width: 173px;
+  height: 125.5px;
+  background: url("../../assets/images/skon/img-skon-challenge-confidential.webp") 0 0 / 173px auto no-repeat;
+}
+
+.sk-ccard__tile--2 { background-position: 0 -137.5px; }
+.sk-ccard__tile--3 { background-position: 0 -282.9px; }
 
 .sk-ccard__fade {
   position: absolute;
@@ -966,7 +1000,7 @@
 
 /* ── Responsive ── */
 @media (max-width: 1280px) {
-  .sk-ccard__confidential,
+  .sk-ccard__tiles,
   .sk-ccard__fade { display: none; }
 }
 
@@ -1053,7 +1087,7 @@
   .sk-hero { padding-top: 120px; }
   .sk-ccard,
   .sk-pmcard { padding: 32px 20px; }
-  .sk-ccard .sk-bleed--52 { --bleed: 20px; }
+  .sk-ccard--flush { padding: 4px 0; }
   .sk-bg-card,
   .sk-ba__card { padding: 32px 20px 0; }
   .sk-bg-card .sk-bleed,
