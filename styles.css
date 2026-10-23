@@ -1746,8 +1746,10 @@ html.has-cursor a[href] * {
 
 /* Hover: the hovered card widens and the other narrows (the thumbnail zoom still applies) */
 @media (hover: hover) and (min-width: 769px) {
-  /* Reserve room for one extra title line (the narrower card can wrap once more) */
-  .whats-next .work-card__content { min-height: 201px; }
+  /* Text stays put: one fixed width (= the narrowest state of a card, 0.935 of the resting column),
+     so titles never re-wrap or shift while the cards widen and narrow */
+  .whats-next .work-grid { container-type: inline-size; }
+  .whats-next .work-card__content { width: calc((50cqw - 20px) * 0.935); }
 
   .whats-next .work-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -1755,11 +1757,11 @@ html.has-cursor a[href] * {
   }
 
   .whats-next .work-grid:has(.work-card:nth-child(1):hover) {
-    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+    grid-template-columns: minmax(0, 1.065fr) minmax(0, 0.935fr);
   }
 
   .whats-next .work-grid:has(.work-card:nth-child(2):hover) {
-    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    grid-template-columns: minmax(0, 0.935fr) minmax(0, 1.065fr);
   }
 }
 
