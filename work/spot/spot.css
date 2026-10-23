@@ -110,6 +110,17 @@
   overflow: hidden;
 }
 
+/* Transparent hotspot over text that is baked into the image (e.g. "(link)") */
+.sp-panel--linked {
+  position: relative;
+}
+
+.sp-panel__link {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+}
+
 .sp-panel img,
 .sp-img {
   display: block;
