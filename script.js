@@ -456,7 +456,14 @@ document.querySelectorAll('.footer__email-btn').forEach(btn => {
     if (!el) return;
     const href = el.getAttribute('href') || '';
     const inGnb = !!el.closest('.gnb');
-    const where = el.closest('.gnb__mobile-nav') ? 'mobile_menu' : inGnb ? 'navi' : el.closest('.footer') ? 'footer' : 'page';
+    const path0 = location.pathname;
+    const where = el.closest('.gnb__mobile-nav') ? 'mobile_menu'
+      : inGnb ? 'navi'
+      : el.closest('.footer') ? 'footer'
+      : /^\/about/.test(path0) ? 'about_page'
+      : /^\/article/.test(path0) ? 'article_page'
+      : /^\/lab/.test(path0) ? 'lab_page'
+      : 'page';
 
     // Project cards: home grid, Work list, What's Next
     if (el.matches('.work-card__link')) {
@@ -468,7 +475,7 @@ document.querySelectorAll('.footer__email-btn').forEach(btn => {
     }
     // Resume (opens the Drive file)
     if (/drive\.google\.com/.test(href)) { track('Navi_Resume', { placement: where }); return; }
-    // LinkedIn: one event for every LinkedIn button (navi, mobile menu, footer, about page)
+    // LinkedIn: one event for every LinkedIn button (navi, mobile menu, footer, About page, Article page)
     if (/linkedin\.com/.test(href)) { track('Linkedin', { placement: where }); return; }
     // Navigation bar
     if (inGnb) {
@@ -480,11 +487,14 @@ document.querySelectorAll('.footer__email-btn').forEach(btn => {
     }
     // Footer and other social links
     if (el.matches('.footer__email-btn')) { track('email_copy', { placement: 'footer' }); return; }
-    if (/behance\.net/.test(href) && !el.matches('.lab-item')) { track('Behance', { placement: where }); return; }
-    // Lab items (Behance links)
+    // Lab items are Behance links: counted as lab_item_click (which work) and as a Behance click
     if (el.matches('.lab-item[href]')) {
       const t = el.querySelector('.lab-item__title');
       track('lab_item_click', { item: clean((t || el).textContent).slice(0, 60) });
+      track('Behance', { placement: 'lab_item' });
+      return;
     }
+    // Every other Behance button (footer, About page icon)
+    if (/behance\.net/.test(href)) { track('Behance', { placement: where }); }
   }, true);
 })();
