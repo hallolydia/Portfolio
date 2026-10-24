@@ -439,7 +439,7 @@ document.querySelectorAll('.footer__email-btn').forEach(btn => {
   videos.forEach(v => io.observe(v));
 })();
 
-// Analytics events (GA4): which projects, nav buttons, resume and social links get clicked.
+// Analytics events (GA4): readable names for what gets clicked.
 // gtag only sends from lydia-oh.com and never from the owner's opted-out browsers (see the head snippet).
 (function initAnalyticsEvents() {
   const track = (name, params) => {
@@ -448,36 +448,39 @@ document.querySelectorAll('.footer__email-btn').forEach(btn => {
   };
   const clean = s => (s || '').replace(/\s+/g, ' ').trim();
   const labelOf = el => clean(el.dataset.text || el.getAttribute('aria-label') || el.textContent);
+  const PROJECTS = { memecore: 'MemeCore', 'mel-ai': 'Mel', 'sk-hmi': 'SK', spot: 'SPOT', 'security-collab': 'INSS' };
+  const NAVI = { Work: 'Navi_Work', About: 'Navi_About', Lab: 'Navi_Lab' };
 
   document.addEventListener('click', e => {
     const el = e.target.closest && e.target.closest('a, button');
     if (!el) return;
     const href = el.getAttribute('href') || '';
-    const inMobileMenu = !!el.closest('.gnb__mobile-nav');
+    const inGnb = !!el.closest('.gnb');
+    const where = el.closest('.gnb__mobile-nav') ? 'mobile_menu' : inGnb ? 'navi' : el.closest('.footer') ? 'footer' : 'page';
 
     // Project cards: home grid, Work list, What's Next
     if (el.matches('.work-card__link')) {
       const slug = (href.match(/work\/([^/]+)/) || [])[1] || href;
       const path = location.pathname.replace(/index\.html$/, '');
       const placement = el.closest('.whats-next') ? 'whats_next' : path === '/' ? 'home' : path === '/work/' ? 'work_list' : 'other';
-      track('project_click', { item: slug, placement });
+      track('project_click', { item: PROJECTS[slug] || slug, placement });
       return;
     }
     // Resume (opens the Drive file)
-    if (/drive\.google\.com/.test(href)) {
-      track('resume_click', { placement: inMobileMenu ? 'mobile_menu' : el.closest('.gnb') ? 'gnb' : 'page' });
-      return;
-    }
+    if (/drive\.google\.com/.test(href)) { track('Navi_Resume', { placement: where }); return; }
+    // LinkedIn: one event for every LinkedIn button (navi, mobile menu, footer, about page)
+    if (/linkedin\.com/.test(href)) { track('Linkedin', { placement: where }); return; }
     // Navigation bar
-    if (el.closest('.gnb')) {
+    if (inGnb) {
       if (el.matches('.gnb__hamburger')) return;
-      const item = el.matches('.gnb__logo') ? 'Logo' : el.matches('.gnb__cta') ? 'LinkedIn button' : labelOf(el);
-      track('nav_click', { item, placement: inMobileMenu ? 'mobile_menu' : 'gnb' });
+      if (el.matches('.gnb__logo')) { track('Navi_Home', { placement: where }); return; }
+      const label = labelOf(el);
+      track(NAVI[label] || ('Navi_' + label.replace(/\W+/g, '_')), { placement: where });
       return;
     }
-    // Footer
+    // Footer and other social links
     if (el.matches('.footer__email-btn')) { track('email_copy', { placement: 'footer' }); return; }
-    if (el.matches('.footer__social-btn')) { track('social_click', { item: labelOf(el), placement: 'footer' }); return; }
+    if (/behance\.net/.test(href) && !el.matches('.lab-item')) { track('Behance', { placement: where }); return; }
     // Lab items (Behance links)
     if (el.matches('.lab-item[href]')) {
       const t = el.querySelector('.lab-item__title');

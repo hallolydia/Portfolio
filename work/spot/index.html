@@ -21,7 +21,7 @@
         if (ls && /[?&]notrack=0(&|$)/.test(location.search)) ls.removeItem('ga_ignore');
         if (ls && ls.getItem('ga_ignore') === '1') { window['ga-disable-' + id] = true; return; }
       } catch (e) {}
-      if (/(^|\.)lydia-oh\.com$/.test(location.hostname)) gtag('config', id);
+      if (/(^|\.)lydia-oh\.com$/.test(location.hostname)) gtag('config', id, { page_title: 'SPOT' });
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
