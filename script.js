@@ -438,3 +438,50 @@ document.querySelectorAll('.footer__email-btn').forEach(btn => {
   }, { rootMargin: '400px 0px' });
   videos.forEach(v => io.observe(v));
 })();
+
+// Analytics events (GA4): which projects, nav buttons, resume and social links get clicked.
+// gtag only sends from lydia-oh.com and never from the owner's opted-out browsers (see the head snippet).
+(function initAnalyticsEvents() {
+  const track = (name, params) => {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', name, Object.assign({ transport_type: 'beacon' }, params));
+  };
+  const clean = s => (s || '').replace(/\s+/g, ' ').trim();
+  const labelOf = el => clean(el.dataset.text || el.getAttribute('aria-label') || el.textContent);
+
+  document.addEventListener('click', e => {
+    const el = e.target.closest && e.target.closest('a, button');
+    if (!el) return;
+    const href = el.getAttribute('href') || '';
+    const inMobileMenu = !!el.closest('.gnb__mobile-nav');
+
+    // Project cards: home grid, Work list, What's Next
+    if (el.matches('.work-card__link')) {
+      const slug = (href.match(/work\/([^/]+)/) || [])[1] || href;
+      const path = location.pathname.replace(/index\.html$/, '');
+      const placement = el.closest('.whats-next') ? 'whats_next' : path === '/' ? 'home' : path === '/work/' ? 'work_list' : 'other';
+      track('project_click', { item: slug, placement });
+      return;
+    }
+    // Resume (opens the Drive file)
+    if (/drive\.google\.com/.test(href)) {
+      track('resume_click', { placement: inMobileMenu ? 'mobile_menu' : el.closest('.gnb') ? 'gnb' : 'page' });
+      return;
+    }
+    // Navigation bar
+    if (el.closest('.gnb')) {
+      if (el.matches('.gnb__hamburger')) return;
+      const item = el.matches('.gnb__logo') ? 'Logo' : el.matches('.gnb__cta') ? 'LinkedIn button' : labelOf(el);
+      track('nav_click', { item, placement: inMobileMenu ? 'mobile_menu' : 'gnb' });
+      return;
+    }
+    // Footer
+    if (el.matches('.footer__email-btn')) { track('email_copy', { placement: 'footer' }); return; }
+    if (el.matches('.footer__social-btn')) { track('social_click', { item: labelOf(el), placement: 'footer' }); return; }
+    // Lab items (Behance links)
+    if (el.matches('.lab-item[href]')) {
+      const t = el.querySelector('.lab-item__title');
+      track('lab_item_click', { item: clean((t || el).textContent).slice(0, 60) });
+    }
+  }, true);
+})();

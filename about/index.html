@@ -7,13 +7,22 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <!-- Google Analytics 4 (counts only visits on lydia-oh.com, not local tests) -->
+  <!-- Google Analytics 4: counts only real visits on lydia-oh.com. The owner's own browsers opt out once with ?notrack=1 (undo with ?notrack=0). -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0P5QZ7HXXT"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    if (/(^|\.)lydia-oh\.com$/.test(location.hostname)) gtag('config', 'G-0P5QZ7HXXT');
+    (function () {
+      var id = 'G-0P5QZ7HXXT', ls = null;
+      try { ls = window.localStorage; } catch (e) {}
+      try {
+        if (ls && /[?&]notrack=1(&|$)/.test(location.search)) ls.setItem('ga_ignore', '1');
+        if (ls && /[?&]notrack=0(&|$)/.test(location.search)) ls.removeItem('ga_ignore');
+        if (ls && ls.getItem('ga_ignore') === '1') { window['ga-disable-' + id] = true; return; }
+      } catch (e) {}
+      if (/(^|\.)lydia-oh\.com$/.test(location.hostname)) gtag('config', id);
+    })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
