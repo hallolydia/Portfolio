@@ -11,27 +11,31 @@
   --sk-box-bg:        #f9fafb;
   --sk-body:          #424751;
 
-  --sk-accent:        #ff8c1e;
+  --sk-accent:        #ff8c1f;
   --sk-accent-bg:     #fff6bc;
-  --sk-accent-soft:   #ffaa5a;
-  --sk-tag-muted:     #b3b8bd;
+  --sk-accent-soft:   #ffab5b;
+  --sk-tag-muted:     #9aa2aa;
+  --sk-tag-option:    #a5acb4;
   --sk-tag-ink:       #000000;
   --sk-chip-dark:     #4f555f;
 
   --sk-panel:         #f3f6f9;
-  --sk-panel-top:     #f2f5f9;
+  --sk-panel-top:     #f3f6f9;
   --sk-fade:          rgba(244, 247, 250, 1);
   --sk-fade-0:        rgba(244, 247, 250, 0);
-  --sk-muted:         #686e70;
+  --sk-muted:         #686f71;
 
   --sk-lang-name:     #98a7c4;
-  --sk-lang-text:     #838c95;
+  --sk-lang-text:     #838d96;
+  --sk-lang-accent:   #ff8c28;
   --sk-lang-shadow:   rgba(22, 64, 96, 0.05);
 
-  --sk-voice-title:   #7e889b;
+  --sk-voice-title:   #7e889c;
+  --sk-quote-text:    #6a717f;
+  --sk-quote-name:    #a1adc3;
   --sk-quote-by:      #7e889c;
   --sk-bubble-dark:   #29292f;
-  --sk-bubble-ink:    #f9f9f9;
+  --sk-bubble-ink:    #fafafa;
   --sk-bubble-text:   #101010;
   --sk-bubble-dot:    #161616;
   --sk-shadow-dark:   rgba(42, 42, 48, 0.2);
@@ -89,7 +93,9 @@
   color: var(--sk-text);
 }
 
-.sk-title--tight { letter-spacing: -0.32px; }
+.sk-title--140 { line-height: 1.4; }
+.sk-ls-t1 { letter-spacing: -0.32px; }
+.sk-ls-t2 { letter-spacing: -0.64px; }
 
 .sk-body {
   font-size: 16px;
@@ -103,23 +109,17 @@
 /* Browser Manrope sets ~3% narrower than Figma's; this keeps Figma's 4-line wrap */
 .sk-body--wrap-960 { max-width: 960px; }
 
-/* Pretendard body copy used inside cards */
-.sk-card__body,
-.sk-iter__text,
-.sk-option__text,
-.sk-quotes {
-  font-family: 'Pretendard', 'Manrope', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 22.4px;
-  color: var(--sk-body);
-}
 
 .sk-ls-0  { letter-spacing: 0; }
 .sk-ls-16 { letter-spacing: -0.16px; }
 .sk-ls-20 { letter-spacing: -0.2px; }
 .sk-ls-24 { letter-spacing: -0.24px; }
 .sk-ls-34 { letter-spacing: -0.34px; }
+.sk-ls-14 { letter-spacing: -0.14px; }
+.sk-ls-28 { letter-spacing: -0.28px; }
+.sk-ls-32 { letter-spacing: -0.32px; }
+.sk-ls-40 { letter-spacing: -0.4px; }
+.sk-ls-q2 { letter-spacing: -0.32px; }
 
 /* Label → title 14px, head → body 24px */
 .sk-text {
@@ -144,6 +144,9 @@
   flex-direction: column;
   gap: 60px;
 }
+
+.sk-stack--48 { gap: 48px; }
+.sk-stack--40 { gap: 40px; }
 
 /* Card backgrounds: #f3f6f9 under a #f2f5f9 → white vertical gradient */
 .sk-panel {
@@ -175,7 +178,9 @@
 .sk-bleed--32 { --bleed: 32px; }
 .sk-bleed--36 { --bleed: 36px; }
 .sk-bleed--40 { --bleed: 40px; }
+.sk-bleed--44 { --bleed: 44px; }
 .sk-bleed--48 { --bleed: 48px; }
+.sk-bleed--50 { --bleed: 50px; }
 .sk-bleed--52 { --bleed: 52px; }
 .sk-bleed--56 { --bleed: 56px; }
 
@@ -362,7 +367,7 @@
   flex: 0 1 450px;
   min-width: 0;
   height: 400px;
-  padding: 52px 52px 0;
+  padding: 48px 48px 0;
   border-radius: 24px;
   overflow: hidden;
 }
@@ -377,153 +382,61 @@
   color: var(--sk-muted);
 }
 
+/* Figma: auto line height, fixed 106px box */
 .sk-bg-card__title--tight {
-  height: 98px;
+  height: 106px;
   line-height: 24.6px;
   letter-spacing: 0;
 }
 
-.sk-bg-card .sk-bleed { --bleed: 52px; }
+.sk-bg-card .sk-bleed { --bleed: 48px; }
 
 /* ── 6. The Challenge (6730:81613) ── */
 .sk-challenge {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
 }
 
 .sk-challenge__blocks {
   display: flex;
   flex-direction: column;
-  gap: 72px;
+  gap: 60px;
 }
 
 .sk-challenge__block {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-}
-
-.sk-challenge__cards {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-/* Text sits above the image-only panel */
-.sk-citem {
-  display: flex;
-  flex-direction: column;
   gap: 36px;
 }
 
-.sk-citem__text {
+.sk-challenge__text {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+  max-width: 1000px;
 }
 
-.sk-ccard {
-  position: relative;
+.sk-challenge__head {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  padding: 40px;
+  gap: 8px;
+}
+
+.sk-challenge__img {
+  display: block;
+  width: 100%;
+  height: auto;
   border-radius: 24px;
-  overflow: hidden;
 }
 
-/* Heatmap band: its white card is inset 52px / 36px in the file, the panel wants 40px / 40px */
-.sk-ccard--flush { padding: 4px 0; }
-
-.sk-ccard__heat {
-  display: block;
-  position: relative;
-  width: calc(100% + 12px);
-  max-width: none;
-  height: auto;
-  margin-left: -12px;
-}
-
-.sk-ccard__head,
-.sk-ccard__screens,
-.sk-ccard__text { position: relative; }
-
-.sk-ccard__head {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.sk-ccard__num {
-  font-size: 18px;
-  font-weight: 800;
-  line-height: 25.2px;
-  letter-spacing: 0.54px;
-  color: var(--sk-accent);
-}
-
-.sk-ccard__title {
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 30.8px;
-  color: var(--sk-text);
-}
-
-.sk-ccard__title--sm {
-  font-size: 21px;
-  line-height: 29.4px;
-}
-
-.sk-ccard__screens {
-  display: block;
-  width: 710px;
-  max-width: 100%;
-  height: auto;
-}
-
-.sk-ccard__text { max-width: 1050px; }
-
-/* Blurred "Confidential" screens: a row of three 173px tiles peeking in at the right edge,
-   each cut from the one stacked asset */
-.sk-ccard__tiles {
-  position: absolute;
-  top: 181px;
-  left: calc(100% - 483px);
-  display: flex;
-  gap: 12px;
-}
-
-.sk-ccard__tile {
-  flex: none;
-  width: 173px;
-  height: 125.5px;
-  background: url("../../assets/images/skon/img-skon-challenge-confidential.webp") 0 0 / 173px auto no-repeat;
-}
-
-.sk-ccard__tile--2 { background-position: 0 -137.5px; }
-.sk-ccard__tile--3 { background-position: 0 -282.9px; }
-
-.sk-ccard__fade {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 173px;
-  background: linear-gradient(90deg, var(--sk-fade-0) 0%, var(--sk-fade) 72.3%);
-  pointer-events: none;
-}
+.sk-challenge__pm { margin-top: 46px; }
 
 .sk-pmcard {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
   padding: 52px;
   border-radius: 24px;
   overflow: hidden;
 }
-
-.sk-pmcard__text { max-width: 1050px; }
 
 .sk-lang {
   display: flex;
@@ -552,6 +465,9 @@
   color: var(--sk-lang-name);
 }
 
+.sk-lang__note { font-weight: 600; }
+.sk-lang__note em { font-style: normal; color: var(--sk-lang-accent); }
+
 .sk-lang__text {
   font-size: 14px;
   font-weight: 400;
@@ -573,7 +489,7 @@
 .sk-voices {
   display: flex;
   justify-content: center;
-  gap: 64px;
+  gap: 68px;
   height: 440px;
   padding: 50px 0 0;
   border-radius: 24px;
@@ -670,7 +586,7 @@
   color: var(--sk-bubble-ink);
 }
 
-.sk-bubble--light .sk-bubble__quote { color: var(--sk-bubble-text); }
+.sk-bubble--light .sk-bubble__quote { color: var(--sk-body); }
 
 .sk-bubble__by {
   display: block;
@@ -688,7 +604,7 @@
 /* ── 8. Design Goal (6730:81941) ── */
 .sk-goal {
   background: var(--sk-accent);
-  padding: 120px 0;
+  padding: 120px 0 150px;
 }
 
 .sk-goal__text {
@@ -707,7 +623,7 @@
 .sk-goal__title {
   font-size: 32px;
   font-weight: 800;
-  line-height: 1.4;
+  line-height: 1.3;
   color: var(--sk-white);
 }
 
@@ -721,40 +637,21 @@
 /* ── 9. Design Strategy + Trade-off (6730:81950) ── */
 .sk-strategy { padding-top: 80px; }
 
-.sk-tradeoff { margin-top: 80px; }
+.sk-tradeoff { margin-top: 140px; }
 
 .sk-cards {
   display: flex;
   gap: 28px;
 }
 
-.sk-cards--3 { gap: 52px; }
-.sk-cards--28 { gap: 28px; }
-
 .sk-card {
   flex: 1 1 0;
   min-width: 0;
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  padding: 40px;
   border-radius: 24px;
-}
-
-.sk-card--strategy {
-  height: 300px;
-  gap: 24px;
-  padding: 56px 52px;
-}
-
-.sk-card--tradeoff {
-  height: 361px;
-  gap: 20px;
-  padding: 40px;
-}
-
-.sk-card--result {
-  height: 559px;
-  gap: 20px;
-  padding: 40px;
 }
 
 .sk-card__head {
@@ -762,6 +659,8 @@
   flex-direction: column;
   gap: 8px;
 }
+
+.sk-card__head--116 { height: 116px; }
 
 .sk-card__num {
   font-size: 16px;
@@ -771,6 +670,8 @@
   color: var(--sk-accent-soft);
 }
 
+.sk-card__num--accent { color: var(--sk-accent); }
+
 .sk-card__title {
   font-size: 20px;
   font-weight: 800;
@@ -778,24 +679,32 @@
   color: var(--sk-text);
 }
 
-.sk-card__title--lg {
-  font-size: 24px;
-  line-height: 31.2px;
+.sk-card__title--bold { font-weight: 700; }
+
+.sk-card__body {
+  font-family: 'Pretendard', 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  color: var(--sk-body);
 }
 
-/* ── 10. Final Design 1 (6730:81995) ── */
+.sk-card__text {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--sk-body);
+}
+
+/* ── 10. Final Design 1 (6730:81994) ── */
 .sk-final {
   background: var(--sk-white);
-  padding-top: 80px;
+  padding: 40px 0 100px;
 }
 
-.sk-final--2 {
-  padding-top: 140px;
-  padding-bottom: 100px;
-}
+.sk-final--2 { padding-bottom: 100px; }
 
 .sk-final__sub { margin-top: 80px; }
-.sk-final__sub--last { margin-top: 120px; }
 
 .sk-iter {
   display: flex;
@@ -805,24 +714,22 @@
 .sk-iter__card {
   flex: 0 1 356px;
   min-width: 0;
-  height: 504px;
   display: flex;
   flex-direction: column;
-  padding: 40px 28px;
+  padding: 32px;
   border-radius: 24px;
   overflow: hidden;
 }
 
-.sk-iter__card--wide {
-  flex: 0 1 520px;
-  padding: 40px 36px;
-}
+.sk-iter__card--wide { flex: 0 1 520px; }
 
 .sk-iter__head {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
+
+.sk-iter__head--78 { height: 78px; }
 
 .sk-iter__tag {
   font-size: 14px;
@@ -832,7 +739,8 @@
   color: var(--sk-tag-muted);
 }
 
-.sk-iter__tag--accent { color: var(--sk-accent-soft); }
+.sk-iter__tag--muted { color: var(--sk-tag-option); }
+.sk-iter__tag--accent { color: var(--sk-accent); }
 
 .sk-iter__title {
   font-size: 17px;
@@ -840,6 +748,19 @@
   line-height: 22.1px;
   color: var(--sk-text);
 }
+
+.sk-iter__text,
+.sk-option__text,
+.sk-hmi__text {
+  margin-top: 24px;
+  font-family: 'Pretendard', 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  color: var(--sk-body);
+}
+
+.sk-hmi__text { letter-spacing: -0.16px; }
 
 .sk-ba {
   display: flex;
@@ -850,7 +771,7 @@
 .sk-ba__card {
   display: flex;
   flex-direction: column;
-  padding: 52px 52px 0;
+  padding: 40px 44px 0;
   border-radius: 24px;
   overflow: hidden;
 }
@@ -864,22 +785,21 @@
 }
 
 .sk-ba__head,
-.sk-hmi__head,
-.sk-components__head {
+.sk-hmi__head {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
 .sk-ba__title {
-  font-size: 24px;
-  font-weight: 800;
-  line-height: 31.2px;
-  letter-spacing: -0.24px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: -0.2px;
   color: var(--sk-text);
 }
 
-/* ── 11. Final Design 2 (6730:83089) ── */
+/* ── 11. Final Design 2 (6730:81994) ── */
 .sk-options {
   display: flex;
   gap: 24px;
@@ -888,29 +808,31 @@
 .sk-option {
   flex: 0 1 380px;
   min-width: 0;
-  height: 576px;
   display: flex;
   flex-direction: column;
-  padding: 40px 28px;
+  padding: 36px 32px;
   border-radius: 24px;
   overflow: hidden;
 }
 
 .sk-option--wide {
   flex: 0 1 472px;
-  padding: 40px 32px;
+  padding: 36px 48px;
 }
 
 .sk-option__head {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  text-align: center;
 }
 
-.sk-option__text {
-  letter-spacing: -0.16px;
-  text-align: center;
+.sk-option__head--44 { height: 44px; }
+
+.sk-option__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  color: var(--sk-text);
 }
 
 .sk-layout {
@@ -928,51 +850,46 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
+  padding: 40px 50px;
   border-radius: 24px;
   overflow: hidden;
 }
 
-.sk-hmi--before {
-  flex: 0 1 460px;
-  padding: 52px 40px 27px;
-}
-
-.sk-hmi--after {
-  flex: 0 1 796px;
-  padding: 52px 56px;
-}
+.sk-hmi--before { flex: 0 1 476px; }
+.sk-hmi--after { flex: 0 1 780px; }
 
 .sk-components {
-  position: relative;
   display: flex;
   flex-direction: column;
-  padding: 52px 48px 0;
+  padding: 40px 50px 0;
   border-radius: 24px;
   overflow: hidden;
+  background:
+    url("../../assets/images/skon/img-skon-fd2-components-head.webp") top center / 100% auto no-repeat,
+    linear-gradient(180deg, var(--sk-panel-top) var(--g0), var(--sk-white) var(--g1)),
+    var(--sk-panel);
 }
-
-/* Figma: "Reusable component set" has no letter-spacing */
-.sk-components__head .sk-ba__title { letter-spacing: 0; }
-
-/* The HMI panel starts 15px above the header's bottom edge */
-.sk-components .sk-bleed { margin-top: -15px; }
 
 .sk-components__head {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 750px;
 }
 
-/* Right-edge fade over the header band (the image band already includes it) */
-.sk-components__fade {
-  position: absolute;
-  top: 13px;
-  right: 0;
-  width: 100px;
-  height: 115px;
-  opacity: 0.6;
-  background: linear-gradient(90deg, var(--sk-fade-0) 0%, var(--sk-fade) 72.3%);
-  pointer-events: none;
+.sk-components__head .sk-hmi__text { margin-top: 0; }
+
+.sk-components__title {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 31.2px;
+  color: var(--sk-text);
 }
+
+/* The HMI panel starts 21px above the header's bottom edge */
+.sk-components .sk-bleed { margin-top: -21px; }
 
 /* ── 12. Result (6730:84184) ── */
 .sk-result { padding-bottom: 80px; }
@@ -983,13 +900,60 @@
   gap: 20px;
 }
 
-.sk-quotes {
-  letter-spacing: -0.16px;
+.sk-card--result { padding: 32px; }
+.sk-card--result-2 { gap: 24px; }
+.sk-card--result-3 { gap: 16px; }
+
+.sk-result__top {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-/* Figma hanging punctuation: the opening quote sits outside the text edge */
-.sk-quotes p { text-indent: -0.4em; }
-.sk-quotes p + p { margin-top: 10px; }
+.sk-result__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sk-result__desc { height: 107px; }
+
+.sk-quotes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sk-quote {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--sk-white);
+}
+
+.sk-quote--14 { gap: 14px; align-items: flex-start; }
+.sk-card--result-3 .sk-quote { align-items: flex-start; }
+
+.sk-quote img {
+  flex-shrink: 0;
+  width: 36px;
+  height: auto;
+}
+
+.sk-quote p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  color: var(--sk-quote-text);
+}
+
+.sk-quote__by {
+  font-size: 13px;
+  letter-spacing: -0.26px;
+  color: var(--sk-quote-name);
+}
 
 /* ── 13. Lessons Learned (6730:84208) ── */
 .sk-lessons__inner {
@@ -1000,8 +964,7 @@
 
 /* ── Responsive ── */
 @media (max-width: 1280px) {
-  .sk-ccard__tiles,
-  .sk-ccard__fade { display: none; }
+  .sk-challenge__img { border-radius: 16px; }
 }
 
 @media (max-width: 1024px) {
@@ -1062,11 +1025,12 @@
     width: 100%;
     max-width: 610px;
   }
-  .sk-card--strategy,
-  .sk-card--tradeoff,
-  .sk-card--result,
   .sk-iter__card,
-  .sk-option { padding-bottom: 40px; }
+  .sk-option { padding-bottom: 32px; }
+  .sk-result__desc,
+  .sk-card__head--116,
+  .sk-iter__head--78,
+  .sk-option__head--44 { height: auto; }
 
   .sk-voices {
     height: auto;
@@ -1085,13 +1049,11 @@
 @media (max-width: 768px) {
   .sk-container { padding: 0 20px; }
   .sk-hero { padding-top: 120px; }
-  .sk-ccard,
   .sk-pmcard { padding: 32px 20px; }
-  .sk-ccard--flush { padding: 4px 0; }
   .sk-bg-card,
   .sk-ba__card { padding: 32px 20px 0; }
   .sk-bg-card .sk-bleed,
-  .sk-ba__card .sk-bleed--52 { --bleed: 20px; }
+  .sk-ba__card .sk-bleed--44 { --bleed: 20px; }
   .sk-bg-card__title--tight { height: auto; margin-bottom: 20px; }
   .sk-lang__card { padding: 24px 20px; }
 }

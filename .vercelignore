@@ -1,0 +1,11 @@
+# Keep internal files and drafts off the live site
+.env*
+.claude
+.claire
+.DS_Store
+CLAUDE.md
+README.md
+rules
+docs
+**/*-draft.html
+**/_draft-*
