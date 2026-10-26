@@ -166,6 +166,9 @@
   height: calc(var(--u) * 292);
   transform: translateX(-50%);
   object-fit: cover;
+  /* Fade the top edge so the encoded sky (#7EBBFF) blends into --mc-browser-sky */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 calc(var(--u) * 24));
+  mask-image: linear-gradient(to bottom, transparent 0, #000 calc(var(--u) * 24));
 }
 
 /* Hero text */
