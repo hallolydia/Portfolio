@@ -344,12 +344,17 @@ document.querySelectorAll('.footer__email-btn').forEach(btn => {
   videos.forEach(v => io.observe(v));
 })();
 
-// Analytics events (GA4): readable names for what gets clicked.
-// gtag only sends from lydia-oh.com and never from the owner's opted-out browsers (see the head snippet).
+// Analytics events (GA4 + Clarity): readable names for what gets clicked.
+// gtag and clarity only send from lydia-oh.com and never from the owner's opted-out browsers (see the head snippet).
 (function initAnalyticsEvents() {
   const track = (name, params) => {
-    if (typeof window.gtag !== 'function') return;
-    window.gtag('event', name, Object.assign({ transport_type: 'beacon' }, params));
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', name, Object.assign({ transport_type: 'beacon' }, params));
+    }
+    // Clarity events take a name only, so the item goes into the name (e.g. "project_click: MemeCore")
+    if (typeof window.clarity === 'function') {
+      window.clarity('event', params && params.item ? name + ': ' + params.item : name);
+    }
   };
   const clean = s => (s || '').replace(/\s+/g, ' ').trim();
   const labelOf = el => clean(el.dataset.text || el.getAttribute('aria-label') || el.textContent);
