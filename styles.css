@@ -14,6 +14,7 @@
   --color-muted:        #646464;   /* rgba(100,100,100) — nav Off */
   --color-muted-2:      #8c8c8c;   /* rgba(140,140,140) */
   --color-text-sub:     #424751;   /* About body text — Figma */
+  --color-work-desc:    #2f323a;   /* Featured Work card description — Figma */
   --color-text-date:    #898989;   /* About dates — Figma */
   --color-line-light:   #d7d7d7;   /* About dividers — Figma */
 
@@ -1142,7 +1143,7 @@ ul { list-style: none; }
 .work-card__desc {
   font-size: 16px;
   font-weight: 400;
-  color: var(--color-muted);
+  color: var(--color-work-desc);
   line-height: 1.55;
   margin-top: 12px;
 }
