@@ -243,15 +243,15 @@
   background: var(--mc-divider);
 }
 
-/* Figma: first column hugs its text at the left; the other three sit centered in 206px frames */
+/* Figma: all columns left-align their text in 206px frames */
 .mc-overview__col {
   flex: none;
   width: 206px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
-.mc-overview__col:first-child { width: auto; align-items: flex-start; }
+.mc-overview__col:first-child { width: auto; }
 
 .mc-overview__item {
   display: flex;

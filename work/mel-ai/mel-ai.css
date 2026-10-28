@@ -195,6 +195,9 @@
 }
 
 .mg-cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1280 / 690;
   border-radius: 28px;
   overflow: hidden;
 }
@@ -275,15 +278,15 @@
   background: var(--mg-divider);
 }
 
-/* Figma: first column hugs its text at the left; the other three sit centered in 259px frames */
+/* Figma: all columns left-align their text in 259px frames */
 .mg-overview__col {
   flex: none;
   width: 259px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
-.mg-overview__col:first-child { width: auto; align-items: flex-start; }
+.mg-overview__col:first-child { width: auto; }
 
 .mg-overview__item {
   display: flex;
@@ -648,6 +651,15 @@
 .mg-live {
   position: relative;
   container-type: inline-size;
+}
+
+/* Hero cover crops a taller canvas into a shorter frame, centered */
+.mg-cover > .mg-live {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
 }
 
 .mg-live__stage {

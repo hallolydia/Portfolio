@@ -167,6 +167,8 @@
 }
 
 .sp-cover {
+  width: 100%;
+  aspect-ratio: 1280 / 642;
   border-radius: 28px;
   overflow: hidden;
 }
@@ -174,7 +176,8 @@
 .sp-cover img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 .sp-hero__text {
@@ -231,13 +234,13 @@
   justify-content: space-between;
 }
 
-/* Figma: 230px columns with 1px dividers, 60px on each side of a divider */
+/* Figma: 230px columns with 1px dividers, 60px on each side of a divider, all left-aligned */
 .sp-overview__col {
   flex: none;
   width: 230px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .sp-overview__col:first-child { align-items: flex-start; }

@@ -37,6 +37,61 @@
   max-width: 640px;
 }
 
+/* ── Role / Timeline / Team / Tools ── */
+.cs-overview {
+  padding: 40px 0 56px;
+}
+
+.cs-overview__box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cs-overview__divider {
+  flex: 1 1 60px;
+  position: relative;
+}
+
+.cs-overview__divider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--color-border);
+}
+
+.cs-overview__col {
+  flex: none;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.cs-overview__col:first-child { width: auto; }
+
+.cs-overview__item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.cs-overview__label {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.16px;
+  color: #565860;
+}
+
+.cs-overview__value {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #76777d;
+}
+
 /* ── Cover image ── */
 .cs-cover-wrap {
   margin-bottom: 56px;
@@ -44,7 +99,7 @@
 
 .cs-cover {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1280 / 689;
   border-radius: 28px;
   overflow: hidden;
   background: var(--color-surface);
