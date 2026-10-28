@@ -445,7 +445,7 @@ ul { list-style: none; }
 
 #work {
   background: #F5F5F5;
-  padding: 120px 0 160px;
+  padding: 100px 0 160px;
   /* Pins once its bottom reaches the viewport bottom, so Strength slides up over it
      (the same cover-up as Work over the hero). --work-stick is set by script.js. */
   position: sticky;
@@ -467,7 +467,7 @@ ul { list-style: none; }
 /* ===== My Strength ===== */
 #strength {
   background: #ffffff;
-  padding: 120px 0 160px;
+  padding: 100px 0 160px;
   position: relative;
   z-index: 3;
 }
