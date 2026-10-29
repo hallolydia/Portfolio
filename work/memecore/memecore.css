@@ -73,7 +73,7 @@
   gap: 60px;
 }
 
-/* Cover card — 1280×774, scaled proportionally via container units */
+/* Figma 6730:105204: 1280×520 cover, with a 752.15×400 browser. */
 .mc-cover {
   container-type: inline-size;
   width: 100%;
@@ -83,8 +83,8 @@
   --u: calc(100cqw / 1280);
   position: relative;
   width: 100%;
-  aspect-ratio: 1280 / 774;
-  border-radius: 28px;
+  aspect-ratio: 1280 / 520;
+  border-radius: 20px;
   overflow: hidden;
   background:
     linear-gradient(-0.01deg, var(--mc-sky-50) 3.207%, var(--mc-navy-50) 22.456%, var(--mc-navy) 43.995%),
@@ -99,19 +99,19 @@
 
 .mc-scene__logo {
   position: absolute;
-  top: calc(var(--u) * 69);
+  top: calc(var(--u) * 41.7578);
   left: 50%;
-  width: calc(var(--u) * 407.274);
-  height: calc(var(--u) * 64);
+  width: calc(var(--u) * 254.55);
+  height: calc(var(--u) * 40);
   transform: translateX(-50%);
 }
 
 .mc-scene__shade {
   position: absolute;
-  top: calc(var(--u) * 397);
+  top: calc(var(--u) * 237.4922);
   left: 50%;
-  width: calc(var(--u) * 1920);
-  height: calc(var(--u) * 377);
+  width: calc(var(--u) * 1438.76);
+  height: calc(var(--u) * 282.51);
   transform: translateX(-50%);
   mix-blend-mode: overlay;
   background: linear-gradient(180deg, var(--mc-shade-0) -21.429%, var(--mc-shade-1) 21.071%, var(--mc-shade-2) 100%);
@@ -119,8 +119,10 @@
 }
 
 .mc-browser {
+  /* Child artwork retains its original canvas coordinates at this scale. */
+  --u: calc(100cqw * 0.7163333333 / 1280);
   position: absolute;
-  top: calc(var(--u) * 216);
+  top: calc(100cqw * 120 / 1280);
   left: 50%;
   width: calc(var(--u) * 1050);
   transform: translateX(-50%);
@@ -129,9 +131,9 @@
   align-items: center;
   background: var(--mc-browser-sky);
   border-radius: calc(var(--u) * 24) calc(var(--u) * 24) 0 0;
-  /* Figma stroke 4px OUTSIDE + drop shadow (-4, 2, 30) */
+  /* Figma: 3.7px outside stroke; scale the original drop shadow with the artwork. */
   box-shadow:
-    0 0 0 calc(var(--u) * 4) var(--mc-frame),
+    0 0 0 calc(100cqw * 3.7 / 1280) var(--mc-frame),
     calc(var(--u) * -4) calc(var(--u) * 2) calc(var(--u) * 30) 0 var(--mc-shadow);
 }
 
@@ -225,6 +227,7 @@
 .mc-overview__box {
   display: flex;
   justify-content: space-between;
+  height: 190px;
 }
 
 /* 1px divider centered in each gap (gap is at least 60px, as before) */
@@ -243,15 +246,16 @@
   background: var(--mc-divider);
 }
 
-/* Figma: all columns left-align their text in 206px frames */
+/* Figma: team 230, role 302, timeline/tools 194, with 120px between columns. */
 .mc-overview__col {
   flex: none;
-  width: 206px;
+  width: 194px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
-.mc-overview__col:first-child { width: auto; }
+.mc-overview__col:first-child { width: 230px; align-items: flex-start; }
+.mc-overview__col:nth-of-type(2) { width: 302px; align-items: flex-start; }
 
 .mc-overview__item {
   display: flex;
@@ -265,14 +269,14 @@
   font-weight: 800;
   line-height: 22.4px;
   letter-spacing: -0.16px;
-  color: var(--mc-label);
+  color: var(--mc-text);
 }
 
 .mc-overview__value {
   font-size: 16px;
   font-weight: 400;
   line-height: 25.6px;
-  color: var(--mc-value);
+  color: var(--mc-body);
 }
 .mc-overview__value--tight { letter-spacing: -0.16px; }
 
@@ -1348,11 +1352,14 @@
 @media (max-width: 1024px) {
   .mc-overview__box {
     display: grid;
+    height: auto;
     grid-template-columns: repeat(2, 1fr);
     gap: 60px;
   }
   .mc-overview__divider { display: none; }
-  .mc-overview__col { width: auto; align-items: flex-start; }
+  .mc-overview__col,
+  .mc-overview__col:first-child,
+  .mc-overview__col:nth-of-type(2) { width: auto; align-items: flex-start; }
 
   .mc-split__row,
   .mc-split__row--about {

@@ -1,0 +1,95 @@
+/* Figma 7358:75144: government case-study introduction only. */
+.government-page {
+  --gov-label: #121213;
+  --gov-value: #424751;
+  --gov-divider: #d3d7db;
+}
+
+.government-page .cs-hero {
+  padding: 240px 0 80px;
+}
+
+.government-page .cs-hero__inner {
+  max-width: 1360px;
+  padding: 0 40px;
+}
+
+.government-page .cs-hero__tags {
+  margin-bottom: 16px;
+}
+
+.government-page .cs-hero__tags .tag {
+  padding: 1px 9px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: -0.28px;
+}
+
+.government-page .cs-hero__title {
+  max-width: 1200px;
+  margin-bottom: 28px;
+  font-size: 36px;
+  line-height: 50.4px;
+  letter-spacing: -0.36px;
+}
+
+.government-page .cs-hero__summary {
+  max-width: 1200px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25.2px;
+  color: var(--color-text);
+}
+
+.government-page .cs-cover-wrap {
+  margin: 60px 0 0;
+}
+
+.government-page .cs-cover {
+  aspect-ratio: 1280 / 520;
+  border-radius: 20px;
+}
+
+.government-page .cs-overview {
+  padding: 40px 0 100px;
+}
+
+.government-page .cs-overview__col {
+  width: 230px;
+  align-items: center;
+}
+
+.government-page .cs-overview__col:first-child {
+  align-items: flex-start;
+}
+
+.government-page .cs-overview__label {
+  line-height: 22.4px;
+  color: var(--gov-label);
+}
+
+.government-page .cs-overview__value {
+  color: var(--gov-value);
+}
+
+.government-page .cs-overview__divider::after {
+  background: var(--gov-divider);
+}
+
+@media (max-width: 1280px) {
+  .government-page .cs-overview__box {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+  }
+  .government-page .cs-overview__divider { display: none; }
+  .government-page .cs-overview__col { width: auto; align-items: flex-start; }
+}
+
+@media (max-width: 768px) {
+  .government-page .cs-hero__inner { padding: 0 20px; }
+  .government-page .cs-cover-wrap { padding: 0; }
+  .government-page .cs-overview__box { grid-template-columns: 1fr; }
+  .government-page .cs-overview__item { white-space: normal; }
+}

@@ -168,8 +168,8 @@
 
 .sp-cover {
   width: 100%;
-  aspect-ratio: 1280 / 642;
-  border-radius: 28px;
+  aspect-ratio: 1280 / 520;
+  border-radius: 20px;
   overflow: hidden;
 }
 
@@ -234,13 +234,13 @@
   justify-content: space-between;
 }
 
-/* Figma: 230px columns with 1px dividers, 60px on each side of a divider, all left-aligned */
+/* Figma: centered text groups in 230px columns, 60px on each side of a divider. */
 .sp-overview__col {
   flex: none;
   width: 230px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .sp-overview__col:first-child { align-items: flex-start; }
@@ -264,14 +264,14 @@
   font-weight: 800;
   line-height: 22.4px;
   letter-spacing: -0.16px;
-  color: var(--sp-label);
+  color: var(--sp-text);
 }
 
 .sp-overview__value {
   font-size: 16px;
   font-weight: 400;
   line-height: 25.6px;
-  color: var(--sp-value);
+  color: var(--sp-body);
 }
 
 /* ── Problem (7176:118593): two 620px columns, 40px apart ── */

@@ -197,8 +197,8 @@
 .mg-cover {
   position: relative;
   width: 100%;
-  aspect-ratio: 1280 / 690;
-  border-radius: 28px;
+  aspect-ratio: 1280 / 520;
+  border-radius: 20px;
   overflow: hidden;
 }
 
@@ -260,6 +260,7 @@
 .mg-overview__box {
   display: flex;
   justify-content: space-between;
+  height: 164px;
 }
 
 /* 1px divider centered in each gap (gap is at least 60px, as before) */
@@ -278,15 +279,15 @@
   background: var(--mg-divider);
 }
 
-/* Figma: all columns left-align their text in 259px frames */
+/* Figma: first column 231px, remaining columns 229.67px, 120px between columns. */
 .mg-overview__col {
   flex: none;
-  width: 259px;
+  width: calc(689px / 3);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
-.mg-overview__col:first-child { width: auto; }
+.mg-overview__col:first-child { width: 231px; align-items: flex-start; }
 
 .mg-overview__item {
   display: flex;
@@ -300,14 +301,14 @@
   font-weight: 800;
   line-height: 22.4px;
   letter-spacing: -0.16px;
-  color: var(--mg-label);
+  color: var(--mg-text);
 }
 
 .mg-overview__value {
   font-size: 16px;
   font-weight: 400;
   line-height: 25.6px;
-  color: var(--mg-value);
+  color: var(--mg-body);
 }
 
 /* ── 10. Exploration cards (6730:87545) ── */
@@ -618,11 +619,13 @@
 @media (max-width: 1024px) {
   .mg-overview__box {
     display: grid;
+    height: auto;
     grid-template-columns: repeat(2, 1fr);
     gap: 60px;
   }
   .mg-overview__divider { display: none; }
-  .mg-overview__col { width: auto; align-items: flex-start; }
+  .mg-overview__col,
+  .mg-overview__col:first-child { width: auto; align-items: flex-start; }
 
   .mg-split,
   .mg-row,
@@ -653,13 +656,16 @@
   container-type: inline-size;
 }
 
-/* Hero cover crops a taller canvas into a shorter frame, centered */
+/* Figma 7352:78645: the cover and live phone share a 1280×520 canvas. */
 .mg-cover > .mg-live {
-  position: absolute;
-  left: 0;
-  top: 50%;
   width: 100%;
-  transform: translateY(-50%);
+}
+
+/* Keep the existing phone controls and videos together at the measured
+   221.67×480 phone slot, positioned at (405, 59.83). */
+.mg-cover .mg-live__stage {
+  transform-origin: 0 0;
+  transform: translate(calc(100cqw * 109.2091 / 1280), calc(100cqw * -3.9021 / 1280)) scale(0.69271875);
 }
 
 .mg-live__stage {
