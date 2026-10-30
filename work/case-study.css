@@ -330,6 +330,21 @@
   will-change: auto;
 }
 
+/* Overview paragraphs: preserve Figma's paragraph spacing and project accent. */
+.overview-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.overview-copy strong {
+  color: var(--overview-accent);
+  font-weight: 600;
+}
+
+.overview-copy--g16 { gap: 16px; }
+.overview-copy--g24 { gap: 24px; }
+
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .cs-meta__grid {

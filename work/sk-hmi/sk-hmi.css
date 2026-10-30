@@ -136,6 +136,15 @@
   gap: 14px;
 }
 
+.sk-text__head--16 { gap: 16px; }
+
+.sk-overview-content__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+}
+
 .sk-text--1000 { max-width: 1000px; }
 .sk-text--1100 { max-width: 1100px; }
 
