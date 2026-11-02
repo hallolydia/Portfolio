@@ -310,7 +310,7 @@ document.querySelectorAll('.footer__email-btn').forEach(btn => {
       document.documentElement.classList.add('has-cursor');
     }
     cursor.classList.add('is-visible');
-    cursor.classList.toggle('is-link', !!(e.target.closest && e.target.closest('a[href]')));
+    cursor.classList.toggle('is-link', !!(e.target.closest && e.target.closest('a[href], .strength-item__btn')));
     setText(textSizeAt(tx, ty));
     wake();
   }, { passive: true });

@@ -360,7 +360,7 @@ ul { list-style: none; }
   line-height: 1.4;
   letter-spacing: -0.01em;
   color: #121213;
-  margin: 0 0 60px;
+  margin: 0 0 40px;
   text-align: left;
   will-change: transform;
 }
@@ -437,6 +437,23 @@ ul { list-style: none; }
   100% { transform: translateY(0);    opacity: 1; }
 }
 
+/* Above 982px viewport height, the hero's forced 100vh leaves empty space
+   below the copy. Let it hug its content instead so Featured Work follows
+   immediately, and drop the now-pointless scroll cue. */
+@media (min-height: 982px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero__inner {
+    padding-bottom: 160px;
+  }
+
+  .hero__scroll-cue {
+    display: none;
+  }
+}
+
 
 
 /* ===== Section ===== */
@@ -446,13 +463,21 @@ ul { list-style: none; }
 
 #work {
   background: #F5F5F5;
-  padding: 100px 0 160px;
+  padding: 80px 0 120px;
   /* Pins once its bottom reaches the viewport bottom, so Strength slides up over it
      (the same cover-up as Work over the hero). --work-stick is set by script.js. */
   position: sticky;
   top: var(--work-stick, 0px);
   z-index: 2;
   border-radius: 0;
+}
+
+/* PC version only: a bit more breathing room above Featured Work than the
+   Figma-spec 80px baseline used elsewhere. */
+@media (min-height: 982px) {
+  #work {
+    padding-top: 120px;
+  }
 }
 
 /* Work → Strength dwell: sticky gray hold before Strength slides in */
@@ -468,7 +493,7 @@ ul { list-style: none; }
 /* ===== My Strength ===== */
 #strength {
   background: #ffffff;
-  padding: 100px 0 160px;
+  padding: 80px 0 120px;
   position: relative;
   z-index: 3;
 }
@@ -1665,7 +1690,9 @@ html.has-cursor * {
 
 /* Links keep the native hand cursor so they read as clickable; the dot hides */
 html.has-cursor a[href],
-html.has-cursor a[href] * {
+html.has-cursor a[href] *,
+html.has-cursor .strength-item__btn,
+html.has-cursor .strength-item__btn * {
   cursor: pointer !important;
 }
 
