@@ -1735,6 +1735,11 @@ ul { list-style: none; }
   .work-card__thumb img[src*="thumb-work-spot"] { object-position: 21% 50% !important; }
   /* Mel: the 3:2 frame trims ~45px per side, so pull the Match Group logo in and shrink it a touch */
   .tsl-logo { left: 130px; top: 48px; width: 107px; height: 33.35px; }
+  /* MemeCore: shrink the browser so it keeps side margins like the SK on screen (~13% each side) */
+  .tsm-browser { transform: translateX(-50%) scale(0.8); transform-origin: 50% 100%; }
+
+  /* Card tags: smaller so a card's tags fit on one line */
+  .tag { font-size: 11px; padding: 2px 8px; }
 
   /* Scroll cue: slightly smaller on phones */
   .hero__mouse { scale: 0.75; transform-origin: 50% 100%; }
