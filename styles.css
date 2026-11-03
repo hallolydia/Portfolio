@@ -341,8 +341,7 @@ ul { list-style: none; }
   display: flex;
   flex-direction: column;
   padding-top: calc(var(--gnb-height) + var(--gnb-top) - 8px);
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 1;
 }
 
@@ -470,10 +469,7 @@ ul { list-style: none; }
 #work {
   background: #F5F5F5;
   padding: 80px 0 120px;
-  /* Pins once its bottom reaches the viewport bottom, so Strength slides up over it
-     (the same cover-up as Work over the hero). --work-stick is set by script.js. */
-  position: sticky;
-  top: var(--work-stick, 0px);
+  position: relative;
   z-index: 2;
   border-radius: 0;
 }
@@ -488,8 +484,6 @@ ul { list-style: none; }
 
 /* Work → Strength dwell: sticky gray hold before Strength slides in */
 .work-dwell {
-  position: sticky;
-  top: 0;
   height: 0;
   background: #F5F5F5;
   z-index: 2;
