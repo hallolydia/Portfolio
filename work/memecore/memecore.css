@@ -1426,3 +1426,8 @@
 @media (max-width: 768px) {
   .mc-scene, .mc-media, .mc-showcase, .mc-feedback, .mc-challenge__card, .mc-art, .mc-panel, .mc-card, .mc-phase, .mc-stat, .mc-tl__card { border-radius: 16px; }
 }
+
+/* Phone: section labels stay on one line */
+@media (max-width: 768px) {
+  .mc-label { font-size: 11px; white-space: nowrap; }
+}

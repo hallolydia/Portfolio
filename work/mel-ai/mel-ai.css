@@ -707,3 +707,8 @@
 @media (max-width: 768px) {
   .mg-panel, .mg-cover, .mg-explore__card, .mg-option, .mg-result { border-radius: 16px; }
 }
+
+/* Phone: section labels stay on one line */
+@media (max-width: 768px) {
+  .mg-label { font-size: 11px; white-space: nowrap; }
+}

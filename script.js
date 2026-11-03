@@ -100,15 +100,20 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // Thumb scenes: on tablet/phone the 616×350 artwork scales to the thumb's height via --ts-scale
 // (done in JS because iOS Safari mis-resolves the CSS-only tan(atan2(cqw)) version)
+// --ts-scale: fit the scene to the thumb height; --ts-cover: What's next cards cover the thumb width
+function setThumbScale(thumb, w, h) {
+  thumb.style.setProperty('--ts-scale', (h / 350).toFixed(4));
+  thumb.style.setProperty('--ts-cover', Math.max(1.01, w / 616).toFixed(4));
+}
 if ('ResizeObserver' in window) {
   const thumbScale = new ResizeObserver(entries => {
     entries.forEach(entry => {
-      entry.target.style.setProperty('--ts-scale', (entry.contentRect.height / 350).toFixed(4));
+      setThumbScale(entry.target, entry.contentRect.width, entry.contentRect.height);
     });
   });
   document.querySelectorAll('.work-card__thumb').forEach(thumb => {
     if (!thumb.querySelector('.thumb-scene')) return;
-    thumb.style.setProperty('--ts-scale', (thumb.offsetHeight / 350).toFixed(4));
+    setThumbScale(thumb, thumb.offsetWidth, thumb.offsetHeight);
     thumbScale.observe(thumb);
   });
 }

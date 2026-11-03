@@ -470,3 +470,8 @@
 @media (max-width: 768px) {
   .sp-panel, .sp-cover, .sp-result { border-radius: 16px; }
 }
+
+/* Phone: section labels stay on one line */
+@media (max-width: 768px) {
+  .sp-label { font-size: 11px; white-space: nowrap; }
+}

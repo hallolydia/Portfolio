@@ -694,6 +694,9 @@ ul { list-style: none; }
   transition: opacity 0.32s ease 0.22s, transform 0.32s ease 0.22s;
 }
 
+/* Phones get the hover image inside the open panel instead (see mobile block) */
+.strength-item__body-img { display: none; }
+
 .strength-item__body-text strong {
   font-weight: 600;
   color: var(--color-text);
@@ -1706,12 +1709,19 @@ ul { list-style: none; }
   .strength-item__num  { grid-column: 1; grid-row: 1; width: 18px; }
   .strength-item__name { grid-column: 2; grid-row: 1; }
   .strength-item__sub  { grid-column: 2; grid-row: 2; justify-self: start; }
-  .strength-item__plus { grid-column: 3; grid-row: 1 / span 2; align-self: center; width: 28px; height: 28px; }
-  .strength-item__icon { width: 28px; height: 28px; }
+  /* +/× : outlined circle aligned to the title line */
+  .strength-item__plus {
+    grid-column: 3; grid-row: 1; align-self: center;
+    width: 40px; height: 40px;
+    border: 1px solid var(--color-divider);
+    border-radius: 50%;
+  }
+  .strength-item__icon { width: 14px; height: 14px; inset: 0; margin: auto; }
 
   /* Open panel: tighter rhythm, and let lines wrap naturally instead of desktop <br> breaks */
   .strength-item__divider   { margin: 0 0 20px; }
-  .strength-item__body-text { margin-bottom: 28px; }
+  .strength-item__body-text { margin-bottom: 20px; }
+  .strength-item__body-img  { display: block; width: 100%; height: auto; margin-bottom: 32px; }
   .strength-item__body-text br { display: none; }
 
   /* Thumbnails: a taller 3:2 frame so the artwork reads larger on phones.
@@ -1722,7 +1732,9 @@ ul { list-style: none; }
     scale: var(--ts-scale, 1); /* thumb height / 350, set by script.js */
   }
   /* SPOT: keep the "UI" ribbon on the left edge in frame */
-  .work-card__thumb img[src*="thumb-work-spot"] { object-position: 40% 50% !important; }
+  .work-card__thumb img[src*="thumb-work-spot"] { object-position: 21% 50% !important; }
+  /* Mel: the 3:2 frame trims ~45px per side, so pull the Match Group logo in and shrink it a touch */
+  .tsl-logo { left: 130px; top: 48px; width: 107px; height: 33.35px; }
 
   /* Scroll cue: slightly smaller on phones */
   .hero__mouse { scale: 0.75; transform-origin: 50% 100%; }
@@ -1811,7 +1823,7 @@ html.has-cursor .strength-item__btn * {
 
 /* The layered thumbnail scenes are 616px wide: scale them to keep covering the thumb when the card is wider */
 .whats-next .work-card__thumb { container-type: inline-size; }
-.whats-next .thumb-scene { scale: max(1.01, tan(atan2(100cqw, 616px))); }
+.whats-next .thumb-scene { scale: var(--ts-cover, 1.01); } /* max(1.01, thumb width / 616), set by script.js */
 
 /* Zoom in with the same springy pop, but come back without undershooting 1x
    (the undershoot exposed the grey thumb background at the left and right edges) */

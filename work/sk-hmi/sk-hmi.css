@@ -1087,3 +1087,8 @@
 @media (max-width: 768px) {
   .sk-overview-content__image, .sk-cover, .sk-media, .sk-bg-card, .sk-challenge__img, .sk-pmcard, .sk-voices, .sk-card, .sk-iter__card, .sk-ba__card, .sk-option, .sk-hmi, .sk-components { border-radius: 16px; }
 }
+
+/* Phone: section labels stay on one line */
+@media (max-width: 768px) {
+  .sk-label:not(.sk-label--num) { font-size: 11px; white-space: nowrap; }
+}
