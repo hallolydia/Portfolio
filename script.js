@@ -98,6 +98,21 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+// Thumb scenes: on tablet/phone the 616×350 artwork scales to the thumb's height via --ts-scale
+// (done in JS because iOS Safari mis-resolves the CSS-only tan(atan2(cqw)) version)
+if ('ResizeObserver' in window) {
+  const thumbScale = new ResizeObserver(entries => {
+    entries.forEach(entry => {
+      entry.target.style.setProperty('--ts-scale', (entry.contentRect.height / 350).toFixed(4));
+    });
+  });
+  document.querySelectorAll('.work-card__thumb').forEach(thumb => {
+    if (!thumb.querySelector('.thumb-scene')) return;
+    thumb.style.setProperty('--ts-scale', (thumb.offsetHeight / 350).toFixed(4));
+    thumbScale.observe(thumb);
+  });
+}
+
 // Scroll cue — float up + fade out as soon as user starts scrolling
 const scrollCue = document.querySelector('.hero__scroll-cue');
 if (scrollCue) {

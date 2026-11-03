@@ -1647,7 +1647,7 @@ ul { list-style: none; }
   .work-card__thumb { height: auto; aspect-ratio: 580 / 350; container-type: inline-size; }
   .work-card .work-card__thumb .thumb-scene {
     transform-origin: 308px 0;
-    scale: tan(atan2(100cqw, 580px));
+    scale: var(--ts-scale, 1); /* thumb height / 350, set by script.js */
   }
 }
 
@@ -1709,12 +1709,17 @@ ul { list-style: none; }
   .strength-item__plus { grid-column: 3; grid-row: 1 / span 2; align-self: center; width: 28px; height: 28px; }
   .strength-item__icon { width: 28px; height: 28px; }
 
+  /* Open panel: tighter rhythm, and let lines wrap naturally instead of desktop <br> breaks */
+  .strength-item__divider   { margin: 0 0 20px; }
+  .strength-item__body-text { margin-bottom: 28px; }
+  .strength-item__body-text br { display: none; }
+
   /* Thumbnails: a taller 3:2 frame so the artwork reads larger on phones.
      Layered scenes scale to the frame height (616×350 → fills 3:2, trims ~45px per side). */
   .work-card__thumb { height: auto; aspect-ratio: 3 / 2; container-type: inline-size; }
   .work-card .work-card__thumb .thumb-scene {
     transform-origin: 308px 0;
-    scale: tan(atan2(100cqw, 525px));
+    scale: var(--ts-scale, 1); /* thumb height / 350, set by script.js */
   }
   /* SPOT: keep the "UI" ribbon on the left edge in frame */
   .work-card__thumb img[src*="thumb-work-spot"] { object-position: 40% 50% !important; }

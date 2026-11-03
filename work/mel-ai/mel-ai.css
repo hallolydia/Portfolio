@@ -702,3 +702,8 @@
   position: absolute;
   display: block;
 }
+
+/* Phone: cards share one 16px corner radius */
+@media (max-width: 768px) {
+  .mg-panel, .mg-cover, .mg-explore__card, .mg-option, .mg-result { border-radius: 16px; }
+}

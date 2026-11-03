@@ -1421,3 +1421,8 @@
 @media (max-width: 560px) {
   .mc-overview__box { grid-template-columns: 1fr; }
 }
+
+/* Phone: cards share one 16px corner radius */
+@media (max-width: 768px) {
+  .mc-scene, .mc-media, .mc-showcase, .mc-feedback, .mc-challenge__card, .mc-art, .mc-panel, .mc-card, .mc-phase, .mc-stat, .mc-tl__card { border-radius: 16px; }
+}

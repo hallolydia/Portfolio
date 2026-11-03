@@ -397,3 +397,38 @@
   body > .cs-meta,
   body > .cs-body { zoom: 0.875; }
 }
+
+/* Phone: overview reads as a spec list (label left, value right, hairline between rows).
+   body prefix outranks each page's own overview rules, which load after this file. */
+@media (max-width: 768px) {
+  body :is(.mc-overview__box, .mg-overview__box, .sk-overview__box, .sp-overview__box, .cs-overview__box) {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: auto;
+    border-top: 1px solid var(--color-border);
+  }
+  body :is(.mc-overview__divider, .mg-overview__divider, .sk-overview__divider, .sp-overview__divider, .cs-overview__divider) {
+    display: none;
+  }
+  body :is(.mc-overview__col, .mg-overview__col, .sk-overview__col, .sp-overview__col, .cs-overview__col):nth-child(n) {
+    width: 100%;
+    flex: none;
+    align-items: stretch;
+  }
+  body :is(.mc-overview__item, .mg-overview__item, .sk-overview__item, .sp-overview__item, .cs-overview__item) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-border);
+    white-space: normal;
+  }
+  body :is(.mc-overview__label, .mg-overview__label, .sk-overview__label, .sp-overview__label, .cs-overview__label) {
+    flex: none;
+  }
+  body :is(.mc-overview__value, .mg-overview__value, .sk-overview__value, .sp-overview__value, .cs-overview__value) {
+    text-align: right;
+  }
+}

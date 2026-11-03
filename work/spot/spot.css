@@ -465,3 +465,8 @@
 @media (max-width: 560px) {
   .sp-overview__box { grid-template-columns: 1fr; }
 }
+
+/* Phone: cards share one 16px corner radius */
+@media (max-width: 768px) {
+  .sp-panel, .sp-cover, .sp-result { border-radius: 16px; }
+}
