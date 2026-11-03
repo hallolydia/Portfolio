@@ -1068,6 +1068,14 @@
   .sk-ba__card .sk-bleed--44 { --bleed: 20px; }
   .sk-bg-card__title--tight { height: auto; margin-bottom: 20px; }
   .sk-lang__card { padding: 24px 20px; }
+
+  /* Phone type scale */
+  .sk-hero__title { font-size: 28px; line-height: 1.3; }
+  .sk-title,
+  .sk-goal__title { font-size: 24px; line-height: 1.35; }
+  .sk-components__title { font-size: 20px; line-height: 1.4; }
+  .sk-goal__body { font-size: 17px; line-height: 1.5; }
+  .sk-hero__summary { font-size: 16px; line-height: 1.5; }
 }
 
 @media (max-width: 560px) {

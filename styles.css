@@ -1641,6 +1641,16 @@ ul { list-style: none; }
   .gnb__inner { padding: 0 12px; }
 }
 
+/* Tablet: cards get narrower than 580px, so a fixed 350px-tall thumb cropped the artwork's centre.
+   Keep the desktop 580×350 framing and scale the scene with the card instead. */
+@media (min-width: 769px) and (max-width: 1279px) {
+  .work-card__thumb { height: auto; aspect-ratio: 580 / 350; container-type: inline-size; }
+  .work-card .work-card__thumb .thumb-scene {
+    transform-origin: 308px 0;
+    scale: tan(atan2(100cqw, 580px));
+  }
+}
+
 @media (max-width: 768px) {
   .gnb { padding: calc(8px + var(--gnb-bleed)) 0 8px; }
   .gnb__inner { display: flex; }
@@ -1676,6 +1686,41 @@ ul { list-style: none; }
     gap: 24px;
     text-align: center;
   }
+
+  /* Section titles: 90px desktop size overflowed the phone width */
+  .section__title     { font-size: 40px; gap: 8px; }
+  .section__header    { margin-bottom: 32px; }
+  #work .section__title-icon     { width: 0.667em; height: auto; }
+  #strength .section__title-icon { width: 0.9em; height: auto; }
+  #strength .section__title      { margin-bottom: 0; }
+  .strength-item__name { font-size: 22px; }
+
+  /* Strength rows: chip drops under the name so the row fits the phone width */
+  .strength-item__btn {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    column-gap: 12px;
+    row-gap: 8px;
+    padding: 28px 0;
+  }
+  .strength-item__num  { grid-column: 1; grid-row: 1; width: 18px; }
+  .strength-item__name { grid-column: 2; grid-row: 1; }
+  .strength-item__sub  { grid-column: 2; grid-row: 2; justify-self: start; }
+  .strength-item__plus { grid-column: 3; grid-row: 1 / span 2; align-self: center; width: 28px; height: 28px; }
+  .strength-item__icon { width: 28px; height: 28px; }
+
+  /* Thumbnails: a taller 3:2 frame so the artwork reads larger on phones.
+     Layered scenes scale to the frame height (616×350 → fills 3:2, trims ~45px per side). */
+  .work-card__thumb { height: auto; aspect-ratio: 3 / 2; container-type: inline-size; }
+  .work-card .work-card__thumb .thumb-scene {
+    transform-origin: 308px 0;
+    scale: tan(atan2(100cqw, 525px));
+  }
+  /* SPOT: keep the "UI" ribbon on the left edge in frame */
+  .work-card__thumb img[src*="thumb-work-spot"] { object-position: 40% 50% !important; }
+
+  /* Scroll cue: slightly smaller on phones */
+  .hero__mouse { scale: 0.75; transform-origin: 50% 100%; }
 }
 
 @media (max-width: 480px) {
