@@ -358,6 +358,14 @@ ul { list-style: none; }
 
 .hero__copy {}
 
+/* PC: headline + sub read as one block, with extra white space above and below */
+@media (min-width: 769px) {
+  .hero__copy {
+    padding-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+
 .hero__headline {
   font-family: 'Manrope', sans-serif;
   font-size: clamp(24px, 3.6vw, 58px);
@@ -479,6 +487,19 @@ ul { list-style: none; }
 @media (min-height: 982px) {
   #work {
     padding-top: 120px;
+  }
+}
+
+/* PC: 40px less gray above the Featured Work title */
+@media (min-width: 769px) {
+  #work {
+    padding-top: 40px;
+  }
+}
+
+@media (min-width: 769px) and (min-height: 982px) {
+  #work {
+    padding-top: 80px;
   }
 }
 
