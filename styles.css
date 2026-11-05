@@ -1687,6 +1687,10 @@ ul { list-style: none; }
   .section__inner,
   .story-strip__inner { padding-left: 20px; padding-right: 20px; }
   .hero__inner        { padding: 60px 20px; }
+  /* Hero height keeps Featured Work in the first screen */
+  .hero               { min-height: calc(70svh - 52px); }
+  #work,
+  #strength           { padding-top: 40px; }
 
   .work-grid,
   .all-work-grid      { grid-template-columns: 1fr; gap: 32px; }
@@ -1713,6 +1717,8 @@ ul { list-style: none; }
 
   /* Section titles: 90px desktop size overflowed the phone width */
   .section__title     { font-size: 40px; gap: 8px; }
+  #work .section__title,
+  #strength .section__title { font-size: 36px; }
   .section__header    { margin-bottom: 32px; }
   #work .section__title-icon     { width: 0.667em; height: auto; }
   #strength .section__title-icon { width: 0.9em; height: auto; }
