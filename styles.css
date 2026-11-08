@@ -1688,7 +1688,7 @@ ul { list-style: none; }
   .story-strip__inner { padding-left: 20px; padding-right: 20px; }
   .hero__inner        { padding: 60px 20px; }
   /* Hero height keeps Featured Work in the first screen */
-  .hero               { min-height: calc(70svh - 52px); }
+  .hero               { min-height: calc(70svh - 44px); }
   #work,
   #strength           { padding-top: 40px; }
 
@@ -1701,7 +1701,7 @@ ul { list-style: none; }
   .story-strip__dot   { display: none; }
 
   .section            { padding: 72px 0; }
-  .hero__headline     { letter-spacing: -0.5px; }
+  .hero__headline     { letter-spacing: -0.5px; margin-bottom: 28px; }
   .hero__sub br       { display: none; }
 
   /* Footer mobile — Figma: padding top=48 bottom=60, column layout */
