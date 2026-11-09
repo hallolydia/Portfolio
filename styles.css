@@ -1408,28 +1408,6 @@ ul { list-style: none; }
   to   { transform: translateX(-50%); }
 }
 
-/* Edge fade overlays on the inner window */
-.marquee-strip__window::before,
-.marquee-strip__window::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 320px;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.marquee-strip__window::before {
-  left: 0;
-  background: linear-gradient(to right, rgba(255,255,255,0.5) 30%, transparent 100%);
-}
-
-.marquee-strip__window::after {
-  right: 0;
-  background: linear-gradient(to left, rgba(255,255,255,0.5) 30%, transparent 100%);
-}
-
 /* =============================================
    FOOTER — Figma spec (node 5317:37218 / 37219)
    - bg: #121213 (rgba 18,18,19)
