@@ -136,7 +136,7 @@
 |-----|------|
 | `hero.headline` | I'm obsessed with finding the real problem — where users and business meet. |
 | `gnb.cta` | LinkedIn (hover: Let's Talk!) |
-| `gnb.cta.url` | `https://www.linkedin.com/in/lydia-jeongeun-oh-2142a8198/` |
+| `gnb.cta.url` | `https://www.linkedin.com/in/lydiaux/` |
 
 ---
 
