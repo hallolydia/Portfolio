@@ -1,12 +1,20 @@
 /* ===== Lab Page ===== */
 
 .lab-main {
-  max-width: 1240px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: calc(var(--gnb-height) + var(--gnb-top) + 184px) 40px 120px;
   display: flex;
   flex-direction: column;
   gap: 120px;
+}
+
+/* Match the GNB side padding (12px) at 769–1280px so content lines up with the nav edges */
+@media (min-width: 769px) and (max-width: 1280px) {
+  .lab-main {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 }
 
 /* Category Section */
