@@ -363,7 +363,7 @@ ul { list-style: none; }
 /* PC: headline + sub read as one block, with extra white space above and below */
 @media (min-width: 769px) {
   .hero__copy {
-    padding-top: 40px;
+    padding-top: 16px;
     margin-bottom: 40px;
   }
 }
