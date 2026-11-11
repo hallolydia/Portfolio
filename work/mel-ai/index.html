@@ -41,8 +41,8 @@
   <link rel="stylesheet" href="../case-study.css?v=8f0ff67cb8" />
   <link rel="stylesheet" href="mel-ai.css" />
 
-<style id="mel-layout">
-/* Case-study layout (PC): one 940px column for text + images, no laptop zoom, left TOC */
+<style id="layout-test">
+/* TEST ONLY (Marin style): one 940px column for text + images, no laptop zoom, larger lighter titles, left TOC */
 @media (min-width: 1025px) {
   .mg-hero .mg-container,
   .mg-overview .mg-container,
@@ -93,6 +93,9 @@
   /* Fonts: replace Inter with Manrope so all case-study text uses one family */
   .mg-explore__list, .mg-explore__result, .mg-hypo__body,
   .mg-option__desc, .mg-result__change { font-family: 'Manrope', sans-serif; }
+  /* Team / Role / Tools / Timeline: columns size to their text, dividers share the leftover space */
+  .mg-overview__col, .mg-overview__col:first-child { width: auto; align-items: flex-start; }
+  .mg-overview__divider { flex: 1 1 0; min-width: 48px; }
   /* Option card titles: keep on one line in the narrower 940px column */
   .mg-option__title { font-size: 16px; white-space: nowrap; }
   .mg-option__desc { text-wrap: balance; }
@@ -117,7 +120,7 @@
   /* Hero tags keep their original on-screen size (they were shown at 87.5%) */
   .mg-hero__tags { zoom: 0.875; }
 }
-/* Hypothesis cards */
+/* TEST: Hypothesis cards */
 .mg-hypo__inner { gap: 32px; }
 .lt-hyp { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .lt-hyp__card {
@@ -144,7 +147,7 @@
     /* 88px under the visible GNB (57px tall); slides to 88px from the top when the GNB hides */
     position: fixed; top: 145px;
     /* Line up TOC text with the GNB logo; -14px = link border 2px + padding 12px */
-    left: calc(80px - 14px);
+    left: calc(104px - 14px);
     width: 160px; z-index: 5;
     opacity: 0; pointer-events: none;
     /* Same spring as the GNB reveal in script.js */
@@ -173,6 +176,39 @@
   .whats-next .work-card__title { font-size: 20px; line-height: 1.3; }
   .whats-next .work-card__desc { font-size: 14px; line-height: 1.5; }
   .whats-next .tag { font-size: 12px; }
+}
+/* Image / screen boxes run from the text line to the LinkedIn line (80px from the right edge),
+   capped at the original 1280px; text stays 940px. Box text one step up. */
+@media (min-width: 1025px) {
+  .mg-cover,
+  .mg-stack > .mg-panel, .mg-stack > .mg-row, .mg-stack > .mg-explore,
+  .mg-stack > .mg-options, .mg-stack > .mg-panel-wrap--680,
+  .mg-container > .mg-split, .mg-hypo .lt-hyp,
+  .whats-next .work-grid { width: min(calc(100% + (100cqw - 1100px) / 2), 1280px); max-width: none; }
+  /* cqw = section width without the scrollbar */
+  body > section { container-type: inline-size; }
+  .mg-explore__title, .mg-explore__result, .mg-explore__list p, .mg-explore__list strong,
+  .mg-option__desc, .lt-hyp__body, .lt-hyp__target { font-size: 16px; }
+  .lt-hyp__title, .whats-next .work-card__title { font-size: 22px; }
+  .mg-source, .whats-next .tag, .mg-option__tag, .lt-hyp__target-label { font-size: 13px; }
+}
+/* TOC visible: content starts 120px after the TOC (TOC text 80 → ~186px, so ≥330px, 24px more air),
+   or stays centered on wide screens; text 940px, boxes run to the LinkedIn line (80px), max 1280px */
+@media (min-width: 1400px) {
+  .mg-hero .mg-container, .mg-overview .mg-container, .mg-section .mg-container,
+  .mg-hypo .mg-container, .mg-solution .mg-container, .whats-next__inner {
+    max-width: none;
+    /* boxes keep their 1015px width (at 1440) and right-align to the LinkedIn line (104px) */
+    padding-left: min(calc(100cqw - 1119px), max(calc((100cqw - 940px) / 2), 306px));
+    padding-right: 104px;
+  }
+  .mg-cover,
+  .mg-stack > .mg-panel, .mg-stack > .mg-row, .mg-stack > .mg-explore,
+  .mg-stack > .mg-options, .mg-stack > .mg-panel-wrap--680,
+  .mg-container > .mg-split, .mg-hypo .lt-hyp,
+  .whats-next .work-grid { width: auto; max-width: 1280px; }
+  .mg-hero__text, .mg-overview__box, .mg-text, .mg-head, .mg-container > .mg-stack > .mg-text,
+  .whats-next__label { max-width: 940px; }
 }
 </style>
 </head>
@@ -231,6 +267,8 @@
             <img class="mg-live__ov" src="../../assets/images/mel-ai/live/hero-cover-08.webp" alt="" style="left:calc(var(--u) * 427);top:calc(var(--u) * 92.01);width:calc(var(--u) * 320);height:calc(var(--u) * 38);clip-path:inset(calc(var(--u) * 0) calc(var(--u) * 0) calc(var(--u) * 0) calc(var(--u) * 0) round calc(var(--u) * 24) calc(var(--u) * 24) calc(var(--u) * 0) calc(var(--u) * 0))">
             <img class="mg-live__ov" src="../../assets/images/mel-ai/live/hero-cover-09.webp" alt="" style="left:calc(var(--u) * 427);top:calc(var(--u) * 755.9);width:calc(var(--u) * 320);height:calc(var(--u) * 29.5);clip-path:inset(calc(var(--u) * 0) calc(var(--u) * 0) calc(var(--u) * 0.49) calc(var(--u) * 0))">
           </div>
+          <!-- Match Group logo above the cover gradient (cover art: x60 y60, 218 wide on 1280×520) -->
+          <img class="mg-live__ov" src="../../assets/images/thumb-mel/logo-match-group.webp" alt="" style="left:4.6875%;top:11.5385%;width:17.03%;height:auto">
         </div>
       </div>
     </div>
@@ -490,7 +528,7 @@
         <span class="mg-label">HYPOTHESIS</span>
         <h2 class="mg-title">We translated our two goals into testable design hypotheses</h2>
       </div>
-      <!-- Hypotheses as two cards (label → title → if/then → target) -->
+      <!-- TEST: hypotheses as two cards (label → title → if/then → target) -->
       <div class="lt-hyp">
         <div class="lt-hyp__card">
           <div class="lt-hyp__text">
@@ -836,7 +874,7 @@
   <script src="mel-ai.js"></script>
 
 <script>
-/* Left TOC built from section labels */
+/* TEST ONLY: build left TOC from section labels */
 (function () {
   var map = {OVERVIEW:'Overview',CONTEXT:'Context','BEHAVIORAL INSIGHT':'Behavioral Insight','THE CHALLENGE':'The Challenge',GOAL:'Goal',EXPLORATION:'Exploration',HYPOTHESIS:'Hypothesis','DESIGN SOLUTION 1: ENTRY POINT':'Design Solution 1','DESIGN SOLUTION 2-1: CONVERSATIONAL ENGAGEMENT':'Design Solution 2',RESULT:'Result','LESSONS LEARNED':'Lessons Learned'};
   var nav = document.createElement('nav'); nav.className = 'lt-toc'; nav.setAttribute('aria-label','On this page');

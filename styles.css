@@ -113,10 +113,10 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  /* Full width: logo + LinkedIn 80px from the screen edges (tablet ≤1024px uses 12px) */
+  /* Full width: logo + LinkedIn 104px from the screen edges (tablet ≤1024px uses 12px) */
   max-width: none;
   margin: 0 auto;
-  padding: 0 80px;
+  padding: 0 104px;
 }
 
 /* Logo — Manrope 800 20px, left col */

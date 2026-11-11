@@ -9,12 +9,12 @@
   gap: 120px;
 }
 
-/* Laptops and up: same edges as the GNB (full width, 80px side padding) */
+/* Laptops and up: same edges as the GNB (full width, 104px side padding) */
 @media (min-width: 1025px) {
   .lab-main {
     max-width: none;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 104px;
+    padding-right: 104px;
   }
 }
 

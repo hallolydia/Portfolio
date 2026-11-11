@@ -41,6 +41,158 @@
   <link rel="stylesheet" href="../../styles.css" />
   <link rel="stylesheet" href="../case-study.css?v=8f0ff67cb8" />
   <link rel="stylesheet" href="memecore.css" />
+
+<style id="mc-layout">
+/* Case-study layout (Mel AI format): one 940px column, no laptop zoom, 100px section rhythm, left TOC */
+@media (min-width: 1025px) {
+  .mc-container { max-width: 1020px; }
+  .mc-container--inset, .mc-intro__text, .mc-challenge__text,
+  .mc-w-1000, .mc-w-1036, .mc-w-1100 { max-width: none; }
+
+  /* Type scale (same as Mel AI) */
+  .mc-title { font-size: 28px; font-weight: 600; line-height: 1.25; letter-spacing: -0.3px; }
+  .mc-body, .mc-lead, .mc-overview__label, .mc-overview__value { font-size: 15.5px; line-height: 1.5; }
+  .mc-lead { color: var(--mc-body); letter-spacing: 0; }
+  .mc-page { --mc-body: #6b7280; --lt-toc: #9ca3af; }
+  .mc-label { font-size: 14px; font-weight: 700; }
+  .mc-label--chip { line-height: 16px; padding: 3px 6px; border-radius: 4px; }
+  .mc-challenge__title, .mc-card__title, .mc-subhead__title, .mc-impl__title { font-size: 20px; font-weight: 600; line-height: 1.3; }
+  .mc-feedback__chip, .mc-chat, .mc-chat__bubble { font-family: 'Manrope', sans-serif; }
+
+  /* Hero: tags → title 12, title → summary 16, 43px under the GNB */
+  .mc-hero { padding-top: 100px; padding-bottom: 60px; }
+  .mc-hero__title { line-height: 1.25; }
+  .mc-hero__summary { font-size: 15.5px; line-height: 1.5; color: var(--mc-body); }
+  .mc-hero__text { gap: 12px; }
+  .mc-hero__copy { gap: 16px; }
+
+  /* Section rhythm: 100px between sections (40 top + 60 bottom) */
+  .mc-overview, .mc-intro, .mc-split, .mc-split--last, .mc-challenge,
+  .mc-block, .mc-block--last { padding-bottom: 60px; }
+
+  /* Label → title 12, title → body 16, body → box 32 */
+  .mc-text__head, .mc-text__head--16, .mc-intro__head { gap: 12px; }
+  .mc-text, .mc-text--20, .mc-intro__text { gap: 16px; }
+  .mc-intro__inner, .mc-challenge__inner, .mc-stack--48 { gap: 32px; }
+  .mc-split__row { gap: 40px; }
+  .mc-challenge__cards { gap: 16px; }
+  .mc-challenge__card { padding: 28px; }
+  /* Fit the narrower column: feedback quotes + result stats */
+  /* Real-size text no longer fits the fixed 448px box: let it grow, keep the chip visible */
+  .mc-feedback { height: auto; padding: 20px; }
+  /* Compact cards so each quote stays on 2 lines in the 450px column */
+  .mc-feedback__card, .mc-feedback__card:nth-child(3) { padding: 16px; gap: 14px; }
+  .mc-feedback__avatar { width: 56px; height: auto; }
+  .mc-feedback__inner { align-self: stretch; min-width: 0; }
+  .mc-feedback__list { width: 100%; }
+  .mc-stat { padding: 36px; }
+  /* Trade-off: 32px gutter so the title fits two lines in its half (needs 452px) */
+  .mc-tradeoff__head { gap: 32px; }
+  /* Before/After cards: BEFORE text now wraps to 2 lines, so line the AFTER scene up with it
+     (notes with the BEFORE text, artwork with the BEFORE image) */
+  .mc-impl-card__body--after > .mc-impl-note { transform: translateY(12px); }
+  .mc-impl-card__body--after > .mc-impl-art--after,
+  .mc-impl-card__body--after > .mc-impl-assets,
+  .mc-impl-card__body--after > .mc-impl-boxes { transform: translateY(52px); }
+  /* Team / Role / Timeline / Tools: fixed 1280px-era column widths (920px) left no room for the
+     dividers in a 940px column; let columns size to their text and share the leftover space evenly */
+  .mc-overview__col,
+  .mc-overview__col:first-child,
+  .mc-overview__col:nth-of-type(2) { width: auto; align-items: flex-start; }
+  .mc-overview__divider { flex: 1 1 0; min-width: 48px; }
+  /* Hypothesis cards: 36px padding on all sides */
+  .mc-card--hyp { padding: 36px; }
+  /* 3-up stats: big numbers 60 → 44px so "24% → 6%" fits a 295px card */
+  .mc-stats--3 .mc-stat { padding: 32px 28px; }
+  .mc-stats--3 .mc-stat__value, .mc-stats--3 .mc-stat__num { font-size: 44px; }
+  .mc-stats--3 .mc-stat__arrow { font-size: 28px; }
+}
+/* Cancel case-study.css 87.5% laptop zoom so text shows at its real size */
+@media (min-width: 1025px) and (max-width: 1679px) {
+  body > section, body > .cs-meta, body > .cs-body { zoom: 1; }
+  .mc-hero__tags { zoom: 0.875; }
+}
+/* What's next: same 940px column; card art scaled to fit */
+@media (min-width: 1025px) {
+  .whats-next__inner { max-width: 1020px; }
+  .whats-next .work-card__media { zoom: 0.726; }
+  .whats-next__label { font-size: 14px; font-weight: 700; }
+  .whats-next .work-card__title { font-size: 20px; line-height: 1.3; }
+  .whats-next .work-card__desc { font-size: 14px; line-height: 1.5; }
+  .whats-next .tag { font-size: 12px; }
+}
+/* Sentence line breaks only on PC */
+@media (max-width: 1024px) { .lt-br { display: none; } }
+/* Left TOC (same as Mel AI) */
+.lt-toc { display: none; }
+@media (min-width: 1400px) {
+  .lt-toc {
+    display: flex; flex-direction: column; gap: 11px;
+    position: fixed; top: 145px; left: calc(104px - 14px);
+    width: 170px; z-index: 5;
+    opacity: 0; pointer-events: none;
+    transition: opacity .25s, top .62s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  body:has(.gnb.gnb--hidden) .lt-toc {
+    top: 88px;
+    transition: opacity .25s, top .38s cubic-bezier(0.55, -0.45, 0.75, 0.15);
+  }
+  .lt-toc.is-on { opacity: 1; pointer-events: auto; }
+  .lt-toc a {
+    font-size: 12px; line-height: 1.3; color: var(--lt-toc); text-decoration: none;
+    padding-left: 12px; border-left: 2px solid transparent;
+  }
+  .lt-toc a:hover { color: var(--mc-body); }
+  .lt-toc a.is-active { color: var(--mc-text); font-weight: 600; border-left-color: var(--mc-text); }
+  /* Over the purple Goal band: switch each overlapping item to light tones */
+  .lt-toc a.on-dark { color: rgba(255, 255, 255, 0.6); }
+  .lt-toc a.on-dark:hover { color: rgba(255, 255, 255, 0.85); }
+  .lt-toc a.on-dark.is-active { color: var(--mc-white); border-left-color: var(--mc-white); }
+}
+/* Image / screen boxes run from the text line to the LinkedIn line (80px from the right edge),
+   capped at the original 1280px; text stays 940px. Box text one step up. */
+@media (min-width: 1025px) {
+  body > section { container-type: inline-size; } /* cqw = section width without the scrollbar */
+  .mc-cover, .mc-intro__inner > .mc-showcase, .mc-challenge__cards,
+  .mc-container > .mc-split__row, .mc-container > .mc-art, .mc-container > .mc-pair,
+  .mc-container > .mc-tl, .mc-container > .mc-stats, .mc-container > .mc-stack,
+  .whats-next .work-grid { width: min(calc(100% + (100cqw - 1100px) / 2), 1280px); max-width: none; }
+  .mc-container > .mc-stack .mc-subhead { max-width: 940px; } /* subheads inside widened stacks stay on the text column */
+  /* Wider cards + 16px text: line the AFTER scene up with BEFORE again */
+  .mc-impl-card__body--after > .mc-impl-note { transform: translateY(7px); }
+  .mc-impl-card__body--after > .mc-impl-art--after,
+  .mc-impl-card__body--after > .mc-impl-assets,
+  .mc-impl-card__body--after > .mc-impl-boxes { transform: translateY(39px); }
+  .mc-panel .mc-body, .mc-card .mc-body, .mc-challenge__card .mc-body, .mc-card__copy,
+  .mc-lead--tight { font-size: 16px; line-height: 1.5; }
+  /* Feedback quotes back to 14px; cards centered in the box */
+  .mc-feedback__quote { font-size: 14px; line-height: 1.5; }
+  .mc-feedback__list { align-items: center; }
+  .mc-challenge__title, .mc-card__title, .mc-impl__title, .whats-next .work-card__title { font-size: 22px; }
+  .mc-tag, .mc-challenge__chip, .mc-feedback__chip, .whats-next .tag { font-size: 13px; }
+}
+/* TOC visible: content starts 120px after the TOC (TOC text 80 → ~186px, so ≥330px, 24px more air),
+   or stays centered on wide screens; text 940px, boxes run to the LinkedIn line (80px), max 1280px */
+@media (min-width: 1400px) {
+  .mc-container, .whats-next__inner {
+    max-width: none;
+    /* boxes keep their 1015px width (at 1440) and right-align to the LinkedIn line (104px) */
+    padding-left: min(calc(100cqw - 1119px), max(calc((100cqw - 940px) / 2), 306px));
+    padding-right: 104px;
+  }
+  .mc-cover, .mc-intro__inner > .mc-showcase, .mc-challenge__cards,
+  .mc-container > .mc-split__row, .mc-container > .mc-art, .mc-container > .mc-pair,
+  .mc-container > .mc-tl, .mc-container > .mc-stats, .mc-container > .mc-stack,
+  .whats-next .work-grid { width: auto; max-width: 1280px; }
+  .mc-hero__text, .mc-overview__box, .mc-intro__text, .mc-container > .mc-text,
+  .mc-container > .mc-tradeoff__head, .mc-goal__text, .whats-next__label { max-width: 940px; }
+  /* Before/After cards at this width: line the AFTER scene up with BEFORE */
+  .mc-impl-card__body--after > .mc-impl-note { transform: translateY(10px); }
+  .mc-impl-card__body--after > .mc-impl-art--after,
+  .mc-impl-card__body--after > .mc-impl-assets,
+  .mc-impl-card__body--after > .mc-impl-boxes { transform: translateY(47px); }
+}
+</style>
 </head>
 <body class="mc-page">
 
@@ -78,8 +230,8 @@
           <span class="tag">Design/Management</span>
         </div>
         <div class="mc-hero__copy">
-          <h1 class="mc-hero__title">Rebuilding a Web3 Website to Help Investors Quickly Understand the Project</h1>
-          <p class="mc-hero__summary">Introduced an AI-driven workflow to rebuild the site in 5 days, cutting page size by 94% and bounce by 2.6×, then scaled it company-wide.</p>
+          <h1 class="mc-hero__title">Rebuilding a Web3 Website to Help Investors<br class="lt-br"> Quickly Understand the Project</h1>
+          <p class="mc-hero__summary">Introduced an AI-driven workflow to rebuild the site in 5 days,<br class="lt-br"> cutting page size by 94% and bounce by 2.6×, then scaled it <span style="white-space: nowrap">company-wide</span>.</p>
         </div>
       </div>
       <div class="mc-cover">
@@ -217,7 +369,7 @@
             <ul class="mc-feedback__list">
               <li class="mc-feedback__card">
                 <img class="mc-feedback__avatar" src="../../assets/images/memecore/feedback-partner.svg" width="74" height="66" alt="">
-                <p class="mc-feedback__quote">“So, what kind of project is MemeCore? I visited<br>the website, but I still don’t understand what it does.”<span class="mc-feedback__by">- Prospective Partner</span></p>
+                <p class="mc-feedback__quote">“So, what kind of project is MemeCore? I visited the website, but I still don’t understand what it does.”<span class="mc-feedback__by">- Prospective Partner</span></p>
               </li>
               <li class="mc-feedback__card">
                 <img class="mc-feedback__avatar" src="../../assets/images/memecore/feedback-investor.svg" width="74" height="66" alt="">
@@ -321,7 +473,7 @@
           <span class="mc-label mc-label--spaced">TIMELINE</span>
           <h2 class="mc-title">Coordinated cross-team schedules to ship in three phases</h2>
         </div>
-        <p class="mc-lead mc-lead--body">With the team balancing multiple projects, I prioritized changes by impact and effort and split the scope into three phases. I shaped the IA with Growth &amp; Marketing, then aligned each phase with illustrators and developers.</p>
+        <p class="mc-lead mc-lead--body">With the team balancing multiple projects, I prioritized changes by impact and effort and split the scope into three phases.<br class="lt-br"> I shaped the IA with Growth &amp; Marketing, then aligned each phase with illustrators and developers.</p>
       </div>
       <div class="mc-tl">
         <img class="mc-tl__line" src="../../assets/images/memecore/timeline-line.svg" width="1280" height="29" alt="" aria-hidden="true">
@@ -405,7 +557,7 @@
         <div class="mc-text">
           <div class="mc-text__head">
             <span class="mc-label mc-label--spaced">TRADE-OFF</span>
-            <h2 class="mc-title">Turning the illustration team's pushback into a shared design rule</h2>
+            <h2 class="mc-title" style="text-wrap: balance">Turning the illustration team's pushback into a shared design rule</h2>
           </div>
           <p class="mc-body mc-body--tight">I reframed the debate <strong>from aesthetics to business impact</strong>, and the team agreed on one rule: interaction for attention, simple illustrations for understanding.</p>
         </div>
@@ -484,7 +636,7 @@
           <span class="mc-label mc-label--chip mc-label--spaced">SHIPPING PROCESS</span>
           <div class="mc-text__head">
             <span class="mc-label mc-label--spaced">NEW CHALLENGE</span>
-            <h2 class="mc-title">After launch, the site was still too slow: 17% of visitors kept clicking with no response</h2>
+            <h2 class="mc-title">After launch, the site was still too slow:<br class="lt-br"> 17% of visitors kept clicking with no response</h2>
           </div>
         </div>
         <p class="mc-body mc-body--tight">We had already shrunk the GIF assets, <strong>but the site still loaded slowly.</strong> Microsoft Clarity showed that pages were too slow to respond: about 17% of visitors rage-clicked, and<strong> session replays showed users on slower networks struggling to load them. A Lighthouse score of 55, well below the 90 benchmark, </strong>confirmed we needed to go further.</p>
@@ -502,7 +654,7 @@
       <div class="mc-text mc-w-1000">
           <div class="mc-text__head">
             <span class="mc-label mc-label--spaced">EXECUTION STRATEGY</span>
-            <h2 class="mc-title">When our frontend developer was reassigned, I built the site myself with vibe coding</h2>
+            <h2 class="mc-title">When our frontend developer was reassigned,<br class="lt-br"> I built the site myself with vibe coding</h2>
           </div>
         <p class="mc-body mc-body--tight">Midway through the project, our frontend developer moved to another urgent initiative. Instead of pausing or cutting scope, <strong>I took over implementation: I connected Claude Code to the Figma API and GitLab, built the frontend, and later handled some backend work.</strong> Testing designs directly in the browser cut handoffs and rework.</p>
       </div>
@@ -520,7 +672,7 @@
       <div class="mc-text mc-w-1000">
           <div class="mc-text__head">
             <span class="mc-label mc-label--spaced">IMPLEMENTATION DECISION</span>
-            <h2 class="mc-title">Replacing full-scene GIFs with static WebP and CSS motion to cut page weight</h2>
+            <h2 class="mc-title">Replacing full-scene GIFs with static WebP<br class="lt-br"> and CSS motion to cut page weight</h2>
           </div>
         <p class="mc-body mc-body--tight">Because I owned the code, <strong>I could fix this directly instead of waiting for a handoff.</strong> Each scene was a single heavy GIF that couldn’t be optimized further, so <strong>I rethought where motion was actually needed.</strong> The site became much lighter, kept its intended look, and no longer needed a loading screen.</p>
       </div>
@@ -777,5 +929,42 @@
 
   <script src="../../script.js"></script>
   <script src="memecore.js"></script>
+
+<script>
+/* Left TOC built from section labels */
+(function () {
+  var skip = /^(ABOUT|SHIPPING PROCESS)/;
+  var nav = document.createElement('nav'); nav.className = 'lt-toc'; nav.setAttribute('aria-label', 'On this page');
+  var items = [], seen = {};
+  document.querySelectorAll('body > section').forEach(function (sec, i) {
+    var labels = [].slice.call(sec.querySelectorAll('.mc-label')).filter(function (l) {
+      return !l.classList.contains('mc-label--link') && !skip.test(l.textContent.trim());
+    });
+    if (!labels.length) return;
+    var raw = labels[0].textContent.replace(/\s+/g, ' ').trim();
+    if (seen[raw]) return; seen[raw] = 1;
+    /* Short names so the TOC keeps clear of the 940px column */
+    var short = {'THE IMPORTANCE OF SITE':'Importance of Site','DATA ANALYSIS & CHALLENGES':'Data Analysis','IMPLEMENTATION DECISION':'Implementation','EXECUTION STRATEGY':'Execution Strategy'};
+    var name = short[raw] || raw.toLowerCase().replace(/(^|[\s-])([a-z])/g, function (m, a, b) { return a + b.toUpperCase(); });
+    sec.id = sec.id || 'lt-' + i;
+    var a = document.createElement('a'); a.href = '#' + sec.id; a.textContent = name;
+    nav.appendChild(a); items.push({ a: a, sec: sec });
+  });
+  document.body.appendChild(nav);
+  function onScroll() {
+    var cur = null;
+    items.forEach(function (it) { if (it.sec.getBoundingClientRect().top <= 200) cur = it; });
+    var meta = document.querySelector('.mc-overview__box');
+    nav.classList.toggle('is-on', !!meta && meta.getBoundingClientRect().top < window.innerHeight);
+    items.forEach(function (it) { it.a.classList.toggle('is-active', it === cur); });
+    var bands = [].slice.call(document.querySelectorAll('.mc-goal')).map(function (b) { return b.getBoundingClientRect(); });
+    items.forEach(function (it) {
+      var r = it.a.getBoundingClientRect(), mid = r.top + r.height / 2;
+      it.a.classList.toggle('on-dark', bands.some(function (b) { return mid > b.top && mid < b.bottom; }));
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+})();
+</script>
 </body>
 </html>
