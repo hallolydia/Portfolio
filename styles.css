@@ -1879,3 +1879,25 @@ html.has-cursor .strength-item__btn * {
   .whats-next { padding: 32px 0 80px; }
   .whats-next__inner { padding: 0 20px; gap: 24px; }
 }
+
+/* Home (laptops+): content edges follow the GNB (logo / LinkedIn, 104px from the screen edges) */
+@media (min-width: 1025px) {
+  #hero .hero__inner,
+  #work .section__inner,
+  #strength .section__inner {
+    max-width: none;
+    padding-left: 104px;
+    padding-right: 104px;
+  }
+}
+
+/* Home Featured Work (laptops+): thumbnails stretch to the wider cards, keeping the 580×350 framing
+   (same scene scaling as tablet; --ts-scale is set by script.js) */
+@media (min-width: 1025px) {
+  #work .work-card__media { max-width: none; }
+  #work .work-card__thumb { height: auto; aspect-ratio: 580 / 350; container-type: inline-size; }
+  #work .work-card .work-card__thumb .thumb-scene {
+    transform-origin: 308px 0;
+    scale: var(--ts-scale, 1);
+  }
+}
