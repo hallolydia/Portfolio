@@ -1842,6 +1842,12 @@ html.has-cursor .strength-item__btn * {
 .whats-next .work-card__thumb { container-type: inline-size; }
 .whats-next .thumb-scene { scale: var(--ts-cover, 1.01); } /* max(1.01, thumb width / 616), set by script.js */
 
+/* Tablet+: thumb height follows the resting card width at the thumbnails' 616:350 ratio, so nothing is cropped */
+@media (min-width: 769px) {
+  .whats-next .work-grid { container-type: inline-size; }
+  .whats-next .work-card__thumb { height: calc((50cqw - 20px) / var(--wn-zoom, 1) * 350 / 616); } /* --wn-zoom: the page's card zoom, if any */
+}
+
 /* Zoom in with the same springy pop, but come back without undershooting 1x
    (the undershoot exposed the grey thumb background at the left and right edges) */
 .whats-next .work-card__link .work-card__thumb {
