@@ -40,6 +40,141 @@
   <link rel="stylesheet" href="../../styles.css" />
   <link rel="stylesheet" href="../case-study.css?v=8f0ff67cb8" />
   <link rel="stylesheet" href="mel-ai.css" />
+
+<style id="mel-layout">
+/* Case-study layout (PC): one 940px column for text + images, no laptop zoom, left TOC */
+@media (min-width: 1025px) {
+  .mg-hero .mg-container,
+  .mg-overview .mg-container,
+  .mg-section .mg-container,
+  .mg-hypo .mg-container,
+  .mg-solution .mg-container { max-width: 1020px; }
+  .mg-text, .mg-title, .mg-body { max-width: none; }
+  .mg-title { font-size: 28px; font-weight: 600; line-height: 1.25; letter-spacing: -0.3px; }
+  /* Body leading 1.5 (matches hero summary) */
+  .mg-body, .mg-hypo__body { line-height: 1.5; }
+  /* Chip label → link label 8px (head gap 12px − 4px) so both read as one label group */
+  .mg-label--chip + .mg-label--link { margin-top: -4px; }
+  /* Context: chip sits outside the inner text block (outer gap 16px − 8px = 8px) */
+  .mg-label--chip + .mg-split__text { margin-top: -8px; }
+  /* 16px case-study text → 15.5px */
+  .mg-body, .mg-explore__title, .mg-explore__result, .mg-option__desc,
+  .mg-overview__label, .mg-overview__value, .mg-hypo__tag, .mg-result__change,
+  .mg-explore__list p, .mg-explore__list strong { font-size: 15.5px; }
+  /* First screen: less dead space above the hero (tags start ~43px under the GNB) */
+  /* Tags sit 43px under the (slimmer, 53px) GNB, same gap as before */
+  .mg-hero { padding-top: 100px; padding-bottom: 56px; }
+  /* Section rhythm: 100px between sections (40 top + 60 bottom) */
+  .mg-overview,
+  .mg-section,
+  .mg-section--pb80,
+  .mg-solution { padding-bottom: 60px; }
+  /* Body text → its box (image / card) 32px */
+  .mg-stack, .mg-stack--60 { gap: 32px; }
+  /* Label → title 12px, title → body 16px */
+  .mg-head, .mg-head--g16 { gap: 12px; }
+  .mg-text, .mg-text--g20,
+  .mg-split__text, .mg-split__text--g14, .mg-split__text--g20 { gap: 16px; }
+  /* Section labels (CONTEXT, OVERVIEW…) lighter and smaller; "About Match Group" link one step smaller */
+  .mg-label { font-size: 14px; font-weight: 700; }
+  /* Chip labels: slimmer (height ~29px → ~22px) */
+  .mg-label--chip { line-height: 16px; padding: 3px 6px; border-radius: 4px; }
+  /* Hypothesis items: match the rest of the page (body 15px, sub-title 20px) */
+  .mg-hypo__title { font-size: 20px; font-weight: 600; }
+  .mg-hypo__body { font-size: 15.5px; line-height: 24px; }
+  /* Body text color: cool slate gray (Skye); TOC one step lighter */
+  .mg-page { --mg-body: #6b7280; --lt-toc: #9ca3af; }
+  /* Hero summary 18px → 15.5px */
+  .mg-hero__summary { font-size: 15.5px; line-height: 1.5; }
+  /* Hero text spacing (Marin-like): tighter title leading, tags → title 12px, title → summary 16px */
+  .mg-hero__title { line-height: 1.25; }
+  .mg-hero__text { gap: 12px; }
+  .mg-hero__copy { gap: 16px; }
+  /* Fonts: replace Inter with Manrope so all case-study text uses one family */
+  .mg-explore__list, .mg-explore__result, .mg-hypo__body,
+  .mg-option__desc, .mg-result__change { font-family: 'Manrope', sans-serif; }
+  /* Option card titles: keep on one line in the narrower 940px column */
+  .mg-option__title { font-size: 16px; white-space: nowrap; }
+  .mg-option__desc { text-wrap: balance; }
+  /* Option cards: tighter inner rhythm (head → image 24, image → desc 20, label → title 6) */
+  .mg-option { padding: 28px 24px; gap: 24px; }
+  .mg-option__head { gap: 6px; }
+  .mg-option__body { gap: 20px; }
+  /* Result cards: 36px padding on all sides */
+  .mg-result { padding: 36px; }
+  /* Source captions under charts: smaller than body (15px) */
+  .mg-source { font-size: 12px; line-height: 1.5; }
+}
+/* Hero title line break only on PC; phones wrap naturally */
+@media (max-width: 1024px) {
+  .lt-br { display: none; }
+}
+/* Cancel case-study.css 87.5% laptop zoom so text shows at its real size */
+@media (min-width: 1025px) and (max-width: 1679px) {
+  body > section,
+  body > .cs-meta,
+  body > .cs-body { zoom: 1; }
+  /* Hero tags keep their original on-screen size (they were shown at 87.5%) */
+  .mg-hero__tags { zoom: 0.875; }
+}
+/* Hypothesis cards */
+.mg-hypo__inner { gap: 32px; }
+.lt-hyp { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.lt-hyp__card {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 24px;
+  padding: 32px; border-radius: 24px; background: var(--mg-white);
+}
+.lt-hyp__text { display: flex; flex-direction: column; gap: 16px; }
+.lt-hyp__title { font-size: 20px; font-weight: 600; line-height: 1.3; color: var(--mg-text); }
+.lt-hyp__body { font-size: 15.5px; line-height: 1.5; color: var(--mg-body); }
+.lt-hyp__target {
+  display: flex; flex-direction: column; gap: 4px;
+  padding-top: 16px; border-top: 1px solid var(--mg-divider);
+  font-size: 15.5px; font-weight: 600; line-height: 1.5; color: var(--mg-text);
+}
+.lt-hyp__target-label { font-size: 12px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; color: var(--mg-accent); }
+@media (max-width: 768px) {
+  .lt-hyp { grid-template-columns: 1fr; }
+  .lt-hyp__card { padding: 24px; }
+}
+.lt-toc { display: none; }
+@media (min-width: 1400px) {
+  .lt-toc {
+    display: flex; flex-direction: column; gap: 11px; /* 13px × 1.3 + 11 ≈ 28px per item */
+    /* 40px under the visible GNB (57px tall); slides to 40px from the top when the GNB hides */
+    position: fixed; top: 97px;
+    /* Line up TOC text with the GNB logo; -14px = link border 2px + padding 12px */
+    left: calc(80px - 14px);
+    width: 160px; z-index: 5;
+    opacity: 0; pointer-events: none;
+    /* Same spring as the GNB reveal in script.js */
+    transition: opacity .25s, top .62s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  body:has(.gnb.gnb--hidden) .lt-toc {
+    top: 40px;
+    /* Same easing as the GNB hide in script.js */
+    transition: opacity .25s, top .38s cubic-bezier(0.55, -0.45, 0.75, 0.15);
+  }
+  .lt-toc.is-on { opacity: 1; pointer-events: auto; }
+  .lt-toc a {
+    font-size: 12px; line-height: 1.3; color: var(--lt-toc);
+    text-decoration: none;
+    padding-left: 12px; border-left: 2px solid transparent;
+  }
+  .lt-toc a:hover { color: var(--mg-body); }
+  /* Current item: black, bolder, with a black bar */
+  .lt-toc a.is-active { color: var(--mg-text); font-weight: 600; border-left-color: var(--mg-text); }
+}
+/* What's next: same 940px column as the body; cards scaled to fit, type tuned to the page scale */
+@media (min-width: 1025px) {
+  .whats-next__inner { max-width: 1020px; }
+  .whats-next .work-card__media { zoom: 0.726; } /* 620px card art → 450px column, same proportions */
+  .whats-next__label { font-size: 14px; font-weight: 700; }
+  .whats-next .work-card__title { font-size: 20px; line-height: 1.3; }
+  .whats-next .work-card__desc { font-size: 14px; line-height: 1.5; }
+  .whats-next .tag { font-size: 12px; }
+}
+</style>
 </head>
 <body class="page-mel-ai mg-page">
 
@@ -77,7 +212,7 @@
           <span class="tag">Business Impact</span>
         </div>
         <div class="mg-hero__copy">
-          <h1 class="mg-hero__title">Designing an AI Dating Experience for Longer Conversations</h1>
+          <h1 class="mg-hero__title">Designing an AI Dating Experience<br class="lt-br"> for Longer Conversations</h1>
           <p class="mg-hero__summary">Redesigned Interactive Mode to make it easier to discover and sustain AI conversations,<br>increasing entry by 5× and average conversation time by 5.5×.</p>
         </div>
       </div>
@@ -179,7 +314,7 @@
           <div class="mg-split__text">
             <div class="mg-head">
               <a class="mg-label mg-label--link" href="https://mtch.com/" target="_blank" rel="noopener">ABOUT MATCH GROUP<img class="mg-label__icon" src="../../assets/images/mel-ai/icon-arrow-up-right.svg" width="20" height="20" alt=""></a>
-              <h2 class="mg-title mg-title--tight">The world’s leading dating company behind Tinder and Hinge</h2>
+              <h2 class="mg-title mg-title--tight" style="text-wrap: balance; letter-spacing: -0.4px">The world’s leading dating company behind Tinder and Hinge</h2>
             </div>
             <p class="mg-body">Match Group is the <strong>#1 global online dating company behind brands like Tinder</strong> and Hinge. Its portfolio serves different relationship needs and audiences, with a shared mission to help people build meaningful connections through technology.</p>
           </div>
@@ -355,26 +490,27 @@
         <span class="mg-label">HYPOTHESIS</span>
         <h2 class="mg-title">We translated our two goals into testable design hypotheses</h2>
       </div>
-      <div class="mg-hypo__list">
-        <div class="mg-hypo__item">
-          <div class="mg-hypo__row">
-            <span class="mg-hypo__num">01</span>
-            <div class="mg-hypo__head">
-              <span class="mg-hypo__tag">ENTRY POINT</span>
-              <h3 class="mg-hypo__title">Make Interactive Mode easier to discover</h3>
+      <!-- Hypotheses as two cards (label → title → if/then → target) -->
+      <div class="lt-hyp">
+        <div class="lt-hyp__card">
+          <div class="lt-hyp__text">
+            <div class="mg-head">
+              <span class="mg-label">01 · ENTRY POINT</span>
+              <h3 class="lt-hyp__title">Make Interactive Mode easier to discover</h3>
             </div>
+            <p class="lt-hyp__body">If we add a main CTA and “Request a Line,” more users will enter Interactive Mode.</p>
           </div>
-          <p class="mg-hypo__body mg-hypo__body--916">Providing two entry points, a main CTA and “Request a Line”, will increase entry into Interactive Mode</p>
+          <p class="lt-hyp__target"><span class="lt-hyp__target-label">Target</span>At least 50% of call users enter the mode</p>
         </div>
-        <div class="mg-hypo__item">
-          <div class="mg-hypo__row">
-            <span class="mg-hypo__num">02</span>
-            <div class="mg-hypo__head">
-              <span class="mg-hypo__tag">CONVERSATIONAL ENGAGEMENT</span>
-              <h3 class="mg-hypo__title">Make it easier to continue and return</h3>
+        <div class="lt-hyp__card">
+          <div class="lt-hyp__text">
+            <div class="mg-head">
+              <span class="mg-label">02 · CONVERSATIONAL ENGAGEMENT</span>
+              <h3 class="lt-hyp__title">Make it easier to continue and return</h3>
             </div>
+            <p class="lt-hyp__body">If we offer scenario options, dialogue suggestions, and conversation history, users will talk longer and come back.</p>
           </div>
-          <p class="mg-hypo__body mg-hypo__body--1000">Providing scenario options and dialogue suggestions will help users continue conversations more easily, while conversation history will make it easier to return</p>
+          <p class="lt-hyp__target"><span class="lt-hyp__target-label">Target</span>Longer average conversation time</p>
         </div>
       </div>
     </div>
@@ -394,7 +530,7 @@
         <div class="mg-options">
           <article class="mg-option">
             <div class="mg-option__head">
-              <span class="mg-option__tag">OPTION  A</span>
+              <span class="mg-option__tag">OPTION A</span>
               <h3 class="mg-option__title"><img src="../../assets/images/mel-ai/icon-option-a.svg" width="22" height="22" alt="">Hidden behind an extra step</h3>
             </div>
             <div class="mg-option__body">
@@ -413,7 +549,7 @@
             <div class="mg-live__clip" style="left:calc(var(--u) * 211.34);top:calc(var(--u) * 77);width:calc(var(--u) * 21.33);height:calc(var(--u) * 21.33);border-radius:calc(var(--u) * 0) calc(var(--u) * 0) calc(var(--u) * 0) calc(var(--u) * 0);background:rgb(3,3,4)"><img class="mg-live__media" style="left:calc(var(--u) * 0);top:calc(var(--u) * 0);width:calc(var(--u) * 21.33);height:calc(var(--u) * 21.33);object-fit:cover" src="../../assets/images/mel-ai/anim/heart.webp" alt=""></div>
           </div>
         </div></div>
-              <p class="mg-option__desc">The prominent prompt made the feature clear,<br>but competed with the conversation.</p>
+              <p class="mg-option__desc">The prominent prompt made the feature clear, but competed with the conversation.</p>
             </div>
           </article>
           <article class="mg-option mg-option--selected">
@@ -499,7 +635,7 @@
           <span class="mg-label mg-label--chip">DESIGN SOLUTION 2-1: CONVERSATIONAL ENGAGEMENT</span>
           <h2 class="mg-title">Reducing the effort to start and sustain a scenario</h2>
         </div>
-        <p class="mg-body">Describing a desired scenario through conversation was unfamiliar UX to users, making it difficult to get started. We introduced two ways to start and supported both high-intent users and users who needed inspiration.</p>
+        <p class="mg-body">Describing a desired scenario through conversation was unfamiliar UX to users, making it difficult to get started.<br class="lt-br"> We introduced two ways to start and supported both high-intent users and users who needed inspiration.</p>
       </div>
       <div class="mg-panel-wrap--680">
         <div class="mg-panel">
@@ -532,7 +668,7 @@
           <span class="mg-label mg-label--chip">DESIGN SOLUTION 2-2: CONVERSATIONAL ENGAGEMENT</span>
           <h2 class="mg-title">Helping users keep the conversation moving</h2>
         </div>
-        <p class="mg-body">Even after choosing a scenario, users could pause while deciding what to say next. We added context-aware suggested replies to give users an easy starting point and keep conversation flowing.</p>
+        <p class="mg-body">Even after choosing a scenario, users could pause while deciding what to say next.<br class="lt-br"> We added context-aware suggested replies to give users an easy starting point and keep conversation flowing.</p>
       </div>
       <div class="mg-panel mg-panel--replies">
         <div class="mg-live"><img src="../../assets/images/mel-ai/replies.webp?v=2" width="1248" height="700" alt="Before: users came up with their own replies. After: context-aware suggested replies" loading="lazy">
@@ -551,7 +687,7 @@
     <div class="mg-container mg-stack">
       <div class="mg-text mg-text--g20">
         <h2 class="mg-title">Helping users return to past conversations with context</h2>
-        <p class="mg-body">After users left Interactive Mode, there was no clear way to return to a previous scenario. We introduced My Conversation, which automatically saves past sessions with the latest image and an AI-generated summary, making it easy for users to recognize and revisit their previous experiences.</p>
+        <p class="mg-body">After users left Interactive Mode, there was no clear way to return to a previous scenario.<br class="lt-br"> We introduced My Conversation, which automatically saves past sessions with the latest image and an AI-generated summary, making it easy for users to recognize and revisit their previous experiences.</p>
       </div>
       <div class="mg-panel">
         <div class="mg-live"><img src="../../assets/images/mel-ai/history.webp" width="1280" height="600" alt="My Conversation saves past sessions with the latest image and an AI-generated summary" loading="lazy">
@@ -698,5 +834,29 @@
 
   <script src="../../script.js"></script>
   <script src="mel-ai.js"></script>
+
+<script>
+/* Left TOC built from section labels */
+(function () {
+  var map = {OVERVIEW:'Overview',CONTEXT:'Context','BEHAVIORAL INSIGHT':'Behavioral Insight','THE CHALLENGE':'The Challenge',GOAL:'Goal',EXPLORATION:'Exploration',HYPOTHESIS:'Hypothesis','DESIGN SOLUTION 1: ENTRY POINT':'Design Solution 1','DESIGN SOLUTION 2-1: CONVERSATIONAL ENGAGEMENT':'Design Solution 2',RESULT:'Result','LESSONS LEARNED':'Lessons Learned'};
+  var nav = document.createElement('nav'); nav.className = 'lt-toc'; nav.setAttribute('aria-label','On this page');
+  var items = [];
+  document.querySelectorAll('section .mg-label').forEach(function (l) {
+    var name = map[l.textContent.trim()]; if (!name) return;
+    var sec = l.closest('section'); sec.id = sec.id || 'lt-' + items.length;
+    var a = document.createElement('a'); a.href = '#' + sec.id; a.textContent = name;
+    nav.appendChild(a); items.push({a: a, sec: sec});
+  });
+  document.body.appendChild(nav);
+  function onScroll() {
+    var cur = null;
+    items.forEach(function (it) { if (it.sec.getBoundingClientRect().top <= 200) cur = it; });
+    var meta = document.querySelector('.mg-overview__box');
+    nav.classList.toggle('is-on', !!meta && meta.getBoundingClientRect().top < window.innerHeight);
+    items.forEach(function (it) { it.a.classList.toggle('is-active', it === cur); });
+  }
+  window.addEventListener('scroll', onScroll, {passive: true}); onScroll();
+})();
+</script>
 </body>
 </html>

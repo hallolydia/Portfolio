@@ -9,8 +9,17 @@
   gap: 120px;
 }
 
-/* Match the GNB side padding (12px) at 769–1280px so content lines up with the nav edges */
-@media (min-width: 769px) and (max-width: 1280px) {
+/* Laptops and up: same edges as the GNB (full width, 80px side padding) */
+@media (min-width: 1025px) {
+  .lab-main {
+    max-width: none;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+/* Tablet: match the GNB side padding (12px) so content lines up with the nav edges */
+@media (min-width: 769px) and (max-width: 1024px) {
   .lab-main {
     padding-left: 12px;
     padding-right: 12px;
