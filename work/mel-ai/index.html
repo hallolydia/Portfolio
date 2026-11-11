@@ -141,8 +141,8 @@
 @media (min-width: 1400px) {
   .lt-toc {
     display: flex; flex-direction: column; gap: 11px; /* 13px × 1.3 + 11 ≈ 28px per item */
-    /* 40px under the visible GNB (57px tall); slides to 40px from the top when the GNB hides */
-    position: fixed; top: 97px;
+    /* 88px under the visible GNB (57px tall); slides to 88px from the top when the GNB hides */
+    position: fixed; top: 145px;
     /* Line up TOC text with the GNB logo; -14px = link border 2px + padding 12px */
     left: calc(80px - 14px);
     width: 160px; z-index: 5;
@@ -151,7 +151,7 @@
     transition: opacity .25s, top .62s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
   body:has(.gnb.gnb--hidden) .lt-toc {
-    top: 40px;
+    top: 88px;
     /* Same easing as the GNB hide in script.js */
     transition: opacity .25s, top .38s cubic-bezier(0.55, -0.45, 0.75, 0.15);
   }
