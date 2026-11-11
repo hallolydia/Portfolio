@@ -1895,7 +1895,7 @@ html.has-cursor .strength-item__btn * {
    (same scene scaling as tablet; --ts-scale is set by script.js) */
 @media (min-width: 1025px) {
   #work .work-card__media { max-width: none; }
-  #work .work-card__thumb { height: auto; aspect-ratio: 580 / 350; container-type: inline-size; }
+  #work .work-card__thumb { height: auto; aspect-ratio: 580 / 350; container-type: inline-size; will-change: auto; } /* no bitmap caching, so hover zoom stays sharp */
   #work .work-card .work-card__thumb .thumb-scene {
     transform-origin: 308px 0;
     scale: var(--ts-scale, 1);
