@@ -43,6 +43,7 @@
   <link rel="stylesheet" href="sk-hmi.css?v=overview-20261029" />
 
 <style id="sk-layout">
+@media (max-width: 1024px) { .lt-br { display: none; } }
 .sk-bg-card__circle { display: none; } /* laptop/PC only; phones keep the original artwork */
 /* Case-study layout (Mel AI / MemeCore format): 940px text column, boxes run to the right edge line,
    real-size type (no laptop zoom), 100px section rhythm, left TOC */
@@ -56,9 +57,16 @@
   .sk-label--chip { line-height: 16px; padding: 3px 6px; border-radius: 4px; }
   .sk-goal__title { font-size: 28px; font-weight: 600; line-height: 1.25; letter-spacing: -0.3px; }
   .sk-goal__body { font-size: 18px; line-height: 1.5; }
-  .sk-card__title, .sk-iter__title, .sk-ba__title,
-  .sk-components__title, .sk-voices__title { font-size: 22px; font-weight: 600; line-height: 1.3; }
-  .sk-card__text, .sk-card__body, .sk-iter__text, .sk-option__text, .sk-hmi__text { font-size: 16px; line-height: 1.5; }
+  /* Card groups keep their original 1280px design (text sizes, wraps, image positions) and scale to fit
+     the box column; --fitz = column width / 1280, set by the script at the end of the page */
+  .sk-voices, .sk-cards, .sk-iter, .sk-ba, .sk-options, .sk-layout { zoom: var(--fitz, 1); }
+  /* Text inside the scaled groups one step up, so it still reads at ~14-15px on laptops */
+  .sk-card__title { font-size: 21px; line-height: 1.3; }
+  .sk-card__text, .sk-card__body, .sk-iter__text, .sk-option__text { font-size: 17px; line-height: 1.45; }
+  .sk-iter__title { font-size: 18px; line-height: 1.3; }
+  .sk-ba__title { font-size: 21px; line-height: 1.3; }
+  .sk-bubble__quote { font-size: 17px; line-height: 1.45; }
+  .sk-quote p { font-size: 15px; line-height: 1.4; }
 
   /* Hero: tags → title 12, title → summary 16 */
   .sk-hero { padding-top: 100px; padding-bottom: 60px; }
@@ -84,7 +92,7 @@
   .sk-bg-card .sk-bleed { --bleed: 40px; }
   .sk-bg-card__title, .sk-bg-card__title--tight { font-size: 20px; font-weight: 600; line-height: 1.4; letter-spacing: -0.2px; height: auto; min-height: 56px; margin-bottom: 24px; }
   .sk-bg-card__orig { display: none; }
-  .sk-bg-card__circle { display: block; width: 245px; height: auto; margin: 16px auto 0;
+  .sk-bg-card__circle { display: block; width: 177px; height: auto; margin: 43px auto 0; /* circle ≈ 128px, same as the 78% pie, centers level */
     -webkit-mask-image: radial-gradient(closest-side, #000 82%, transparent 100%);
     mask-image: radial-gradient(closest-side, #000 82%, transparent 100%); }
 
@@ -327,7 +335,7 @@
           <div class="sk-challenge__text">
             <div class="sk-challenge__head">
               <span class="sk-label">LEARNER CHALLENGE 02</span>
-              <h2 class="sk-title sk-title--140 sk-ls-t2">Similar-looking items and unclear action cues caused a 72% misclick rate</h2>
+              <h2 class="sk-title sk-title--140 sk-ls-t2">Similar-looking items and unclear action cues<br class="lt-br"> caused a 72% misclick rate</h2>
             </div>
             <p class="sk-body">Neither the character nor the instructions showed what to select next, so learners often picked the wrong item and got stuck.</p>
           </div>
@@ -455,7 +463,7 @@
     <div class="sk-container sk-stack sk-stack--48 sk-tradeoff">
       <div class="sk-text__head sk-text--1000">
         <span class="sk-label">TRADE-OFF</span>
-        <h2 class="sk-title">We prioritized learning effectiveness and scalability over copying each machine interface</h2>
+        <h2 class="sk-title">We prioritized learning effectiveness and scalability<br class="lt-br"> over copying each machine interface</h2>
       </div>
       <div class="sk-cards">
         <article class="sk-card sk-panel">
@@ -800,6 +808,21 @@
     });
   }
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+})();
+</script>
+<script>
+/* Card groups: scale their 1280px design to the box column (laptop/PC only) */
+(function () {
+  var sel = '.sk-voices, .sk-cards, .sk-iter, .sk-ba, .sk-options, .sk-layout';
+  function fit() {
+    var wide = window.matchMedia('(min-width: 1025px)').matches;
+    document.querySelectorAll(sel).forEach(function (el) {
+      var p = el.parentElement, cs = getComputedStyle(p);
+      var w = p.getBoundingClientRect().width - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      el.style.setProperty('--fitz', wide ? Math.min(1, w / 1280).toFixed(4) : '1');
+    });
+  }
+  fit(); window.addEventListener('resize', fit);
 })();
 </script>
 </body>
