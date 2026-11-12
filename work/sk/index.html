@@ -43,6 +43,7 @@
   <link rel="stylesheet" href="sk-hmi.css?v=overview-20261029" />
 
 <style id="sk-layout">
+.sk-bg-card__circle { display: none; } /* laptop/PC only; phones keep the original artwork */
 /* Case-study layout (Mel AI / MemeCore format): 940px text column, boxes run to the right edge line,
    real-size type (no laptop zoom), 100px section rhythm, left TOC */
 @media (min-width: 1025px) {
@@ -55,7 +56,7 @@
   .sk-label--chip { line-height: 16px; padding: 3px 6px; border-radius: 4px; }
   .sk-goal__title { font-size: 28px; font-weight: 600; line-height: 1.25; letter-spacing: -0.3px; }
   .sk-goal__body { font-size: 18px; line-height: 1.5; }
-  .sk-card__title, .sk-bg-card__title, .sk-iter__title, .sk-ba__title,
+  .sk-card__title, .sk-iter__title, .sk-ba__title,
   .sk-components__title, .sk-voices__title { font-size: 22px; font-weight: 600; line-height: 1.3; }
   .sk-card__text, .sk-card__body, .sk-iter__text, .sk-option__text, .sk-hmi__text { font-size: 16px; line-height: 1.5; }
 
@@ -77,6 +78,15 @@
   .sk-text, .sk-text--20, .sk-challenge__text { gap: 16px; }
   .sk-stack, .sk-stack--48, .sk-stack--40 { gap: 32px; }
   .sk-challenge__block { gap: 32px; }
+  /* Project background cards: left card fixed so both titles sit on exactly 2 lines; circle centered */
+  .sk-bg-card { flex: 0 0 450px; padding: 40px 40px 0; }
+  .sk-bg-card--wide { flex: 1 1 0; }
+  .sk-bg-card .sk-bleed { --bleed: 40px; }
+  .sk-bg-card__title, .sk-bg-card__title--tight { font-size: 20px; font-weight: 600; line-height: 1.4; letter-spacing: -0.2px; height: auto; min-height: 56px; margin-bottom: 24px; }
+  .sk-bg-card__orig { display: none; }
+  .sk-bg-card__circle { display: block; width: 245px; height: auto; margin: 16px auto 0;
+    -webkit-mask-image: radial-gradient(closest-side, #000 82%, transparent 100%);
+    mask-image: radial-gradient(closest-side, #000 82%, transparent 100%); }
 
   /* Columns: text stays 940px from the text line; boxes and images run to the right edge line */
   body > section { container-type: inline-size; } /* cqw = section width without the scrollbar */
@@ -286,8 +296,9 @@
       </div>
       <div class="sk-bg-cards">
         <div class="sk-bg-card sk-panel sk-panel--a">
-          <p class="sk-bg-card__title">Less formal education made text-heavy instructions hard to follow</p>
-          <img class="sk-bleed" src="../../assets/images/skon/img-skon-bg-education.webp" srcset="../../assets/images/skon/img-skon-bg-education.webp 2x" width="450" height="298" alt="#1 Elementary school — the most common education level" loading="lazy">
+          <p class="sk-bg-card__title">Less formal education made text-heavy<br class="lt-br"> instructions hard to follow</p>
+          <img class="sk-bg-card__circle" src="../../assets/images/skon/img-skon-bg-education-circle.webp" width="245" height="225" alt="#1 Elementary school — the most common education level" loading="lazy">
+          <img class="sk-bleed sk-bg-card__orig" src="../../assets/images/skon/img-skon-bg-education.webp" srcset="../../assets/images/skon/img-skon-bg-education.webp 2x" width="450" height="298" alt="#1 Elementary school — the most common education level" loading="lazy">
         </div>
         <div class="sk-bg-card sk-bg-card--wide sk-panel sk-panel--a">
           <p class="sk-bg-card__title sk-bg-card__title--tight">Little equipment experience made<br>the training hard to apply on the job</p>
