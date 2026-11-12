@@ -1931,11 +1931,11 @@ html.has-cursor .strength-item__btn * {
 .hero__scroll-cue { display: none; }
 .hero { min-height: auto; }
 @media (min-width: 769px) {
-  /* Laptop (1512px) values: top 80, bottom 120. Wider screens scale up in proportion so a PC looks the same */
-  .hero__inner     { padding-top: max(80px, calc(100vw * 80 / 1512)); padding-bottom: max(120px, calc(100vw * 120 / 1512)); }
+  /* Laptop (1512px) values: top 72, bottom 104, headline 38/700, sub 15. Wider screens scale up in proportion so a PC looks the same */
+  .hero__inner     { padding-top: max(72px, calc(100vw * 72 / 1512)); padding-bottom: max(104px, calc(100vw * 104 / 1512)); }
   .hero__copy      { margin-bottom: 0; padding-top: 0; }
-  .hero__headline  { font-size: clamp(24px, 3vw, 72px); margin-bottom: max(24px, calc(100vw * 24 / 1512)); }
-  .hero__sub       { font-size: clamp(14px, 1.1vw, 28px); }
+  .hero__headline  { font-size: clamp(24px, calc(100vw * 38 / 1512), 72px); font-weight: 700; margin-bottom: max(24px, calc(100vw * 24 / 1512)); }
+  .hero__sub       { font-size: clamp(14px, calc(100vw * 15 / 1512), 28px); }
   #work            { padding-top: max(40px, calc(100vw * 40 / 1512)); }
 }
 @media (max-width: 768px) {
