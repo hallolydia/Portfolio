@@ -906,6 +906,9 @@ ul { list-style: none; }
   height: 132.041px;
   transform: translate(-50%, -50%);
   object-fit: cover;
+  /* Fade the top edge so the video's own sky blends into --tsm-sky (same as the MemeCore cover) */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 10.85px);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 10.85px);
 }
 
 /* --- Mel AI (Match Group) --- */
