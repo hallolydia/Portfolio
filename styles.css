@@ -1919,3 +1919,38 @@ html.has-cursor .strength-item__btn * {
   #work .section__title-icon     { width: 32px; height: 32px; }
   #strength .section__title-icon { width: 43px; height: 43px; }
 }
+
+/* Home PC: My Strength title → first item text = 60px, same as Featured Work title → thumbnails
+   (title 0 + header 4 + item padding-top 56) */
+@media (min-width: 769px) {
+  #strength .section__title  { margin-bottom: 0; }
+  #strength .section__header { margin-bottom: 4px; }
+}
+
+/* Home hero (all screens): no scroll cue; the hero hugs its content so Featured Work shows in the first screen */
+.hero__scroll-cue { display: none; }
+.hero { min-height: auto; }
+@media (min-width: 769px) {
+  /* Laptop (1512px) values: top 80, bottom 120. Wider screens scale up in proportion so a PC looks the same */
+  .hero__inner     { padding-top: max(80px, calc(100vw * 80 / 1512)); padding-bottom: max(120px, calc(100vw * 120 / 1512)); }
+  .hero__copy      { margin-bottom: 0; padding-top: 0; }
+  .hero__headline  { font-size: clamp(24px, 3vw, 72px); margin-bottom: max(24px, calc(100vw * 24 / 1512)); }
+  .hero__sub       { font-size: clamp(14px, 1.1vw, 28px); }
+  #work            { padding-top: max(40px, calc(100vw * 40 / 1512)); }
+}
+@media (max-width: 768px) {
+  .hero__inner     { padding: 24px 20px 36px; }
+  #work            { padding-top: 28px; }
+}
+
+/* Home PC: section titles 48 → 36px, title → content 60 → 40px,
+   My Strength top padding = Featured Work top padding */
+@media (min-width: 769px) {
+  #work .section__title,
+  #strength .section__title      { font-size: 36px; letter-spacing: -0.36px; }
+  #work .section__title-icon     { width: 24px; height: 24px; }
+  #strength .section__title-icon { width: 32px; height: 32px; }
+  #work .section__header         { margin-bottom: 40px; }
+  #strength .section__header     { margin-bottom: -16px; } /* + first item's 56px top padding = 40px */
+  #strength                      { padding-top: max(40px, calc(100vw * 40 / 1512)); }
+}
