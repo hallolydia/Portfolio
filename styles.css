@@ -1843,7 +1843,7 @@ html.has-cursor .strength-item__btn * {
 
 /* The layered thumbnail scenes are 616px wide: scale them to keep covering the thumb when the card is wider */
 .whats-next .work-card__thumb { container-type: inline-size; }
-.whats-next .thumb-scene { scale: var(--ts-cover, 1.01); } /* max(1.01, thumb width / 616), set by script.js */
+.whats-next .thumb-scene { scale: var(--ts-cover, 1.01); transform-origin: 308px 0; } /* max(1.01, thumb width / 616), set by script.js; grows from the top so it fills the 616:350 thumb */
 
 /* Tablet+: thumb height follows the resting card width at the thumbnails' 616:350 ratio, so nothing is cropped */
 @media (min-width: 769px) {
