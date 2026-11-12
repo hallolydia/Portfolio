@@ -87,12 +87,13 @@
   .sk-stack, .sk-stack--48, .sk-stack--40 { gap: 32px; }
   .sk-challenge__block { gap: 32px; }
   /* Project background cards: left card fixed so both titles sit on exactly 2 lines; circle centered */
-  .sk-bg-card { flex: 0 0 450px; padding: 40px 40px 0; }
+  .sk-bg-card { flex: 0 0 450px; height: auto; padding: 40px; display: flex; flex-direction: column; }
   .sk-bg-card--wide { flex: 1 1 0; }
   .sk-bg-card .sk-bleed { --bleed: 40px; }
+  .sk-bg-card--wide .sk-bleed { margin-bottom: calc(-5.45% - 4.4px); } /* the artwork has empty space under the pie (5.45% of its width); keep the visible bottom gap at 40px */
   .sk-bg-card__title, .sk-bg-card__title--tight { font-size: 20px; font-weight: 600; line-height: 1.4; letter-spacing: -0.2px; height: auto; min-height: 56px; margin-bottom: 24px; }
   .sk-bg-card__orig { display: none; }
-  .sk-bg-card__circle { display: block; width: 177px; height: auto; margin: 43px auto 0; /* circle ≈ 128px, same as the 78% pie, centers level */
+  .sk-bg-card__circle { display: block; width: var(--cw, 177px); height: auto; margin: var(--cm, 12px) auto var(--cb, -4px); /* circle ≈ 128px, same as the 78% pie, centers level */
     -webkit-mask-image: radial-gradient(closest-side, #000 82%, transparent 100%);
     mask-image: radial-gradient(closest-side, #000 82%, transparent 100%); }
 
@@ -822,7 +823,16 @@
       el.style.setProperty('--fitz', wide ? Math.min(1, w / 1280).toFixed(4) : '1');
     });
   }
-  fit(); window.addEventListener('resize', fit);
+  /* Project background: size the #1 circle like the 78% pie and line their centers up */
+  function circle() {
+    var art = document.querySelector('.sk-bg-card--wide .sk-bleed'), card = document.querySelector('.sk-bg-card');
+    if (!art || !card) return;
+    var W = art.getBoundingClientRect().width;
+    card.style.setProperty('--cw', (W * 0.2926).toFixed(1) + 'px');
+    card.style.setProperty('--cm', (W * 0.0199).toFixed(1) + 'px');
+    card.style.setProperty('--cb', (W * -0.0059).toFixed(1) + 'px');
+  }
+  fit(); circle(); window.addEventListener('resize', function () { fit(); circle(); });
 })();
 </script>
 </body>

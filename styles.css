@@ -1954,3 +1954,27 @@ html.has-cursor .strength-item__btn * {
   #strength .section__header     { margin-bottom: -4px; } /* + first item's 56px top padding = 52px */
   #strength                      { padding-top: max(32px, calc(100vw * 32 / 1512)); }
 }
+
+/* Logo hover: "Lydia" rolls up and a second "Lydia" rolls in (same motion as the LinkedIn button).
+   The real text stays for screen readers; the two visible copies are drawn by ::before/::after. */
+.gnb__logo {
+  position: relative;
+  display: inline-block;
+  justify-self: start;
+  height: 28px;
+  line-height: 28px;
+  overflow: hidden;
+  color: transparent;
+}
+.gnb__logo::before,
+.gnb__logo::after {
+  content: "Lydia";
+  position: absolute;
+  left: 0;
+  color: var(--color-text);
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.gnb__logo::before { top: 0; }
+.gnb__logo::after  { top: 100%; }
+.gnb__logo:hover::before,
+.gnb__logo:hover::after { transform: translateY(-28px); }
