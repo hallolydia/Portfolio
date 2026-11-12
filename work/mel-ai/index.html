@@ -891,7 +891,7 @@
     var cur = null;
     items.forEach(function (it) { if (it.sec.getBoundingClientRect().top <= 200) cur = it; });
     var meta = document.querySelector('.mg-overview__box');
-    nav.classList.toggle('is-on', !!meta && meta.getBoundingClientRect().top < window.innerHeight);
+    nav.classList.toggle('is-on', true); /* visible from the first screen */
     items.forEach(function (it) { it.a.classList.toggle('is-active', it === cur); });
   }
   window.addEventListener('scroll', onScroll, {passive: true}); onScroll();

@@ -956,7 +956,7 @@
     var cur = null;
     items.forEach(function (it) { if (it.sec.getBoundingClientRect().top <= 200) cur = it; });
     var meta = document.querySelector('.mc-overview__box');
-    nav.classList.toggle('is-on', !!meta && meta.getBoundingClientRect().top < window.innerHeight);
+    nav.classList.toggle('is-on', true); /* visible from the first screen */
     items.forEach(function (it) { it.a.classList.toggle('is-active', it === cur); });
     var bands = [].slice.call(document.querySelectorAll('.mc-goal')).map(function (b) { return b.getBoundingClientRect(); });
     items.forEach(function (it) {
