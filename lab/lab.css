@@ -201,3 +201,11 @@ a.lab-item:hover .lab-item__thumb img {
     margin-bottom: 20px;
   }
 }
+
+/* PC: less space above the first section (184 → 64px under the GNB) and between sections (120 → 80px) */
+@media (min-width: 769px) {
+  .lab-main {
+    padding-top: calc(var(--gnb-height) + var(--gnb-top) + 64px);
+    gap: 80px;
+  }
+}
