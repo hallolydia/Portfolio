@@ -393,7 +393,7 @@ document.querySelectorAll('.footer__email-btn').forEach(btn => {
   const clean = s => (s || '').replace(/\s+/g, ' ').trim();
   const labelOf = el => clean(el.dataset.text || el.getAttribute('aria-label') || el.textContent);
   const PROJECTS = { memecore: 'MemeCore', 'mel-ai': 'Mel', 'sk-hmi': 'SK', sk: 'SK', spot: 'SPOT', 'security-collab': 'INSS' };
-  const NAVI = { Work: 'Navi_Work', About: 'Navi_About', Lab: 'Navi_Lab' };
+  const NAVI = { Work: 'Navi_Work', About: 'Navi_About', Lab: 'Navi_Lab', Play: 'Navi_Lab' };
 
   document.addEventListener('click', e => {
     const el = e.target.closest && e.target.closest('a, button');
