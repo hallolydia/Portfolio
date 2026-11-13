@@ -1978,3 +1978,23 @@ html.has-cursor .strength-item__btn * {
 .gnb__logo::after  { top: 100%; }
 .gnb__logo:hover::before,
 .gnb__logo:hover::after { transform: translateY(-28px); }
+
+/* Nav hover: label rolls up, a black copy rolls in (no more bold-on-hover).
+   The current page keeps its black, semibold label. Wrapper spans are added by script.js. */
+.gnb__nav a { height: 32px; overflow: hidden; justify-content: flex-start; }
+.gnb__nav a::after { display: none; }
+.gnb__nav a:hover { font-weight: 500; }
+.gnb__nav a.active:hover { font-weight: 600; }
+.gnb__roll {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.gnb__roll-face {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  flex-shrink: 0;
+}
+.gnb__roll-face--next { color: var(--color-text); }
+.gnb__nav a:hover .gnb__roll { transform: translateY(-32px); }

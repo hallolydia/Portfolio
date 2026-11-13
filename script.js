@@ -66,6 +66,20 @@ document.querySelectorAll('.gnb__nav a').forEach(a => {
   }
 });
 
+// Nav hover: the label rolls up and a black copy rolls in (same motion as the logo and LinkedIn button)
+document.querySelectorAll('.gnb__nav a').forEach(a => {
+  const roll = document.createElement('span');
+  roll.className = 'gnb__roll';
+  const face = document.createElement('span');
+  face.className = 'gnb__roll-face';
+  while (a.firstChild) face.appendChild(a.firstChild);
+  const copy = face.cloneNode(true);
+  copy.className = 'gnb__roll-face gnb__roll-face--next';
+  copy.setAttribute('aria-hidden', 'true');
+  roll.append(face, copy);
+  a.appendChild(roll);
+});
+
 // Hamburger — toggle open state + animate bars
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobileNav');
