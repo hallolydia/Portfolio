@@ -406,7 +406,7 @@ document.querySelectorAll('.footer__email-btn').forEach(btn => {
       : el.closest('.footer') ? 'footer'
       : /^\/about/.test(path0) ? 'about_page'
       : /^\/article/.test(path0) ? 'article_page'
-      : /^\/lab/.test(path0) ? 'lab_page'
+      : /^\/(lab|play)/.test(path0) ? 'lab_page'
       : 'page';
 
     // Project cards: home grid, Work list, What's Next

@@ -1,7 +1,34 @@
 {
   "redirects": [
-    { "source": "/work/sk-hmi", "destination": "/work/sk/", "permanent": true },
-    { "source": "/work/sk-hmi/", "destination": "/work/sk/", "permanent": true },
-    { "source": "/work/sk-hmi/index.html", "destination": "/work/sk/", "permanent": true }
+    {
+      "source": "/work/sk-hmi",
+      "destination": "/work/sk/",
+      "permanent": true
+    },
+    {
+      "source": "/work/sk-hmi/",
+      "destination": "/work/sk/",
+      "permanent": true
+    },
+    {
+      "source": "/work/sk-hmi/index.html",
+      "destination": "/work/sk/",
+      "permanent": true
+    },
+    {
+      "source": "/lab",
+      "destination": "/play/",
+      "permanent": true
+    },
+    {
+      "source": "/lab/",
+      "destination": "/play/",
+      "permanent": true
+    },
+    {
+      "source": "/lab/index.html",
+      "destination": "/play/",
+      "permanent": true
+    }
   ]
 }
