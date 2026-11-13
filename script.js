@@ -393,7 +393,7 @@ document.querySelectorAll('.footer__email-btn').forEach(btn => {
   const clean = s => (s || '').replace(/\s+/g, ' ').trim();
   const labelOf = el => clean(el.dataset.text || el.getAttribute('aria-label') || el.textContent);
   const PROJECTS = { memecore: 'MemeCore', 'mel-ai': 'Mel', 'sk-hmi': 'SK', sk: 'SK', spot: 'SPOT', 'security-collab': 'INSS' };
-  const NAVI = { Work: 'Navi_Work', About: 'Navi_About', Lab: 'Navi_Lab', Play: 'Navi_Lab' };
+  const NAVI = { Work: 'Navi_Work', About: 'Navi_About', Lab: 'Navi_Play', Play: 'Navi_Play' };
 
   document.addEventListener('click', e => {
     const el = e.target.closest && e.target.closest('a, button');
@@ -406,7 +406,7 @@ document.querySelectorAll('.footer__email-btn').forEach(btn => {
       : el.closest('.footer') ? 'footer'
       : /^\/about/.test(path0) ? 'about_page'
       : /^\/article/.test(path0) ? 'article_page'
-      : /^\/(lab|play)/.test(path0) ? 'lab_page'
+      : /^\/(lab|play)/.test(path0) ? 'play_page'
       : 'page';
 
     // Project cards: home grid, Work list, What's Next
