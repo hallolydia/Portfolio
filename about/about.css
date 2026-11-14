@@ -398,3 +398,19 @@
   .about-section__title    { font-size: 20px; font-weight: 600; line-height: 1.3; letter-spacing: -0.2px; gap: 8px; }
   .about-section__title-icon { width: 20px; height: 20px; }
 }
+
+/* PC type scale: section titles 20 > item names 17 > body 15 > meta (location, dates) 14 */
+@media (min-width: 769px) {
+  .about-work-item__company,
+  .about-edu-item__school,
+  .about-award-item__name      { font-size: 17px; line-height: 1.3; }
+  .about-work-item__company--wrap { line-height: 1.3; }
+  .about-work-item__role       { font-size: 17px; line-height: 1.3; }
+  .about-hero__body p,
+  .about-work-item__desc,
+  .about-edu-item__degree,
+  .about-award-item__desc      { font-size: 15px; line-height: 1.5; }
+  .about-work-item__location,
+  .about-work-item__date,
+  .about-award-item__date      { font-size: 14px; }
+}
