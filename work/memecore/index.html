@@ -205,18 +205,49 @@
 @media (max-width: 480px) { .mc-kpis__num { font-size: 22px; } }
 /* One type scale for the whole page (laptop/PC) */
 @media (min-width: 1025px) {
-  .mc-title, .mc-goal__title { font-size: 28px; font-weight: 600; line-height: 1.3; letter-spacing: -0.3px; }
-  .mc-label, .mc-goal__label, .mc-overview__label { font-size: 14px; font-weight: 700; letter-spacing: 0.4px; }
-  .mc-challenge__title, .mc-impl__title, .mc-subhead__title, .mc-card__title { font-size: 20px; font-weight: 600; line-height: 1.35; }
+  .mc-title, .mc-goal__title { font-size: 28px; line-height: 1.3; letter-spacing: -0.3px; }
+  .mc-label, .mc-goal__label, .mc-overview__label { font-size: 14px; letter-spacing: 0.4px; }
+  .mc-challenge__title, .mc-impl__title, .mc-subhead__title, .mc-card__title { font-size: 20px; line-height: 1.35; }
   .mc-body, .mc-lead, .mc-hero__summary, .mc-overview__value, .mc-tl__sub, .mc-impl-card .mc-body,
   .mc-panel .mc-body, .mc-card .mc-body, .mc-challenge__card .mc-body, .mc-lead--body { font-size: 15.5px; line-height: 1.55; }
-  .mc-body strong, .mc-lead strong, .mc-strong-800 { font-weight: 600; }
-  .mc-stat__label { font-size: 15.5px; font-weight: 500; }
-  .mc-stat__value, .mc-stats--3 .mc-stat__value, .mc-stat__num, .mc-stats--3 .mc-stat__num { font-size: 36px; font-weight: 600; line-height: 1.2; }
+  .mc-stat__label { font-size: 15.5px; }
+  .mc-stat__value, .mc-stats--3 .mc-stat__value, .mc-stat__num, .mc-stats--3 .mc-stat__num { font-size: 36px; line-height: 1.2; }
   .mc-stat__arrow, .mc-stats--3 .mc-stat__arrow { font-size: 24px; }
   .mc-kpis__num { font-size: 26px; font-weight: 600; }
   .mc-chat__bubble p, .mc-feedback__quote { font-size: 14px; line-height: 1.45; }
   body .mc-text .mc-lead, body .mc-text .mc-lead strong, body .mc-tl__list li { font-size: 15.5px; line-height: 1.55; }
+}
+</style>
+<style id="mc-type-draft">
+/* What I did on tablet/phone: label on top, bullets full width */
+@media (max-width: 1024px) {
+  .mc-overview__item:has(.mc-did) { flex-direction: column; gap: 12px; }
+  .mc-did { margin: 0; padding-left: 18px; list-style: disc; display: flex; flex-direction: column; gap: 6px; }
+  .mc-did li { display: list-item; font-size: 16px; line-height: 1.6; color: var(--mc-body); }
+}
+/* Draft: new sizes only. Font family, weights and colors stay as the original page. */
+@media (min-width: 1025px) {
+  .mc-label, .mc-label--spaced {
+    font-size: 14px;
+    letter-spacing: 0.06em;
+  }
+  .mc-goal__label { font-size: 14px; letter-spacing: 0.06em; }
+  .mc-hero__title { font-size: 36px; line-height: 1.2; letter-spacing: -0.6px; }
+  .mc-title, .mc-goal__title { font-size: 28px; line-height: 1.3; letter-spacing: -0.4px; }
+  .mc-challenge__title, .mc-impl__title, .mc-subhead__title, .mc-card__title { font-size: 20px; line-height: 1.4; letter-spacing: -0.2px; }
+  .mc-body, .mc-lead, .mc-lead--body, .mc-hero__summary, .mc-tl__sub,
+  .mc-panel .mc-body, .mc-card .mc-body, .mc-challenge__card .mc-body, .mc-impl-card .mc-body,
+  body .mc-text .mc-lead, body .mc-tl__list li { font-size: 16px; line-height: 1.6; }
+  .mc-stat__value, .mc-stats--3 .mc-stat__value, .mc-stat__num, .mc-stats--3 .mc-stat__num { font-size: 28px; line-height: 1.2; letter-spacing: -0.4px; }
+  .mc-stat__arrow, .mc-stats--3 .mc-stat__arrow { font-size: 22px; }
+  .mc-stat__label { font-size: 16px; line-height: 1.45; }
+  .mc-chat__bubble p, .mc-feedback__quote { font-size: 15px; line-height: 1.5; }
+  body .mc-lead strong, body .mc-lead--body strong, body .mc-text .mc-lead strong { font-size: inherit; }
+  .mc-tl__date, .mc-tl__date--lg { font-size: 13px; letter-spacing: 0.04em; }
+  .mc-did { margin: 0; padding-left: 18px; list-style: disc; display: flex; flex-direction: column; gap: 4px; }
+  .mc-did li { display: list-item; font-size: 15.5px; line-height: 1.5; color: var(--mc-body); }
+  .mc-kpis__label { font-size: 14px; }
+  .mc-eyebrow { margin: 0; font-size: 15px; font-weight: 400; color: var(--mc-meta); }
 }
 </style>
 </head>
@@ -297,13 +328,6 @@
         <span class="mc-overview__divider" aria-hidden="true"></span>
         <div class="mc-overview__col">
           <div class="mc-overview__item">
-            <p class="mc-overview__label">MY ROLE</p>
-            <p class="mc-overview__value mc-overview__value--tight">Product Management<br>End-to-end Product Design<br>Front-end Implementation <span style="white-space:nowrap">(AI-assisted)</span><br>Interaction Design</p>
-          </div>
-        </div>
-        <span class="mc-overview__divider" aria-hidden="true"></span>
-        <div class="mc-overview__col">
-          <div class="mc-overview__item">
             <p class="mc-overview__label">TIMELINE</p>
             <p class="mc-overview__value">Nov 2025 - Jun 2026</p>
           </div>
@@ -313,6 +337,18 @@
           <div class="mc-overview__item">
             <p class="mc-overview__label">TOOLS</p>
             <p class="mc-overview__value">Figma<br>Claude Code<br>LightRoom<br>After Effects</p>
+          </div>
+        </div>
+        <span class="mc-overview__divider" aria-hidden="true"></span>
+        <div class="mc-overview__col">
+          <div class="mc-overview__item">
+            <p class="mc-overview__label">WHAT I DID</p>
+            <ul class="mc-did">
+              <li>Led UX strategy and IA with Growth &amp; Marketing</li>
+              <li>Designed the navigation and landing page</li>
+              <li>Built the frontend with AI-assisted coding</li>
+              <li>Documented an AI workflow adopted company-wide</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -505,6 +541,7 @@
       <div class="mc-text mc-w-1000">
           <div class="mc-text__head">
             <span class="mc-label mc-label--spaced">DESIGN SOLUTION 1</span>
+            <p class="mc-eyebrow">Navigation</p>
             <h2 class="mc-title">A navigation built around investors' questions and the business</h2>
           </div>
         <p class="mc-lead mc-lead--nav">Users' frequent questions set what came first, the business model set the order, and Web3 services like Sui and Monad set familiar patterns.</p>
@@ -522,6 +559,7 @@
       <div class="mc-text mc-w-1000">
           <div class="mc-text__head">
             <span class="mc-label mc-label--spaced">DESIGN SOLUTION 2</span>
+            <p class="mc-eyebrow">Landing page</p>
             <h2 class="mc-title">From a visual-first map to an information-first landing page</h2>
           </div>
         <p class="mc-body mc-body--tight">With Growth and Marketing, <strong>I ranked investors' top questions and our key messages</strong>, then ordered the page by them.</p>
@@ -556,15 +594,15 @@
         <div class="mc-panel mc-chat">
           <div class="mc-chat__row">
             <div class="mc-chat__who mc-chat__who--me"><img src="../../assets/images/memecore/chat/avatar-me.svg" width="52" height="52" alt=""><span>Me</span></div>
-            <div class="mc-chat__bubble"><img class="mc-chat__tail" src="../../assets/images/memecore/chat/bubble-tail.svg" alt=""><p>"Simpler visuals will make the information much clearer."</p></div>
+            <div class="mc-chat__bubble"><img class="mc-chat__tail" src="../../assets/images/memecore/chat/bubble-tail-flat.svg" alt=""><p>"Simpler visuals would be clearer."</p></div>
           </div>
           <div class="mc-chat__row">
             <div class="mc-chat__who mc-chat__who--them"><img src="../../assets/images/memecore/chat/avatar-illustrators.svg" width="52" height="52" alt=""><span>Illustrators</span></div>
-            <div class="mc-chat__bubble"><img class="mc-chat__tail" src="../../assets/images/memecore/chat/bubble-tail.svg" alt=""><p>"But it could weaken MemeCore's core identity."</p></div>
+            <div class="mc-chat__bubble"><img class="mc-chat__tail" src="../../assets/images/memecore/chat/bubble-tail-flat.svg" alt=""><p>"But we'd lose MemeCore's identity."</p></div>
           </div>
           <div class="mc-chat__row">
             <div class="mc-chat__who mc-chat__who--me"><img src="../../assets/images/memecore/chat/avatar-me.svg" width="52" height="52" alt=""><span>Me</span></div>
-            <div class="mc-chat__bubble"><img class="mc-chat__tail" src="../../assets/images/memecore/chat/bubble-tail.svg" alt=""><p>"A beautiful site means nothing if users can't get in.<br>Let's keep the illustrations, but give each one a clear job."</p></div>
+            <div class="mc-chat__bubble"><img class="mc-chat__tail" src="../../assets/images/memecore/chat/bubble-tail-flat.svg" alt=""><p>"Keep the art, but give each a job."</p></div>
           </div>
         </div>
       </div>
@@ -913,8 +951,7 @@
 /* Left TOC built from section labels */
 (function () {
   var skip = /^(ABOUT|SHIPPING PROCESS)/;
-  var nav = document.createElement('nav'); nav.className = 'lt-toc'; nav.setAttribute('aria-label', 'On this page');
-  var items = [], seen = {};
+  var nav = document.createElement('nav'); nav.className = 'lt-toc'; nav.setAttribute('aria-label', 'On this page');;
   document.querySelectorAll('body > section').forEach(function (sec, i) {
     var labels = [].slice.call(sec.querySelectorAll('.mc-label')).filter(function (l) {
       return !l.classList.contains('mc-label--link') && !skip.test(l.textContent.trim());
