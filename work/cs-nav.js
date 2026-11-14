@@ -7,10 +7,13 @@
   back.className = 'cs-back';
   back.href = '/#work';
   back.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>Back';
-  // Came from this site: go back so the home page keeps its scroll position
+  // Back always means Home. If the previous page was the home page, step back in history so it keeps
+  // its scroll position; otherwise (e.g. arrived from another case study via What's next) go to /#work.
   back.addEventListener('click', function (e) {
     try {
-      if (document.referrer && new URL(document.referrer).origin === location.origin && history.length > 1) {
+      var ref = document.referrer ? new URL(document.referrer) : null;
+      var fromHome = ref && ref.origin === location.origin && /^\/(index\.html)?$/.test(ref.pathname);
+      if (fromHome && history.length > 1) {
         e.preventDefault();
         history.back();
       }
