@@ -196,6 +196,29 @@
 </style>
 <style>/* case studies: never paint the GNB, even before cs-nav.css arrives */ .gnb, .gnb__mobile-nav { display: none !important; }</style>
 <link rel="stylesheet" href="../cs-nav.css" />
+<style id="mc-short">
+.mc-kpis { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.mc-kpis li { display: flex; flex-direction: column; gap: 4px; padding: 18px 20px; border-radius: 16px; background: var(--mc-surface, #f5f6f8); }
+.mc-kpis__num { font-size: 26px; font-weight: 700; line-height: 1.2; letter-spacing: -0.4px; color: var(--mc-text); white-space: nowrap; }
+.mc-kpis__label { font-size: 13px; line-height: 1.4; color: var(--mc-body); }
+@media (max-width: 1024px) { .mc-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .mc-kpis__num { font-size: 22px; } }
+/* One type scale for the whole page (laptop/PC) */
+@media (min-width: 1025px) {
+  .mc-title, .mc-goal__title { font-size: 28px; font-weight: 600; line-height: 1.3; letter-spacing: -0.3px; }
+  .mc-label, .mc-goal__label, .mc-overview__label { font-size: 14px; font-weight: 700; letter-spacing: 0.4px; }
+  .mc-challenge__title, .mc-impl__title, .mc-subhead__title, .mc-card__title { font-size: 20px; font-weight: 600; line-height: 1.35; }
+  .mc-body, .mc-lead, .mc-hero__summary, .mc-overview__value, .mc-tl__sub, .mc-impl-card .mc-body,
+  .mc-panel .mc-body, .mc-card .mc-body, .mc-challenge__card .mc-body, .mc-lead--body { font-size: 15.5px; line-height: 1.55; }
+  .mc-body strong, .mc-lead strong, .mc-strong-800 { font-weight: 600; }
+  .mc-stat__label { font-size: 15.5px; font-weight: 500; }
+  .mc-stat__value, .mc-stats--3 .mc-stat__value, .mc-stat__num, .mc-stats--3 .mc-stat__num { font-size: 36px; font-weight: 600; line-height: 1.2; }
+  .mc-stat__arrow, .mc-stats--3 .mc-stat__arrow { font-size: 24px; }
+  .mc-kpis__num { font-size: 26px; font-weight: 600; }
+  .mc-chat__bubble p, .mc-feedback__quote { font-size: 14px; line-height: 1.45; }
+  body .mc-text .mc-lead, body .mc-text .mc-lead strong, body .mc-tl__list li { font-size: 15.5px; line-height: 1.55; }
+}
+</style>
 </head>
 <body class="mc-page">
 
@@ -234,7 +257,7 @@
         </div>
         <div class="mc-hero__copy">
           <h1 class="mc-hero__title">Rebuilding a Web3 Website to Help Investors<br class="lt-br"> Quickly Understand the Project</h1>
-          <p class="mc-hero__summary">Introduced an AI-driven workflow to rebuild the site in 5 days,<br class="lt-br"> cutting page size by 94% and bounce by 2.6×, then scaled it <span style="white-space: nowrap">company-wide</span>.</p>
+          <p class="mc-hero__summary">Redesigned MemeCore's site so investors could find key information fast,<br class="lt-br"> then built it myself with AI coding agents when our frontend developer was reassigned.</p>
         </div>
       </div>
       <div class="mc-cover">
@@ -252,6 +275,12 @@
           </div>
         </div>
       </div>
+          <ul class="mc-kpis" aria-label="Results">
+        <li><span class="mc-kpis__num">+21%</span><span class="mc-kpis__label">Detail-page visits</span></li>
+        <li><span class="mc-kpis__num">94%</span><span class="mc-kpis__label">Smaller page size</span></li>
+        <li><span class="mc-kpis__num">55 → 92</span><span class="mc-kpis__label">Lighthouse score</span></li>
+        <li><span class="mc-kpis__num">1 mo → 5 days</span><span class="mc-kpis__label">Update cycle, adopted company-wide</span></li>
+      </ul>
     </div>
   </section>
 
@@ -296,12 +325,11 @@
       <div class="mc-intro__text">
         <div class="mc-intro__head">
           <span class="mc-label mc-label--chip mc-label--spaced">OVERVIEW</span>
-          <h2 class="mc-title">As MemeCore grew, its website needed to evolve</h2>
+          <h2 class="mc-title">As MemeCore grew, its website had to earn investors' trust</h2>
         </div>
         <div class="overview-copy" style="--overview-accent:var(--mc-accent)">
-          <p class="mc-body"><strong>MemeCore</strong> is a Web3 startup building an ecosystem around its meme coin, M coin. As the business expanded, its corporate website became a key resource for <strong>prospective investors and partners</strong> to explore the project.</p>
-          <p class="mc-body">However, <strong>visitors struggled to find key information</strong>, while slow page loading disrupted the experience. The redesign aimed to improve usability and performance while preserving MemeCore's visual identity.</p>
-          <p class="mc-body"><strong>As the sole product designer and product manager,</strong> I led the redesign’s UX strategy, information architecture, and implementation, working with engineers and illustrators. The redesign <strong>reduced page size by 94% and bounce rate by 20%.</strong> I completed the final implementation <strong>in 5 days using AI coding agents</strong> and documented <strong>an AI workflow later adopted company-wide.</strong></p>
+          <p class="mc-body"><strong>MemeCore</strong> is a Web3 startup behind M, a community-driven meme coin. After major exchange listings and a top-20 market cap, its website became the first place <strong>investors and partners</strong> checked.</p>
+          <p class="mc-body"><strong>As the sole product designer and PM,</strong> I led the IA, UX, and implementation with engineers and illustrators, and shipped the final build myself with AI coding agents.</p>
         </div>
       </div>
       <div class="mc-showcase mc-art" style="--aw:1280">
@@ -316,55 +344,16 @@
     </div>
   </section>
 
-  <!-- About MemeCore (Figma 6730:105270) -->
-  <section class="mc-split">
-    <div class="mc-container">
-      <div class="mc-split__row mc-split__row--about">
-        <div class="mc-text">
-          <div class="mc-text__head">
-            <a class="mc-label mc-label--link" href="https://memecore.com/" target="_blank" rel="noopener"><span class="mc-label__text">ABOUT&nbsp; MEMECORE</span><img class="mc-label__icon" src="../../assets/images/memecore/icon-arrow-up-right.svg" width="20" height="20" alt=""></a>
-            <h2 class="mc-title">A Web3 company building<br>an ecosystem around M coin</h2>
-          </div>
-          <p class="mc-body">MemeCore is a Web3 startup behind <strong>M, a community-driven coin built to fix the trust problem in meme coins.</strong> Its platforms and events keep the community engaged long after the hype.</p>
-        </div>
-        <div class="mc-media">
-          <img src="../../assets/images/memecore/about.webp?v=2" width="610" height="400" alt="MemeCore community pixel-art scene" loading="lazy">
-          <video class="mc-media__anim" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-            <source src="../../assets/images/memecore/anim/about-scene.webm" type="video/webm">
-          </video>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Site Background (Figma 6730:105283) -->
-  <section class="mc-split">
-    <div class="mc-container">
-      <div class="mc-split__row">
-        <div class="mc-text">
-          <div class="mc-text__head mc-text__head--16">
-            <span class="mc-label">THE IMPORTANCE OF SITE</span>
-            <h2 class="mc-title mc-title--tight">As MemeCore grew, the site needed clarity more than visual impact</h2>
-          </div>
-          <p class="mc-body">Early on, flashy GIF illustrations helped MemeCore stand out in a crowded crypto market, <strong>growing its community to 600K+ and event participation to 3.2M+</strong>. After major exchange listings and a top-20 market cap, the site needed to shift<strong> from grabbing attention to building credibility.</strong></p>
-        </div>
-        <div class="mc-media">
-          <img src="../../assets/images/memecore/importance-graph.webp?v=3" width="610" height="400" alt="Growth graph: early-stage marketing with eye-catching illustrations, rapid growth, then a website renewal showing why M coin is trustworthy" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Problem (Figma 6730:105296) -->
+      <!-- Problem (Figma 6730:105296) -->
   <section class="mc-split mc-split--last">
     <div class="mc-container">
       <div class="mc-split__row mc-split__row--problem">
         <div class="mc-text">
           <div class="mc-text__head">
             <span class="mc-label mc-label--spaced">PROBLEM</span>
-            <h2 class="mc-title mc-title--tighter">The site left investors and partners unsure what MemeCore stood for</h2>
+            <h2 class="mc-title mc-title--tighter">The site left investors unsure what MemeCore stood for</h2>
           </div>
-          <p class="mc-body mc-body--tight">Despite MemeCore’s growth, skepticism around meme coins remained. Investors and partners kept saying its direction was unclear. The cause was the site: it had <strong>limited key information and no clear hierarchy</strong>, so the Growth &amp; Marketing team had to explain the project in every meeting.</p>
+          <p class="mc-body mc-body--tight">Flashy GIF art had grown the community to 600K+, but it didn't explain the project. With <strong>little key information and no clear hierarchy</strong>, the Growth &amp; Marketing team had to explain MemeCore in every meeting.</p>
         </div>
         <div class="mc-feedback">
           <div class="mc-feedback__inner">
@@ -372,15 +361,15 @@
             <ul class="mc-feedback__list">
               <li class="mc-feedback__card">
                 <img class="mc-feedback__avatar" src="../../assets/images/memecore/feedback-partner.svg" width="74" height="66" alt="">
-                <p class="mc-feedback__quote">“So, what kind of project is MemeCore? I visited the website, but I still don’t understand what it does.”<span class="mc-feedback__by">- Prospective Partner</span></p>
+                <p class="mc-feedback__quote">“I saw the site, but still don’t get what MemeCore does.”<span class="mc-feedback__by">- Prospective Partner</span></p>
               </li>
               <li class="mc-feedback__card">
                 <img class="mc-feedback__avatar" src="../../assets/images/memecore/feedback-investor.svg" width="74" height="66" alt="">
-                <p class="mc-feedback__quote">“Given the scale of its past events, it seems well-funded. But I’m still concerned, it’s a meme coin.”<span class="mc-feedback__by">- MemeCore Investor</span></p>
+                <p class="mc-feedback__quote">“It looks well-funded, but it’s still a meme coin.”<span class="mc-feedback__by">- MemeCore Investor</span></p>
               </li>
               <li class="mc-feedback__card">
                 <img class="mc-feedback__avatar" src="../../assets/images/memecore/feedback-vc.svg" width="74" height="66" alt="">
-                <p class="mc-feedback__quote">“The project strategy feels too abstract, making it seem focused mainly on short-term price growth.”<span class="mc-feedback__by">- Crypto VC</span></p>
+                <p class="mc-feedback__quote">“The strategy feels focused on short-term price.”<span class="mc-feedback__by">- Crypto VC</span></p>
               </li>
             </ul>
           </div>
@@ -395,9 +384,9 @@
       <div class="mc-text mc-challenge__text">
         <div class="mc-text__head">
           <span class="mc-label mc-label--spaced">DATA ANALYSIS &amp; CHALLENGES</span>
-          <h2 class="mc-title">Unclear content structure and heavy page weight<br>drove a 56.1% initial bounce rate</h2>
+          <h2 class="mc-title">Unclear structure and heavy pages<br>drove a 56.1% initial bounce rate</h2>
         </div>
-        <p class="mc-lead"><strong>Six months of Google Analytics and Clarity data showed where users left. A usability test with 5 people showed why.</strong><br>As both PM and product designer, I took on both problems, from design to code.</p>
+        <p class="mc-lead"><strong>Six months of Google Analytics and Clarity data showed where users left; a usability test with 5 people showed why.</strong> As both PM and designer, I took on both, from design to code.</p>
       </div>
       <div class="mc-challenge__cards">
         <article class="mc-challenge__card">
@@ -432,7 +421,7 @@
             <span class="mc-label mc-label--spaced">INSIGHT</span>
             <h2 class="mc-title">Users stayed 5× longer once they reached detail pages</h2>
           </div>
-        <p class="mc-body">The content itself was worth reading, but many users left before ever reaching it. As the business strategy became clearer after launch, I saw an opportunity to surface key information earlier and make it easier to navigate.</p>
+        <p class="mc-body">The content was worth reading, but most users left before reaching it. The job was to surface it earlier.</p>
       </div>
       <div class="mc-art" style="--aw:1280">
         <img src="../../assets/images/memecore/insight.webp?v=5" width="1280" height="411" alt="Detail page scrolling on mobile, beside a chart: site average 29s vs. detail-page users 2m 25s, 5× longer average time spent" loading="lazy">
@@ -446,7 +435,7 @@
     <div class="mc-container">
       <div class="mc-goal__text">
         <span class="mc-goal__label">GOAL</span>
-        <h2 class="mc-goal__title">Help investors reach key information more easily, increasing detail-page visits by 15% and reducing loading drop-off by 10%.</h2>
+        <h2 class="mc-goal__title">Help investors reach key information faster:<br class="lt-br"> +15% detail-page visits, −10% loading drop-off.</h2>
       </div>
     </div>
   </section>
@@ -458,11 +447,11 @@
       <div class="mc-pair">
         <article class="mc-card mc-card--hyp">
           <span class="mc-tag mc-tag--muted">FOR PROBLEM 1</span>
-          <h3 class="mc-card__title">If we add a clear landing page and business-focused navigation, users will reach key information more easily.</h3>
+          <h3 class="mc-card__title">If the landing page and navigation follow investors' questions, they'll reach key information faster.</h3>
         </article>
         <article class="mc-card mc-card--hyp">
           <span class="mc-tag mc-tag--muted">FOR PROBLEM 2</span>
-          <h3 class="mc-card__title mc-card__title--tight">If we replace heavy GIFs with CSS animations and WebP images, the site will load faster and reduce drop-off.</h3>
+          <h3 class="mc-card__title mc-card__title--tight">If heavy GIFs become WebP and CSS motion, pages will load faster and fewer people will leave.</h3>
         </article>
       </div>
     </div>
@@ -476,7 +465,7 @@
           <span class="mc-label mc-label--spaced">TIMELINE</span>
           <h2 class="mc-title">Coordinated cross-team schedules to ship in three phases</h2>
         </div>
-        <p class="mc-lead mc-lead--body">With the team balancing multiple projects, I prioritized changes by impact and effort and split the scope into three phases.<br class="lt-br"> I shaped the IA with Growth &amp; Marketing, then aligned each phase with illustrators and developers.</p>
+        <p class="mc-lead mc-lead--body">With everyone on multiple projects, I split the scope by impact and effort and aligned each phase across teams.</p>
       </div>
       <div class="mc-tl">
         <img class="mc-tl__line" src="../../assets/images/memecore/timeline-line.svg" width="1280" height="29" alt="" aria-hidden="true">
@@ -516,9 +505,9 @@
       <div class="mc-text mc-w-1000">
           <div class="mc-text__head">
             <span class="mc-label mc-label--spaced">DESIGN SOLUTION 1</span>
-            <h2 class="mc-title">A navigation that helps users explore and reflects the business direction</h2>
+            <h2 class="mc-title">A navigation built around investors' questions and the business</h2>
           </div>
-        <p class="mc-lead mc-lead--nav">To build a clear hierarchy, I analyzed three sources. Users' frequent questions showed what to surface first, the business model set the priorities, and Web3 services like Sui and Monad showed familiar navigation patterns.</p>
+        <p class="mc-lead mc-lead--nav">Users' frequent questions set what came first, the business model set the order, and Web3 services like Sui and Monad set familiar patterns.</p>
       </div>
       <div class="mc-stack mc-stack--28">
         <img class="mc-shotimg" src="../../assets/images/memecore/di1-navs.webp?v=5" width="1280" height="406" alt="Navigation across three releases. First release: brought key information into one place, but outdated Web3 pages and scattered content remained. Second release: removed outdated items, merged related content, and added a Buy $M button linking to exchanges. Final release: as the company shifted to a community strategy built on online and offline events, added new pages such as Announcements and redesigned screens." loading="lazy">
@@ -533,9 +522,9 @@
       <div class="mc-text mc-w-1000">
           <div class="mc-text__head">
             <span class="mc-label mc-label--spaced">DESIGN SOLUTION 2</span>
-            <h2 class="mc-title">Turning a visual-first homepage into an information-first landing page</h2>
+            <h2 class="mc-title">From a visual-first map to an information-first landing page</h2>
           </div>
-        <p class="mc-body mc-body--tight">To decide what the homepage should show first, <strong>I worked with the Growth and Marketing teams to rank users' most common questions and the company's key messages</strong>, then built the new landing page around that order.</p>
+        <p class="mc-body mc-body--tight">With Growth and Marketing, <strong>I ranked investors' top questions and our key messages</strong>, then ordered the page by them.</p>
       </div>
       <div class="mc-pair">
         <article class="mc-card mc-card--shot">
@@ -598,7 +587,7 @@
       <div class="mc-stack mc-stack--40">
         <div class="mc-subhead mc-w-1000">
           <h3 class="mc-subhead__title"><span class="mc-subhead__num">02</span> Illustrations that support understanding</h3>
-          <p class="mc-body">In information-heavy sections, I kept <strong>one consistent layout so illustrations only support the content.</strong><br>Users could scan faster while the brand stayed recognizable.</p>
+          <p class="mc-body">In information sections, <strong>one consistent layout lets illustrations support the content</strong>, so users scan faster.</p>
         </div>
         <div class="mc-panel mc-panel--info">
           <div class="mc-art mc-art--bleed" style="--aw:1210">
@@ -616,7 +605,7 @@
     <div class="mc-container mc-stack mc-stack--48">
       <div class="mc-text mc-text--20 mc-w-1100">
         <div class="mc-text__head"><span class="mc-label mc-label--spaced">DESIGN RESULT</span></div>
-        <p class="mc-lead mc-lead--body">I compared three months before and after the redesign, with similar traffic in both periods. After the landing page became information-first, fewer users left immediately, and more continued to detail pages.</p>
+        <p class="mc-lead mc-lead--body">Three months before vs. after, with similar traffic: fewer users left right away, and more reached detail pages.</p>
       </div>
       <div class="mc-stats mc-stats--2">
         <div class="mc-stat">
@@ -636,30 +625,17 @@
     <div class="mc-container mc-stack mc-stack--48">
       <div class="mc-text mc-w-1000">
         <div class="mc-stack mc-stack--14">
-          <span class="mc-label mc-label--chip mc-label--spaced">SHIPPING PROCESS</span>
+          
           <div class="mc-text__head">
             <span class="mc-label mc-label--spaced">NEW CHALLENGE</span>
-            <h2 class="mc-title">After launch, the site was still too slow:<br class="lt-br"> 17% of visitors kept clicking with no response</h2>
+            <h2 class="mc-title">The site was still slow, and our frontend<br class="lt-br"> developer was reassigned, so I built it myself</h2>
           </div>
         </div>
-        <p class="mc-body mc-body--tight">We had already shrunk the GIF assets, <strong>but the site still loaded slowly.</strong> Microsoft Clarity showed that pages were too slow to respond: about 17% of visitors rage-clicked, and<strong> session replays showed users on slower networks struggling to load them. A Lighthouse score of 55, well below the 90 benchmark, </strong>confirmed we needed to go further.</p>
+        <p class="mc-body mc-body--tight">Lighthouse scored 55 and <strong>17% of visitors rage-clicked on unresponsive pages.</strong> Rather than pause, <strong>I connected Claude Code to the Figma API and GitLab and took over the frontend.</strong></p>
       </div>
       <div class="mc-art mc-art--round" style="--aw:1280">
         <img src="../../assets/images/memecore/challenge.webp?v=3" width="1280" height="411" alt="Lighthouse performance score of 55 beside a session replay: a blank page for 9s while the user clicked 7 times" loading="lazy">
         <video class="mc-art__clip" style="--x:628;--y:83;--w:600;--h:276;--r:16.44" muted loop playsinline preload="none" data-lazy-video aria-hidden="true"><source src="../../assets/images/memecore/video/replay.webm?v=6" type="video/webm"></video>
-      </div>
-    </div>
-  </section>
-
-  <!-- Execution Strategy (Figma 6730:105915) -->
-  <section class="mc-block">
-    <div class="mc-container mc-stack mc-stack--48">
-      <div class="mc-text mc-w-1000">
-          <div class="mc-text__head">
-            <span class="mc-label mc-label--spaced">EXECUTION STRATEGY</span>
-            <h2 class="mc-title">When our frontend developer was reassigned,<br class="lt-br"> I built the site myself with vibe coding</h2>
-          </div>
-        <p class="mc-body mc-body--tight">Midway through the project, our frontend developer moved to another urgent initiative. Instead of pausing or cutting scope, <strong>I took over implementation: I connected Claude Code to the Figma API and GitLab, built the frontend, and later handled some backend work.</strong> Testing designs directly in the browser cut handoffs and rework.</p>
       </div>
       <div class="mc-art mc-art--round" style="--aw:1280">
         <img src="../../assets/images/memecore/execution.webp?v=4" width="1280" height="440" alt="Three mobile pages built through vibe coding: the menu, Announcements and Brand Kit" loading="lazy">
@@ -669,15 +645,15 @@
     </div>
   </section>
 
-  <!-- Implementation Decision (Figma 6730:106708) -->
+    <!-- Implementation Decision (Figma 6730:106708) -->
   <section class="mc-block mc-block--impl">
     <div class="mc-container mc-stack mc-stack--60">
       <div class="mc-text mc-w-1000">
           <div class="mc-text__head">
             <span class="mc-label mc-label--spaced">IMPLEMENTATION DECISION</span>
-            <h2 class="mc-title">Replacing full-scene GIFs with static WebP<br class="lt-br"> and CSS motion to cut page weight</h2>
+            <h2 class="mc-title">Swapping full-scene GIFs for WebP and CSS motion</h2>
           </div>
-        <p class="mc-body mc-body--tight">Because I owned the code, <strong>I could fix this directly instead of waiting for a handoff.</strong> Each scene was a single heavy GIF that couldn’t be optimized further, so <strong>I rethought where motion was actually needed.</strong> The site became much lighter, kept its intended look, and no longer needed a loading screen.</p>
+        <p class="mc-body mc-body--tight">Each scene was one heavy GIF, so <strong>I kept motion only where it mattered</strong> and made the rest static. The loading screen was no longer needed.</p>
       </div>
       <div class="mc-stack mc-stack--48">
         <div class="mc-stack mc-stack--28">
@@ -757,7 +733,7 @@
             <span class="mc-label mc-label--spaced">SHIPPING RESULT</span>
             <h2 class="mc-title mc-title--n064">Vibe coding cut updates from a month to 5 days, and performance rose 55→92</h2>
           </div>
-          <p class="mc-body">The optimization raised the Lighthouse score from 55 to 92, cut page weight by 94%, and lowered loading drop-off from 24% to 6%. <strong>The vibe-coding workflow also reduced development and QA time for updates from about a month to five days. I documented the process from a designer's perspective and shared it company-wide</strong>, where it became an internal best practice.</p>
+          <p class="mc-body">Page weight fell 94% and loading drop-off went from 24% to 6%. <strong>I documented the workflow, and it became the company's internal best practice.</strong></p>
         </div>
         <div class="mc-media mc-media--result">
           <img src="../../assets/images/memecore/shipping.webp?v=3" width="580" height="390" alt="Internal vibe-coding guide documenting the designer–developer workflow" loading="lazy">
@@ -789,7 +765,7 @@
             <span class="mc-label mc-label--chip mc-label--spaced">LEARNING</span>
             <h2 class="mc-title">Ownership drove results; next time, I'll plan around the team's capacity</h2>
           </div>
-          <p class="mc-lead mc-lead--body">As both product manager and product designer for the first time, I led the project from planning to launch, ahead of schedule. It earned me the company's highest performance rating, but I was proudest of getting the team to launch despite losing frontend support.<br><br>Looking back, I found two gaps in how I planned. First, I treated agreement as capacity. Teammates said yes to a fast timeline, but they were also managing several other projects. Second, I planned for the expected, not the variable. Urgent requests often came up at our company, and without a buffer, the team felt rushed midway. Going forward, <strong>I'll check each person's workload before setting timelines and build in buffer for unexpected requests</strong>, so speed stays sustainable.</p>
+          <p class="mc-lead mc-lead--body">I led the project from planning to launch ahead of schedule and earned the company's highest performance rating. But I took the team's yes as capacity and left no buffer for urgent requests. <strong>Next time, I'll check each person's workload and plan for the unexpected.</strong></p>
         </div>
         <div class="mc-media">
           <img src="../../assets/images/memecore/learning.webp?v=7" width="610" height="436" alt="Performance review sheet showing the highest rating" loading="lazy">
