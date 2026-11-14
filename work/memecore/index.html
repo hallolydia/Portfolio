@@ -194,6 +194,8 @@
   .mc-impl-card__body--after > .mc-impl-boxes { transform: translateY(47px); }
 }
 </style>
+<style>/* case studies: never paint the GNB, even before cs-nav.css arrives */ .gnb, .gnb__mobile-nav { display: none !important; }</style>
+<link rel="stylesheet" href="../cs-nav.css" />
 </head>
 <body class="mc-page">
 
@@ -967,7 +969,6 @@
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 })();
 </script>
-<link rel="stylesheet" href="../cs-nav.css" />
 <script src="../cs-nav.js"></script>
 </body>
 </html>

@@ -156,6 +156,8 @@
   .lt-toc a.on-dark.is-active { color: var(--sk-white); border-left-color: var(--sk-white); }
 }
 </style>
+<style>/* case studies: never paint the GNB, even before cs-nav.css arrives */ .gnb, .gnb__mobile-nav { display: none !important; }</style>
+<link rel="stylesheet" href="../cs-nav.css" />
 </head>
 <body class="sk-page">
 
@@ -835,7 +837,6 @@
   fit(); circle(); window.addEventListener('resize', function () { fit(); circle(); });
 })();
 </script>
-<link rel="stylesheet" href="../cs-nav.css" />
 <script src="../cs-nav.js"></script>
 </body>
 </html>
