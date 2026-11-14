@@ -1,0 +1,70 @@
+/* ===== Case study pages: no top GNB, "Back" at the top of a left bar (TOC below), content centered =====
+   Loaded last on every case study page, so it overrides each page's own layout rules. */
+
+/* No top navigation on case studies */
+.gnb, .gnb__mobile-nav { display: none !important; }
+
+/* Left bar: Back (+ the page's TOC, moved in by cs-nav.js) */
+.cs-side {
+  position: absolute;
+  top: 24px;
+  left: 20px;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.cs-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.cs-back:hover { opacity: 0.6; }
+.cs-back svg { flex-shrink: 0; }
+
+/* No GNB above the hero any more: content starts near the top.
+   Below 1400px there is no left bar, so Back sits above the content (its left edge follows the
+   content's left edge, set by cs-nav.js); from 1400px Back shares the content's top line. */
+.mg-hero, .mc-hero, .sk-hero, .sp-hero, .government-page .cs-hero { padding-top: 64px; }
+.cs-side { top: 20px; }
+
+@media (min-width: 769px) and (max-width: 1399px) {
+  .cs-side { top: 24px; }
+  .mg-hero, .mc-hero, .sk-hero, .sp-hero, .government-page .cs-hero { padding-top: 76px; }
+}
+
+@media (min-width: 1400px) {
+  .cs-side { top: 64px; left: 40px; }
+}
+/* Security Collab keeps case-study.css's 87.5% laptop zoom: 64 / 0.875 so its tags also land on 64px */
+@media (min-width: 1400px) and (max-width: 1679px) {
+  .government-page .cs-hero { padding-top: calc(64px / 0.875); }
+}
+
+/* PC: the bar stays put while scrolling; the TOC sits under Back instead of under the old GNB */
+@media (min-width: 1400px) {
+  .cs-side { position: fixed; }
+
+  .cs-side .lt-toc,
+  body:has(.gnb.gnb--hidden) .cs-side .lt-toc {
+    position: static;
+    margin-left: -14px; /* link border 2px + padding 12px, so TOC text lines up with "Back" */
+    width: 170px;
+    transition: opacity .25s;
+  }
+
+  /* Content: one column centered on the page (boxes 1015px wide on wide screens), at least 240px clear of the bar */
+  .mg-hero .mg-container, .mg-overview .mg-container, .mg-section .mg-container,
+  .mg-hypo .mg-container, .mg-solution .mg-container,
+  .mc-container, .sk-container, .sp-container, .whats-next__inner {
+    padding-left: max(calc((100cqw - 1015px) / 2), 240px);
+    padding-right: max(calc((100cqw - 1015px) / 2), 240px);
+  }
+}
