@@ -219,6 +219,9 @@
 }
 </style>
 <style id="mc-type-draft">
+/* Result cards: sign and units match the number */
+.mc-stat__value > .mc-stat__plus { font-size: inherit; font-weight: inherit; line-height: inherit; }
+.mc-stat .mc-w400 { font-weight: inherit; }
 /* What I did on tablet/phone: label on top, bullets full width */
 @media (max-width: 1024px) {
   .mc-overview__item:has(.mc-did) { flex-direction: column; gap: 12px; }
@@ -238,8 +241,11 @@
   .mc-body, .mc-lead, .mc-lead--body, .mc-hero__summary, .mc-tl__sub,
   .mc-panel .mc-body, .mc-card .mc-body, .mc-challenge__card .mc-body, .mc-impl-card .mc-body,
   body .mc-text .mc-lead, body .mc-tl__list li { font-size: 16px; line-height: 1.6; }
-  .mc-stat__value, .mc-stats--3 .mc-stat__value, .mc-stat__num, .mc-stats--3 .mc-stat__num { font-size: 28px; line-height: 1.2; letter-spacing: -0.4px; }
-  .mc-stat__arrow, .mc-stats--3 .mc-stat__arrow { font-size: 22px; }
+  .mc-stat__value, .mc-stats--3 .mc-stat__value, .mc-stat__num, .mc-stats--3 .mc-stat__num { font-size: 40px; line-height: 1.2; letter-spacing: -0.6px; }
+  .mc-stat__value { margin-top: 12px; }
+  .mc-stat__value--row { padding-top: 0; gap: 12px; }
+  .mc-stat__num--96 { height: auto; }
+  .mc-stat__arrow, .mc-stats--3 .mc-stat__arrow { font-size: 28px; line-height: 1.2; }
   .mc-stat__label { font-size: 16px; line-height: 1.45; }
   .mc-chat__bubble p, .mc-feedback__quote { font-size: 15px; line-height: 1.5; }
   body .mc-lead strong, body .mc-lead--body strong, body .mc-text .mc-lead strong { font-size: inherit; }
@@ -648,11 +654,11 @@
       <div class="mc-stats mc-stats--2">
         <div class="mc-stat">
           <p class="mc-stat__label">Bounce rate</p>
-          <p class="mc-stat__value"><span class="mc-stat__plus">-</span> 9.2%</p>
+          <p class="mc-stat__value"><span class="mc-stat__plus">−</span>9.2%</p>
         </div>
         <div class="mc-stat">
           <p class="mc-stat__label">Detail-page visits</p>
-          <p class="mc-stat__value"><span class="mc-stat__plus">+</span> 21%</p>
+          <p class="mc-stat__value"><span class="mc-stat__plus">+</span>21%</p>
         </div>
       </div>
     </div>
