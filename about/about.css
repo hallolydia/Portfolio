@@ -394,7 +394,8 @@
    20px from title to content */
 @media (min-width: 769px) {
   .about-hero              { padding-top: calc(var(--gnb-height) + var(--gnb-top) + 64px); }
-  .about-section__inner    { gap: 20px; }
+  .about-section__inner,
+  #about-education .about-section__inner { gap: 20px; }
   .about-section__title    { font-size: 20px; font-weight: 600; line-height: 1.3; letter-spacing: -0.2px; gap: 8px; }
   .about-section__title-icon { width: 20px; height: 20px; }
 }
