@@ -951,7 +951,8 @@
 /* Left TOC built from section labels */
 (function () {
   var skip = /^(ABOUT|SHIPPING PROCESS)/;
-  var nav = document.createElement('nav'); nav.className = 'lt-toc'; nav.setAttribute('aria-label', 'On this page');;
+  var nav = document.createElement('nav'); nav.className = 'lt-toc'; nav.setAttribute('aria-label', 'On this page');
+  var items = [], seen = {};
   document.querySelectorAll('body > section').forEach(function (sec, i) {
     var labels = [].slice.call(sec.querySelectorAll('.mc-label')).filter(function (l) {
       return !l.classList.contains('mc-label--link') && !skip.test(l.textContent.trim());
