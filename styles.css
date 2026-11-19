@@ -255,15 +255,15 @@ ul { list-style: none; }
 .gnb__hamburger span {
   display: block;
   width: 20px;
-  height: 1.5px;
+  height: 2px; /* whole pixels: 1.5px lines landed on .25/.75 positions and rendered at uneven thickness */
   background: var(--color-text);
   border-radius: 2px;
   transition: transform var(--transition), opacity var(--transition);
 }
 
-.gnb__hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.gnb__hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .gnb__hamburger.open span:nth-child(2) { opacity: 0; }
-.gnb__hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.gnb__hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* Mobile nav — dropdown below GNB bar */
 .gnb__mobile-nav {
@@ -2017,8 +2017,9 @@ html.has-cursor .strength-item__btn * {
    - section titles = PC labels (20px / 600, icons 16/20px, 20px to the content)
    - thumbnails in the 616×350 ratio the artwork is drawn in, so nothing is cropped; card title/desc one step down */
 @media (max-width: 768px) {
-  .hero__inner { padding: 76px 20px 132px; }
-  .hero__headline { margin-bottom: 20px; }
+  .hero__inner { padding: 76px 20px 140px; }
+  /* Bold, and as large as the phone allows while the headline stays on its 4 designed lines (≈24px at 375, 26px at 430) */
+  .hero__headline { margin-bottom: 20px; font-size: clamp(22px, calc((100vw - 40px) * 0.072), 26px); font-weight: 700; }
 
   #work .section__title,
   #strength .section__title      { font-size: 20px; font-weight: 600; letter-spacing: -0.2px; line-height: 1.3; gap: 8px; }
