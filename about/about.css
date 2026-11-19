@@ -420,3 +420,30 @@
 @media (max-width: 768px) {
   .about-hero__title         { font-size: 24px; line-height: 1.4; letter-spacing: -0.24px; }
 }
+
+/* Connect: email copies like the footer button (same script), opening into the dark pill.
+   The 44px icon is already black with a white envelope, so it is not inverted. */
+.about-connect__email {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  max-width: 44px;
+  flex-shrink: 0;
+}
+.about-connect__email:hover,
+.about-connect__email.copied { max-width: 380px; padding-right: 18px; }
+.about-connect__email img,
+.about-connect__email:hover img,
+.about-connect__email.copied img { width: 44px; height: 44px; flex-shrink: 0; filter: none; }
+.about-connect__email .footer__email-label { font-size: 14px; margin-left: 6px; }
+
+/* Phone spacing: sections 144 → 64px apart, hero title → text 40 → 20, paragraphs 22 → 12, title → content 40 → 20 (= PC) */
+@media (max-width: 768px) {
+  .about-hero                              { padding-bottom: 32px; }
+  .about-hero__text                        { gap: 20px; }
+  .about-hero__body p + p                  { margin-top: 12px; }
+  .about-section                           { padding: 32px 0; }
+  #about-award                             { padding-bottom: 96px; } /* was 240px above the footer */
+  .about-section__inner,
+  #about-education .about-section__inner   { gap: 20px; }
+}
