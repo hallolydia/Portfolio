@@ -30,6 +30,7 @@
   /* Footer — Figma */
   --color-footer-bg:    #121213;
   --color-footer-text:  #c2c2cc;   /* rgba(194,194,204) */
+  --color-email-pill-bg: #000000;  /* footer email copy pill (open) */
 
   /* Accent */
   --color-accent:       #5b4ff0;
@@ -1488,8 +1489,17 @@ ul { list-style: none; }
 .footer__email-btn.copied {
   max-width: 380px;
   padding-right: 16px;
-  background: #ffffff;
+  background: var(--color-email-pill-bg);
 }
+
+/* Open pill is dark: white icon (same image, inverted), white action, light-gray address */
+.footer__email-btn img { transition: filter 0.32s ease; }
+.footer__email-btn:hover img,
+.footer__email-btn.copied img { filter: invert(1); }
+.footer__email-btn:hover .footer__email-addr,
+.footer__email-btn.copied .footer__email-addr { color: var(--color-footer-text); }
+.footer__email-btn:hover .footer__email-action,
+.footer__email-btn.copied .footer__email-action { color: var(--color-bg); }
 
 .footer__email-label {
   display: inline-flex;
@@ -1998,3 +2008,29 @@ html.has-cursor .strength-item__btn * {
 }
 .gnb__roll-face--next { color: var(--color-text); }
 .gnb__nav a:hover .gnb__roll { transform: translateY(-32px); }
+
+/* Home mobile clean-up (PC/laptop untouched):
+   - hero: room under the GNB and a white margin before Featured Work (Featured Work + its first thumbnail still peek in the first screen)
+   - section titles = PC labels (20px / 600, icons 16/20px, 20px to the content)
+   - thumbnails in the 616×350 ratio the artwork is drawn in, so nothing is cropped; card title/desc one step down */
+@media (max-width: 768px) {
+  .hero__inner { padding: 64px 20px 56px; }
+
+  #work .section__title,
+  #strength .section__title      { font-size: 20px; font-weight: 600; letter-spacing: -0.2px; line-height: 1.3; gap: 8px; }
+  #work .section__title-icon     { width: 16px; height: 16px; }
+  #strength .section__title-icon { width: 20px; height: 20px; }
+  #work .section__header,
+  #strength .section__header     { margin-bottom: 20px; }
+
+  .work-card__thumb { aspect-ratio: 616 / 350; }
+  .tsl-logo { left: calc(50% - 206.37px); top: 40.66px; width: 125.915px; height: 39.234px; } /* back to the uncropped scene position */
+  .work-card__link  { gap: 16px; }
+  .work-card__title { font-size: 20px; line-height: 1.3; }
+  .work-card__desc  { font-size: 14px; line-height: 1.5; }
+
+  /* My Strength: no floating hover image at phone width (even with a mouse); the image shows only
+     inside the open panel, 20px further from the text (20 → 40px) */
+  .strength-item__hover     { display: none; }
+  .strength-item__body-text { margin-bottom: 40px; }
+}
