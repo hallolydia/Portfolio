@@ -873,10 +873,13 @@ ul { list-style: none; }
 .tsm-shade { bottom: 0; width: 868.217px; height: 170.478px; left: calc(50% + 0.41px); }
 .tsm-browser {
   position: absolute;
-  bottom: -0.18px;
+  /* 1.1× larger and pinned ~20px under the logo (logo ends at 60px), so less empty navy above it;
+     the bottom of the page shot runs a little past the frame */
+  top: 82px;
   left: calc(50% + 0.41px);
   width: 474.806px;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scale(1.1);
+  transform-origin: 50% 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2014,7 +2017,7 @@ html.has-cursor .strength-item__btn * {
    - section titles = PC labels (20px / 600, icons 16/20px, 20px to the content)
    - thumbnails in the 616×350 ratio the artwork is drawn in, so nothing is cropped; card title/desc one step down */
 @media (max-width: 768px) {
-  .hero__inner { padding: 64px 20px 56px; }
+  .hero__inner { padding: 64px 20px 112px; }
 
   #work .section__title,
   #strength .section__title      { font-size: 20px; font-weight: 600; letter-spacing: -0.2px; line-height: 1.3; gap: 8px; }
@@ -2033,4 +2036,9 @@ html.has-cursor .strength-item__btn * {
      inside the open panel, 20px further from the text (20 → 40px) */
   .strength-item__hover     { display: none; }
   .strength-item__body-text { margin-bottom: 40px; }
+  /* Open-panel image: same ratio, phone-friendly size (full width was ~270px tall) */
+  .strength-item__body-img  { max-width: 260px; border-radius: 16px; }
+
+  /* MemeCore thumbnail: no 0.8 shrink any more (the frame is no longer cropped); same 1.1 browser as other screens */
+  .tsm-browser { transform: translateX(-50%) scale(1.1); transform-origin: 50% 0; }
 }
