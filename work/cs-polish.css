@@ -77,3 +77,12 @@
 @media (min-width: 1025px) {
   .mc-goal { height: auto; padding: 100px 0; }
 }
+
+/* Section and card titles: 500 weight, tighter tracking and leading (Manrope and colors unchanged) */
+@media (min-width: 1025px) {
+  .mg-title, .mc-title, .mc-goal__title, .sk-title, .sk-goal__title, .sp-title { font-weight: 500; letter-spacing: -0.03em; line-height: 1.2; }
+  .mg-explore__title, .lt-hyp__title, .mg-option__title, .mg-result__label,
+  .mc-challenge__title, .mc-card__title, .mc-subhead__title, .mc-impl__title,
+  .sk-bg-card__title, .sk-option__title, .sk-card__title, .sk-ba__title, .sk-iter__title, .sk-voices__title, .sk-components__title,
+  .sp-cause__title, .sp-result__label { font-weight: 500; letter-spacing: -0.03em; line-height: 1.3; }
+}
