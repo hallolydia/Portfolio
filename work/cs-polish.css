@@ -72,3 +72,8 @@
 .mg-body strong, .mc-body strong, .mc-lead strong, .sk-body strong, .sp-body strong, .overview-copy strong { font-weight: 500; }
 .mg-body strong:not([style]), .mc-body strong:not([style]), .mc-lead strong, .sk-body strong:not([style]), .sp-body strong:not([style]) { color: var(--soft-strong); }
 .overview-copy p strong:not([style]) { color: var(--overview-accent, var(--soft-strong)); }
+
+/* MemeCore Goal band: its fixed 560px height was sized for a 40px title; fit it to the content */
+@media (min-width: 1025px) {
+  .mc-goal { height: auto; padding: 100px 0; }
+}
