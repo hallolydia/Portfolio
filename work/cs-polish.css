@@ -86,3 +86,8 @@
   .sk-bg-card__title, .sk-option__title, .sk-card__title, .sk-ba__title, .sk-iter__title, .sk-voices__title, .sk-components__title,
   .sp-cause__title, .sp-result__label { letter-spacing: -0.03em; line-height: 1.3; }
 }
+
+/* Info row labels (TEAM, TOOLS, TIMELINE, WHAT I DID): quieter, so they read as labels, not headings */
+.mg-overview__label, .mc-overview__label, .sk-overview__label, .sp-overview__label {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: var(--soft-strong);
+}
