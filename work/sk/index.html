@@ -158,6 +158,8 @@
 </style>
 <style>/* case studies: never paint the GNB, even before cs-nav.css arrives */ .gnb, .gnb__mobile-nav { display: none !important; }</style>
 <link rel="stylesheet" href="../cs-nav.css" />
+  <link rel="stylesheet" href="../cs-polish.css">
+  <style>.pd-outcome, .pd-did { --pd-accent: var(--sk-accent); --pd-accent-bg: var(--sk-accent-bg); --pd-panel: var(--sk-panel-top); --pd-body: var(--sk-body); --pd-text: var(--sk-text); }</style>
 </head>
 <body class="sk-page">
 
@@ -205,6 +207,17 @@
     </div>
   </section>
 
+  <!-- Outcome (draft) -->
+  <section class="pd-outcome">
+    <div class="pd-outcome__inner">
+      <span class="pd-outcome__label">OUTCOME</span>
+      <div class="pd-outcome__grid">
+        <div class="pd-outcome__card"><span class="pd-outcome__tag">BEFORE</span><p class="pd-outcome__text">Text-heavy instructions on screens copied from each machine. <strong>72% of learners misclicked,</strong> and every language added more text to manage.</p></div>
+        <div class="pd-outcome__card pd-outcome__card--after"><span class="pd-outcome__tag">AFTER</span><p class="pd-outcome__text">Character-led, guided steps on one consistent UI with reusable components. <strong>Satisfaction doubled</strong> and training took 8 hours less.</p></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Role · Timeline · Team · Tools (Figma 6730:81454) -->
   <section class="sk-overview">
     <div class="sk-container">
@@ -213,13 +226,6 @@
           <div class="sk-overview__item">
             <p class="sk-overview__label">TEAM</p>
             <p class="sk-overview__value">3 UI/UX Designers (Me)<br>1 Project Leader<br>4 Planners<br>3 Unity Engineers<br>3 3D Designers</p>
-          </div>
-        </div>
-        <span class="sk-overview__divider" aria-hidden="true"></span>
-        <div class="sk-overview__col">
-          <div class="sk-overview__item">
-            <p class="sk-overview__label">MY ROLE</p>
-            <p class="sk-overview__value">Product Design<br>Design System<br>Prototyping</p>
           </div>
         </div>
         <span class="sk-overview__divider" aria-hidden="true"></span>
@@ -234,6 +240,17 @@
           <div class="sk-overview__item">
             <p class="sk-overview__label">TOOLS</p>
             <p class="sk-overview__value">Figma<br>Photoshop<br>Illustrator<br>Unity</p>
+          </div>
+        </div>
+        <span class="sk-overview__divider" aria-hidden="true"></span>
+        <div class="sk-overview__col">
+          <div class="sk-overview__item">
+            <p class="sk-overview__label">WHAT I DID</p>
+            <ul class="pd-did">
+              <li>Turned text-heavy steps into guided, game-like training</li>
+              <li>Built one consistent UI across machines</li>
+              <li>Created reusable components for hundreds of screens</li>
+            </ul>
           </div>
         </div>
       </div>

@@ -214,6 +214,8 @@
 </style>
 <style>/* case studies: never paint the GNB, even before cs-nav.css arrives */ .gnb, .gnb__mobile-nav { display: none !important; }</style>
 <link rel="stylesheet" href="../cs-nav.css" />
+  <link rel="stylesheet" href="../cs-polish.css">
+  <style>.pd-outcome, .pd-did { --pd-accent: var(--mg-accent); --pd-accent-bg: var(--mg-accent-bg); --pd-panel: var(--mg-panel-top); --pd-body: var(--mg-body); --pd-text: var(--mg-text); }</style>
 </head>
 <body class="page-mel-ai mg-page">
 
@@ -277,6 +279,17 @@
     </div>
   </section>
 
+  <!-- Outcome (draft) -->
+  <section class="pd-outcome">
+    <div class="pd-outcome__inner">
+      <span class="pd-outcome__label">OUTCOME</span>
+      <div class="pd-outcome__grid">
+        <div class="pd-outcome__card"><span class="pd-outcome__tag">BEFORE</span><p class="pd-outcome__text">Users could enter Interactive Mode only through the AI's dialogue. <strong>Just 13.3% found it,</strong> and many ran out of things to say.</p></div>
+        <div class="pd-outcome__card pd-outcome__card--after"><span class="pd-outcome__tag">AFTER</span><p class="pd-outcome__text">A visible entry button, scenario options, and suggested replies. <strong>68% now enter the mode,</strong> and conversations last 5.5× longer.</p></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Role · Timeline · Team · Tools (Figma 6730:87190) -->
   <section class="mg-overview">
     <div class="mg-container">
@@ -285,13 +298,6 @@
           <div class="mg-overview__item">
             <p class="mg-overview__label">TEAM</p>
             <p class="mg-overview__value">2 Product Designers (Me)<br>1 Product Owner<br>2 Product Managers<br>6 ML Engineers<br>8 iOS/Android/Web Engineers</p>
-          </div>
-        </div>
-        <span class="mg-overview__divider" aria-hidden="true"></span>
-        <div class="mg-overview__col">
-          <div class="mg-overview__item">
-            <p class="mg-overview__label">MY ROLE</p>
-            <p class="mg-overview__value">Product Design<br>Interaction Design<br>Design System<br>UX Research<br>Prototyping</p>
           </div>
         </div>
         <span class="mg-overview__divider" aria-hidden="true"></span>
@@ -306,6 +312,18 @@
           <div class="mg-overview__item">
             <p class="mg-overview__label">TIMELINE</p>
             <p class="mg-overview__value">Apr 2024 - Jul 2024</p>
+          </div>
+        </div>
+        <span class="mg-overview__divider" aria-hidden="true"></span>
+        <div class="mg-overview__col">
+          <div class="mg-overview__item">
+            <p class="mg-overview__label">WHAT I DID</p>
+            <ul class="pd-did">
+              <li>Analyzed behavior data from 1,000+ users</li>
+              <li>Redesigned how users enter Interactive Mode</li>
+              <li>Designed scenario options and suggested replies</li>
+              <li>Prototyped with PM and ML engineers</li>
+            </ul>
           </div>
         </div>
       </div>

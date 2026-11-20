@@ -144,6 +144,8 @@
 </style>
 <style>/* case studies: never paint the GNB, even before cs-nav.css arrives */ .gnb, .gnb__mobile-nav { display: none !important; }</style>
 <link rel="stylesheet" href="../cs-nav.css" />
+  <link rel="stylesheet" href="../cs-polish.css">
+  <style>.pd-outcome, .pd-did { --pd-accent: var(--sp-accent); --pd-accent-bg: var(--sp-accent-bg); --pd-panel: var(--sp-panel-top); --pd-body: var(--sp-body); --pd-text: var(--sp-text); }</style>
 </head>
 <body class="sp-page">
 
@@ -190,6 +192,17 @@
     </div>
   </section>
 
+  <!-- Outcome (draft) -->
+  <section class="pd-outcome">
+    <div class="pd-outcome__inner">
+      <span class="pd-outcome__label">OUTCOME</span>
+      <div class="pd-outcome__grid">
+        <div class="pd-outcome__card"><span class="pd-outcome__tag">BEFORE</span><p class="pd-outcome__text">Fans searched <strong>4 to 5 platforms</strong> to check a seat view, and none of the six we interviewed had ever written a review.</p></div>
+        <div class="pd-outcome__card pd-outcome__card--after"><span class="pd-outcome__tag">AFTER</span><p class="pd-outcome__text">One clear “Find seat views” button and a team character that grows with every review. <strong>Views found 5× faster,</strong> 8.2× more reviews.</p></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Role · Timeline · Team · Tools (Figma 6999:100037) -->
   <section class="sp-section">
     <div class="sp-container">
@@ -198,13 +211,6 @@
           <div class="sp-overview__item">
             <p class="sp-overview__label">TEAM</p>
             <p class="sp-overview__value">3 Product Designers (Me)<br>3 Android Developers<br>3 Backend Developers</p>
-          </div>
-        </div>
-        <span class="sp-overview__divider" aria-hidden="true"></span>
-        <div class="sp-overview__col">
-          <div class="sp-overview__item">
-            <p class="sp-overview__label">MY ROLE</p>
-            <p class="sp-overview__value">Product Design<br>3D Graphics<br>User Research and Testing</p>
           </div>
         </div>
         <span class="sp-overview__divider" aria-hidden="true"></span>
@@ -219,6 +225,17 @@
           <div class="sp-overview__item">
             <p class="sp-overview__label">TIMELINE</p>
             <p class="sp-overview__value">Jun 2024 -<br>Aug 2024</p>
+          </div>
+        </div>
+        <span class="sp-overview__divider" aria-hidden="true"></span>
+        <div class="sp-overview__col">
+          <div class="sp-overview__item">
+            <p class="sp-overview__label">WHAT I DID</p>
+            <ul class="pd-did">
+              <li>Led user research and testing for the home screen</li>
+              <li>Designed one clear “Find seat views” entry</li>
+              <li>Designed and modeled a team character that grows with reviews</li>
+            </ul>
           </div>
         </div>
       </div>
