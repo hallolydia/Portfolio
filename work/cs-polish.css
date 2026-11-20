@@ -15,17 +15,19 @@
   .mg-explore__title, .lt-hyp__title, .mg-option__title, .mg-result__label,
   .mc-challenge__title, .mc-card__title, .mc-subhead__title, .mc-impl__title,
   .sk-bg-card__title, .sk-option__title, .sk-card__title, .sk-ba__title, .sk-iter__title, .sk-voices__title, .sk-components__title,
-  .sp-cause__title, .sp-result__label { font-size: 20px; line-height: 1.35; font-weight: 600; }
+  .sp-cause__title, .sp-result__label { font-size: 18px; line-height: 1.4; font-weight: 600; }
   .mg-body, .mg-hero__summary, .mc-body, .mc-lead, .mc-hero__summary, .sk-body, .sk-hero__summary, .sp-body, .sp-hero__summary,
   .sk-card__body, .sk-card__text, .sk-iter__text, .sk-option__text, .sk-goal__body,
-  .overview-copy p, body .mc-text .mc-lead { font-size: 16px; line-height: 1.6; }
-  .mg-overview__value, .mc-overview__value, .sk-overview__value, .sp-overview__value, .pd-did li { font-size: 15.5px; line-height: 1.6; }
-  /* Mel Exploration cards: reason line and → result a step smaller (16 → 15) */
-  .mg-explore__list p, .mg-explore__result { font-size: 15px; line-height: 1.5; }
+  .overview-copy p, body .mc-text .mc-lead { font-size: 15px; line-height: 1.62; text-wrap: pretty; }
+  .mg-overview__value, .mc-overview__value, .sk-overview__value, .sp-overview__value, .pd-did li { font-size: 15px; line-height: 1.6; }
+  /* Mel Exploration cards: reason line and → result one step under the body */
+  .mg-explore__list p, .mg-explore__result { font-size: 14px; line-height: 1.5; }
 
   /* ---------- Readable text column (media stays full width) ---------- */
-  .mg-body, .mc-body, .mc-lead, .sk-body, .sp-body, .overview-copy p { max-width: 720px; }
-  .mg-title, .mc-title, .sk-title, .sp-title { max-width: 760px; text-wrap: balance; }
+  .mg-body, .mc-body, .mc-lead, .sk-body, .sp-body, .overview-copy p { max-width: 900px; }
+  /* Forced breaks inside paragraphs made a short third line; let the text flow */
+  .mg-body .lt-br, .mc-body .lt-br, .sk-body .lt-br, .sp-body .lt-br { display: none; }
+  .mg-title, .mc-title, .sk-title, .sp-title { max-width: 900px; text-wrap: balance; }
   .mg-split .mg-body, .mc-split__row .mc-body, .mc-split__row .mc-lead, .sk-split .sk-body, .sp-row .sp-body { max-width: none; }
 }
 
