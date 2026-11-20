@@ -1492,17 +1492,16 @@ ul { list-style: none; }
 .footer__email-btn.copied {
   max-width: 380px;
   padding-right: 16px;
-  background: var(--color-email-pill-bg);
+  background: #ffffff;
 }
 
-/* Open pill is dark: white icon (same image, inverted), white action, light-gray address */
-.footer__email-btn img { transition: filter 0.32s ease; }
-.footer__email-btn:hover img,
-.footer__email-btn.copied img { filter: invert(1); }
-.footer__email-btn:hover .footer__email-addr,
-.footer__email-btn.copied .footer__email-addr { color: var(--color-footer-text); }
-.footer__email-btn:hover .footer__email-action,
-.footer__email-btn.copied .footer__email-action { color: var(--color-bg); }
+/* About connect pill opens dark (white page): white action, light-gray address (its icon is already dark) */
+.about-connect__email:hover,
+.about-connect__email.copied { background: var(--color-email-pill-bg); }
+.about-connect__email:hover .footer__email-addr,
+.about-connect__email.copied .footer__email-addr { color: var(--color-footer-text); }
+.about-connect__email:hover .footer__email-action,
+.about-connect__email.copied .footer__email-action { color: var(--color-bg); }
 
 .footer__email-label {
   display: inline-flex;
