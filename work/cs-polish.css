@@ -35,7 +35,7 @@
 .pd-outcome__label { font-size: 14px; font-weight: 700; letter-spacing: 0.4px; color: var(--pd-accent); }
 .pd-outcome__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .pd-outcome__card { display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 16px; background: var(--pd-panel); }
-.pd-outcome__card--after { background: var(--pd-accent-bg); }
+.pd-outcome__card--after { background: var(--pd-panel); }
 .pd-outcome__tag { align-self: flex-start; padding: 2px 8px; border-radius: 6px; font-size: 13px; font-weight: 700; letter-spacing: 0.4px; color: var(--pd-panel); background: var(--pd-body); }
 .pd-outcome__card--after .pd-outcome__tag { background: var(--pd-accent); }
 .pd-outcome__text { margin: 0; font-size: 16px; line-height: 1.6; color: var(--pd-body); }
