@@ -27,7 +27,6 @@
   .mg-body, .mc-body, .mc-lead, .sk-body, .sp-body, .overview-copy p { max-width: 900px; }
   /* Forced breaks inside paragraphs made a short third line; let the text flow */
   .mg-body .lt-br, .mc-body .lt-br, .sk-body .lt-br, .sp-body .lt-br { display: none; }
-  .mg-title, .mc-title, .sk-title, .sp-title { max-width: 900px; text-wrap: balance; }
   .mg-split .mg-body, .mc-split__row .mc-body, .mc-split__row .mc-lead, .sk-split .sk-body, .sp-row .sp-body { max-width: none; }
 }
 
@@ -58,3 +57,18 @@
   .mg-overview__value, .mc-overview__value, .sk-overview__value, .sp-overview__value { text-align: left; }
   .pd-did li { font-size: 16px; line-height: 1.6; }
 }
+
+/* ---------- Softer reading: charcoal titles, lighter body gray, highlights at 500 ---------- */
+.mg-page { --mg-text: #2d3742; --soft-strong: #545c68; }
+.mc-page { --mc-text: #2d3742; --mc-heading: #2d3742; --soft-strong: #545c68; }
+.sk-page { --sk-text: #2d3742; --soft-strong: #545c68; }
+.sp-page { --sp-text: #2d3742; --soft-strong: #545c68; }
+@media (min-width: 1025px) {
+  .mg-page { --mg-body: #7b838f; }
+  .mc-page { --mc-body: #7b838f; }
+  .sk-page { --sk-body: #7b838f; }
+  .sp-page { --sp-body: #7b838f; }
+}
+.mg-body strong, .mc-body strong, .mc-lead strong, .sk-body strong, .sp-body strong, .overview-copy strong { font-weight: 500; }
+.mg-body strong:not([style]), .mc-body strong:not([style]), .mc-lead strong, .sk-body strong:not([style]), .sp-body strong:not([style]) { color: var(--soft-strong); }
+.overview-copy p strong:not([style]) { color: var(--overview-accent, var(--soft-strong)); }
